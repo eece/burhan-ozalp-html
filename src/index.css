@@ -1,35 +1,27 @@
-@import "tailwindcss";
 
-@theme {
-  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
-  --color-primary-text: #7b5f43;
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
 }
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
-    font-size: 16px;
-  }
-  
-  body {
-    color: #333;
-    @apply text-base;
-  }
+body {
+  color: #333;
+  font-size: 1rem;
+}
 
-  p, span, a, li, div, input, textarea, select {
-    color: var(--color-primary-text);
-  }
-  
-  /* Heading exceptions: keep them darker */
-  h1, h2, h3, h4, h5, h6, h1 span, h2 span {
-    color: #333;
-  }
+p, span, a, li, div, input, textarea, select {
+  color: #7b5f43;
+}
 
-  input::placeholder, textarea::placeholder {
-    font-size: 16px;
-    color: #7b5f43;
-    opacity: 0.6;
-  }
+/* Heading exceptions: keep them darker */
+h1, h2, h3, h4, h5, h6, h1 span, h2 span {
+  color: #333;
+}
+
+input::placeholder, textarea::placeholder {
+  font-size: 16px;
+  color: #7b5f43;
+  opacity: 0.6;
 }
 
 @keyframes fade-in-right {
