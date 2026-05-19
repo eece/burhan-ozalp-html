@@ -1,3 +1,38 @@
+// Mobile Menu Toggle logic
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenuCloseBtn = document.getElementById('mobile-menu-close');
+const mobileMenu = document.getElementById('mobile-menu');
+
+const toggleMenu = () => {
+  mobileMenu.classList.toggle('translate-x-full');
+  document.body.classList.toggle('overflow-hidden');
+};
+
+if (mobileMenuBtn && mobileMenu) {
+  mobileMenuBtn.addEventListener('click', toggleMenu);
+}
+
+if (mobileMenuCloseBtn && mobileMenu) {
+  mobileMenuCloseBtn.addEventListener('click', toggleMenu);
+}
+
+if (mobileMenu) {
+  // Mobile Accordion Logic
+  const accordionBtns = document.querySelectorAll('.mobile-accordion-btn');
+  accordionBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const content = btn.nextElementSibling;
+      const icon = btn.querySelector('i');
+      
+      content?.classList.toggle('hidden');
+      if (icon) {
+        icon.classList.toggle('fa-plus');
+        icon.classList.toggle('fa-minus');
+      }
+    });
+  });
+}
+
 // Simple slider logic
 const slider = document.querySelector('.hero-slider');
 const prevBtn = document.querySelector('.slider-prev');

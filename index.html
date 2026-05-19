@@ -28,7 +28,7 @@
 </head>
 <body class="bg-[#fcfaf7] text-[#333] font-['Montserrat',sans-serif]">
     <!-- Top Header -->
-    <header class="bg-white border-b border-gray-100">
+    <header class="bg-white border-b border-gray-100 hidden sm:block">
         <div class="container mx-auto px-4 py-2 flex flex-wrap justify-between items-center text-base uppercase tracking-wider text-gray-500 font-semibold">
             <div class="flex items-center space-x-6">
                 <div class="flex items-center">
@@ -54,18 +54,33 @@
         </div>
     </header>
 
+    <!-- Mobile Top Header (Centered) -->
+    <div class="sm:hidden bg-white border-b border-gray-100 py-3">
+        <div class="container mx-auto px-4 flex flex-col items-center space-y-3 text-[11px] uppercase tracking-wider text-gray-500 font-semibold text-center">
+            <div class="flex items-center justify-center">
+                <i class="fa-solid fa-phone text-[10px] mr-2 text-[#8b6e4e]"></i>
+                Bizi Arayın: +90 532 157 05 77
+            </div>
+            <a href="#" class="bg-[#008000] text-white px-6 py-2 flex items-center hover:bg-opacity-90 transition-all rounded-sm text-xs font-bold mx-auto">
+                <i class="fa-solid fa-check text-xs mr-2"></i>
+                HIZLI İLETİŞİM
+            </a>
+        </div>
+    </div>
+
     <!-- Navigation Header -->
     <nav class="bg-white sticky top-0 z-50 shadow-sm border-b border-gray-50">
-        <div class="container mx-auto px-4 py-4 flex flex-col lg:flex-row justify-between items-center">
-            <div class="mb-4 lg:mb-0">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="z-50">
                 <a href="/" class="block">
                     <h1 class="text-2xl md:text-3xl font-['Cormorant_Garamond'] tracking-widest text-[#333] font-light leading-none">
-                        <span class="block text-base font-['Montserrat'] font-semibold text-[#8b6e4e] tracking-[0.3em] mb-1">Doc.Dr.</span>
+                        <span class="block text-[10px] md:text-base font-['Montserrat'] font-semibold text-[#8b6e4e] tracking-[0.3em] mb-1 uppercase">Doc.Dr.</span>
                         BURHAN ÖZALP
                     </h1>
                 </a>
             </div>
-            <ul class="flex flex-wrap justify-center items-center space-x-4 md:space-x-8 text-base font-bold uppercase tracking-[0.15em] text-gray-600">
+            <!-- Desktop Menu -->
+            <ul class="hidden lg:flex flex-wrap justify-center items-center space-x-4 md:space-x-8 text-base font-bold uppercase tracking-[0.15em] text-gray-600">
                 <li class="relative group py-2">
                     <a href="#" class="hover:text-[#8b6e4e] transition-all">Hakkımda</a>
                     <ul class="absolute left-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[200px] border-t-2 border-[#8b6e4e] py-2 z-50">
@@ -114,28 +129,79 @@
                 <li class="relative group py-2">
                     <button class="flex items-center hover:text-[#8b6e4e] transition-all cursor-pointer">
                         <img src="https://flagcdn.com/w20/tr.png" class="w-4 mr-2"> 
-                        <span>Türkçe</span>
+                        <span class="text-xs uppercase">TR</span>
                         <i class="fa-solid fa-chevron-down text-[10px] ml-1 opacity-50"></i>
                     </button>
                     <ul class="absolute right-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[120px] border-t-2 border-[#8b6e4e] py-2 z-50 text-left">
                         <li>
-                            <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">
-                                <img src="https://flagcdn.com/w20/tr.png" class="w-4 mr-2"> TR
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">
+                            <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all text-xs uppercase">
                                 <img src="https://flagcdn.com/w20/gb.png" class="w-4 mr-2"> EN
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">
-                                <img src="https://flagcdn.com/w20/de.png" class="w-4 mr-2"> DE
                             </a>
                         </li>
                     </ul>
                 </li>
             </ul>
+
+            <!-- Mobile Menu Toggles -->
+            <div class="flex items-center space-x-4 lg:hidden">
+                <div class="relative group sm:hidden">
+                    <button class="flex items-center hover:text-[#8b6e4e] transition-all cursor-pointer">
+                        <img src="https://flagcdn.com/w20/tr.png" class="w-5"> 
+                        <i class="fa-solid fa-chevron-down text-[10px] ml-1 opacity-50"></i>
+                    </button>
+                    <ul class="absolute right-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[100px] border-t-2 border-[#8b6e4e] py-2 z-50 text-left">
+                        <li>
+                            <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all text-xs font-bold uppercase text-[#333]">
+                                <img src="https://flagcdn.com/w20/gb.png" class="w-4 mr-2"> EN
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <button id="mobile-menu-btn" class="text-[#333] focus:outline-none z-50">
+                    <i class="fa-solid fa-bars text-2xl animate-pulse-slow"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Panel -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white z-[200] transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden overflow-y-auto pb-12">
+            <div class="flex justify-end p-6">
+                <button id="mobile-menu-close" class="text-[#333] focus:outline-none">
+                    <i class="fa-solid fa-times text-3xl"></i>
+                </button>
+            </div>
+            <div class="container mx-auto px-6">
+                <ul class="space-y-6 text-lg font-bold uppercase tracking-widest text-[#333]">
+                    <li>
+                        <div class="flex justify-between items-center cursor-pointer mobile-accordion-btn">
+                            <span>Hakkımda</span>
+                            <i class="fa-solid fa-plus text-xs"></i>
+                        </div>
+                        <ul class="mt-4 ml-4 space-y-4 text-sm font-semibold text-gray-500 hidden mobile-accordion-content border-l border-gray-100 pl-4 capitalize tracking-normal">
+                             <li><a href="#" class="hover:text-[#8b6e4e]">Özgeçmiş</a></li>
+                             <li><a href="#" class="hover:text-[#8b6e4e]">Kariyer</a></li>
+                             <li><a href="#" class="hover:text-[#8b6e4e]">Eğitim</a></li>
+                             <li><a href="#" class="hover:text-[#8b6e4e]">Sertifikalar</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="flex justify-between items-center cursor-pointer mobile-accordion-btn">
+                            <span>İşlemler</span>
+                            <i class="fa-solid fa-plus text-xs"></i>
+                        </div>
+                        <ul class="mt-4 ml-4 space-y-4 text-sm font-semibold text-gray-500 hidden mobile-accordion-content border-l border-gray-100 pl-4 capitalize tracking-normal">
+                             <li><a href="/hizmetler.html" class="hover:text-[#8b6e4e]">Tüm İşlemler</a></li>
+                             <li><a href="#" class="hover:text-[#8b6e4e]">Lipödem Cerrahisi</a></li>
+                             <li><a href="/burun-estetigi.html" class="hover:text-[#8b6e4e]">Burun Estetiği</a></li>
+                             <li><a href="#" class="hover:text-[#8b6e4e]">Vücut Estetiği</a></li>
+                             <li><a href="#" class="hover:text-[#8b6e4e]">Yüz Estetiği</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="block hover:text-[#8b6e4e]">Lipödem</a></li>
+                    <li><a href="#" class="block hover:text-[#8b6e4e]">Galeri</a></li>
+                    <li><a href="/iletisim.html" class="block hover:text-[#8b6e4e]">İletişim</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
