@@ -9,14 +9,6 @@ body {
   font-size: 1rem;
 }
 
-p, span, a, li, div, input, textarea, select {
-  color: #7b5f43;
-}
-
-/* Heading exceptions: keep them darker */
-h1, h2, h3, h4, h5, h6, h1 span, h2 span {
-  color: #333;
-}
 
 input::placeholder, textarea::placeholder {
   font-size: 16px;
