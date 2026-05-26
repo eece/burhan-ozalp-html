@@ -1,0 +1,2 @@
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss -i ./src/input.css -o ./src/tailwind.css
