@@ -47,10 +47,12 @@
                 </div>
             </div>
             <div class="flex items-center space-x-6">
-                <div class="relative hidden sm:block">
-                    <input type="text" placeholder="ARA..." class="bg-gray-50 border border-gray-200 px-3 py-1.5 w-40 text-base focus:outline-none focus:border-[#8b6e4e]">
-                    <i class="fa-solid fa-magnifying-glass absolute right-2 top-2.5 text-[10px] text-gray-400"></i>
-                </div>
+                <form action="/arama.html" method="GET" class="relative hidden sm:block">
+                    <input type="text" name="s" placeholder="ARA..." class="bg-gray-50 border border-gray-200 px-3 py-1.5 w-40 text-base focus:outline-none focus:border-[#8b6e4e]">
+                    <button type="submit" class="absolute right-2 top-2 text-gray-400 hover:text-[#8b6e4e] focus:outline-none bg-transparent border-0 cursor-pointer">
+                        <i class="fa-solid fa-magnifying-glass text-[10px]"></i>
+                    </button>
+                </form>
                 <a href="#" class="bg-[#008000] text-white px-4 py-2 flex items-center hover:bg-opacity-90 transition-all rounded-sm">
                     <i class="fa-solid fa-check text-xs mr-2"></i>
                     HIZLI İLETİŞİM

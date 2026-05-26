@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arama Sonuçları - Doç. Dr. Burhan Özalp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/src/tailwind.css">
+    <link rel="stylesheet" href="/src/index.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'cormorant': ['"Cormorant Garamond"', 'serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap');
+    </style>
+</head>
+<body class="bg-[#fcfaf7] text-[#333] font-['Montserrat',sans-serif]">
+    <!-- Top Header -->
+    <header class="bg-white border-b border-gray-100 hidden sm:block">
+        <div class="container mx-auto px-4 py-2 flex flex-wrap justify-between items-center text-base uppercase tracking-wider text-gray-500 font-semibold">
+            <div class="flex items-center space-x-6">
+                <div class="flex items-center">
+                    <i class="fa-solid fa-phone text-[10px] mr-2 text-[#8b6e4e]"></i>
+                    Bizi Arayın: +90 532 157 05 77
+                </div>
+                <div class="hidden md:flex items-center space-x-4 border-l border-gray-200 pl-6">
+                    <a href="#" class="hover:text-[#8b6e4e] transition-colors"><i class="fa-brands fa-facebook-f text-xl"></i></a>
+                    <a href="#" class="hover:text-[#8b6e4e] transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                    <a href="#" class="hover:text-[#8b6e4e] transition-colors"><i class="fa-brands fa-youtube text-xl"></i></a>
+                </div>
+            </div>
+            <div class="flex items-center space-x-6">
+                <!-- Search Form header -->
+                <form action="/arama.html" method="GET" class="relative hidden sm:block">
+                    <input type="text" name="s" placeholder="ARA..." class="bg-gray-50 border border-gray-200 px-3 py-1.5 w-40 text-base focus:outline-none focus:border-[#8b6e4e]">
+                    <button type="submit" class="absolute right-2 top-2 text-gray-400 hover:text-[#8b6e4e] focus:outline-none bg-transparent border-0 cursor-pointer">
+                        <i class="fa-solid fa-magnifying-glass text-[10px]"></i>
+                    </button>
+                </form>
+                <a href="#" class="bg-[#008000] text-white px-4 py-2 flex items-center hover:bg-opacity-90 transition-all rounded-sm">
+                    <i class="fa-solid fa-check text-xs mr-2"></i>
+                    HIZLI İLETİŞİM
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Top Header (Centered) -->
+    <div class="sm:hidden bg-white border-b border-gray-100 py-3">
+        <div class="container mx-auto px-4 flex flex-col items-center space-y-3 text-[11px] uppercase tracking-wider text-gray-500 font-semibold text-center">
+            <div class="flex items-center justify-center">
+                <i class="fa-solid fa-phone text-[10px] mr-2 text-[#8b6e4e]"></i>
+                Bizi Arayın: +90 532 157 05 77
+            </div>
+            <a href="#" class="bg-[#008000] text-white px-6 py-2 flex items-center hover:bg-opacity-90 transition-all rounded-sm text-xs font-bold mx-auto">
+                <i class="fa-solid fa-check text-xs mr-2"></i>
+                HIZLI İLETİŞİM
+            </a>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <nav class="bg-white sticky top-0 z-50 shadow-sm border-b border-gray-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="z-50">
+                <a href="/" class="block">
+                    <h1 class="text-2xl md:text-3xl font-['Cormorant_Garamond'] tracking-widest text-[#333] font-light leading-none">
+                        <span class="block text-[10px] md:text-base font-['Montserrat'] font-semibold text-[#8b6e4e] tracking-[0.3em] mb-1 uppercase">Doc.Dr.</span>
+                        BURHAN ÖZALP
+                    </h1>
+                </a>
+            </div>
+            <!-- Desktop Menu -->
+            <ul class="hidden lg:flex flex-wrap justify-center items-center space-x-4 md:space-x-8 text-base font-bold uppercase tracking-[0.15em] text-gray-600">
+                <li class="relative group py-2">
+                    <a href="#" class="hover:text-[#8b6e4e] transition-all">Hakkımda</a>
+                    <ul class="absolute left-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[200px] border-t-2 border-[#8b6e4e] py-2 z-50">
+                        <li><a href="#" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Özgeçmiş</a></li>
+                        <li class="relative group/sub">
+                            <a href="#" class="flex items-center justify-between px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">
+                                Kariyer <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </a>
+                            <ul class="absolute left-full top-0 hidden group-hover/sub:block bg-white shadow-xl min-w-[200px] border-l border-gray-100 py-2">
+                                <li><a href="#" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Eğitim</a></li>
+                                <li><a href="#" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Sertifikalar</a></li>
+                                <li><a href="#" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Yayınlar</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="relative group py-2">
+                    <a href="/hizmetler.html" class="hover:text-[#8b6e4e] transition-all">İşlemler</a>
+                    <ul class="absolute left-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[220px] border-t-2 border-[#8b6e4e] py-2 z-50">
+                        <li class="relative group/sub">
+                            <a href="#" class="flex items-center justify-between px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">
+                                Lipödem Cerrahisi <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </a>
+                            <ul class="absolute left-full top-0 hidden group-hover/sub:block bg-white shadow-xl min-w-[220px] border-l border-gray-100 py-2">
+                                <li><a href="#" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Lipödem Nedir?</a></li>
+                                <li><a href="#" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Tedavi Yöntemleri</a></li>
+                            </ul>
+                        </li>
+                        <li class="relative group/sub">
+                            <a href="/burun-estetigi.html" class="flex items-center justify-between px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">
+                                Burun Estetiği <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </a>
+                            <ul class="absolute left-full top-0 hidden group-hover/sub:block bg-white shadow-xl min-w-[220px] border-l border-gray-100 py-2">
+                                <li><a href="/burun-estetigi.html" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Rinoplasti</a></li>
+                                <li><a href="#" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Revizyon</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Vücut Estetiği</a></li>
+                        <li><a href="#" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Yüz Estetiği</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="hover:text-[#8b6e4e] border-b-2 border-transparent hover:border-[#8b6e4e] pb-1 transition-all">Lipödem</a></li>
+                <li><a href="#" class="hover:text-[#8b6e4e] transition-all">Galeri</a></li>
+                <li><a href="/iletisim.html" class="hover:text-[#8b6e4e] transition-all">İletişim</a></li>
+                
+                <li class="relative group py-2">
+                    <button class="flex items-center hover:text-[#8b6e4e] transition-all cursor-pointer bg-transparent border-0">
+                        <img src="https://flagcdn.com/w20/tr.png" class="w-4 mr-2"> 
+                        <span class="text-xs uppercase">TR</span>
+                        <i class="fa-solid fa-chevron-down text-[10px] ml-1 opacity-50"></i>
+                    </button>
+                    <ul class="absolute right-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[120px] border-t-2 border-[#8b6e4e] py-2 z-50 text-left">
+                        <li>
+                            <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all text-xs uppercase">
+                                <img src="https://flagcdn.com/w20/gb.png" class="w-4 mr-2"> EN
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- Mobile Menu Toggles -->
+            <div class="flex items-center space-x-4 lg:hidden">
+                <div class="relative group sm:hidden">
+                    <button class="flex items-center hover:text-[#8b6e4e] transition-all cursor-pointer bg-transparent border-0">
+                        <img src="https://flagcdn.com/w20/tr.png" class="w-5"> 
+                        <i class="fa-solid fa-chevron-down text-[10px] ml-1 opacity-50"></i>
+                    </button>
+                    <ul class="absolute right-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[100px] border-t-2 border-[#8b6e4e] py-2 z-50 text-left">
+                        <li>
+                            <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all text-xs font-bold uppercase text-[#333]">
+                                <img src="https://flagcdn.com/w20/gb.png" class="w-4 mr-2"> EN
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <button id="mobile-menu-btn" class="text-[#333] focus:outline-none z-50 bg-transparent border-0 cursor-pointer">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Panel -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white z-[200] transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden overflow-y-auto pb-12">
+            <div class="flex justify-end p-6">
+                <button id="mobile-menu-close" class="text-[#333] focus:outline-none bg-transparent border-0 cursor-pointer">
+                    <i class="fa-solid fa-times text-3xl"></i>
+                </button>
+            </div>
+            <div class="container mx-auto px-6">
+                <ul class="space-y-6 text-lg font-bold uppercase tracking-widest text-[#333]">
+                    <li>
+                        <div class="flex justify-between items-center cursor-pointer mobile-accordion-btn">
+                            <span>Hakkımda</span>
+                            <i class="fa-solid fa-plus text-xs"></i>
+                        </div>
+                        <ul class="mt-4 ml-4 space-y-4 text-sm font-semibold text-gray-500 hidden mobile-accordion-content border-l border-gray-100 pl-4 capitalize tracking-normal">
+                             <li><a href="#" class="hover:text-[#8b6e4e]">Özgeçmiş</a></li>
+                             <li><a href="#" class="hover:text-[#8b6e4e]">Kariyer</a></li>
+                             <li><a href="#" class="hover:text-[#8b6e4e]">Eğitim</a></li>
+                             <li><a href="#" class="hover:text-[#8b6e4e]">Sertifikalar</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="flex justify-between items-center cursor-pointer mobile-accordion-btn">
+                            <span>İşlemler</span>
+                            <i class="fa-solid fa-plus text-xs"></i>
+                        </div>
+                        <ul class="mt-4 ml-4 space-y-4 text-sm font-semibold text-gray-500 hidden mobile-accordion-content border-l border-gray-100 pl-4 capitalize tracking-normal">
+                             <li><a href="/hizmetler.html" class="hover:text-[#8b6e4e]">Tüm İşlemler</a></li>
+                             <li><a href="#" class="hover:text-[#8b6e4e]">Lipödem Cerrahisi</a></li>
+                             <li><a href="/burun-estetigi.html" class="hover:text-[#8b6e4e]">Burun Estetiği</a></li>
+                             <li><a href="#" class="hover:text-[#8b6e4e]">Vücut Estetiği</a></li>
+                             <li><a href="#" class="hover:text-[#8b6e4e]">Yüz Estetiği</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="block hover:text-[#8b6e4e]">Lipödem</a></li>
+                    <li><a href="#" class="block hover:text-[#8b6e4e]">Galeri</a></li>
+                    <li><a href="/iletisim.html" class="block hover:text-[#8b6e4e]">İletişim</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="bg-[#dcd0c0] py-16 text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-['Cormorant_Garamond'] font-light tracking-widest text-white mb-4 uppercase">Arama Sonuçları</h2>
+            <div class="flex items-center justify-center space-x-2 text-xs md:text-sm font-bold uppercase tracking-widest text-[#8b6e4e]">
+                <a href="/" class="hover:text-white transition-colors">ANA SAYFA</a>
+                <span>-</span>
+                <span class="text-white">ARAMA SONUÇLARI</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="py-24 bg-white min-h-[500px]">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <!-- Search engine bar inside page -->
+            <div class="mb-16">
+                <form action="/arama.html" method="GET" class="flex flex-col md:flex-row shadow-sm rounded-sm overflow-hidden border border-gray-100">
+                    <input type="text" name="s" id="search-bar-input" placeholder="Kelime yazın ve arayın..." class="flex-grow bg-[#fcfaf7] px-6 py-4 text-base focus:outline-none focus:border-[#8b6e4e] text-gray-700 font-medium">
+                    <button type="submit" class="bg-[#8b6e4e] text-white px-10 py-4 font-bold tracking-widest uppercase hover:bg-[#7b5f43] transition-all cursor-pointer">ARA</button>
+                </form>
+                <div class="mt-4 text-sm text-gray-400 italic" id="search-term-summary">
+                    <!-- Loaded dynamically -->
+                </div>
+            </div>
+
+            <!-- Results container -->
+            <div id="search-results-wrapper" class="space-y-8">
+                <div class="text-center py-12 text-gray-400">
+                    <i class="fa-solid fa-circle-notch fa-spin text-4xl text-[#8b6e4e] mb-4"></i>
+                    <p class="text-base">Arama sonuçları yükleniyor...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white pt-24 pb-12 border-t border-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-16 mb-20 text-center lg:text-left">
+                <!-- Branding & Address -->
+                <div class="flex flex-col items-center lg:items-start">
+                    <h2 class="text-3xl font-['Cormorant_Garamond'] tracking-widest text-[#333] font-light leading-none mb-10">
+                        <span class="block text-base font-['Montserrat'] font-semibold text-[#8b6e4e] tracking-[0.3em] mb-1 uppercase">Doc.Dr.</span>
+                        BURHAN ÖZALP
+                    </h2>
+                    <div class="space-y-4 text-base text-gray-500 font-medium font-['Montserrat'] leading-relaxed w-full">
+                        <div class="flex items-start justify-center lg:justify-start">
+                            <i class="fa-solid fa-location-dot mt-1 mr-3 text-[#8b6e4e] flex-shrink-0"></i>
+                            <div>
+                                Harbiye, Vali Konağı Cd. No:3 E:5,<br>
+                                34367 Şişli / İstanbul
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-center lg:justify-start">
+                            <i class="fa-solid fa-phone mr-3 text-[#8b6e4e] flex-shrink-0"></i>
+                            <div>
+                                +90 532 157 05 77 / +90 212 261 12 12
+                            </div>
+                        </div>
+                        <div class="pt-4 w-full flex justify-center lg:justify-start">
+                            <a href="#" class="bg-[#2c8d2c] text-white px-8 py-3 rounded-sm flex items-center justify-center w-full sm:w-auto font-bold tracking-widest uppercase hover:bg-opacity-90 transition-all">
+                                <i class="fa-solid fa-check text-xs mr-2"></i> YOL TARİFİ
+                            </a>
+                        </div>
+                        <div class="flex space-x-4 pt-4 justify-center lg:justify-start">
+                            <a href="#" class="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center hover:bg-[#8b6e4e] hover:text-white hover:border-[#8b6e4e] transition-all"><i class="fa-brands fa-facebook-f text-lg"></i></a>
+                            <a href="#" class="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center hover:bg-[#8b6e4e] hover:text-white hover:border-[#8b6e4e] transition-all"><i class="fa-brands fa-instagram text-lg"></i></a>
+                            <a href="#" class="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center hover:bg-[#8b6e4e] hover:text-white hover:border-[#8b6e4e] transition-all"><i class="fa-brands fa-youtube text-lg"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Services -->
+                <div class="grid grid-cols-2 gap-4 text-left">
+                    <ul class="text-base font-semibold text-gray-500 uppercase tracking-wider space-y-4">
+                        <li><a href="/burun-estetigi.html" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Burun Estetiği</a></li>
+                        <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Göğüs Estetiği</a></li>
+                        <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Göğüs Büyütme</a></li>
+                        <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Jinekomasti</a></li>
+                        <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Karın Germe</a></li>
+                    </ul>
+                    <ul class="text-base font-semibold text-gray-500 uppercase tracking-wider space-y-4">
+                        <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Brezilya Poposu</a></li>
+                        <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Boyun Germe</a></li>
+                        <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Faça / Jilet İzi</a></li>
+                        <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Kepçe Kulak Estetiği</a></li>
+                        <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Yağ Enjeksiyonu</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Form Footer -->
+                <div class="bg-[#f8f6f3] p-8 rounded-sm">
+                    <h4 class="text-base font-bold tracking-[0.2em] text-[#8b6e4e] mb-6 uppercase">Numaranızı Bırakın Arayalım !</h4>
+                    <form class="space-y-4">
+                        <input type="text" placeholder="Ad Soyad*" class="bg-white border-b border-gray-200 px-4 py-2.5 text-base w-full focus:outline-none focus:border-[#8b6e4e]">
+                        <input type="text" placeholder="Ülke*" class="bg-white border-b border-gray-200 px-4 py-2.5 text-base w-full focus:outline-none focus:border-[#8b6e4e]">
+                        <input type="tel" placeholder="Telefon No*" class="bg-white border-b border-gray-200 px-4 py-2.5 text-base w-full focus:outline-none focus:border-[#8b6e4e]">
+                        <textarea placeholder="Mesaj*" rows="3" class="bg-white border-b border-gray-200 px-4 py-2.5 text-base w-full focus:outline-none focus:border-[#8b6e4e] resize-none"></textarea>
+                        <button class="bg-[#8b6e4e] text-white px-8 py-3 text-base font-bold tracking-widest w-full hover:bg-opacity-90 transition-all uppercase rounded-sm cursor-pointer">GÖNDER</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Bottom Credits -->
+            <div class="border-t border-gray-100 pt-12 text-center">
+                <div class="flex flex-wrap justify-center space-x-6 text-base font-bold uppercase text-gray-400 tracking-widest mb-6 px-4">
+                    <a href="#" class="hover:text-gray-600 transition-all mb-2">Randevu</a>
+                    <a href="#" class="hover:text-gray-600 transition-all mb-2">SSS</a>
+                    <a href="#" class="hover:text-gray-600 transition-all mb-2">Hakkımda</a>
+                    <a href="#" class="hover:text-gray-600 transition-all mb-2">Site Haritası</a>
+                    <a href="/iletisim.html" class="hover:text-gray-600 transition-all mb-2">İletişim</a>
+                    <a href="#" class="hover:text-gray-600 transition-all mb-2">KVKK</a>
+                    <a href="#" class="hover:text-gray-600 transition-all mb-2">Gizlilik Sözleşmesi</a>
+                </div>
+                <p class="text-base text-gray-400 uppercase tracking-widest mb-4 px-4">© 2025 Tüm Hakları Doç. Dr. Burhan Özalp'a Aittir.</p>
+                <p class="text-base text-gray-300 max-w-2xl mx-auto italic px-4 leading-relaxed">Bu sitede yer alan makaleler tamamen bilgilendirme amaçlı olup, tanı ve tedavi amacıyla kullanılamaz. Tüm sağlık sorunları için doktorunuza başvurunuz.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed WhatsApp Widget -->
+    <a href="https://wa.me/905321570577" target="_blank" class="fixed bottom-6 right-6 bg-[#25d366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform z-[60]">
+        <img src="/src/images/whatsapp.svg" class="w-8 h-8" alt="WhatsApp">
+    </a>
+
+    <script type="module" src="/src/main.js"></script>
+
+    <!-- Client-Side Search Engine script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Curated Clinic pages search list
+            const searchDatabase = [
+                {
+                    title: "Burun Estetiği (Rhinoplasty)",
+                    category: "Yüz Estetiği",
+                    url: "/burun-estetigi.html",
+                    description: "Doğal ve yüzünüzle uyumlu bir burun yapısı elde edin. Rinoplasti ameliyatı, estetik ve fonksiyonel (nefes alma) şikayetlerin eş zamanlı düzeltilmesini sağlar.",
+                    keywords: ["burun", "estetik", "rinoplasti", "burun estetiği", "nose", "rhinoplasty", "kemik", "nefes", "kıkırdak", "revizyon"]
+                },
+                {
+                    title: "Meme Büyütme",
+                    category: "Meme Estetiği",
+                    url: "/hizmetler.html",
+                    description: "Estetik şikayetleri gideren, dolgun ve doğal görünümlü meme protezleri (silikon) ile kadınsı hatlarınızı belirginleştirin.",
+                    keywords: ["meme", "göğüs", "büyütme", "silikon", "protez", "estetik", "dolgun", "breast", "mamoplasti"]
+                },
+                {
+                    title: "Yağ Aldırma (Liposuction - Lipomatik)",
+                    category: "Vücut Estetiği",
+                    url: "/hizmetler.html",
+                    description: "Bölgesel fazlalıklardan, dirençli yağ dokularından modern Lipomatik teknolojisiyle konforlu ve etkili bir şekilde kurtulun.",
+                    keywords: ["yağ", "aldırma", "liposuction", "lipomatik", "bölgesel", "incelme", "zayıflama", "vücut", "lipo"]
+                },
+                {
+                    title: "Jinekomasti (Erkeklerde Meme Küçültme)",
+                    category: "Erkek Estetiği",
+                    url: "/hizmetler.html",
+                    description: "Erkeklerde hormonal veya yapısal nedenlerle oluşan meme büyümesi sorununu kalıcı olarak gidermeye yönelik liposuction ve cerrahi tedavi yöntemi.",
+                    keywords: ["jinekomasti", "göğüs", "erkek", "meme", "büyümesi", "küçültme"]
+                },
+                {
+                    title: "Karın Germe (Abdominoplasti)",
+                    category: "Vücut Estetiği",
+                    url: "/hizmetler.html",
+                    description: "Hamilelik veya aşırı kilo alıp verme sonrası karın bölgesinde meydana gelen sarkıklıkları, kas gevşekliklerini gidererek gergin bir profil kazandıran ameliyat.",
+                    keywords: ["karın", "germe", "sarkma", "gebelik", "abdominoplasti", "bel", "inceltme"]
+                },
+                {
+                    title: "Yüz Germe (Face Lift)",
+                    category: "Yüz Estetiği",
+                    url: "/hizmetler.html",
+                    description: "Yaşlanma belirtilerine karşı kendinizi daha taze ve genç bir görünüme kavuşturmak üzere, sarkan dokuların toparlanmasını sağlayan germe ameliyatı.",
+                    keywords: ["yüz", "germe", "kırışıklık", "face", "lift", "sarkma", "yaşlanma"]
+                },
+                {
+                    title: "Göz Kapağı Estetiği (Blefaroplasti)",
+                    category: "Yüz Estetiği",
+                    url: "/hizmetler.html",
+                    description: "Yorgun ve yaşlı bakışlara neden olan üst ve alt göz kapağı sarkmaları ve torbalarının giderilmesiyle daha canlı bakışlar kazandıran popüler işlem.",
+                    keywords: ["göz", "göz kapağı", "blefaroplasti", "torba", "sarkık", "bakış", "canlı", "kirpik"]
+                },
+                {
+                    title: "BBL - Popo Estetiği (Brazilian Butt Lift)",
+                    category: "Vücut Estetiği",
+                    url: "/hizmetler.html",
+                    description: "Vücudun diğer bölgelerinden alınan fazla yağların özel yöntemlerle popo bölgesine enjekte edilerek dolgun ve kalkık kalçalar oluşturulması işlemidir.",
+                    keywords: ["bbl", "popo", "kalça", "enjeksiyon", "dolgun", "brazilian", "butt", "liposuction"]
+                },
+                {
+                    title: "Kepçe Kulak Estetiği (Otoplasti)",
+                    category: "Yüz Estetiği",
+                    url: "/hizmetler.html",
+                    description: "Öne doğru belirgin olan kulak kıkırdaklarının cerrahi olarak arkaya doğru şekillendirilerek doğal anatomik açısına kavuşturulduğu, özgüveni tazeleyen işlem.",
+                    keywords: ["kulak", "kepçe", "otoplasti", "kıkırdak", "çocuk", "estetik"]
+                },
+                {
+                    title: "Yağ Enjeksiyonu (Lipofilling)",
+                    category: "Yüz & Vücut Estetiği",
+                    url: "/hizmetler.html",
+                    description: "Kendi vücut yağlarınızın özel süzme teknikleriyle yüz, göğüs veya kalça gibi hacim ihtiyacı duyulan bölgelere transfer edilerek canlandırılması.",
+                    keywords: ["yağ", "transfer", "enjeksiyon", "lipofilling", "dolgu", "hacim", "kırışıklık"]
+                },
+                {
+                    title: "Lipödem Tedavisi & Cerrahisi",
+                    category: "Lipödem",
+                    url: "/hizmetler.html",
+                    description: "Ağrılı sızılı yağ birikmesi hastalığı olan Lipödem sorununa uzman dokunuşu ile kalıcı çözümler ve Lipomatik cerrahi tedavileri.",
+                    keywords: ["lipödem", "bacak", "ağrı", "yağlanma", "tedavi", "lipödem cerrahisi", "kalınlaşma"]
+                },
+                {
+                    title: "Doktor Özgeçmiş & Kariyer",
+                    category: "Hakkımda",
+                    url: "#",
+                    description: "Doç. Dr. Burhan Özalp kimdir? Eğitim geçmişi, akademik yayınları, kariyeri, vizyonu ve aldığı ulusal/uluslararası sertifikalar.",
+                    keywords: ["hakkımda", "burhan", "özalp", "özgeçmiş", "biyografi", "kariyer", "eğitim", "sertifikalar", "yayınlar"]
+                },
+                {
+                    title: "İletişim, Adres ve Randevu",
+                    category: "İletişim",
+                    url: "/iletisim.html",
+                    description: "İstanbul Şişli Nişantaşı semtindeki estetik ve plastik cerrahi kliniğimize telefon veya online form üzerinden ulaşın ve randevunuzu kolayca planlayın.",
+                    keywords: ["iletişim", "adres", "telefon", "randevu", "doktor", "burhan", "özalp", "klinik", "yol", "harita", "ulaşım", "şişli", "istanbul"]
+                }
+            ];
+
+            // Helper to get query params
+            const getQueryParam = (param) => {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(param);
+            };
+
+            const query = getQueryParam('s') || '';
+
+            // Update page inputs with existing term
+            const barInput = document.getElementById('search-bar-input');
+            const summaryText = document.getElementById('search-term-summary');
+            const resultsWrapper = document.getElementById('search-results-wrapper');
+
+            if (barInput) {
+                barInput.value = query;
+            }
+
+            // Normalise query for searching
+            const cleanString = (str) => {
+                return str
+                    .toLowerCase()
+                    .replace(/ı/g, 'i')
+                    .replace(/ğ/g, 'g')
+                    .replace(/ü/g, 'u')
+                    .replace(/ş/g, 's')
+                    .replace(/ö/g, 'o')
+                    .replace(/ç/g, 'c')
+                    .trim();
+            };
+
+            const searchString = cleanString(query);
+
+            if (summaryText) {
+                if (query) {
+                    summaryText.innerHTML = `<strong>"${escapeHTML(query)}"</strong> araması için sonuçlar gösteriliyor.`;
+                } else {
+                    summaryText.innerText = "Tüm kliniklerimize ve işlemlerimize ait kayıtlar aşağıda listelenmiştir:";
+                }
+            }
+
+            // Perform filtering
+            let filteredResults = [];
+            if (!searchString) {
+                filteredResults = searchDatabase; // Show all if empty search
+            } else {
+                filteredResults = searchDatabase.filter(item => {
+                    const titleClean = cleanString(item.title);
+                    const descClean = cleanString(item.description);
+                    const categoryClean = cleanString(item.category);
+                    
+                    // Check direct keyword array
+                    const keywordMatch = item.keywords.some(keyword => {
+                        return cleanString(keyword).includes(searchString) || searchString.includes(cleanString(keyword));
+                    });
+
+                    return titleClean.includes(searchString) || 
+                           descClean.includes(searchString) || 
+                           categoryClean.includes(searchString) || 
+                           keywordMatch;
+                });
+            }
+
+            // Clear loading spinner
+            resultsWrapper.innerHTML = '';
+
+            if (filteredResults.length === 0) {
+                resultsWrapper.innerHTML = `
+                    <div class="text-center py-20 bg-gray-50 border border-gray-100 rounded-sm">
+                        <div class="w-16 h-16 bg-red-50 text-red-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fa-solid fa-circle-xmark text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-['Cormorant_Garamond'] font-bold text-gray-800 mb-4 uppercase tracking-widest">Maalesef Sonuç Bulunamadı</h3>
+                        <p class="text-[#7b5f43] text-sm max-w-md mx-auto leading-relaxed mb-8">
+                            Aramanızla eşleşen hiçbir estetik işleve veya sayfaya ulaşamadık. Lütfen yazım kurallarını kontrol edip tekrar arayın ya da aşağıdaki popüler hizmetlerimize göz atın.
+                        </p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="/burun-estetigi.html" class="px-6 py-2.5 bg-[#8b6e4e] text-white text-xs font-bold tracking-widest uppercase hover:bg-opacity-90 transition-all rounded-sm shadow-sm">Burun Estetiği</a>
+                            <a href="/hizmetler.html" class="px-6 py-2.5 border border-gray-300 text-gray-500 text-xs font-bold tracking-widest uppercase hover:border-[#8b6e4e] hover:text-[#8b6e4e] transition-all rounded-sm">Tüm Hizmetler</a>
+                        </div>
+                    </div>
+                `;
+            } else {
+                // Render list
+                const totalText = document.createElement('div');
+                totalText.className = "text-sm text-gray-400 border-b border-gray-100 pb-4 mb-8 uppercase tracking-widest font-semibold";
+                totalText.textContent = `${filteredResults.length} Sonuç Bulundu`;
+                resultsWrapper.appendChild(totalText);
+
+                filteredResults.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = "bg-white border border-gray-100 p-8 hover:shadow-lg hover:border-[#8b6e4e]/40 transition-all duration-300 rounded-sm relative group";
+                    
+                    // Highlight query matches
+                    let titleHTML = escapeHTML(item.title);
+                    let descHTML = escapeHTML(item.description);
+
+                    if (searchString && query.length >= 2) {
+                        const regex = new RegExp(`(${escapeRegExp(query)})`, 'gi');
+                        titleHTML = titleHTML.replace(regex, '<span class="bg-yellow-100 text-gray-900 px-1 font-semibold">$1</span>');
+                        descHTML = descHTML.replace(regex, '<span class="bg-yellow-100 text-gray-900 px-1">$1</span>');
+                    }
+
+                    card.innerHTML = `
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+                            <span class="inline-block px-3 py-1 bg-[#fcfaf7] border border-gray-100 text-[#8b6e4e] text-[10px] font-bold uppercase tracking-[0.15em] rounded-sm self-start">
+                                ${escapeHTML(item.category)}
+                            </span>
+                        </div>
+                        <h3 class="text-2xl font-['Cormorant_Garamond'] font-bold text-[#333] group-hover:text-[#8b6e4e] transition-colors uppercase tracking-wider mb-3 leading-snug">
+                            <a href="${escapeHTML(item.url)}">${titleHTML}</a>
+                        </h3>
+                        <p class="text-[#7b5f43] text-sm leading-relaxed mb-6 font-medium">${descHTML}</p>
+                        <div class="flex items-center">
+                            <a href="${escapeHTML(item.url)}" class="text-xs font-bold tracking-[0.2em] text-[#8b6e4e] group-hover:text-[#7b5f43] border-b border-[#8b6e4e] pb-1 uppercase hover:opacity-75 transition-all inline-flex items-center">
+                                Detaylara Git <i class="fa-solid fa-arrow-right ml-2 text-[10px] transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    `;
+                    resultsWrapper.appendChild(card);
+                });
+            }
+
+            // Utilities
+            function escapeHTML(str) {
+                return str.replace(/[&<>'"]/g, 
+                    tag => ({
+                        '&': '&amp;',
+                        '<': '&lt;',
+                        '>': '&gt;',
+                        "'": '&#39;',
+                        '"': '&quot;'
+                    }[tag] || tag)
+                );
+            }
+
+            function escapeRegExp(string) {
+                return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            }
+        });
+    </script>
+</body>
+</html>

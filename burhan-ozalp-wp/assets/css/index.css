@@ -1,0 +1,61 @@
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  color: #333;
+  font-size: 1rem;
+}
+
+input::placeholder, textarea::placeholder {
+  font-size: 16px;
+  color: #7b5f43;
+  opacity: 0.6;
+}
+
+@keyframes fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-right {
+  animation: fade-in-right 1.2s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 1.5s ease-out forwards;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8b6e4e;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6d553e;
+}
