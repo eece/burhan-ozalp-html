@@ -1,4 +1,11 @@
 
+@import "tailwindcss";
+
+@theme {
+  --font-cormorant: "Cormorant Garamond", serif;
+  --font-montserrat: "Montserrat", sans-serif;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
