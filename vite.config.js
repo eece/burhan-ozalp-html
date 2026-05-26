@@ -3,6 +3,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
+    base: '/burhan-ozalp-html/',
     plugins: [],
     resolve: {
       alias: {
