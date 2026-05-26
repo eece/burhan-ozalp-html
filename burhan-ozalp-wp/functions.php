@@ -38,7 +38,7 @@ function burhan_ozalp_filter_image_sizes( $sizes ) {
     unset( $sizes['2048x2048'] );
     return $sizes;
 }
-add_filter( 'intermediate_image_sizes_advanced', 'burhan_filter_image_sizes' );
+// add_filter( 'intermediate_image_sizes_advanced', 'burhan_ozalp_filter_image_sizes' );
 
 // Turn off thumbnail generation rules for custom sizes
 function burhan_ozalp_disable_other_sizes() {
@@ -48,7 +48,7 @@ function burhan_ozalp_disable_other_sizes() {
     update_option( 'large_size_w', 0 );
     update_option( 'large_size_h', 0 );
 }
-add_action( 'after_switch_theme', 'burhan_ozalp_disable_other_sizes' );
+// add_action( 'after_switch_theme', 'burhan_ozalp_disable_other_sizes' );
 
 /**
  * Enqueue Styles and Scripts
