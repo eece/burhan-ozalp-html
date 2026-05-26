@@ -47,7 +47,7 @@
                         <i class="fa-solid fa-magnifying-glass text-[10px]"></i>
                     </button>
                 </form>
-                <a href="<?php echo esc_url( $contact_btn_url ); ?>" class="bg-[#2c8d2c] text-white px-4 py-2 flex items-center hover:bg-opacity-90 transition-all rounded-sm text-xs font-bold leading-none">
+                <a href="<?php echo esc_url( $contact_btn_url ); ?>" class="bg-[#008000] text-white px-4 py-2 flex items-center hover:bg-opacity-90 transition-all rounded-sm">
                     <i class="fa-solid fa-check text-xs mr-2"></i>
                     <?php echo esc_html( $contact_btn_text ); ?>
                 </a>
@@ -62,7 +62,7 @@
                 <i class="fa-solid fa-phone text-[10px] mr-2 text-[#8b6e4e]"></i>
                 <?php echo esc_html__( 'Bizi Arayın:', 'burhan-ozalp' ); ?> <?php echo esc_html( $phone ); ?>
             </div>
-            <a href="<?php echo esc_url( $contact_btn_url ); ?>" class="bg-[#2c8d2c] text-white px-6 py-2 flex items-center hover:bg-opacity-90 transition-all rounded-sm text-xs font-bold mx-auto">
+            <a href="<?php echo esc_url( $contact_btn_url ); ?>" class="bg-[#008000] text-white px-6 py-2 flex items-center hover:bg-opacity-90 transition-all rounded-sm text-xs font-bold mx-auto">
                 <i class="fa-solid fa-check text-xs mr-2"></i>
                 <?php echo esc_html( $contact_btn_text ); ?>
             </a>
