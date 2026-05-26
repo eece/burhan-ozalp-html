@@ -1738,6 +1738,35 @@ input::placeholder, textarea::placeholder {
 ::-webkit-scrollbar-thumb:hover {
   background: #6d553e;
 }
+.page-numbers {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #e5e7eb;
+  color: #7b5f43;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  font-size: 0.875rem;
+  margin: 0 4px;
+  border-radius: 2px;
+}
+.page-numbers:hover, a.page-numbers:hover {
+  border-color: #8b6e4e;
+  color: #8b6e4e !important;
+  background-color: #fcfaf7;
+  text-decoration: none;
+}
+.page-numbers.current {
+  background-color: #8b6e4e;
+  border-color: #8b6e4e;
+  color: #ffffff !important;
+}
+.page-numbers.prev, .page-numbers.next {
+  width: auto;
+  padding: 0 16px;
+}
 @property --tw-translate-x {
   syntax: "*";
   inherits: false;

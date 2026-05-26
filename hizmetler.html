@@ -169,31 +169,21 @@
     <!-- Page Header -->
     <section class="bg-[#dcd0c0] py-16 text-center">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl md:text-5xl font-['Cormorant_Garamond'] font-light tracking-widest text-white mb-4 uppercase">Hizmetlerimiz</h2>
+            <h2 class="text-4xl md:text-5xl font-['Cormorant_Garamond'] font-light tracking-widest text-white mb-4 uppercase">Yazılar</h2>
             <div class="flex items-center justify-center space-x-2 text-xs md:text-sm font-bold uppercase tracking-widest text-[#8b6e4e]">
                 <a href="/" class="hover:text-white transition-colors">ANA SAYFA</a>
                 <span>-</span>
-                <span class="text-white">HİZMETLERİMİZ</span>
+                <span class="text-white">YAZILAR</span>
             </div>
         </div>
     </section>
 
-    <!-- Services Grid with Filter -->
+    <!-- Blog / Articles Grid -->
     <section class="py-24 bg-white">
         <div class="container mx-auto px-4">
-            <!-- Filter -->
-            <div class="flex flex-wrap justify-center gap-4 mb-16">
-                <button class="filter-btn active px-8 py-2 border border-[#8b6e4e] bg-[#8b6e4e] text-white text-sm font-bold tracking-widest uppercase hover:bg-[#8b6e4e] hover:text-white transition-all rounded-sm cursor-pointer" data-filter="all">Tümü</button>
-                <button class="filter-btn px-8 py-2 border border-gray-200 text-gray-500 text-sm font-bold tracking-widest uppercase hover:border-[#8b6e4e] hover:text-[#8b6e4e] transition-all rounded-sm cursor-pointer" data-filter="yüz">Yüz Estetiği</button>
-                <button class="filter-btn px-8 py-2 border border-gray-200 text-gray-500 text-sm font-bold tracking-widest uppercase hover:border-[#8b6e4e] hover:text-[#8b6e4e] transition-all rounded-sm cursor-pointer" data-filter="vücut">Vücut Estetiği</button>
-                <button class="filter-btn px-8 py-2 border border-gray-200 text-gray-500 text-sm font-bold tracking-widest uppercase hover:border-[#8b6e4e] hover:text-[#8b6e4e] transition-all rounded-sm cursor-pointer" data-filter="meme">Meme Estetiği</button>
-                <button class="filter-btn px-8 py-2 border border-gray-200 text-gray-500 text-sm font-bold tracking-widest uppercase hover:border-[#8b6e4e] hover:text-[#8b6e4e] transition-all rounded-sm cursor-pointer" data-filter="erkek">Erkek Estetiği</button>
-            </div>
-
-            <!-- Grid -->
             <div class="services-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Burun Estetiği -->
-                <div class="service-card group cursor-pointer" data-category="yüz">
+                <div class="service-card group cursor-pointer" onclick="window.location='/burun-estetigi.html'">
                     <div class="overflow-hidden mb-6 rounded-sm aspect-[4/3] relative">
                         <img src="https://images.unsplash.com/photo-1598440755123-55763a28f307?auto=format&fit=crop&q=80&w=800" alt="Burun Estetiği" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
@@ -207,7 +197,7 @@
                 </div>
 
                 <!-- Meme Büyütme -->
-                <div class="service-card group cursor-pointer" data-category="meme">
+                <div class="service-card group cursor-pointer">
                     <div class="overflow-hidden mb-6 rounded-sm aspect-[4/3] relative">
                         <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&q=80&w=800" alt="Meme Büyütme" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                          <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
@@ -221,7 +211,7 @@
                 </div>
 
                 <!-- Liposuction -->
-                <div class="service-card group cursor-pointer" data-category="vücut">
+                <div class="service-card group cursor-pointer">
                     <div class="overflow-hidden mb-6 rounded-sm aspect-[4/3] relative">
                         <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=800" alt="Liposuction" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                          <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
@@ -235,7 +225,7 @@
                 </div>
 
                 <!-- Jinekomasti -->
-                <div class="service-card group cursor-pointer" data-category="erkek">
+                <div class="service-card group cursor-pointer">
                     <div class="overflow-hidden mb-6 rounded-sm aspect-[4/3] relative">
                          <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&q=80&w=800" alt="Jinekomasti" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                          <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
@@ -249,7 +239,7 @@
                 </div>
 
                 <!-- Karın Germe -->
-                <div class="service-card group cursor-pointer" data-category="vücut">
+                <div class="service-card group cursor-pointer">
                     <div class="overflow-hidden mb-6 rounded-sm aspect-[4/3] relative">
                          <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800" alt="Karın Germe" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                          <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
@@ -263,7 +253,7 @@
                 </div>
 
                 <!-- Yüz Germe -->
-                <div class="service-card group cursor-pointer" data-category="yüz">
+                <div class="service-card group cursor-pointer">
                     <div class="overflow-hidden mb-6 rounded-sm aspect-[4/3] relative">
                          <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=800" alt="Yüz Germe" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                          <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
@@ -272,9 +262,18 @@
                         </div>
                     </div>
                     <h3 class="text-2xl font-['Cormorant_Garamond'] text-[#333] mb-3 group-hover:text-[#8b6e4e] transition-colors leading-tight uppercase font-bold tracking-widest">Yüz Germe</h3>
-                    <p class="text-base text-[#7b5f43] mb-6 leading-relaxed">Zamana meydan okuyan, taze ve genç bir görünüm.</p>
+                    <p class="text-base text-[#7b5f43] mb-6 leading-relaxed">Zamana meydan okuyan, taze ve genel görünüm.</p>
                     <a href="#" class="text-base font-bold tracking-[0.2em] text-[#8b6e4e] border-b border-[#8b6e4e] pb-1 uppercase hover:opacity-70 transition-all inline-block">Detaylı Bilgi</a>
                 </div>
+            </div>
+
+            <!-- Pagination block -->
+            <div class="flex justify-center space-x-2 mt-16 text-sm font-bold tracking-widest uppercase py-4">
+                <a href="#" class="page-numbers prev"><i class="fa-solid fa-chevron-left"></i></a>
+                <span class="page-numbers current">1</span>
+                <a href="#" class="page-numbers">2</a>
+                <a href="#" class="page-numbers">3</a>
+                <a href="#" class="page-numbers next"><i class="fa-solid fa-chevron-right"></i></a>
             </div>
         </div>
     </section>
@@ -363,33 +362,5 @@
     </a>
 
     <script type="module" src="/src/main.js"></script>
-    <script>
-      // Filter Logic
-      const filterBtns = document.querySelectorAll('.filter-btn');
-      const serviceCards = document.querySelectorAll('.service-card');
-
-      filterBtns.forEach(btn => {
-          btn.addEventListener('click', () => {
-              // Toggle active class
-              filterBtns.forEach(b => {
-                  b.classList.remove('active', 'bg-[#8b6e4e]', 'text-white');
-                  b.classList.add('border-gray-200', 'text-gray-500');
-              });
-              btn.classList.add('active', 'bg-[#8b6e4e]', 'text-white');
-              btn.classList.remove('border-gray-200', 'text-gray-500');
-
-              const filter = btn.getAttribute('data-filter');
-
-              serviceCards.forEach(card => {
-                  if (filter === 'all' || card.getAttribute('data-category').includes(filter)) {
-                      card.style.display = 'block';
-                      card.classList.add('animate-fade-in');
-                  } else {
-                      card.style.display = 'none';
-                  }
-              });
-          });
-      });
-    </script>
 </body>
 </html>
