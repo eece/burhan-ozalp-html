@@ -87,25 +87,62 @@
                 $menu_tree = get_field('header_menu', 'option');
                 if ( ! empty( $menu_tree ) ) :
                     foreach ( $menu_tree as $item ) :
+                        $item_url = '#';
+                        $item_title = '';
+                        $item_target = '_self';
+                        if ( ! empty( $item['link'] ) && is_array( $item['link'] ) ) {
+                            $item_url    = $item['link']['url'];
+                            $item_title  = $item['link']['title'];
+                            $item_target = ! empty( $item['link']['target'] ) ? $item['link']['target'] : '_self';
+                        } elseif ( ! empty( $item['url'] ) ) {
+                            $item_url   = $item['url'];
+                            $item_title = ! empty( $item['title'] ) ? $item['title'] : '';
+                        }
                 ?>
                         <li class="relative group py-2">
-                            <a href="<?php echo esc_url( $item['url'] ); ?>" class="hover:text-[#8b6e4e] transition-colors"><?php echo esc_html( $item['title'] ); ?></a>
+                            <a href="<?php echo esc_url( $item_url ); ?>" target="<?php echo esc_attr( $item_target ); ?>" class="hover:text-[#8b6e4e] transition-colors"><?php echo esc_html( $item_title ); ?></a>
                             <?php if ( ! empty( $item['sub_menu'] ) ) : ?>
                                 <ul class="absolute left-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[220px] border-t-2 border-[#8b6e4e] py-2 z-50 text-left">
-                                    <?php foreach ( $item['sub_menu'] as $sub_item ) : ?>
+                                    <?php 
+                                    foreach ( $item['sub_menu'] as $sub_item ) : 
+                                        $sub_url = '#';
+                                        $sub_title = '';
+                                        $sub_target = '_self';
+                                        if ( ! empty( $sub_item['link'] ) && is_array( $sub_item['link'] ) ) {
+                                            $sub_url    = $sub_item['link']['url'];
+                                            $sub_title  = $sub_item['link']['title'];
+                                            $sub_target = ! empty( $sub_item['link']['target'] ) ? $sub_item['link']['target'] : '_self';
+                                        } elseif ( ! empty( $sub_item['url'] ) ) {
+                                            $sub_url   = $sub_item['url'];
+                                            $sub_title = ! empty( $sub_item['title'] ) ? $sub_item['title'] : '';
+                                        }
+                                    ?>
                                         <li class="relative <?php echo ! empty( $sub_item['sub_sub_menu'] ) ? 'group/sub' : ''; ?>">
-                                            <a href="<?php echo esc_url( $sub_item['url'] ); ?>" class="flex items-center justify-between px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors">
-                                                <span><?php echo esc_html( $sub_item['title'] ); ?></span>
+                                            <a href="<?php echo esc_url( $sub_url ); ?>" target="<?php echo esc_attr( $sub_target ); ?>" class="flex items-center justify-between px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors">
+                                                <span><?php echo esc_html( $sub_title ); ?></span>
                                                 <?php if ( ! empty( $sub_item['sub_sub_menu'] ) ) : ?>
                                                     <i class="fa-solid fa-chevron-right text-[10px]"></i>
                                                 <?php endif; ?>
                                             </a>
                                             <?php if ( ! empty( $sub_item['sub_sub_menu'] ) ) : ?>
                                                 <ul class="absolute left-full top-0 hidden group-hover/sub:block bg-white shadow-xl min-w-[220px] border-l border-gray-100 py-2">
-                                                    <?php foreach ( $sub_item['sub_sub_menu'] as $sub_sub_item ) : ?>
+                                                    <?php 
+                                                    foreach ( $sub_item['sub_sub_menu'] as $sub_sub_item ) : 
+                                                        $sub_sub_url = '#';
+                                                        $sub_sub_title = '';
+                                                        $sub_sub_target = '_self';
+                                                        if ( ! empty( $sub_sub_item['link'] ) && is_array( $sub_sub_item['link'] ) ) {
+                                                            $sub_sub_url    = $sub_sub_item['link']['url'];
+                                                            $sub_sub_title  = $sub_sub_item['link']['title'];
+                                                            $sub_sub_target = ! empty( $sub_sub_item['link']['target'] ) ? $sub_sub_item['link']['target'] : '_self';
+                                                        } elseif ( ! empty( $sub_sub_item['url'] ) ) {
+                                                            $sub_sub_url   = $sub_sub_item['url'];
+                                                            $sub_sub_title = ! empty( $sub_sub_item['title'] ) ? $sub_sub_item['title'] : '';
+                                                        }
+                                                    ?>
                                                         <li>
-                                                            <a href="<?php echo esc_url( $sub_sub_item['url'] ); ?>" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors">
-                                                                <?php echo esc_html( $sub_sub_item['title'] ); ?>
+                                                            <a href="<?php echo esc_url( $sub_sub_url ); ?>" target="<?php echo esc_attr( $sub_sub_target ); ?>" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors">
+                                                                <?php echo esc_html( $sub_sub_title ); ?>
                                                             </a>
                                                         </li>
                                                     <?php endforeach; ?>
@@ -268,34 +305,71 @@
                     <?php
                     if ( ! empty( $menu_tree ) ) :
                         foreach ( $menu_tree as $item ) :
+                            $item_url = '#';
+                            $item_title = '';
+                            $item_target = '_self';
+                            if ( ! empty( $item['link'] ) && is_array( $item['link'] ) ) {
+                                $item_url    = $item['link']['url'];
+                                $item_title  = $item['link']['title'];
+                                $item_target = ! empty( $item['link']['target'] ) ? $item['link']['target'] : '_self';
+                            } elseif ( ! empty( $item['url'] ) ) {
+                                $item_url   = $item['url'];
+                                $item_title = ! empty( $item['title'] ) ? $item['title'] : '';
+                            }
                     ?>
                             <li>
                                 <?php if ( ! empty( $item['sub_menu'] ) ) : ?>
                                     <div class="flex justify-between items-center cursor-pointer mobile-accordion-btn">
-                                        <span><?php echo esc_html( $item['title'] ); ?></span>
+                                        <span><?php echo esc_html( $item_title ); ?></span>
                                         <i class="fa-solid fa-plus text-xs"></i>
                                     </div>
                                     <ul class="mt-4 ml-4 space-y-4 text-sm font-semibold text-gray-500 hidden mobile-accordion-content border-l border-gray-100 pl-4 capitalize tracking-normal">
-                                        <?php foreach ( $item['sub_menu'] as $sub_item ) : ?>
+                                        <?php 
+                                        foreach ( $item['sub_menu'] as $sub_item ) : 
+                                            $sub_url = '#';
+                                            $sub_title = '';
+                                            $sub_target = '_self';
+                                            if ( ! empty( $sub_item['link'] ) && is_array( $sub_item['link'] ) ) {
+                                                $sub_url    = $sub_item['link']['url'];
+                                                $sub_title  = $sub_item['link']['title'];
+                                                $sub_target = ! empty( $sub_item['link']['target'] ) ? $sub_item['link']['target'] : '_self';
+                                            } elseif ( ! empty( $sub_item['url'] ) ) {
+                                                $sub_url   = $sub_item['url'];
+                                                $sub_title = ! empty( $sub_item['title'] ) ? $sub_item['title'] : '';
+                                            }
+                                        ?>
                                             <li>
                                                 <?php if ( ! empty( $sub_item['sub_sub_menu'] ) ) : ?>
                                                     <div class="flex justify-between items-center cursor-pointer mobile-accordion-btn mt-2">
-                                                        <span><?php echo esc_html( $sub_item['title'] ); ?></span>
+                                                        <span><?php echo esc_html( $sub_title ); ?></span>
                                                         <i class="fa-solid fa-plus text-xs"></i>
                                                     </div>
                                                     <ul class="mt-4 ml-4 space-y-4 text-xs font-semibold text-gray-400 hidden mobile-accordion-content border-l border-gray-100 pl-4 capitalize tracking-normal">
-                                                        <?php foreach ( $sub_item['sub_sub_menu'] as $sub_sub_item ) : ?>
-                                                            <li><a href="<?php echo esc_url( $sub_sub_item['url'] ); ?>" class="hover:text-[#8b6e4e]"><?php echo esc_html( $sub_sub_item['title'] ); ?></a></li>
+                                                        <?php 
+                                                        foreach ( $sub_item['sub_sub_menu'] as $sub_sub_item ) : 
+                                                            $sub_sub_url = '#';
+                                                            $sub_sub_title = '';
+                                                            $sub_sub_target = '_self';
+                                                            if ( ! empty( $sub_sub_item['link'] ) && is_array( $sub_sub_item['link'] ) ) {
+                                                                $sub_sub_url    = $sub_sub_item['link']['url'];
+                                                                $sub_sub_title  = $sub_sub_item['link']['title'];
+                                                                $sub_sub_target = ! empty( $sub_sub_item['link']['target'] ) ? $sub_sub_item['link']['target'] : '_self';
+                                                            } elseif ( ! empty( $sub_sub_item['url'] ) ) {
+                                                                $sub_sub_url   = $sub_sub_item['url'];
+                                                                $sub_sub_title = ! empty( $sub_sub_item['title'] ) ? $sub_sub_item['title'] : '';
+                                                            }
+                                                        ?>
+                                                            <li><a href="<?php echo esc_url( $sub_sub_url ); ?>" target="<?php echo esc_attr( $sub_sub_target ); ?>" class="hover:text-[#8b6e4e]"><?php echo esc_html( $sub_sub_title ); ?></a></li>
                                                         <?php endforeach; ?>
                                                     </ul>
                                                 <?php else : ?>
-                                                    <a href="<?php echo esc_url( $sub_item['url'] ); ?>" class="hover:text-[#8b6e4e]"><?php echo esc_html( $sub_item['title'] ); ?></a>
+                                                    <a href="<?php echo esc_url( $sub_url ); ?>" target="<?php echo esc_attr( $sub_target ); ?>" class="hover:text-[#8b6e4e]"><?php echo esc_html( $sub_title ); ?></a>
                                                 <?php endif; ?>
                                             </li>
                                         <?php endforeach; ?>
                                     </ul>
                                 <?php else : ?>
-                                    <a href="<?php echo esc_url( $item['url'] ); ?>" class="block hover:text-[#8b6e4e]"><?php echo esc_html( $item['title'] ); ?></a>
+                                    <a href="<?php echo esc_url( $item_url ); ?>" target="<?php echo esc_attr( $item_target ); ?>" class="block hover:text-[#8b6e4e]"><?php echo esc_html( $item_title ); ?></a>
                                 <?php endif; ?>
                             </li>
                     <?php

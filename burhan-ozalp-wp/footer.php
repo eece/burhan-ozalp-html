@@ -81,8 +81,21 @@ $footer_col2_links = burhan_get_option('footer_col2_links');
                         <h4 class="text-base font-bold tracking-[0.2em] text-[#8b6e4e] mb-6 uppercase text-left"><?php echo esc_html($footer_col1_title); ?></h4>
                         <ul class="text-base font-semibold text-gray-500 uppercase tracking-wider space-y-4 list-none pl-0">
                             <?php if ( ! empty($footer_col1_links) ) : ?>
-                                <?php foreach ( $footer_col1_links as $link ) : ?>
-                                    <li><a href="<?php echo esc_url($link['url']); ?>" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> <?php echo esc_html($link['title']); ?></a></li>
+                                <?php 
+                                foreach ( $footer_col1_links as $item ) : 
+                                    $link_url = '#';
+                                    $link_title = '';
+                                    $link_target = '_self';
+                                    if ( ! empty( $item['link'] ) && is_array( $item['link'] ) ) {
+                                        $link_url    = $item['link']['url'];
+                                        $link_title  = $item['link']['title'];
+                                        $link_target = ! empty( $item['link']['target'] ) ? $item['link']['target'] : '_self';
+                                    } elseif ( ! empty( $item['url'] ) ) {
+                                        $link_url   = $item['url'];
+                                        $link_title = ! empty( $item['title'] ) ? $item['title'] : '';
+                                    }
+                                ?>
+                                    <li><a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> <?php echo esc_html($link_title); ?></a></li>
                                 <?php endforeach; ?>
                             <?php else : ?>
                                 <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Burun Estetiği</a></li>
@@ -97,8 +110,21 @@ $footer_col2_links = burhan_get_option('footer_col2_links');
                         <h4 class="text-base font-bold tracking-[0.2em] text-[#8b6e4e] mb-6 uppercase text-left"><?php echo esc_html($footer_col2_title); ?></h4>
                         <ul class="text-base font-semibold text-gray-500 uppercase tracking-wider space-y-4 list-none pl-0">
                             <?php if ( ! empty($footer_col2_links) ) : ?>
-                                <?php foreach ( $footer_col2_links as $link ) : ?>
-                                    <li><a href="<?php echo esc_url($link['url']); ?>" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> <?php echo esc_html($link['title']); ?></a></li>
+                                <?php 
+                                foreach ( $footer_col2_links as $item ) : 
+                                    $link_url = '#';
+                                    $link_title = '';
+                                    $link_target = '_self';
+                                    if ( ! empty( $item['link'] ) && is_array( $item['link'] ) ) {
+                                        $link_url    = $item['link']['url'];
+                                        $link_title  = $item['link']['title'];
+                                        $link_target = ! empty( $item['link']['target'] ) ? $item['link']['target'] : '_self';
+                                    } elseif ( ! empty( $item['url'] ) ) {
+                                        $link_url   = $item['url'];
+                                        $link_title = ! empty( $item['title'] ) ? $item['title'] : '';
+                                    }
+                                ?>
+                                    <li><a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> <?php echo esc_html($link_title); ?></a></li>
                                 <?php endforeach; ?>
                             <?php else : ?>
                                 <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Brezilya Poposu</a></li>
