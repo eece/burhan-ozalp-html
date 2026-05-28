@@ -98,6 +98,14 @@ acf_add_local_field_group(array(
             'type' => 'textarea',
             'default_value' => "Bu sitede yer alan makaleler tamamen bilgilendirme amaçlı olup, tanı ve tedavi amacıyla kullanılamaz. Tüm sağlık sorunları için doktorunuza başvurunuz.",
         ),
+        array(
+            'key' => 'field_footer_contact_form',
+            'label' => 'Footer İletişim Formu (Contact Form 7 Shortcode)',
+            'name' => 'footer_contact_form',
+            'type' => 'text',
+            'instructions' => 'İletişim Formu CF7 kısa kodunu giriniz. (Örn: [contact-form-7 id="xxxx" title="Footer İletişim Formu"])',
+            'placeholder' => '[contact-form-7 id="..." title="..."]',
+        ),
     ),
     'location' => array(
         array(

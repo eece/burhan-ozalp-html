@@ -164,13 +164,22 @@ if ( isset( $locations['footer_menu'] ) ) {
                 <!-- Contact Form Footer -->
                 <div class="bg-[#f8f6f3] p-8 rounded-sm">
                     <h4 class="text-base font-bold tracking-[0.2em] text-[#8b6e4e] mb-6 uppercase text-left"><?php echo esc_html__( 'Numaranızı Bırakın Arayalım !', 'burhan-ozalp' ); ?></h4>
-                    <form class="space-y-4">
-                        <input type="text" placeholder="<?php echo esc_attr__( 'Ad Soyad*', 'burhan-ozalp' ); ?>" class="bg-white border-b border-gray-200 px-4 py-2.5 text-base w-full focus:outline-none focus:border-[#8b6e4e]">
-                        <input type="text" placeholder="<?php echo esc_attr__( 'Ülke*', 'burhan-ozalp' ); ?>" class="bg-white border-b border-gray-200 px-4 py-2.5 text-base w-full focus:outline-none focus:border-[#8b6e4e]">
-                        <input type="tel" placeholder="<?php echo esc_attr__( 'Telefon No*', 'burhan-ozalp' ); ?>" class="bg-white border-b border-gray-200 px-4 py-2.5 text-base w-full focus:outline-none focus:border-[#8b6e4e]">
-                        <textarea placeholder="<?php echo esc_attr__( 'Mesaj*', 'burhan-ozalp' ); ?>" rows="3" class="bg-white border-b border-gray-200 px-4 py-2.5 text-base w-full focus:outline-none focus:border-[#8b6e4e] resize-none"></textarea>
-                        <button class="bg-[#8b6e4e] text-white px-8 py-3 text-base font-bold tracking-widest w-full hover:bg-opacity-90 transition-all uppercase rounded-sm cursor-pointer"><?php echo esc_html__( 'GÖNDER', 'burhan-ozalp' ); ?></button>
-                    </form>
+                    <?php 
+                    $footer_form_shortcode = burhan_get_option('footer_contact_form');
+                    if ( ! empty( $footer_form_shortcode ) ) {
+                        echo do_shortcode( $footer_form_shortcode );
+                    } else {
+                        ?>
+                        <form class="space-y-4">
+                            <input type="text" placeholder="<?php echo esc_attr__( 'Ad Soyad*', 'burhan-ozalp' ); ?>" class="bg-white border-b border-gray-200 px-4 py-2.5 text-base w-full focus:outline-none focus:border-[#8b6e4e]">
+                            <input type="text" placeholder="<?php echo esc_attr__( 'Ülke*', 'burhan-ozalp' ); ?>" class="bg-white border-b border-gray-200 px-4 py-2.5 text-base w-full focus:outline-none focus:border-[#8b6e4e]">
+                            <input type="tel" placeholder="<?php echo esc_attr__( 'Telefon No*', 'burhan-ozalp' ); ?>" class="bg-white border-b border-gray-200 px-4 py-2.5 text-base w-full focus:outline-none focus:border-[#8b6e4e]">
+                            <textarea placeholder="<?php echo esc_attr__( 'Mesaj*', 'burhan-ozalp' ); ?>" rows="3" class="bg-white border-b border-gray-200 px-4 py-2.5 text-base w-full focus:outline-none focus:border-[#8b6e4e] resize-none"></textarea>
+                            <button class="bg-[#8b6e4e] text-white px-8 py-3 text-base font-bold tracking-widest w-full hover:bg-opacity-90 transition-all uppercase rounded-sm cursor-pointer"><?php echo esc_html__( 'GÖNDER', 'burhan-ozalp' ); ?></button>
+                        </form>
+                        <?php
+                    }
+                    ?>
                 </div>
             </div>
 

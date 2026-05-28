@@ -25,6 +25,27 @@ Aşağıdaki HTML kodunu Contact Form 7 yönetim panelindeki **Form** bölümün
 </div>
 ```
 
+## 2. Footer İletişim Formu (Footer Contact Form)
+
+Bu form, sayfa alt bilgisinde (Footer) yer alan "Numaranızı Bırakın Arayalım !" başlıklı dikey iletişim alanının WordPress + Contact Form 7 (CF7) eklentisine uygun şablonudur.
+
+### Contact Form 7 Markup
+Aşağıdaki HTML kodunu Contact Form 7 yönetim panelindeki **Form** bölümüne doğrudan kopyalayıp yapıştırabilirsiniz:
+
+```html
+<div class="space-y-4">
+    [text* your-name class:bg-white class:border-b class:border-gray-200 class:px-4 class:py-2.5 class:text-base class:w-full class:focus:outline-none class:focus:border-brand placeholder "Ad Soyad*"]
+
+    [text* your-country class:bg-white class:border-b class:border-gray-200 class:px-4 class:py-2.5 class:text-base class:w-full class:focus:outline-none class:focus:border-brand placeholder "Ülke*"]
+
+    [tel* your-phone class:bg-white class:border-b class:border-gray-200 class:px-4 class:py-2.5 class:text-base class:w-full class:focus:outline-none class:focus:border-brand placeholder "Telefon No*"]
+
+    [textarea* your-message x3 class:bg-white class:border-b class:border-gray-200 class:px-4 class:py-2.5 class:text-base class:w-full class:focus:outline-none class:focus:border-brand class:resize-none placeholder "Mesaj*"]
+
+    [submit class:bg-brand class:text-white class:px-8 class:py-3 class:text-base class:font-bold class:tracking-widest class:w-full class:hover:bg-opacity-90 class:transition-all class:uppercase class:rounded-sm class:cursor-pointer "GÖNDER"]
+</div>
+```
+
 > **Önemli İpucu (Contact Form 7 P Etiketi Engelleme):** 
 > Contact Form 7, form içindeki her satır arasına otomatik olarak `<p>` ve `<br>` etiketleri ekler. Bu durumun flex hiyerarşisini ve Tailwind tasarımlarını bozmasını engellemek için `wp-config.php` dosyanıza şu satırı eklemeniz önerilir:
 > ```php
