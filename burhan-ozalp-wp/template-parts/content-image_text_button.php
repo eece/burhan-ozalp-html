@@ -11,6 +11,7 @@ $image = get_sub_field('image');
 $content = get_sub_field('content');
 $btn_text = get_sub_field('btn_text');
 $btn_url = get_sub_field('btn_url');
+$image_position = get_sub_field('image_position');
 
 // Sane default fallbacks
 if ( empty( $label ) ) $label = esc_html__( 'BİYOGRAFİ', 'burhan-ozalp' );
@@ -18,11 +19,17 @@ if ( empty( $bio_title ) ) $bio_title = esc_html__( 'DOÇ. DR. BURHAN ÖZALP', '
 if ( empty( $image ) ) $image = 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=800';
 if ( empty( $btn_text ) ) $btn_text = esc_html__( 'BİYOGRAFİ', 'burhan-ozalp' );
 if ( empty( $btn_url ) ) $btn_url = '#';
+if ( empty( $image_position ) ) $image_position = 'left';
+
+$row_class = 'container mx-auto px-4 flex flex-col lg:flex-row items-center gap-16';
+if ( $image_position === 'right' ) {
+    $row_class = 'container mx-auto px-4 flex flex-col lg:flex-row-reverse items-center gap-16';
+}
 ?>
 
 <!-- Biography Section -->
 <section class="py-24 bg-white relative overflow-hidden text-center lg:text-left">
-    <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-16">
+    <div class="<?php echo esc_attr( $row_class ); ?>">
         <div class="w-full lg:w-1/2 relative z-10">
             <div class="relative inline-block">
                 <img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_attr( $bio_title ); ?>" class="rounded-sm shadow-2xl relative z-10 max-w-full h-auto">
@@ -42,7 +49,7 @@ if ( empty( $btn_url ) ) $btn_url = '#';
                 ?>
             </div>
             <div class="text-center lg:text-left">
-                <a href="<?php echo esc_url( $btn_url ); ?>" class="inline-block px-10 py-3 border border-gray-200 text-gray-500 text-base font-bold tracking-[0.2em] transform hover:bg-[#8b6e4e] hover:text-white hover:border-[#8b6e4e] transition-all uppercase rounded-sm"><?php echo esc_html( $btn_text ); ?></a>
+                <a href="<?php echo esc_url( $btn_url ); ?>" class="inline-block px-10 py-3 border-2 border-[#8b6e4e] text-[#8b6e4e] text-base font-black tracking-[0.2em] transform hover:bg-[#8b6e4e] hover:text-white transition-all uppercase rounded-sm"><?php echo esc_html( $btn_text ); ?></a>
             </div>
         </div>
     </div>

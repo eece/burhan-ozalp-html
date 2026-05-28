@@ -264,10 +264,22 @@ acf_add_local_field_group(array(
                 // Layout: Biography Block
                 'layout_biography' => array(
                     'key' => 'layout_biography',
-                    'name' => 'biography',
-                    'label' => 'Biyografi & Doktor Hakkımızda Alanı',
+                    'name' => 'image_text_button',
+                    'label' => 'görsel ve yazı butonlu section',
                     'display' => 'block',
                     'sub_fields' => array(
+                        array(
+                            'key' => 'field_bio_image_position',
+                            'label' => 'Görsel Pozisyonu',
+                            'name' => 'image_position',
+                            'type' => 'select',
+                            'choices' => array(
+                                'left' => 'Sol (Görsel Solda, Yazı Sağda)',
+                                'right' => 'Sağ (Yazı Solda, Görsel Sağda)',
+                            ),
+                            'default_value' => 'left',
+                            'return_format' => 'value',
+                        ),
                         array(
                             'key' => 'field_bio_label',
                             'label' => 'Üst Etiket (Biografi)',
