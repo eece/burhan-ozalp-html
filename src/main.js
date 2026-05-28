@@ -16,6 +16,25 @@ if (mobileMenuCloseBtn && mobileMenu) {
   mobileMenuCloseBtn.addEventListener('click', toggleMenu);
 }
 
+// Mobile Language Dropdown Toggle
+const mobileLangBtns = document.querySelectorAll('.mobile-lang-btn');
+mobileLangBtns.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const menu = btn.nextElementSibling;
+    if (menu) {
+      menu.classList.toggle('hidden');
+    }
+  });
+});
+
+document.addEventListener('click', () => {
+  const mobileLangMenus = document.querySelectorAll('.mobile-lang-menu');
+  mobileLangMenus.forEach(menu => {
+    menu.classList.add('hidden');
+  });
+});
+
 if (mobileMenu) {
   // Mobile Accordion Logic
   const accordionBtns = document.querySelectorAll('.mobile-accordion-btn');

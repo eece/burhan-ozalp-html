@@ -304,7 +304,7 @@
 
             <!-- Mobile Menu Toggles -->
             <div class="flex items-center space-x-4 lg:hidden">
-                <div class="relative group sm:hidden">
+                <div class="relative">
                     <?php if ( function_exists( 'pll_the_languages' ) ) : ?>
                         <?php
                         $langs = pll_the_languages( array( 'raw' => 1 ) );
@@ -312,11 +312,11 @@
                             foreach ( $langs as $lang ) :
                                 if ( $lang['current_lang'] ) :
                         ?>
-                                    <button class="flex items-center hover:text-[#8b6e4e] transition-colors cursor-pointer">
+                                    <button class="mobile-lang-btn flex items-center hover:text-[#8b6e4e] transition-colors cursor-pointer">
                                         <img src="<?php echo esc_url( $lang['flag'] ); ?>" class="w-5" alt="<?php echo esc_attr( $lang['slug'] ); ?>"> 
                                         <i class="fa-solid fa-chevron-down text-[10px] ml-1 opacity-50"></i>
                                     </button>
-                                    <ul class="absolute right-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[100px] border-t-2 border-[#8b6e4e] py-2 z-50 text-left">
+                                    <ul class="mobile-lang-menu absolute right-0 top-full hidden bg-white shadow-xl min-w-[100px] border-t-2 border-[#8b6e4e] py-2 z-50 text-left">
                                         <?php
                                         foreach ( $langs as $other_lang ) :
                                             if ( ! $other_lang['current_lang'] ) :
@@ -337,11 +337,11 @@
                         endif;
                         ?>
                     <?php else : ?>
-                        <button class="flex items-center hover:text-[#8b6e4e] transition-colors cursor-pointer">
+                        <button class="mobile-lang-btn flex items-center hover:text-[#8b6e4e] transition-colors cursor-pointer">
                             <img src="https://flagcdn.com/w20/tr.png" class="w-5" alt="TR"> 
                             <i class="fa-solid fa-chevron-down text-[10px] ml-1 opacity-50"></i>
                         </button>
-                        <ul class="absolute right-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[100px] border-t-2 border-[#8b6e4e] py-2 z-50 text-left">
+                        <ul class="mobile-lang-menu absolute right-0 top-full hidden bg-white shadow-xl min-w-[100px] border-t-2 border-[#8b6e4e] py-2 z-50 text-left">
                             <li>
                                 <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all text-xs font-bold uppercase text-[#333]">
                                     <img src="https://flagcdn.com/w20/gb.png" class="w-4 mr-2" alt="EN"> EN
