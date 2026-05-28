@@ -9,17 +9,24 @@ $label = get_sub_field('label');
 $bio_title = get_sub_field('title');
 $image = get_sub_field('image');
 $content = get_sub_field('content');
-$btn_text = get_sub_field('btn_text');
-$btn_url = get_sub_field('btn_url');
+$button_link = get_sub_field('button_link');
 $image_position = get_sub_field('image_position');
 
 // Sane default fallbacks
 if ( empty( $label ) ) $label = esc_html__( 'BİYOGRAFİ', 'burhan-ozalp' );
 if ( empty( $bio_title ) ) $bio_title = esc_html__( 'DOÇ. DR. BURHAN ÖZALP', 'burhan-ozalp' );
 if ( empty( $image ) ) $image = 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=800';
-if ( empty( $btn_text ) ) $btn_text = esc_html__( 'BİYOGRAFİ', 'burhan-ozalp' );
-if ( empty( $btn_url ) ) $btn_url = '#';
 if ( empty( $image_position ) ) $image_position = 'left';
+
+$btn_url = '#';
+$btn_text = esc_html__( 'BİYOGRAFİ', 'burhan-ozalp' );
+$btn_target = '_self';
+
+if ( ! empty( $button_link ) && is_array( $button_link ) ) {
+    $btn_url = ! empty( $button_link['url'] ) ? $button_link['url'] : '#';
+    $btn_text = ! empty( $button_link['title'] ) ? $button_link['title'] : esc_html__( 'BİYOGRAFİ', 'burhan-ozalp' );
+    $btn_target = ! empty( $button_link['target'] ) ? $button_link['target'] : '_self';
+}
 
 $row_class = 'container mx-auto px-4 flex flex-col lg:flex-row items-center gap-16';
 if ( $image_position === 'right' ) {
@@ -49,7 +56,7 @@ if ( $image_position === 'right' ) {
                 ?>
             </div>
             <div class="text-center lg:text-left">
-                <a href="<?php echo esc_url( $btn_url ); ?>" class="inline-block px-10 py-3 border-2 border-[#8b6e4e] text-[#8b6e4e] text-base font-black tracking-[0.2em] transform hover:bg-[#8b6e4e] hover:text-white transition-all uppercase rounded-sm"><?php echo esc_html( $btn_text ); ?></a>
+                <a href="<?php echo esc_url( $btn_url ); ?>" target="<?php echo esc_attr( $btn_target ); ?>" class="inline-block px-10 py-3 border-2 border-[#8b6e4e] text-[#8b6e4e] text-base font-black tracking-[0.2em] transform hover:bg-[#8b6e4e] hover:text-white transition-all uppercase rounded-sm"><?php echo esc_html( $btn_text ); ?></a>
             </div>
         </div>
     </div>
