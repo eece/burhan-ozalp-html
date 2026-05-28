@@ -351,12 +351,6 @@ acf_add_local_field_group(array(
                                     'return_format' => 'url',
                                 ),
                                 array(
-                                    'key' => 'field_op_title',
-                                    'label' => 'Operasyon Başlığı',
-                                    'name' => 'title',
-                                    'type' => 'text',
-                                ),
-                                array(
                                     'key' => 'field_op_link',
                                     'label' => 'Operasyon Linki',
                                     'name' => 'link',

@@ -20,12 +20,13 @@ if ( empty( $title ) ) {
             if ( have_rows('items') ) :
                 while ( have_rows('items') ) : the_row();
                     $image = get_sub_field('image');
-                    $op_title = get_sub_field('title');
                     $link = get_sub_field('link');
+                    $op_title = '';
                     $link_url = '#';
                     $link_target = '_self';
                     if ( ! empty( $link ) && is_array( $link ) ) {
                         $link_url    = $link['url'];
+                        $op_title    = ! empty( $link['title'] ) ? $link['title'] : '';
                         $link_target = ! empty( $link['target'] ) ? $link['target'] : '_self';
                     } elseif ( ! empty( $link ) && is_string( $link ) ) {
                         $link_url    = $link;

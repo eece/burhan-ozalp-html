@@ -84,7 +84,70 @@
             <!-- Desktop Menu -->
             <ul class="hidden lg:flex flex-wrap justify-center items-center space-x-4 md:space-x-8 text-base font-bold uppercase tracking-[0.15em] text-gray-600">
                 <?php
-                $menu_tree = get_field('header_menu', 'option');
+                $menu_tree = array();
+                $header_menu_location = 'header_menu';
+                $locations = get_nav_menu_locations();
+                if ( isset( $locations[ $header_menu_location ] ) ) {
+                    $menu_id = $locations[ $header_menu_location ];
+                    $menu_items = wp_get_nav_menu_items( $menu_id );
+                    if ( ! empty( $menu_items ) ) {
+                        // Level 1 items
+                        $level1 = array();
+                        // Level 2 & 3 items grouped
+                        $level2_and_3 = array();
+
+                        foreach ( $menu_items as $item ) {
+                            $parent_id = intval( $item->menu_item_parent );
+                            $formatted_item = array(
+                                'id'           => $item->ID,
+                                'title'        => $item->title,
+                                'url'          => $item->url,
+                                'target'       => ! empty( $item->target ) ? $item->target : '_self',
+                                'sub_menu'     => array(),
+                                'sub_sub_menu' => array()
+                            );
+
+                            if ( $parent_id === 0 ) {
+                                $level1[ $item->ID ] = $formatted_item;
+                            } else {
+                                $formatted_item['parent_id'] = $parent_id;
+                                $level2_and_3[ $item->ID ] = $formatted_item;
+                            }
+                        }
+
+                        // Pass 2: Separate Level 2 and Level 3
+                        $level2 = array();
+                        $level3 = array();
+                        foreach ( $level2_and_3 as $id => $item_data ) {
+                            $parent_id = $item_data['parent_id'];
+                            if ( isset( $level1[ $parent_id ] ) ) {
+                                // Parent is Level 1, so this is Level 2
+                                $level2[ $id ] = $item_data;
+                            } else {
+                                // Parent is not in Level 1 (it must be level 2), so this is Level 3
+                                $level3[ $id ] = $item_data;
+                            }
+                        }
+
+                        // Pass 3: Nest Level 3 inside Level 2
+                        foreach ( $level3 as $id => $item_data ) {
+                            $parent_id = $item_data['parent_id'];
+                            if ( isset( $level2[ $parent_id ] ) ) {
+                                $level2[ $parent_id ]['sub_sub_menu'][ $id ] = $item_data;
+                            }
+                        }
+
+                        // Pass 4: Nest Level 2 inside Level 1
+                        foreach ( $level2 as $id => $item_data ) {
+                            $parent_id = $item_data['parent_id'];
+                            if ( isset( $level1[ $parent_id ] ) ) {
+                                $level1[ $parent_id ]['sub_menu'][ $id ] = $item_data;
+                            }
+                        }
+
+                        $menu_tree = $level1;
+                    }
+                }
                 if ( ! empty( $menu_tree ) ) :
                     foreach ( $menu_tree as $item ) :
                         $item_url = '#';

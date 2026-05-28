@@ -19,9 +19,11 @@ function burhan_ozalp_setup() {
     add_theme_support( 'post-thumbnails' );
     add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
 
-    // Register primary navigation menu
+    // Register navigation menus
     register_nav_menus( array(
-        'primary' => esc_html__( 'Ana Menü (Desktop & Mobile)', 'burhan-ozalp' ),
+        'header_menu'     => esc_html__( 'Header Menü', 'burhan-ozalp' ),
+        'footer_menu'     => esc_html__( 'Footer Menü', 'burhan-ozalp' ),
+        'bottom_bar_menu' => esc_html__( 'Bottom Bar Menü', 'burhan-ozalp' ),
     ) );
 }
 add_action( 'after_setup_theme', 'burhan_ozalp_setup' );

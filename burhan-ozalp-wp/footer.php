@@ -77,62 +77,122 @@ $footer_col2_links = burhan_get_option('footer_col2_links');
 
                 <!-- Quick Services -->
                 <div class="grid grid-cols-2 gap-4 text-left">
+                    <?php
+                    $footer_menu_items = array();
+                    $locations = get_nav_menu_locations();
+                    if ( isset( $locations['footer_menu'] ) ) {
+                        $menu_id = $locations['footer_menu'];
+                        $raw_footer_items = wp_get_nav_menu_items( $menu_id );
+                        if ( ! empty( $raw_footer_items ) ) {
+                            foreach ( $raw_footer_items as $item ) {
+                                $footer_menu_items[] = array(
+                                    'title'  => $item->title,
+                                    'url'    => $item->url,
+                                    'target' => ! empty( $item->target ) ? $item->target : '_self',
+                                );
+                            }
+                        }
+                    }
+
+                    // If a menu is registered in WP, split it into two lists
+                    if ( ! empty( $footer_menu_items ) ) {
+                        $count = count( $footer_menu_items );
+                        $half = ceil( $count / 2 );
+                        $footer_col1_rendered_links = array_slice( $footer_menu_items, 0, $half );
+                        $footer_col2_rendered_links = array_slice( $footer_menu_items, $half );
+                    } else {
+                        // Fall back to ACF/static values
+                        $footer_col1_rendered_links = array();
+                        if ( ! empty($footer_col1_links) ) {
+                            foreach ( $footer_col1_links as $item ) {
+                                $link_url = '#';
+                                $link_title = '';
+                                $link_target = '_self';
+                                if ( ! empty( $item['link'] ) && is_array( $item['link'] ) ) {
+                                    $link_url    = $item['link']['url'];
+                                    $link_title  = $item['link']['title'];
+                                    $link_target = ! empty( $item['link']['target'] ) ? $item['link']['target'] : '_self';
+                                } elseif ( ! empty( $item['url'] ) ) {
+                                    $link_url   = $item['url'];
+                                    $link_title = ! empty( $item['title'] ) ? $item['title'] : '';
+                                }
+                                $footer_col1_rendered_links[] = array(
+                                    'title'  => $link_title,
+                                    'url'    => $link_url,
+                                    'target' => $link_target,
+                                );
+                            }
+                        } else {
+                            // Static fallbacks for column 1
+                            $static_c1 = array(
+                                __('Burun Estetiği', 'burhan-ozalp'),
+                                __('Göğüs Estetiği', 'burhan-ozalp'),
+                                __('Göğüs Büyütme', 'burhan-ozalp'),
+                                __('Jinekomasti', 'burhan-ozalp'),
+                                __('Karın Germe', 'burhan-ozalp')
+                            );
+                            foreach ($static_c1 as $title) {
+                                $footer_col1_rendered_links[] = array('title' => $title, 'url' => '#', 'target' => '_self');
+                            }
+                        }
+
+                        $footer_col2_rendered_links = array();
+                        if ( ! empty($footer_col2_links) ) {
+                            foreach ( $footer_col2_links as $item ) {
+                                $link_url = '#';
+                                $link_title = '';
+                                $link_target = '_self';
+                                if ( ! empty( $item['link'] ) && is_array( $item['link'] ) ) {
+                                    $link_url    = $item['link']['url'];
+                                    $link_title  = $item['link']['title'];
+                                    $link_target = ! empty( $item['link']['target'] ) ? $item['link']['target'] : '_self';
+                                } elseif ( ! empty( $item['url'] ) ) {
+                                    $link_url   = $item['url'];
+                                    $link_title = ! empty( $item['title'] ) ? $item['title'] : '';
+                                }
+                                $footer_col2_rendered_links[] = array(
+                                    'title'  => $link_title,
+                                    'url'    => $link_url,
+                                    'target' => $link_target,
+                                );
+                            }
+                        } else {
+                            // Static fallbacks for column 2
+                            $static_c2 = array(
+                                __('Brezilya Poposu', 'burhan-ozalp'),
+                                __('Boyun Germe', 'burhan-ozalp'),
+                                __('Faça / Jilet İzi', 'burhan-ozalp'),
+                                __('Kepçe Kulak Estetiği', 'burhan-ozalp'),
+                                __('Yağ Enjeksiyonu', 'burhan-ozalp')
+                            );
+                            foreach ($static_c2 as $title) {
+                                $footer_col2_rendered_links[] = array('title' => $title, 'url' => '#', 'target' => '_self');
+                            }
+                        }
+                    }
+                    ?>
                     <div>
                         <h4 class="text-base font-bold tracking-[0.2em] text-[#8b6e4e] mb-6 uppercase text-left"><?php echo esc_html($footer_col1_title); ?></h4>
                         <ul class="text-base font-semibold text-gray-500 uppercase tracking-wider space-y-4 list-none pl-0">
-                            <?php if ( ! empty($footer_col1_links) ) : ?>
-                                <?php 
-                                foreach ( $footer_col1_links as $item ) : 
-                                    $link_url = '#';
-                                    $link_title = '';
-                                    $link_target = '_self';
-                                    if ( ! empty( $item['link'] ) && is_array( $item['link'] ) ) {
-                                        $link_url    = $item['link']['url'];
-                                        $link_title  = $item['link']['title'];
-                                        $link_target = ! empty( $item['link']['target'] ) ? $item['link']['target'] : '_self';
-                                    } elseif ( ! empty( $item['url'] ) ) {
-                                        $link_url   = $item['url'];
-                                        $link_title = ! empty( $item['title'] ) ? $item['title'] : '';
-                                    }
-                                ?>
-                                    <li><a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> <?php echo esc_html($link_title); ?></a></li>
-                                <?php endforeach; ?>
-                            <?php else : ?>
-                                <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Burun Estetiği</a></li>
-                                <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Göğüs Estetiği</a></li>
-                                <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Göğüs Büyütme</a></li>
-                                <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Jinekomasti</a></li>
-                                <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Karın Germe</a></li>
-                            <?php endif; ?>
+                            <?php foreach ( $footer_col1_rendered_links as $link ) : ?>
+                                <li>
+                                    <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>" class="hover:text-[#8b6e4e] flex items-center transition-all">
+                                        <i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> <?php echo esc_html($link['title']); ?>
+                                    </a>
+                                </li>
+                            <?php endforeach; ?>
                         </ul>
                     </div>
                     <div>
                         <h4 class="text-base font-bold tracking-[0.2em] text-[#8b6e4e] mb-6 uppercase text-left"><?php echo esc_html($footer_col2_title); ?></h4>
                         <ul class="text-base font-semibold text-gray-500 uppercase tracking-wider space-y-4 list-none pl-0">
-                            <?php if ( ! empty($footer_col2_links) ) : ?>
-                                <?php 
-                                foreach ( $footer_col2_links as $item ) : 
-                                    $link_url = '#';
-                                    $link_title = '';
-                                    $link_target = '_self';
-                                    if ( ! empty( $item['link'] ) && is_array( $item['link'] ) ) {
-                                        $link_url    = $item['link']['url'];
-                                        $link_title  = $item['link']['title'];
-                                        $link_target = ! empty( $item['link']['target'] ) ? $item['link']['target'] : '_self';
-                                    } elseif ( ! empty( $item['url'] ) ) {
-                                        $link_url   = $item['url'];
-                                        $link_title = ! empty( $item['title'] ) ? $item['title'] : '';
-                                    }
-                                ?>
-                                    <li><a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> <?php echo esc_html($link_title); ?></a></li>
-                                <?php endforeach; ?>
-                            <?php else : ?>
-                                <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Brezilya Poposu</a></li>
-                                <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Boyun Germe</a></li>
-                                <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Faça / Jilet İzi</a></li>
-                                <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Kepçe Kulak Estetiği</a></li>
-                                <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Yağ Enjeksiyonu</a></li>
-                            <?php endif; ?>
+                            <?php foreach ( $footer_col2_rendered_links as $link ) : ?>
+                                <li>
+                                    <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>" class="hover:text-[#8b6e4e] flex items-center transition-all">
+                                        <i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> <?php echo esc_html($link['title']); ?>
+                                    </a>
+                                </li>
+                            <?php endforeach; ?>
                         </ul>
                     </div>
                 </div>
@@ -153,13 +213,42 @@ $footer_col2_links = burhan_get_option('footer_col2_links');
             <!-- Bottom Credits -->
             <div class="border-t border-gray-100 pt-12 text-center">
                 <div class="flex flex-wrap justify-center space-x-6 text-base font-bold uppercase text-gray-400 tracking-widest mb-6 px-4">
-                    <a href="#" class="hover:text-gray-600 transition-all mb-2"><?php echo esc_html__( 'Randevu', 'burhan-ozalp' ); ?></a>
-                    <a href="#" class="hover:text-gray-600 transition-all mb-2"><?php echo esc_html__( 'SSS', 'burhan-ozalp' ); ?></a>
-                    <a href="#" class="hover:text-gray-600 transition-all mb-2"><?php echo esc_html__( 'Hakkımda', 'burhan-ozalp' ); ?></a>
-                    <a href="#" class="hover:text-gray-600 transition-all mb-2"><?php echo esc_html__( 'Site Haritası', 'burhan-ozalp' ); ?></a>
-                    <a href="#" class="hover:text-gray-600 transition-all mb-2"><?php echo esc_html__( 'İletişim', 'burhan-ozalp' ); ?></a>
-                    <a href="#" class="hover:text-gray-600 transition-all mb-2"><?php echo esc_html__( 'KVKK', 'burhan-ozalp' ); ?></a>
-                    <a href="#" class="hover:text-gray-600 transition-all mb-2"><?php echo esc_html__( 'Gizlilik Sözleşmesi', 'burhan-ozalp' ); ?></a>
+                    <?php
+                    $bottom_menu_items = array();
+                    $locations = get_nav_menu_locations();
+                    if ( isset( $locations['bottom_bar_menu'] ) ) {
+                        $menu_id = $locations['bottom_bar_menu'];
+                        $raw_bottom_items = wp_get_nav_menu_items( $menu_id );
+                        if ( ! empty( $raw_bottom_items ) ) {
+                            foreach ( $raw_bottom_items as $item ) {
+                                $bottom_menu_items[] = array(
+                                    'title'  => $item->title,
+                                    'url'    => $item->url,
+                                    'target' => ! empty( $item->target ) ? $item->target : '_self',
+                                );
+                            }
+                        }
+                    }
+
+                    if ( ! empty( $bottom_menu_items ) ) {
+                        foreach ( $bottom_menu_items as $link ) {
+                            ?>
+                            <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>" class="hover:text-gray-600 transition-all mb-2"><?php echo esc_html($link['title']); ?></a>
+                            <?php
+                        }
+                    } else {
+                        // Fallback elements
+                        ?>
+                        <a href="#" class="hover:text-gray-600 transition-all mb-2"><?php echo esc_html__( 'Randevu', 'burhan-ozalp' ); ?></a>
+                        <a href="#" class="hover:text-gray-600 transition-all mb-2"><?php echo esc_html__( 'SSS', 'burhan-ozalp' ); ?></a>
+                        <a href="#" class="hover:text-gray-600 transition-all mb-2"><?php echo esc_html__( 'Hakkımda', 'burhan-ozalp' ); ?></a>
+                        <a href="#" class="hover:text-gray-600 transition-all mb-2"><?php echo esc_html__( 'Site Haritası', 'burhan-ozalp' ); ?></a>
+                        <a href="#" class="hover:text-gray-600 transition-all mb-2"><?php echo esc_html__( 'İletişim', 'burhan-ozalp' ); ?></a>
+                        <a href="#" class="hover:text-gray-600 transition-all mb-2"><?php echo esc_html__( 'KVKK', 'burhan-ozalp' ); ?></a>
+                        <a href="#" class="hover:text-gray-600 transition-all mb-2"><?php echo esc_html__( 'Gizlilik Sözleşmesi', 'burhan-ozalp' ); ?></a>
+                        <?php
+                    }
+                    ?>
                 </div>
                 <p class="text-base text-gray-400 uppercase tracking-widest mb-4 px-4"><?php echo esc_html( $copyright ); ?></p>
                 <p class="text-base text-gray-300 max-w-2xl mx-auto italic px-4 leading-relaxed"><?php echo esc_html( $disclaimer ); ?></p>
