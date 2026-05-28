@@ -98,58 +98,6 @@ acf_add_local_field_group(array(
             'type' => 'textarea',
             'default_value' => "Bu sitede yer alan makaleler tamamen bilgilendirme amaçlı olup, tanı ve tedavi amacıyla kullanılamaz. Tüm sağlık sorunları için doktorunuza başvurunuz.",
         ),
-        array(
-            'key' => 'field_header_menu',
-            'label' => 'Header Menü Linkleri (ACF)',
-            'name' => 'header_menu',
-            'type' => 'repeater',
-            'instructions' => 'Üst menü hiyerarşisini kolayca tasarlayın. Eğer tanımlamazsanız şık bir varsayılan menü gösterilir.',
-            'layout' => 'row',
-            'button_label' => 'Yeni Menü Elemanı Ekle',
-            'sub_fields' => array(
-                array(
-                    'key' => 'field_header_menu_link',
-                    'label' => 'Bağlantı (Link Seçiçi)',
-                    'name' => 'link',
-                    'type' => 'link',
-                    'required' => 1,
-                ),
-                array(
-                    'key' => 'field_header_submenu',
-                    'label' => 'Alt Menü Elemanları',
-                    'name' => 'sub_menu',
-                    'type' => 'repeater',
-                    'layout' => 'row',
-                    'button_label' => 'Alt Menü Ekle',
-                    'sub_fields' => array(
-                        array(
-                            'key' => 'field_header_sub_link',
-                            'label' => 'Alt Menü Bağlantısı',
-                            'name' => 'link',
-                            'type' => 'link',
-                            'required' => 1,
-                        ),
-                        array(
-                            'key' => 'field_header_subsubmenu',
-                            'label' => '3. Seviye Alt Menü Elemanları',
-                            'name' => 'sub_sub_menu',
-                            'type' => 'repeater',
-                            'layout' => 'row',
-                            'button_label' => 'Üçüncü Seviye Ekle',
-                            'sub_fields' => array(
-                                array(
-                                    'key' => 'field_header_sub_sub_link',
-                                    'label' => 'Bağlantı',
-                                    'name' => 'link',
-                                    'type' => 'link',
-                                    'required' => 1,
-                                ),
-                            ),
-                        ),
-                    ),
-                ),
-            ),
-        ),
     ),
     'location' => array(
         array(
