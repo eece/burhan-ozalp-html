@@ -15,6 +15,20 @@
         .filter-btn.active:hover {
             color: white !important;
         }
+
+        /* Dropdown overflow handler for desktop menus closer to the right side of the screen */
+        @media (min-width: 1024px) {
+            ul.hidden.lg\:flex > li:nth-last-child(-n+3) > ul {
+                left: auto !important;
+                right: 0 !important;
+            }
+            ul.hidden.lg\:flex > li:nth-last-child(-n+3) li ul {
+                left: auto !important;
+                right: 100% !important;
+                border-left: none !important;
+                border-right: 1px solid #e5e7eb !important;
+            }
+        }
     </style>
 </head>
 <body class="bg-[#fcfaf7] text-[#333] font-['Montserrat',sans-serif]">
