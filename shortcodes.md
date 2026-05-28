@@ -11,17 +11,17 @@ Aşağıdaki HTML kodunu Contact Form 7 yönetim panelindeki **Form** bölümün
 
 ```html
 <div class="flex flex-wrap items-center gap-4 justify-center">
-    [text* your-name class:bg-white class:border-b class:border-gray-200 class:px-4 class:py-2.5 class:text-base class:w-full class:sm:w-48 class:focus:outline-none class:focus:border-[#8b6e4e] placeholder "Ad Soyad*"]
+    [text* your-name class:bg-white class:border-b class:border-gray-200 class:px-4 class:py-2.5 class:text-base class:w-full class:sm:w-48 class:focus:outline-none class:focus:border-brand placeholder "Ad Soyad*"]
 
-    [email* your-email class:bg-white class:border-b class:border-gray-200 class:px-4 class:py-2.5 class:text-base class:w-full class:sm:w-44 class:focus:outline-none class:focus:border-[#8b6e4e] placeholder "E-posta*"]
+    [email* your-email class:bg-white class:border-b class:border-gray-200 class:px-4 class:py-2.5 class:text-base class:w-full class:sm:w-44 class:focus:outline-none class:focus:border-brand placeholder "E-posta*"]
 
-    [text* your-country class:bg-white class:border-b class:border-gray-200 class:px-4 class:py-2.5 class:text-base class:w-full class:sm:w-36 class:focus:outline-none class:focus:border-[#8b6e4e] placeholder "Ülke*"]
+    [text* your-country class:bg-white class:border-b class:border-gray-200 class:px-4 class:py-2.5 class:text-base class:w-full class:sm:w-36 class:focus:outline-none class:focus:border-brand placeholder "Ülke*"]
 
-    [tel* your-phone class:bg-white class:border-b class:border-gray-200 class:px-4 class:py-2.5 class:text-base class:w-full class:sm:w-36 class:focus:outline-none class:focus:border-[#8b6e4e] placeholder "Telefon*"]
+    [tel* your-phone class:bg-white class:border-b class:border-gray-200 class:px-4 class:py-2.5 class:text-base class:w-full class:sm:w-36 class:focus:outline-none class:focus:border-brand placeholder "Telefon*"]
 
     [select* your-subject class:bg-white class:border-b class:border-gray-200 class:px-4 class:py-2.5 class:text-base class:text-gray-400 class:focus:outline-none class:w-full class:sm:w-36 "Konu*" "Burun Estetiği" "Vücut Estetiği"]
 
-    [submit class:bg-[#8b6e4e] class:text-white class:px-8 class:py-3 class:text-base class:font-bold class:tracking-widest class:hover:bg-opacity-90 class:transition-all class:uppercase class:rounded-sm class:cursor-pointer "GÖNDER"]
+    [submit class:bg-brand class:text-white class:px-8 class:py-3 class:text-base class:font-bold class:tracking-widest class:hover:bg-opacity-90 class:transition-all class:uppercase class:rounded-sm class:cursor-pointer "GÖNDER"]
 </div>
 ```
 
