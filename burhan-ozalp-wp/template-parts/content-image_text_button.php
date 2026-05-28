@@ -1,30 +1,30 @@
 <?php
 /**
- * Template part for displaying Biography block.
+ * Template part for displaying generic image, text and button block.
  *
  * @package burhan-ozalp
  */
 
 $label = get_sub_field('label');
-$bio_title = get_sub_field('title');
+$section_title = get_sub_field('title');
 $image = get_sub_field('image');
 $content = get_sub_field('content');
 $button_link = get_sub_field('button_link');
 $image_position = get_sub_field('image_position');
 
 // Sane default fallbacks
-if ( empty( $label ) ) $label = esc_html__( 'BİYOGRAFİ', 'burhan-ozalp' );
-if ( empty( $bio_title ) ) $bio_title = esc_html__( 'DOÇ. DR. BURHAN ÖZALP', 'burhan-ozalp' );
+if ( empty( $label ) ) $label = esc_html__( 'Devamını Oku', 'burhan-ozalp' );
+if ( empty( $section_title ) ) $section_title = esc_html__( 'DOÇ. DR. BURHAN ÖZALP', 'burhan-ozalp' );
 if ( empty( $image ) ) $image = 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=800';
 if ( empty( $image_position ) ) $image_position = 'left';
 
 $btn_url = '#';
-$btn_text = esc_html__( 'BİYOGRAFİ', 'burhan-ozalp' );
+$btn_text = esc_html__( 'Devamını Oku', 'burhan-ozalp' );
 $btn_target = '_self';
 
 if ( ! empty( $button_link ) && is_array( $button_link ) ) {
     $btn_url = ! empty( $button_link['url'] ) ? $button_link['url'] : '#';
-    $btn_text = ! empty( $button_link['title'] ) ? $button_link['title'] : esc_html__( 'BİYOGRAFİ', 'burhan-ozalp' );
+    $btn_text = ! empty( $button_link['title'] ) ? $button_link['title'] : esc_html__( 'Devamını Oku', 'burhan-ozalp' );
     $btn_target = ! empty( $button_link['target'] ) ? $button_link['target'] : '_self';
 }
 
@@ -34,24 +34,22 @@ if ( $image_position === 'right' ) {
 }
 ?>
 
-<!-- Biography Section -->
+<!-- Image Text Button Section -->
 <section class="py-24 bg-white relative overflow-hidden text-center lg:text-left">
     <div class="<?php echo esc_attr( $row_class ); ?>">
         <div class="w-full lg:w-1/2 relative z-10">
             <div class="relative inline-block">
-                <img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_attr( $bio_title ); ?>" class="rounded-sm shadow-2xl relative z-10 max-w-full h-auto">
+                <img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_attr( $section_title ); ?>" class="rounded-sm shadow-2xl relative z-10 max-w-full h-auto">
                 <div class="absolute -top-10 -left-10 w-full h-full bg-[#f8f6f3] -z-10 rounded-sm"></div>
             </div>
         </div>
         <div class="w-full lg:w-1/2 animate-fade-in text-left">
             <span class="text-base uppercase font-bold tracking-[0.4em] text-[#8b6e4e] mb-4 block text-center lg:text-left"><?php echo esc_html( $label ); ?></span>
-            <h2 class="text-4xl md:text-6xl font-light font-['Cormorant_Garamond'] text-[#333] mb-8 tracking-wider text-center lg:text-left"><?php echo esc_html( $bio_title ); ?></h2>
+            <h2 class="text-4xl md:text-6xl font-light font-['Cormorant_Garamond'] text-[#333] mb-8 tracking-wider text-center lg:text-left"><?php echo esc_html( $section_title ); ?></h2>
             <div class="prose text-[#7b5f43] leading-relaxed max-w-lg mb-10 mx-auto lg:mx-0 text-lg">
                 <?php 
                 if ( ! empty( $content ) ) {
                     echo wp_kses_post( $content );
-                } else {
-                    echo '<p class="mb-4">' . esc_html__( "Neo Estetik İstanbul Cerrahi Kliniği'nin kurucusu DOÇ. DR. BURHAN ÖZALP 1980 yılında İstanbul'da doğmuştur. İlk, orta ve lise eğitimini İstanbul'da tamamladıktan sonra girdiği üniversite sınavında üstün başarı elde ederek tıp camiasının en köklü ve saygın kurumlarından olan İstanbul Tıp Fakültesi'nde (Çapa Tıp Fakültesi) tıp eğitimine başlamış ve 2004 yılında tıp doktoru ünvanını almıştır.", 'burhan-ozalp' ) . '</p>';
                 }
                 ?>
             </div>
