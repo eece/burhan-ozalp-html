@@ -25,10 +25,15 @@ $facebook = burhan_get_option('facebook_url', '#');
 $instagram = burhan_get_option('instagram_url', '#');
 $youtube = burhan_get_option('youtube_url', '#');
 
-$footer_col1_title = burhan_get_option('footer_col1_title', 'HIZLI LİNKLER');
-$footer_col1_links = burhan_get_option('footer_col1_links');
-$footer_col2_title = burhan_get_option('footer_col2_title', 'DİĞER ESTETİKLER');
-$footer_col2_links = burhan_get_option('footer_col2_links');
+$footer_menu_title = esc_html__( 'HIZLI LİNKLER', 'burhan-ozalp' );
+$locations = get_nav_menu_locations();
+if ( isset( $locations['footer_menu'] ) ) {
+    $menu_id = $locations['footer_menu'];
+    $menu_object = wp_get_nav_menu_object( $menu_id );
+    if ( $menu_object && ! empty( $menu_object->name ) ) {
+        $footer_menu_title = $menu_object->name;
+    }
+}
 ?>
 
     <!-- Footer -->
@@ -76,53 +81,35 @@ $footer_col2_links = burhan_get_option('footer_col2_links');
                 </div>
 
                 <!-- Quick Services -->
-                <div class="grid grid-cols-2 gap-4 text-left">
-                    <?php
-                    $footer_menu_items = array();
-                    $locations = get_nav_menu_locations();
-                    if ( isset( $locations['footer_menu'] ) ) {
-                        $menu_id = $locations['footer_menu'];
-                        $raw_footer_items = wp_get_nav_menu_items( $menu_id );
-                        if ( ! empty( $raw_footer_items ) ) {
-                            foreach ( $raw_footer_items as $item ) {
-                                $footer_menu_items[] = array(
-                                    'title'  => $item->title,
-                                    'url'    => $item->url,
-                                    'target' => ! empty( $item->target ) ? $item->target : '_self',
-                                );
+                <div class="flex flex-col">
+                    <h4 class="text-base font-bold tracking-[0.2em] text-[#8b6e4e] mb-6 uppercase text-left"><?php echo esc_html($footer_menu_title); ?></h4>
+                    <div class="grid grid-cols-2 gap-4 text-left">
+                        <?php
+                        $footer_menu_items = array();
+                        $locations = get_nav_menu_locations();
+                        if ( isset( $locations['footer_menu'] ) ) {
+                            $menu_id = $locations['footer_menu'];
+                            $raw_footer_items = wp_get_nav_menu_items( $menu_id );
+                            if ( ! empty( $raw_footer_items ) ) {
+                                foreach ( $raw_footer_items as $item ) {
+                                    $footer_menu_items[] = array(
+                                        'title'  => $item->title,
+                                        'url'    => $item->url,
+                                        'target' => ! empty( $item->target ) ? $item->target : '_self',
+                                    );
+                                }
                             }
                         }
-                    }
 
-                    // If a menu is registered in WP, split it into two lists
-                    if ( ! empty( $footer_menu_items ) ) {
-                        $count = count( $footer_menu_items );
-                        $half = ceil( $count / 2 );
-                        $footer_col1_rendered_links = array_slice( $footer_menu_items, 0, $half );
-                        $footer_col2_rendered_links = array_slice( $footer_menu_items, $half );
-                    } else {
-                        // Fall back to ACF/static values
-                        $footer_col1_rendered_links = array();
-                        if ( ! empty($footer_col1_links) ) {
-                            foreach ( $footer_col1_links as $item ) {
-                                $link_url = '#';
-                                $link_title = '';
-                                $link_target = '_self';
-                                if ( ! empty( $item['link'] ) && is_array( $item['link'] ) ) {
-                                    $link_url    = $item['link']['url'];
-                                    $link_title  = $item['link']['title'];
-                                    $link_target = ! empty( $item['link']['target'] ) ? $item['link']['target'] : '_self';
-                                } elseif ( ! empty( $item['url'] ) ) {
-                                    $link_url   = $item['url'];
-                                    $link_title = ! empty( $item['title'] ) ? $item['title'] : '';
-                                }
-                                $footer_col1_rendered_links[] = array(
-                                    'title'  => $link_title,
-                                    'url'    => $link_url,
-                                    'target' => $link_target,
-                                );
-                            }
+                        // If a menu is registered in WP, split it into two lists
+                        if ( ! empty( $footer_menu_items ) ) {
+                            $count = count( $footer_menu_items );
+                            $half = ceil( $count / 2 );
+                            $footer_col1_rendered_links = array_slice( $footer_menu_items, 0, $half );
+                            $footer_col2_rendered_links = array_slice( $footer_menu_items, $half );
                         } else {
+                            // Fall back to static values
+                            $footer_col1_rendered_links = array();
                             // Static fallbacks for column 1
                             $static_c1 = array(
                                 __('Burun Estetiği', 'burhan-ozalp'),
@@ -134,29 +121,8 @@ $footer_col2_links = burhan_get_option('footer_col2_links');
                             foreach ($static_c1 as $title) {
                                 $footer_col1_rendered_links[] = array('title' => $title, 'url' => '#', 'target' => '_self');
                             }
-                        }
 
-                        $footer_col2_rendered_links = array();
-                        if ( ! empty($footer_col2_links) ) {
-                            foreach ( $footer_col2_links as $item ) {
-                                $link_url = '#';
-                                $link_title = '';
-                                $link_target = '_self';
-                                if ( ! empty( $item['link'] ) && is_array( $item['link'] ) ) {
-                                    $link_url    = $item['link']['url'];
-                                    $link_title  = $item['link']['title'];
-                                    $link_target = ! empty( $item['link']['target'] ) ? $item['link']['target'] : '_self';
-                                } elseif ( ! empty( $item['url'] ) ) {
-                                    $link_url   = $item['url'];
-                                    $link_title = ! empty( $item['title'] ) ? $item['title'] : '';
-                                }
-                                $footer_col2_rendered_links[] = array(
-                                    'title'  => $link_title,
-                                    'url'    => $link_url,
-                                    'target' => $link_target,
-                                );
-                            }
-                        } else {
+                            $footer_col2_rendered_links = array();
                             // Static fallbacks for column 2
                             $static_c2 = array(
                                 __('Brezilya Poposu', 'burhan-ozalp'),
@@ -169,31 +135,29 @@ $footer_col2_links = burhan_get_option('footer_col2_links');
                                 $footer_col2_rendered_links[] = array('title' => $title, 'url' => '#', 'target' => '_self');
                             }
                         }
-                    }
-                    ?>
-                    <div>
-                        <h4 class="text-base font-bold tracking-[0.2em] text-[#8b6e4e] mb-6 uppercase text-left"><?php echo esc_html($footer_col1_title); ?></h4>
-                        <ul class="text-base font-semibold text-gray-500 uppercase tracking-wider space-y-4 list-none pl-0">
-                            <?php foreach ( $footer_col1_rendered_links as $link ) : ?>
-                                <li>
-                                    <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>" class="hover:text-[#8b6e4e] flex items-center transition-all">
-                                        <i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> <?php echo esc_html($link['title']); ?>
-                                    </a>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-base font-bold tracking-[0.2em] text-[#8b6e4e] mb-6 uppercase text-left"><?php echo esc_html($footer_col2_title); ?></h4>
-                        <ul class="text-base font-semibold text-gray-500 uppercase tracking-wider space-y-4 list-none pl-0">
-                            <?php foreach ( $footer_col2_rendered_links as $link ) : ?>
-                                <li>
-                                    <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>" class="hover:text-[#8b6e4e] flex items-center transition-all">
-                                        <i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> <?php echo esc_html($link['title']); ?>
-                                    </a>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
+                        ?>
+                        <div>
+                            <ul class="text-base font-semibold text-gray-500 uppercase tracking-wider space-y-4 list-none pl-0">
+                                <?php foreach ( $footer_col1_rendered_links as $link ) : ?>
+                                    <li>
+                                        <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>" class="hover:text-[#8b6e4e] flex items-center transition-all">
+                                            <i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> <?php echo esc_html($link['title']); ?>
+                                        </a>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="text-base font-semibold text-gray-500 uppercase tracking-wider space-y-4 list-none pl-0">
+                                <?php foreach ( $footer_col2_rendered_links as $link ) : ?>
+                                    <li>
+                                        <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>" class="hover:text-[#8b6e4e] flex items-center transition-all">
+                                            <i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> <?php echo esc_html($link['title']); ?>
+                                        </a>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 

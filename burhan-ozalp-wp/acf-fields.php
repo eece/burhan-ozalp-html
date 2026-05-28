@@ -150,54 +150,6 @@ acf_add_local_field_group(array(
                 ),
             ),
         ),
-        array(
-            'key' => 'field_footer_col1_title',
-            'label' => 'Footer Sol Liste Başlığı',
-            'name' => 'footer_col1_title',
-            'type' => 'text',
-            'default_value' => 'HIZLI LİNKLER',
-        ),
-        array(
-            'key' => 'field_footer_col1_links',
-            'label' => 'Footer Sol Liste Linkleri',
-            'name' => 'footer_col1_links',
-            'type' => 'repeater',
-            'layout' => 'table',
-            'button_label' => 'Kolon 1 Link Ekle',
-            'sub_fields' => array(
-                array(
-                    'key' => 'field_footer_col1_link_obj',
-                    'label' => 'Bağlantı (Link / Sayfa Seçin)',
-                    'name' => 'link',
-                    'type' => 'link',
-                    'required' => 1,
-                ),
-            ),
-        ),
-        array(
-            'key' => 'field_footer_col2_title',
-            'label' => 'Footer Sağ Liste Başlığı',
-            'name' => 'footer_col2_title',
-            'type' => 'text',
-            'default_value' => 'DİĞER ESTETİKLER',
-        ),
-        array(
-            'key' => 'field_footer_col2_links',
-            'label' => 'Footer Sağ Liste Linkleri',
-            'name' => 'footer_col2_links',
-            'type' => 'repeater',
-            'layout' => 'table',
-            'button_label' => 'Kolon 2 Link Ekle',
-            'sub_fields' => array(
-                array(
-                    'key' => 'field_footer_col2_link_obj',
-                    'label' => 'Bağlantı (Link / Sayfa Seçin)',
-                    'name' => 'link',
-                    'type' => 'link',
-                    'required' => 1,
-                ),
-            ),
-        ),
     ),
     'location' => array(
         array(
