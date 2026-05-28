@@ -105,13 +105,13 @@ a.page-numbers:hover {
   padding: 0 16px;
 }
 
-/* Dropdown overflow handler - Only the very last item's submenus open to the left to avoid screen overflow in HTML */
+/* Dropdown overflow handler - The item immediately before Polylang (second to last item) has its submenus open to the left to avoid screen overflow */
 @media (min-width: 1024px) {
-  ul.hidden.lg\:flex > li:last-child > ul {
+  ul.hidden.lg\:flex > li:nth-last-child(2) > ul {
     left: auto !important;
     right: 0 !important;
   }
-  ul.hidden.lg\:flex > li:last-child li ul {
+  ul.hidden.lg\:flex > li:nth-last-child(2) li ul {
     left: auto !important;
     right: 100% !important;
     border-left: none !important;
