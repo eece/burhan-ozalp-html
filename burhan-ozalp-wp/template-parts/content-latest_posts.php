@@ -45,13 +45,11 @@ $query = new WP_Query( $args );
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                 <?php while ( $query->have_posts() ) : $query->the_post(); ?>
                     <div class="group cursor-pointer text-left" onclick="window.location='<?php the_permalink(); ?>'">
-                        <div class="overflow-hidden mb-8 rounded-sm aspect-[4/5]">
-                            <?php if ( has_post_thumbnail() ) : ?>
+                        <?php if ( has_post_thumbnail() ) : ?>
+                            <div class="overflow-hidden mb-8 rounded-sm aspect-[4/5]">
                                 <?php the_post_thumbnail( 'large', array( 'class' => 'w-full h-full object-cover transition-transform duration-700 group-hover:scale-110' ) ); ?>
-                            <?php else : ?>
-                                <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=600" alt="Post" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                            <?php endif; ?>
-                        </div>
+                            </div>
+                        <?php endif; ?>
                         <h3 class="text-2xl font-['Cormorant_Garamond'] text-[#333] mb-4 group-hover:text-[#8b6e4e] transition-colors leading-tight"><?php the_title(); ?></h3>
                         <p class="text-base text-[#7b5f43] mb-6 leading-relaxed">
                             <?php echo esc_html( wp_trim_words( get_the_excerpt(), 25, '...' ) ); ?>
