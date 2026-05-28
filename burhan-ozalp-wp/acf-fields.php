@@ -195,7 +195,7 @@ acf_add_local_field_group(array(
                                     'type' => 'text',
                                     'default_value' => 'Detaylar',
                                 ),
-                                array(
+                                                        array(
                                     'key' => 'field_slide_btn_url',
                                     'label' => 'Buton Linki',
                                     'name' => 'btn_url',
@@ -218,6 +218,13 @@ acf_add_local_field_group(array(
                             'name' => 'title',
                             'type' => 'text',
                             'default_value' => 'Numaranızı Bırakın Arayalım',
+                        ),
+                        array(
+                            'key' => 'field_callback_cf7_shortcode',
+                            'label' => 'Contact Form 7 Shortcode',
+                            'name' => 'cf7_shortcode',
+                            'type' => 'text',
+                            'placeholder' => '[contact-form-7 id="..." title="..."]',
                         ),
                     ),
                 ),
@@ -257,7 +264,7 @@ acf_add_local_field_group(array(
                                     'type' => 'link',
                                     'return_format' => 'array',
                                 ),
-                            ),
+                             ),
                         ),
                     ),
                 ),
@@ -265,7 +272,7 @@ acf_add_local_field_group(array(
                 'layout_biography' => array(
                     'key' => 'layout_biography',
                     'name' => 'image_text_button',
-                    'label' => 'görsel ve yazı butonlu section',
+                    'label' => 'Görsel ve Yazı Butonlu Section',
                     'display' => 'block',
                     'sub_fields' => array(
                         array(
