@@ -344,10 +344,11 @@ acf_add_local_field_group(array(
                             'button_label' => 'Operasyon Ekle',
                             'sub_fields' => array(
                                 array(
-                                    'key' => 'field_op_icon',
-                                    'label' => 'FontAwesome İkon Sınıfı (Örn: fa-face-smile)',
-                                    'name' => 'icon_class',
-                                    'type' => 'text',
+                                    'key' => 'field_op_image',
+                                    'label' => 'Görsel / Resim Seçin',
+                                    'name' => 'image',
+                                    'type' => 'image',
+                                    'return_format' => 'url',
                                 ),
                                 array(
                                     'key' => 'field_op_title',
@@ -359,7 +360,8 @@ acf_add_local_field_group(array(
                                     'key' => 'field_op_link',
                                     'label' => 'Operasyon Linki',
                                     'name' => 'link',
-                                    'type' => 'text',
+                                    'type' => 'link',
+                                    'return_format' => 'array',
                                 ),
                             ),
                         ),
