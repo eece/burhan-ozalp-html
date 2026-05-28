@@ -122,4 +122,81 @@ a.page-numbers:hover {
   }
 }
 
+/* Contact Form 7 integration & styling */
+.wpcf7-form-control-wrap {
+  display: inline-block !important;
+  vertical-align: middle;
+  width: 100% !important;
+}
+
+@media (min-width: 640px) {
+  .wpcf7-form-control-wrap[data-name="your-name"] {
+    width: 12rem !important; /* sm:w-48 */
+  }
+  .wpcf7-form-control-wrap[data-name="your-email"] {
+    width: 11rem !important; /* sm:w-44 */
+  }
+  .wpcf7-form-control-wrap[data-name="your-country"] {
+    width: 9rem !important; /* sm:w-36 */
+  }
+  .wpcf7-form-control-wrap[data-name="your-phone"] {
+    width: 9rem !important; /* sm:w-36 */
+  }
+  .wpcf7-form-control-wrap[data-name="your-subject"] {
+    width: 9rem !important; /* sm:w-36 */
+  }
+}
+
+/* Form input elements */
+.wpcf7-form-control {
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.wpcf7-text,
+.wpcf7-select,
+.wpcf7-textarea {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e5e7eb !important;
+  padding: 0.625rem 1rem !important; /* px-4 py-2.5 */
+  font-size: 1rem !important; /* text-base */
+}
+
+.wpcf7-text:focus,
+.wpcf7-select:focus,
+.wpcf7-textarea:focus {
+  outline: 2px solid transparent !important;
+  outline-offset: 2px !important;
+  border-color: #8b6e4e !important; /* focus:border-brand */
+}
+
+.wpcf7-select {
+  color: #9ca3af !important; /* text-gray-400 */
+}
+
+.wpcf7-submit {
+  background-color: #8b6e4e !important; /* bg-brand */
+  color: #ffffff !important;
+  padding: 0.75rem 2rem !important; /* px-8 py-3 */
+  font-size: 1rem !important; /* text-base */
+  font-weight: 700 !important; /* font-bold */
+  letter-spacing: 0.1em !important; /* tracking-widest */
+  text-transform: uppercase !important;
+  border-radius: 0.125rem !important; /* rounded-sm */
+  cursor: pointer !important;
+  border: none !important;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .wpcf7-submit {
+    width: auto !important;
+  }
+}
+
+.wpcf7-submit:hover {
+  opacity: 0.9 !important; /* hover:bg-opacity-90 */
+}
+
+
 
