@@ -264,8 +264,15 @@ acf_add_local_field_group(array(
                             'sub_fields' => array(
                                 array(
                                     'key' => 'field_slide_image',
-                                    'label' => 'Arka Plan Resmi',
+                                    'label' => 'Masaüstü Resmi (Desktop)',
                                     'name' => 'image',
+                                    'type' => 'image',
+                                    'return_format' => 'url',
+                                ),
+                                array(
+                                    'key' => 'field_slide_image_mobile',
+                                    'label' => 'Mobil Resmi (Mobile)',
+                                    'name' => 'image_mobile',
                                     'type' => 'image',
                                     'return_format' => 'url',
                                 ),

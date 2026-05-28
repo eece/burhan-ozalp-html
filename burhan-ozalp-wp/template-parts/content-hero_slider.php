@@ -13,21 +13,27 @@ if ( have_rows('slides') ) :
             <?php 
             $slide_index = 0;
             while ( have_rows('slides') ) : the_row();
-                $image = get_sub_field('image');
+                $image_desktop = get_sub_field('image');
+                $image_mobile = get_sub_field('image_mobile');
                 $subtitle = get_sub_field('subtitle');
                 $title = get_sub_field('title');
                 $btn_text = get_sub_field('btn_text');
                 $btn_url = get_sub_field('btn_url');
                 
                 // Fallback default sample images
-                if ( empty($image) ) {
-                    $image = 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=2000';
+                if ( empty($image_desktop) ) {
+                    $image_desktop = 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=2000';
+                }
+                if ( empty($image_mobile) ) {
+                    $image_mobile = $image_desktop;
                 }
             ?>
                 <!-- Slide <?php echo $slide_index + 1; ?> -->
                 <div class="slide absolute inset-0 <?php echo $slide_index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'; ?> transition-opacity duration-1000">
-                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('<?php echo esc_url( $image ); ?>');"></div>
-                    <div class="absolute inset-0 bg-gradient-to-l from-black/40 via-black/20 to-transparent"></div>
+                    <!-- Desktop background image -->
+                    <div class="absolute inset-0 bg-cover bg-center hidden md:block" style="background-image: url('<?php echo esc_url( $image_desktop ); ?>');"></div>
+                    <!-- Mobile background image -->
+                    <div class="absolute inset-0 bg-cover bg-center md:hidden" style="background-image: url('<?php echo esc_url( $image_mobile ); ?>');"></div>
                     <div class="container mx-auto h-full px-4 flex flex-col justify-center items-end text-right relative z-10">
                         <div class="max-w-xl animate-fade-in-right">
                             <?php if ( ! empty( $subtitle ) ) : ?>
