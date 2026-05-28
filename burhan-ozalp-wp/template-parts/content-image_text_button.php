@@ -55,9 +55,11 @@ if ( $image_position === 'right' ) {
                 }
                 ?>
             </div>
+            <?php if ( ! empty( $button_link ) && is_array( $button_link ) ) : ?>
             <div class="text-center lg:text-left">
                 <a href="<?php echo esc_url( $btn_url ); ?>" target="<?php echo esc_attr( $btn_target ); ?>" class="inline-block px-10 py-3 border-2 border-[#8b6e4e] text-[#8b6e4e] text-base font-black tracking-[0.2em] transform hover:bg-[#8b6e4e] hover:text-white transition-all uppercase rounded-sm"><?php echo esc_html( $btn_text ); ?></a>
             </div>
+            <?php endif; ?>
         </div>
     </div>
     <!-- Hexagon pattern background -->
