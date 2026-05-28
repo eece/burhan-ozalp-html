@@ -198,5 +198,20 @@ a.page-numbers:hover {
   opacity: 0.9 !important; /* hover:bg-opacity-90 */
 }
 
+/* Custom Accordion SSS Styling */
+.accordion-item.active .accordion-icon {
+  border-color: #8b6e4e !important;
+  background-color: #f8f6f3 !important;
+  color: #8b6e4e !important;
+}
+
+.accordion-item.active .accordion-icon i {
+  transform: rotate(45deg) !important;
+}
+
+.accordion-item.active .accordion-trigger span {
+  color: #8b6e4e !important;
+}
+
 
 

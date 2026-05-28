@@ -123,5 +123,42 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // General Accordion SSS Interaction (supports multiple on a page)
+  const accordionTriggers = document.querySelectorAll('.accordion-trigger');
+  accordionTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const item = trigger.closest('.accordion-item');
+      if (!item) return;
+      
+      const group = item.closest('.accordion-group');
+      const content = item.querySelector('.accordion-content');
+      if (!content) return;
+      
+      const isOpen = item.classList.contains('active');
+      
+      // Strict accordion group behavior (close other open ones under the same group)
+      if (group) {
+        const activeItems = group.querySelectorAll('.accordion-item.active');
+        activeItems.forEach(activeItem => {
+          if (activeItem !== item) {
+            activeItem.classList.remove('active');
+            const activeContent = activeItem.querySelector('.accordion-content');
+            if (activeContent) {
+              activeContent.style.maxHeight = '0px';
+            }
+          }
+        });
+      }
+      
+      if (isOpen) {
+        item.classList.remove('active');
+        content.style.maxHeight = '0px';
+      } else {
+        item.classList.add('active');
+        content.style.maxHeight = content.scrollHeight + 'px';
+      }
+    });
+  });
+
   console.log('Doç. Dr. Burhan Özalp theme scripts initialized');
 });

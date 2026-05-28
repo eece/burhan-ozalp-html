@@ -115,5 +115,42 @@ if (slider && prevBtn && nextBtn) {
   dots.forEach(dot => dot.addEventListener('click', resetInterval));
 }
 
+// General Accordion SSS Interaction (supports multiple instances uniquely)
+const accordionTriggers = document.querySelectorAll('.accordion-trigger');
+accordionTriggers.forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const item = trigger.closest('.accordion-item');
+    if (!item) return;
+    
+    const group = item.closest('.accordion-group');
+    const content = item.querySelector('.accordion-content');
+    if (!content) return;
+    
+    const isOpen = item.classList.contains('active');
+    
+    // Strict accordion group behavior (close other open ones under the same group)
+    if (group) {
+      const activeItems = group.querySelectorAll('.accordion-item.active');
+      activeItems.forEach(activeItem => {
+        if (activeItem !== item) {
+          activeItem.classList.remove('active');
+          const activeContent = activeItem.querySelector('.accordion-content');
+          if (activeContent) {
+            activeContent.style.maxHeight = '0px';
+          }
+        }
+      });
+    }
+    
+    if (isOpen) {
+      item.classList.remove('active');
+      content.style.maxHeight = '0px';
+    } else {
+      item.classList.add('active');
+      content.style.maxHeight = content.scrollHeight + 'px';
+    }
+  });
+});
+
 // Lucide icon replacement is handled by the CDN script in index.html
 console.log('App initialized');
