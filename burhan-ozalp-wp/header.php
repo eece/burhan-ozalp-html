@@ -181,7 +181,7 @@
                                         }
                                     ?>
                                         <li class="relative <?php echo ! empty( $sub_item['sub_sub_menu'] ) ? 'group/sub' : ''; ?>">
-                                            <a href="<?php echo esc_url( $sub_url ); ?>" target="<?php echo esc_attr( $sub_target ); ?>" class="flex items-center justify-between px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors">
+                                            <a href="<?php echo esc_url( $sub_url ); ?>" target="<?php echo esc_attr( $sub_target ); ?>" class="flex items-center justify-between px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors">
                                                 <span><?php echo esc_html( $sub_title ); ?></span>
                                                 <?php if ( ! empty( $sub_item['sub_sub_menu'] ) ) : ?>
                                                     <i class="fa-solid fa-chevron-right text-[10px]"></i>
@@ -204,7 +204,7 @@
                                                         }
                                                     ?>
                                                         <li>
-                                                            <a href="<?php echo esc_url( $sub_sub_url ); ?>" target="<?php echo esc_attr( $sub_sub_target ); ?>" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors">
+                                                            <a href="<?php echo esc_url( $sub_sub_url ); ?>" target="<?php echo esc_attr( $sub_sub_target ); ?>" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors">
                                                                 <?php echo esc_html( $sub_sub_title ); ?>
                                                             </a>
                                                         </li>
@@ -224,14 +224,14 @@
                     <li class="relative group py-2">
                         <a href="<?php echo esc_url( home_url('/') ); ?>" class="hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Hakkımda', 'burhan-ozalp'); ?></a>
                         <ul class="absolute left-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[200px] border-t-2 border-[#8b6e4e] py-2 z-50 text-left">
-                            <li><a href="#" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Özgeçmiş', 'burhan-ozalp'); ?></a></li>
+                            <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Özgeçmiş', 'burhan-ozalp'); ?></a></li>
                             <li class="relative group/sub">
-                                <a href="#" class="flex items-center justify-between px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors">
+                                <a href="#" class="flex items-center justify-between px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors">
                                     <span><?php echo esc_html__('Kariyer', 'burhan-ozalp'); ?></span> <i class="fa-solid fa-chevron-right text-[10px]"></i>
                                 </a>
                                 <ul class="absolute left-full top-0 hidden group-hover/sub:block bg-white shadow-xl min-w-[200px] border-l border-gray-100 py-2">
-                                    <li><a href="#" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Eğitim', 'burhan-ozalp'); ?></a></li>
-                                    <li><a href="#" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Sertifikalar', 'burhan-ozalp'); ?></a></li>
+                                    <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Eğitim', 'burhan-ozalp'); ?></a></li>
+                                    <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Sertifikalar', 'burhan-ozalp'); ?></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -239,10 +239,10 @@
                     <li class="relative group py-2">
                         <a href="#" class="hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('İşlemler', 'burhan-ozalp'); ?></a>
                         <ul class="absolute left-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[220px] border-t-2 border-[#8b6e4e] py-2 z-50 text-left">
-                            <li><a href="#" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Lipödem Cerrahisi', 'burhan-ozalp'); ?></a></li>
-                            <li><a href="#" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Burun Estetiği', 'burhan-ozalp'); ?></a></li>
-                            <li><a href="#" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Vücut Estetiği', 'burhan-ozalp'); ?></a></li>
-                            <li><a href="#" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Yüz Estetiği', 'burhan-ozalp'); ?></a></li>
+                            <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Lipödem Cerrahisi', 'burhan-ozalp'); ?></a></li>
+                            <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Burun Estetiği', 'burhan-ozalp'); ?></a></li>
+                            <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Vücut Estetiği', 'burhan-ozalp'); ?></a></li>
+                            <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Yüz Estetiği', 'burhan-ozalp'); ?></a></li>
                         </ul>
                     </li>
                     <li><a href="#" class="hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Lipödem', 'burhan-ozalp'); ?></a></li>

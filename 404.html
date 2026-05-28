@@ -8,24 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/src/tailwind.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap');
-        
-        /* Dropdown overflow handler for desktop menus closer to the right side of the screen */
-        @media (min-width: 1024px) {
-            ul.hidden.lg\:flex > li:nth-last-child(-n+3) > ul {
-                left: auto !important;
-                right: 0 !important;
-            }
-            ul.hidden.lg\:flex > li:nth-last-child(-n+3) li ul {
-                left: auto !important;
-                right: 100% !important;
-                border-left: none !important;
-                border-right: 1px solid #e5e7eb !important;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="/src/index.css">
 </head>
 <body class="bg-[#fcfaf7] text-[#333] font-['Montserrat',sans-serif]">
     <!-- Top Header -->
@@ -88,15 +71,15 @@
                 <li class="relative group py-2">
                     <a href="#" class="hover:text-[#8b6e4e] transition-all">Hakkımda</a>
                     <ul class="absolute left-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[200px] border-t-2 border-[#8b6e4e] py-2 z-50">
-                        <li><a href="#" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Özgeçmiş</a></li>
+                        <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Özgeçmiş</a></li>
                         <li class="relative group/sub">
-                            <a href="#" class="flex items-center justify-between px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">
+                            <a href="#" class="flex items-center justify-between px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">
                                 Kariyer <i class="fa-solid fa-chevron-right text-[10px]"></i>
                             </a>
                             <ul class="absolute left-full top-0 hidden group-hover/sub:block bg-white shadow-xl min-w-[200px] border-l border-gray-100 py-2">
-                                <li><a href="#" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Eğitim</a></li>
-                                <li><a href="#" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Sertifikalar</a></li>
-                                <li><a href="#" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Yayınlar</a></li>
+                                <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Eğitim</a></li>
+                                <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Sertifikalar</a></li>
+                                <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Yayınlar</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -105,25 +88,25 @@
                     <a href="/hizmetler.html" class="hover:text-[#8b6e4e] transition-all">İşlemler</a>
                     <ul class="absolute left-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[220px] border-t-2 border-[#8b6e4e] py-2 z-50">
                         <li class="relative group/sub">
-                            <a href="#" class="flex items-center justify-between px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">
+                            <a href="#" class="flex items-center justify-between px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">
                                 Lipödem Cerrahisi <i class="fa-solid fa-chevron-right text-[10px]"></i>
                             </a>
                             <ul class="absolute left-full top-0 hidden group-hover/sub:block bg-white shadow-xl min-w-[220px] border-l border-gray-100 py-2">
-                                <li><a href="#" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Lipödem Nedir?</a></li>
-                                <li><a href="#" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Tedavi Yöntemleri</a></li>
+                                <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Lipödem Nedir?</a></li>
+                                <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Tedavi Yöntemleri</a></li>
                             </ul>
                         </li>
                         <li class="relative group/sub">
-                            <a href="/burun-estetigi.html" class="flex items-center justify-between px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">
+                            <a href="/burun-estetigi.html" class="flex items-center justify-between px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">
                                 Burun Estetiği <i class="fa-solid fa-chevron-right text-[10px]"></i>
                             </a>
                             <ul class="absolute left-full top-0 hidden group-hover/sub:block bg-white shadow-xl min-w-[220px] border-l border-gray-100 py-2">
-                                <li><a href="/burun-estetigi.html" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Rinoplasti</a></li>
-                                <li><a href="#" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Revizyon</a></li>
+                                <li><a href="/burun-estetigi.html" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Rinoplasti</a></li>
+                                <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Revizyon</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Vücut Estetiği</a></li>
-                        <li><a href="#" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Yüz Estetiği</a></li>
+                        <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Vücut Estetiği</a></li>
+                        <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Yüz Estetiği</a></li>
                     </ul>
                 </li>
                 <li><a href="#" class="hover:text-[#8b6e4e] border-b-2 border-transparent hover:border-[#8b6e4e] pb-1 transition-all">Lipödem</a></li>

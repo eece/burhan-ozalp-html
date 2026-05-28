@@ -8,26 +8,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/src/tailwind.css">
+    <link rel="stylesheet" href="/src/index.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap');
-        
         .filter-btn.active:hover {
             color: white !important;
-        }
-
-        /* Dropdown overflow handler for desktop menus closer to the right side of the screen */
-        @media (min-width: 1024px) {
-            ul.hidden.lg\:flex > li:nth-last-child(-n+3) > ul {
-                left: auto !important;
-                right: 0 !important;
-            }
-            ul.hidden.lg\:flex > li:nth-last-child(-n+3) li ul {
-                left: auto !important;
-                right: 100% !important;
-                border-left: none !important;
-                border-right: 1px solid #e5e7eb !important;
-            }
         }
     </style>
 </head>
@@ -92,7 +76,7 @@
                 <li class="relative group py-2">
                     <a href="#" class="hover:text-[#8b6e4e] transition-all">Hakkımda</a>
                     <ul class="absolute left-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[200px] border-t-2 border-[#8b6e4e] py-2 z-50">
-                        <li><a href="#" class="block px-6 py-3 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Özgeçmiş</a></li>
+                        <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Özgeçmiş</a></li>
                     </ul>
                 </li>
                 <li class="relative group py-2">

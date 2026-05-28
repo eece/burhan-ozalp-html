@@ -105,3 +105,18 @@ a.page-numbers:hover {
   padding: 0 16px;
 }
 
+/* Dropdown overflow handler - Only the very last item's submenus open to the left to avoid screen overflow in HTML */
+@media (min-width: 1024px) {
+  ul.hidden.lg\:flex > li:last-child > ul {
+    left: auto !important;
+    right: 0 !important;
+  }
+  ul.hidden.lg\:flex > li:last-child li ul {
+    left: auto !important;
+    right: 100% !important;
+    border-left: none !important;
+    border-right: 1px solid #e5e7eb !important;
+  }
+}
+
+
