@@ -1,0 +1,222 @@
+/**
+ * Doç. Dr. Burhan Özalp WordPress Content Styles
+ * Handling standard WYSIWYG editor outputs, block editor classes, tables, blockquotes, and lists.
+ */
+
+/* Scoped Content Styling for WYSIWYG / Editor Outputs (.entry-content, .wp-content, .prose) */
+.entry-content,
+.wp-content,
+.wysiwyg-content,
+.comment-content {
+  color: #2d2a26;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+/* Headings with Cormorant Garamond and Elegant Accents */
+.entry-content h1, .wp-content h1, .wysiwyg-content h1,
+.entry-content h2, .wp-content h2, .wysiwyg-content h2,
+.entry-content h3, .wp-content h3, .wysiwyg-content h3,
+.entry-content h4, .wp-content h4, .wysiwyg-content h4,
+.entry-content h5, .wp-content h5, .wysiwyg-content h5,
+.entry-content h6, .wp-content h6, .wysiwyg-content h6 {
+  font-family: "Cormorant Garamond", serif;
+  color: #8b6e4e;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.entry-content h1, .wp-content h1, .wysiwyg-content h1 { font-size: 2.25rem; }
+.entry-content h2, .wp-content h2, .wysiwyg-content h2 { font-size: 1.875rem; border-left: 3px solid #8b6e4e; padding-left: 0.75rem; }
+.entry-content h3, .wp-content h3, .wysiwyg-content h3 { font-size: 1.5rem; }
+.entry-content h4, .wp-content h4, .wysiwyg-content h4 { font-size: 1.25rem; }
+.entry-content h5, .wp-content h5, .wysiwyg-content h5 { font-size: 1.125rem; }
+.entry-content h6, .wp-content h6, .wysiwyg-content h6 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* Paragraphs & Spacing */
+.entry-content p, .wp-content p, .wysiwyg-content p, .comment-content p {
+  margin-bottom: 1.5rem;
+  color: #554e45;
+}
+
+.entry-content p:last-child, .wp-content p:last-child, .wysiwyg-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Inline Elements style */
+.entry-content strong, .wp-content strong, .wysiwyg-content strong {
+  color: #2d2a26;
+  font-weight: 600;
+}
+
+.entry-content a, .wp-content a, .wysiwyg-content a {
+  color: #8b6e4e;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(139, 110, 78, 0.3);
+  transition: all 0.2s ease-in-out;
+}
+
+.entry-content a:hover, .wp-content a:hover, .wysiwyg-content a:hover {
+  color: #7b5f43;
+  text-decoration-color: #7b5f43;
+}
+
+/* Unordered & Ordered Lists */
+.entry-content ul, .wp-content ul, .wysiwyg-content ul {
+  list-style-type: none;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.entry-content ul li, .wp-content ul li, .wysiwyg-content ul li {
+  position: relative;
+  margin-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  color: #554e45;
+}
+
+.entry-content ul li::before, .wp-content ul li::before, .wysiwyg-content ul li::before {
+  content: "•";
+  color: #8b6e4e;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.1rem;
+}
+
+.entry-content ol, .wp-content ol, .wysiwyg-content ol {
+  list-style-type: decimal;
+  padding-left: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.entry-content ol li, .wp-content ol li, .wysiwyg-content ol li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.25rem;
+  color: #554e45;
+}
+
+.entry-content ol li::marker, .wp-content ol li::marker, .wysiwyg-content ol li::marker {
+  color: #8b6e4e;
+  font-weight: 600;
+}
+
+/* Blockquotes with Elegant Accents */
+.entry-content blockquote, .wp-content blockquote, .wysiwyg-content blockquote {
+  background-color: #f8f6f3;
+  border-left: 4px solid #8b6e4e;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  font-style: italic;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #7b5f43;
+  position: relative;
+}
+
+.entry-content blockquote p, .wp-content blockquote p, .wysiwyg-content blockquote p {
+  margin-bottom: 0;
+}
+
+/* WordPress Core Alignment Classes */
+.aligncenter {
+  display: block;
+  margin: 1.5rem auto;
+  text-align: center;
+}
+
+.alignleft {
+  float: left;
+  margin: 0.5rem 1.5rem 1.5rem 0;
+}
+
+.alignright {
+  float: right;
+  margin: 0.5rem 0 1.5rem 1.5rem;
+}
+
+img.aligncenter, img.alignleft, img.alignright {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.125rem;
+}
+
+@media (max-width: 640px) {
+  .alignleft, .alignright {
+    float: none;
+    margin: 1.5rem auto;
+    display: block;
+    text-align: center;
+  }
+}
+
+.wp-caption {
+  max-width: 100%;
+  background: #f8f6f3;
+  border: 1px solid #e1deda;
+  padding: 6px;
+  text-align: center;
+  border-radius: 2px;
+}
+
+.wp-caption img {
+  margin: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+.wp-caption-text {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 8px 0 0 0;
+  color: #7b5f43;
+}
+
+/* Tables Styling */
+.entry-content table, .wp-content table, .wysiwyg-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  background-color: #ffffff;
+}
+
+.entry-content table th, .wp-content table th, .wysiwyg-content table th,
+.entry-content table td, .wp-content table td, .wysiwyg-content table td {
+  border: 1px solid #e5e7eb;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.entry-content table th, .wp-content table th, .wysiwyg-content table th {
+  background-color: #f8f6f3;
+  color: #8b6e4e;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.entry-content table tr:nth-child(even), .wp-content table tr:nth-child(even), .wysiwyg-content table tr:nth-child(even) {
+  background-color: #faf9f7;
+}
+
+/* Basic CSS for responsiveness in Gutenberg Embeds */
+.wp-block-embed, .wp-block-video {
+  margin-bottom: 1.5rem;
+}
+
+/* Horizontal Rule style */
+.entry-content hr, .wp-content hr, .wysiwyg-content hr {
+  margin: 2.5rem 0;
+  border: 0;
+  border-top: 1px solid #e5e7eb;
+}

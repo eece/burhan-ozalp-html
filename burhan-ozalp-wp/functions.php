@@ -65,6 +65,9 @@ function burhan_ozalp_assets() {
     // Theme Tailwind Stylesheet
     wp_enqueue_style( 'burhan-theme-style', get_template_directory_uri() . '/assets/css/index.css', array(), '1.0.0' );
 
+    // Theme WordPress Content Typography Stylesheet
+    wp_enqueue_style( 'burhan-wp-styles', get_template_directory_uri() . '/assets/css/wp-styles.css', array(), '1.0.0' );
+
     // Standard scripts enqueuing
     wp_enqueue_script( 'burhan-theme-script', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.0', true );
 
