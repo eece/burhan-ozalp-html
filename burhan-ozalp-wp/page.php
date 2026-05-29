@@ -45,7 +45,7 @@ else :
             ?>
             <section class="py-24 bg-white">
                 <div class="container mx-auto px-4 max-w-5xl">
-                    <div class="prose max-w-none text-[#7b5f43] leading-relaxed">
+                    <div class="prose max-w-none text-[#7b5f43] leading-relaxed entry-content">
                         <?php the_content(); ?>
                     </div>
                 </div>

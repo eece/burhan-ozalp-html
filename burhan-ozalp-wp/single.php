@@ -37,7 +37,7 @@ get_header(); ?>
                         </div>
                     <?php endif; ?>
 
-                    <div class="prose max-w-none text-[#7b5f43] leading-relaxed text-lg">
+                    <div class="prose max-w-none text-[#7b5f43] leading-relaxed text-lg entry-content">
                         <?php the_content(); ?>
                     </div>
 

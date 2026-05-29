@@ -34,7 +34,7 @@ $title = get_sub_field('title');
                             </span>
                         </button>
                         <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                            <div class="pt-4 pb-2 text-[#7b5f43] leading-relaxed prose max-w-none text-sm md:text-base">
+                            <div class="pt-4 pb-2 text-[#7b5f43] leading-relaxed prose max-w-none text-sm md:text-base entry-content">
                                 <?php echo wp_kses_post( $item_content ); ?>
                             </div>
                         </div>
