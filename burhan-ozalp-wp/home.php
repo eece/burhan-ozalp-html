@@ -55,11 +55,9 @@ get_header(); ?>
                     $primary_cat_name = ! empty( $post_cats ) ? $post_cats[0]->name : esc_html__( 'İşlem', 'burhan-ozalp' );
                 ?>
                     <div class="service-card group cursor-pointer" onclick="window.location='<?php the_permalink(); ?>'">
-                        <div class="overflow-hidden mb-6 rounded-sm aspect-[4/3] relative">
+                        <div class="overflow-hidden mb-6 rounded-sm aspect-[4/3] relative bg-gray-200">
                             <?php if ( has_post_thumbnail() ) : ?>
                                 <?php the_post_thumbnail( 'large', array( 'class' => 'w-full h-full object-cover transition-transform duration-700 group-hover:scale-110' ) ); ?>
-                            <?php else : ?>
-                                <img src="https://images.unsplash.com/photo-1598440755123-55763a28f307?auto=format&fit=crop&q=80&w=800" alt="<?php the_title_attribute(); ?>" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                             <?php endif; ?>
                             <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
                             <div class="absolute bottom-6 left-6">
