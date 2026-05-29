@@ -137,10 +137,10 @@ if ( isset( $locations['footer_menu'] ) ) {
                         }
                         ?>
                         <div>
-                            <ul class="text-base font-semibold text-gray-500 uppercase tracking-wider space-y-4 list-none pl-0">
+                            <ul class="text-base font-semibold text-gray-700 uppercase tracking-wider space-y-4 list-none pl-0">
                                 <?php foreach ( $footer_col1_rendered_links as $link ) : ?>
                                     <li>
-                                        <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>" class="hover:text-[#8b6e4e] flex items-center transition-all">
+                                        <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>" class="hover:text-[#8b6e4e] flex items-center transition-all text-gray-700 hover:text-[#8b6e4e]">
                                             <i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> <?php echo esc_html($link['title']); ?>
                                         </a>
                                     </li>
@@ -148,10 +148,10 @@ if ( isset( $locations['footer_menu'] ) ) {
                             </ul>
                         </div>
                         <div>
-                            <ul class="text-base font-semibold text-gray-500 uppercase tracking-wider space-y-4 list-none pl-0">
+                            <ul class="text-base font-semibold text-gray-700 uppercase tracking-wider space-y-4 list-none pl-0">
                                 <?php foreach ( $footer_col2_rendered_links as $link ) : ?>
                                     <li>
-                                        <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>" class="hover:text-[#8b6e4e] flex items-center transition-all">
+                                        <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>" class="hover:text-[#8b6e4e] flex items-center transition-all text-gray-700 hover:text-[#8b6e4e]">
                                             <i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> <?php echo esc_html($link['title']); ?>
                                         </a>
                                     </li>
@@ -185,7 +185,7 @@ if ( isset( $locations['footer_menu'] ) ) {
 
             <!-- Bottom Credits -->
             <div class="border-t border-gray-100 pt-12 text-center">
-                <div class="flex flex-wrap justify-center space-x-6 text-base font-bold uppercase text-gray-400 tracking-widest mb-6 px-4">
+                <div class="flex flex-wrap justify-center space-x-6 text-base font-bold uppercase text-gray-600 tracking-widest mb-6 px-4">
                     <?php
                     $bottom_menu_items = array();
                     $locations = get_nav_menu_locations();
@@ -206,25 +206,25 @@ if ( isset( $locations['footer_menu'] ) ) {
                     if ( ! empty( $bottom_menu_items ) ) {
                         foreach ( $bottom_menu_items as $link ) {
                             ?>
-                            <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>" class="hover:text-gray-600 transition-all mb-2"><?php echo esc_html($link['title']); ?></a>
+                            <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>" class="hover:text-[#8b6e4e] transition-all mb-2"><?php echo esc_html($link['title']); ?></a>
                             <?php
                         }
                     } else {
                         // Fallback elements
                         ?>
-                        <a href="#" class="hover:text-gray-600 transition-all mb-2"><?php echo esc_html__( 'Randevu', 'burhan-ozalp' ); ?></a>
-                        <a href="#" class="hover:text-gray-600 transition-all mb-2"><?php echo esc_html__( 'SSS', 'burhan-ozalp' ); ?></a>
-                        <a href="#" class="hover:text-gray-600 transition-all mb-2"><?php echo esc_html__( 'Hakkımda', 'burhan-ozalp' ); ?></a>
-                        <a href="#" class="hover:text-gray-600 transition-all mb-2"><?php echo esc_html__( 'Site Haritası', 'burhan-ozalp' ); ?></a>
-                        <a href="#" class="hover:text-gray-600 transition-all mb-2"><?php echo esc_html__( 'İletişim', 'burhan-ozalp' ); ?></a>
-                        <a href="#" class="hover:text-gray-600 transition-all mb-2"><?php echo esc_html__( 'KVKK', 'burhan-ozalp' ); ?></a>
-                        <a href="#" class="hover:text-gray-600 transition-all mb-2"><?php echo esc_html__( 'Gizlilik Sözleşmesi', 'burhan-ozalp' ); ?></a>
+                        <a href="#" class="hover:text-[#8b6e4e] transition-all mb-2"><?php echo esc_html__( 'Randevu', 'burhan-ozalp' ); ?></a>
+                        <a href="#" class="hover:text-[#8b6e4e] transition-all mb-2"><?php echo esc_html__( 'SSS', 'burhan-ozalp' ); ?></a>
+                        <a href="#" class="hover:text-[#8b6e4e] transition-all mb-2"><?php echo esc_html__( 'Hakkımda', 'burhan-ozalp' ); ?></a>
+                        <a href="#" class="hover:text-[#8b6e4e] transition-all mb-2"><?php echo esc_html__( 'Site Haritası', 'burhan-ozalp' ); ?></a>
+                        <a href="#" class="hover:text-[#8b6e4e] transition-all mb-2"><?php echo esc_html__( 'İletişim', 'burhan-ozalp' ); ?></a>
+                        <a href="#" class="hover:text-[#8b6e4e] transition-all mb-2"><?php echo esc_html__( 'KVKK', 'burhan-ozalp' ); ?></a>
+                        <a href="#" class="hover:text-[#8b6e4e] transition-all mb-2"><?php echo esc_html__( 'Gizlilik Sözleşmesi', 'burhan-ozalp' ); ?></a>
                         <?php
                     }
                     ?>
                 </div>
-                <p class="text-base text-gray-400 uppercase tracking-widest mb-4 px-4"><?php echo esc_html( $copyright ); ?></p>
-                <p class="text-base text-gray-300 max-w-2xl mx-auto italic px-4 leading-relaxed"><?php echo esc_html( $disclaimer ); ?></p>
+                <p class="text-base text-gray-600 uppercase tracking-widest mb-4 px-4"><?php echo esc_html( $copyright ); ?></p>
+                <p class="text-base text-gray-600 max-w-2xl mx-auto italic px-4 leading-relaxed"><?php echo esc_html( $disclaimer ); ?></p>
             </div>
         </div>
     </footer>

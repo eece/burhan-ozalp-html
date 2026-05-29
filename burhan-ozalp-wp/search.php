@@ -15,13 +15,13 @@ get_header(); ?>
 <!-- Page Header -->
 <section class="bg-[#dcd0c0] py-16 text-center">
     <div class="container mx-auto px-4">
-        <h2 class="text-4xl md:text-5xl font-['Cormorant_Garamond'] font-light tracking-widest text-white mb-4 uppercase">
+        <h2 class="text-4xl md:text-5xl font-['Cormorant_Garamond'] font-medium tracking-widest text-[#2d2a26] mb-4 uppercase">
             <?php echo esc_html__( 'Arama Sonuçları', 'burhan-ozalp' ); ?>
         </h2>
-        <div class="flex items-center justify-center space-x-2 text-xs md:text-sm font-bold uppercase tracking-widest text-[#8b6e4e]">
-            <a href="<?php echo esc_url( home_url('/') ); ?>" class="hover:text-white transition-colors"><?php echo esc_html__( 'ANA SAYFA', 'burhan-ozalp' ); ?></a>
-            <span>-</span>
-            <span class="text-white uppercase"><?php echo esc_html__( 'ARAMA SONUÇLARI', 'burhan-ozalp' ); ?></span>
+        <div class="flex items-center justify-center space-x-2 text-xs md:text-sm font-bold uppercase tracking-widest text-[#5c4a37]">
+            <a href="<?php echo esc_url( home_url('/') ); ?>" class="text-[#5c4a37] hover:text-[#2d2a26] transition-colors"><?php echo esc_html__( 'ANA SAYFA', 'burhan-ozalp' ); ?></a>
+            <span class="text-[#2d2a26]/40">-</span>
+            <span class="text-[#2d2a26] uppercase"><?php echo esc_html__( 'ARAMA SONUÇLARI', 'burhan-ozalp' ); ?></span>
         </div>
     </div>
 </section>
