@@ -220,3 +220,65 @@ img.aligncenter, img.alignleft, img.alignright {
   border: 0;
   border-top: 1px solid #e5e7eb;
 }
+
+/* RTL Support Overrides */
+html[dir="rtl"] .entry-content h2,
+html[dir="rtl"] .wp-content h2,
+html[dir="rtl"] .wysiwyg-content h2 {
+  border-left: none;
+  padding-left: 0;
+  border-right: 3px solid #8b6e4e;
+  padding-right: 0.75rem;
+}
+
+html[dir="rtl"] .entry-content ul,
+html[dir="rtl"] .wp-content ul,
+html[dir="rtl"] .wysiwyg-content ul {
+  padding-left: 0;
+  padding-right: 1.5rem;
+}
+
+html[dir="rtl"] .entry-content ul li,
+html[dir="rtl"] .wp-content ul li,
+html[dir="rtl"] .wysiwyg-content ul li {
+  padding-left: 0;
+  padding-right: 1.25rem;
+}
+
+html[dir="rtl"] .entry-content ul li::before,
+html[dir="rtl"] .wp-content ul li::before,
+html[dir="rtl"] .wysiwyg-content ul li::before {
+  left: auto;
+  right: 0;
+}
+
+html[dir="rtl"] .entry-content ol,
+html[dir="rtl"] .wp-content ol,
+html[dir="rtl"] .wysiwyg-content ol {
+  padding-left: 0;
+  padding-right: 1.75rem;
+}
+
+html[dir="rtl"] .entry-content ol li,
+html[dir="rtl"] .wp-content ol li,
+html[dir="rtl"] .wysiwyg-content ol li {
+  padding-left: 0;
+  padding-right: 0.25rem;
+}
+
+html[dir="rtl"] .entry-content blockquote,
+html[dir="rtl"] .wp-content blockquote,
+html[dir="rtl"] .wysiwyg-content blockquote {
+  border-left: none;
+  border-right: 4px solid #8b6e4e;
+}
+
+html[dir="rtl"] .entry-content table th,
+html[dir="rtl"] .wp-content table th,
+html[dir="rtl"] .wysiwyg-content table th,
+html[dir="rtl"] .entry-content table td,
+html[dir="rtl"] .wp-content table td,
+html[dir="rtl"] .wysiwyg-content table td {
+  text-align: right;
+}
+

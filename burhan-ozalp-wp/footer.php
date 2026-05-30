@@ -41,32 +41,32 @@ if ( isset( $locations['footer_menu'] ) ) {
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-16 mb-20 text-center lg:text-left rtl:lg:text-right">
                 <!-- Branding & Address -->
-                <div class="w-full flex flex-col items-center lg:items-start rtl:items-end">
-                   <h2 class="w-full text-3xl font-['Cormorant_Garamond'] tracking-widest text-[#333] font-light leading-none mb-10 text-center lg:text-left rtl:text-right">
+                <div class="w-full flex flex-col items-center lg:items-start rtl:lg:items-end rtl:items-end">
+                   <h2 class="w-full text-3xl font-['Cormorant_Garamond'] tracking-widest text-[#333] font-light leading-none mb-10 text-center lg:text-left rtl:lg:text-right rtl:text-right">
                         <span class="block text-base font-['Montserrat'] font-semibold text-[#8b6e4e] tracking-[0.3em] mb-1 uppercase"><?php echo esc_html( $logo_subtitle ); ?></span>
                         <?php echo esc_html( $logo_title ); ?>
                     </h2>
-                    <div class="text-base text-[#7b5f43] space-y-6 leading-relaxed text-left rtl:text-right w-full flex flex-col items-center lg:items-start rtl:items-end">
-                        <div class="flex flex-col lg:flex-row items-center lg:items-start rtl:items-end rtl:lg:items-start text-center lg:text-left rtl:text-right">
+                    <div class="text-base text-[#7b5f43] space-y-6 leading-relaxed w-full flex flex-col items-center lg:items-start rtl:lg:items-end rtl:items-end text-center lg:text-left rtl:lg:text-right rtl:text-right">
+                        <div class="flex flex-col lg:flex-row items-center lg:items-start rtl:items-end rtl:lg:items-start text-center lg:text-left rtl:lg:text-right rtl:text-right">
                             <i class="fa-solid fa-location-dot text-sm mb-2 lg:mb-0 lg:mr-3 rtl:lg:mr-0 rtl:lg:ml-3 text-[#8b6e4e] mt-0.5 shrink-0"></i>
                             <div>
                                 <span class="block font-bold mb-1 uppercase text-gray-800"><?php echo esc_html__( 'Muayenehane Adresi:', 'burhan-ozalp' ); ?></span>
                                 <?php echo esc_html( $address ); ?>
                             </div>
                         </div>
-                        <div class="flex flex-col lg:flex-row items-center lg:items-start rtl:items-end rtl:lg:items-start text-center lg:text-left rtl:text-right">
+                        <div class="flex flex-col lg:flex-row items-center lg:items-start rtl:items-end rtl:lg:items-start text-center lg:text-left rtl:lg:text-right rtl:text-right">
                             <i class="fa-solid fa-phone text-sm mb-2 lg:mb-0 lg:mr-3 rtl:lg:mr-0 rtl:lg:ml-3 text-[#8b6e4e] mt-0.5 shrink-0"></i>
                             <div>
                                 <span class="block font-bold mb-1 uppercase text-gray-800"><?php echo esc_html__( 'Telefonlar:', 'burhan-ozalp' ); ?></span>
                                 <span dir="ltr" class="inline-block"><?php echo esc_html( $phone ); ?> <?php echo ! empty( $sec_phone ) ? ' / ' . esc_html( $sec_phone ) : ''; ?></span>
                             </div>
                         </div>
-                        <div class="pt-4 w-full flex justify-center lg:justify-start rtl:justify-end">
+                        <div class="pt-4 w-full flex justify-center lg:justify-start rtl:lg:justify-end rtl:justify-end">
                             <a href="<?php echo esc_url( $directions_url ); ?>" target="_blank" class="bg-[#2c8d2c] text-white px-8 py-3 rounded-sm flex items-center justify-center w-full sm:w-auto font-bold tracking-widest uppercase hover:bg-opacity-90 transition-all text-xs">
                                 <i class="fa-solid fa-check text-xs mr-2 rtl:mr-0 rtl:ml-2"></i> <?php echo esc_html__( 'YOL TARİFİ', 'burhan-ozalp' ); ?>
                             </a>
                         </div>
-                        <div class="flex gap-4 pt-4 justify-center lg:justify-start rtl:justify-end">
+                        <div class="flex gap-4 pt-4 justify-center lg:justify-start rtl:lg:justify-end rtl:justify-end">
                             <?php if ( ! empty( $facebook ) ) : ?>
                                 <a href="<?php echo esc_url( $facebook ); ?>" class="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center hover:bg-[#8b6e4e] hover:text-white hover:border-[#8b6e4e] transition-all" target="_blank"><i class="fa-brands fa-facebook-f text-lg"></i></a>
                             <?php endif; ?>
@@ -82,8 +82,8 @@ if ( isset( $locations['footer_menu'] ) ) {
 
                 <!-- Quick Services -->
                 <div class="flex flex-col">
-                    <h4 class="text-base font-bold tracking-[0.2em] text-[#8b6e4e] mb-6 uppercase text-left rtl:text-right"><?php echo esc_html($footer_menu_title); ?></h4>
-                    <div class="grid grid-cols-2 gap-4 text-left rtl:text-right">
+                    <h4 class="text-base font-bold tracking-[0.2em] text-[#8b6e4e] mb-6 uppercase text-center lg:text-left rtl:lg:text-right rtl:text-right"><?php echo esc_html($footer_menu_title); ?></h4>
+                    <div class="grid grid-cols-2 gap-4 text-center lg:text-left rtl:lg:text-right rtl:text-right">
                         <?php
                         $footer_menu_items = array();
                         $locations = get_nav_menu_locations();
@@ -140,7 +140,7 @@ if ( isset( $locations['footer_menu'] ) ) {
                             <ul class="text-base font-semibold text-gray-700 uppercase tracking-wider space-y-4 list-none pl-0 pr-0">
                                 <?php foreach ( $footer_col1_rendered_links as $link ) : ?>
                                     <li>
-                                        <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>" class="hover:text-[#8b6e4e] flex items-center transition-all text-gray-700 hover:text-[#8b6e4e]">
+                                        <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>" class="hover:text-[#8b6e4e] flex items-center justify-center lg:justify-start rtl:lg:justify-end rtl:justify-end transition-all text-gray-700 hover:text-[#8b6e4e]">
                                             <i class="fa-solid fa-chevron-right text-[10px] mr-2 rtl:mr-0 rtl:ml-2 rtl:!hidden text-[#8b6e4e]"></i>
                                             <i class="fa-solid fa-chevron-left text-[10px] ml-2 !hidden rtl:!inline-block text-[#8b6e4e]"></i>
                                             <?php echo esc_html($link['title']); ?>
@@ -153,7 +153,7 @@ if ( isset( $locations['footer_menu'] ) ) {
                             <ul class="text-base font-semibold text-gray-700 uppercase tracking-wider space-y-4 list-none pl-0 pr-0">
                                 <?php foreach ( $footer_col2_rendered_links as $link ) : ?>
                                     <li>
-                                        <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>" class="hover:text-[#8b6e4e] flex items-center transition-all text-gray-700 hover:text-[#8b6e4e]">
+                                        <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>" class="hover:text-[#8b6e4e] flex items-center justify-center lg:justify-start rtl:lg:justify-end rtl:justify-end transition-all text-gray-700 hover:text-[#8b6e4e]">
                                             <i class="fa-solid fa-chevron-right text-[10px] mr-2 rtl:mr-0 rtl:ml-2 rtl:!hidden text-[#8b6e4e]"></i>
                                             <i class="fa-solid fa-chevron-left text-[10px] ml-2 !hidden rtl:!inline-block text-[#8b6e4e]"></i>
                                             <?php echo esc_html($link['title']); ?>
@@ -166,8 +166,8 @@ if ( isset( $locations['footer_menu'] ) ) {
                 </div>
 
                 <!-- Contact Form Footer -->
-                <div class="bg-[#f8f6f3] p-8 rounded-sm">
-                    <h4 class="text-base font-bold tracking-[0.2em] text-[#8b6e4e] mb-6 uppercase text-left rtl:text-right"><?php echo esc_html__( 'Numaranızı Bırakın Arayalım !', 'burhan-ozalp' ); ?></h4>
+                <div class="bg-[#f8f6f3] p-8 rounded-sm text-center lg:text-left rtl:lg:text-right rtl:text-right">
+                    <h4 class="text-base font-bold tracking-[0.2em] text-[#8b6e4e] mb-6 uppercase text-center lg:text-left rtl:lg:text-right rtl:text-right"><?php echo esc_html__( 'Numaranızı Bırakın Arayalım !', 'burhan-ozalp' ); ?></h4>
                     <?php 
                     $footer_form_shortcode = burhan_get_option('footer_contact_form');
                     if ( ! empty( $footer_form_shortcode ) ) {
