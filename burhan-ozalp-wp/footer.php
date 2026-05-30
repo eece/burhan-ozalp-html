@@ -41,32 +41,32 @@ if ( isset( $locations['footer_menu'] ) ) {
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-16 mb-20 text-center lg:text-left rtl:lg:text-right">
                 <!-- Branding & Address -->
-                <div class="w-full flex flex-col items-center lg:items-start rtl:lg:items-end">
+                <div class="w-full flex flex-col items-center lg:items-start rtl:items-end">
                    <h2 class="w-full text-3xl font-['Cormorant_Garamond'] tracking-widest text-[#333] font-light leading-none mb-10 text-center lg:text-left rtl:text-right">
                         <span class="block text-base font-['Montserrat'] font-semibold text-[#8b6e4e] tracking-[0.3em] mb-1 uppercase"><?php echo esc_html( $logo_subtitle ); ?></span>
                         <?php echo esc_html( $logo_title ); ?>
                     </h2>
-                    <div class="text-base text-[#7b5f43] space-y-6 leading-relaxed text-left rtl:text-right">
-                        <div class="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left rtl:lg:text-right">
+                    <div class="text-base text-[#7b5f43] space-y-6 leading-relaxed text-left rtl:text-right w-full flex flex-col items-center lg:items-start rtl:items-end">
+                        <div class="flex flex-col lg:flex-row items-center lg:items-start rtl:items-end rtl:lg:items-start text-center lg:text-left rtl:text-right">
                             <i class="fa-solid fa-location-dot text-sm mb-2 lg:mb-0 lg:mr-3 rtl:lg:mr-0 rtl:lg:ml-3 text-[#8b6e4e] mt-0.5 shrink-0"></i>
                             <div>
                                 <span class="block font-bold mb-1 uppercase text-gray-800"><?php echo esc_html__( 'Muayenehane Adresi:', 'burhan-ozalp' ); ?></span>
                                 <?php echo esc_html( $address ); ?>
                             </div>
                         </div>
-                        <div class="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left rtl:lg:text-right">
+                        <div class="flex flex-col lg:flex-row items-center lg:items-start rtl:items-end rtl:lg:items-start text-center lg:text-left rtl:text-right">
                             <i class="fa-solid fa-phone text-sm mb-2 lg:mb-0 lg:mr-3 rtl:lg:mr-0 rtl:lg:ml-3 text-[#8b6e4e] mt-0.5 shrink-0"></i>
                             <div>
                                 <span class="block font-bold mb-1 uppercase text-gray-800"><?php echo esc_html__( 'Telefonlar:', 'burhan-ozalp' ); ?></span>
                                 <span dir="ltr" class="inline-block"><?php echo esc_html( $phone ); ?> <?php echo ! empty( $sec_phone ) ? ' / ' . esc_html( $sec_phone ) : ''; ?></span>
                             </div>
                         </div>
-                        <div class="pt-4 w-full flex justify-center lg:justify-start rtl:lg:justify-end">
+                        <div class="pt-4 w-full flex justify-center lg:justify-start rtl:justify-end">
                             <a href="<?php echo esc_url( $directions_url ); ?>" target="_blank" class="bg-[#2c8d2c] text-white px-8 py-3 rounded-sm flex items-center justify-center w-full sm:w-auto font-bold tracking-widest uppercase hover:bg-opacity-90 transition-all text-xs">
                                 <i class="fa-solid fa-check text-xs mr-2 rtl:mr-0 rtl:ml-2"></i> <?php echo esc_html__( 'YOL TARİFİ', 'burhan-ozalp' ); ?>
                             </a>
                         </div>
-                        <div class="flex gap-4 pt-4 justify-center lg:justify-start rtl:lg:justify-end">
+                        <div class="flex gap-4 pt-4 justify-center lg:justify-start rtl:justify-end">
                             <?php if ( ! empty( $facebook ) ) : ?>
                                 <a href="<?php echo esc_url( $facebook ); ?>" class="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center hover:bg-[#8b6e4e] hover:text-white hover:border-[#8b6e4e] transition-all" target="_blank"><i class="fa-brands fa-facebook-f text-lg"></i></a>
                             <?php endif; ?>

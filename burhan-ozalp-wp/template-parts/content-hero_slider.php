@@ -34,16 +34,18 @@ if ( have_rows('slides') ) :
                     <div class="absolute inset-0 bg-cover bg-center hidden md:block" style="background-image: url('<?php echo esc_url( $image_desktop ); ?>');"></div>
                     <!-- Mobile background image -->
                     <div class="absolute inset-0 bg-cover bg-center md:hidden" style="background-image: url('<?php echo esc_url( $image_mobile ); ?>');"></div>
-                    <div class="container mx-auto h-full px-4 flex flex-col justify-center items-end text-right relative z-10">
-                        <div class="max-w-xl animate-fade-in-right">
+                    <div class="container mx-auto h-full px-4 flex flex-col justify-center items-end rtl:items-start text-right rtl:text-right relative z-10">
+                        <div class="max-w-xl animate-fade-in-right text-right rtl:text-right">
                             <?php if ( ! empty( $subtitle ) ) : ?>
-                                <span class="block text-lg md:text-3xl font-medium text-white tracking-widest font-['Cormorant_Garamond'] mb-4 drop-shadow-md [text-shadow:_0_2px_10px_rgba(0,0,0,0.95)]"><?php echo esc_html( $subtitle ); ?></span>
+                                <span class="block text-lg md:text-3xl font-medium text-white tracking-widest font-['Cormorant_Garamond'] mb-4 drop-shadow-md [text-shadow:_0_2px_10px_rgba(0,0,0,0.95)] text-right rtl:text-right"><?php echo esc_html( $subtitle ); ?></span>
                             <?php endif; ?>
                             <?php if ( ! empty( $title ) ) : ?>
-                                <h2 class="text-2xl sm:text-4xl md:text-7xl font-bold font-['Cormorant_Garamond'] text-white leading-tight mb-8 uppercase drop-shadow-lg [text-shadow:_0_2px_15px_rgba(0,0,0,0.95)]"><?php echo nl2br( esc_html( $title ) ); ?></h2>
+                                <h2 class="text-2xl sm:text-4xl md:text-7xl font-bold font-['Cormorant_Garamond'] text-white leading-tight mb-8 uppercase drop-shadow-lg [text-shadow:_0_2px_15px_rgba(0,0,0,0.95)] text-right rtl:text-right"><?php echo nl2br( esc_html( $title ) ); ?></h2>
                             <?php endif; ?>
                             <?php if ( ! empty( $btn_text ) ) : ?>
-                                <a href="<?php echo esc_url( $btn_url ); ?>" class="inline-block px-10 py-3 bg-[#8b6e4e] text-white text-base font-bold tracking-[0.2em] transform hover:bg-[#7b5f43] hover:scale-105 transition-all uppercase rounded-sm shadow-xl"><?php echo esc_html( $btn_text ); ?></a>
+                                <div class="text-right rtl:text-right">
+                                    <a href="<?php echo esc_url( $btn_url ); ?>" class="inline-block px-10 py-3 bg-[#8b6e4e] text-white text-base font-bold tracking-[0.2em] transform hover:bg-[#7b5f43] hover:scale-105 transition-all uppercase rounded-sm shadow-xl"><?php echo esc_html( $btn_text ); ?></a>
+                                </div>
                             <?php endif; ?>
                         </div>
                     </div>

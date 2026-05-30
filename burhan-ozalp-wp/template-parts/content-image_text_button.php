@@ -35,7 +35,7 @@ if ( $image_position === 'right' ) {
 ?>
 
 <!-- Image Text Button Section -->
-<section class="py-24 bg-white relative overflow-hidden text-center lg:text-left">
+<section class="py-24 bg-white relative overflow-hidden text-center lg:text-left rtl:lg:text-right">
     <div class="<?php echo esc_attr( $row_class ); ?>">
         <div class="w-full lg:w-1/2 relative z-10">
             <div class="relative inline-block">
@@ -43,10 +43,10 @@ if ( $image_position === 'right' ) {
                 <div class="absolute -top-10 -left-10 w-full h-full bg-[#f8f6f3] -z-10 rounded-sm"></div>
             </div>
         </div>
-        <div class="w-full lg:w-1/2 animate-fade-in text-left">
-            <span class="text-base uppercase font-bold tracking-[0.4em] text-[#8b6e4e] mb-4 block text-center lg:text-left"><?php echo esc_html( $label ); ?></span>
-            <h2 class="text-4xl md:text-6xl font-light font-['Cormorant_Garamond'] text-[#333] mb-8 tracking-wider text-center lg:text-left"><?php echo esc_html( $section_title ); ?></h2>
-            <div class="prose text-[#7b5f43] leading-relaxed max-w-lg mb-10 mx-auto lg:mx-0 text-lg">
+        <div class="w-full lg:w-1/2 animate-fade-in text-left rtl:text-right">
+            <span class="text-base uppercase font-bold tracking-[0.4em] text-[#8b6e4e] mb-4 block text-center lg:text-left rtl:text-right rtl:lg:text-right"><?php echo esc_html( $label ); ?></span>
+            <h2 class="text-4xl md:text-6xl font-light font-['Cormorant_Garamond'] text-[#333] mb-8 tracking-wider text-center lg:text-left rtl:text-right rtl:lg:text-right"><?php echo esc_html( $section_title ); ?></h2>
+            <div class="prose text-[#7b5f43] leading-relaxed max-w-lg mb-10 mx-auto lg:mx-0 rtl:lg:mr-0 rtl:lg:ml-auto text-lg text-left rtl:text-right">
                 <?php 
                 if ( ! empty( $content ) ) {
                     echo wp_kses_post( $content );
@@ -54,7 +54,7 @@ if ( $image_position === 'right' ) {
                 ?>
             </div>
             <?php if ( ! empty( $button_link ) && is_array( $button_link ) ) : ?>
-            <div class="text-center lg:text-left">
+            <div class="text-center lg:text-left rtl:text-right rtl:lg:text-right">
                 <a href="<?php echo esc_url( $btn_url ); ?>" target="<?php echo esc_attr( $btn_target ); ?>" class="inline-block px-10 py-3 border-2 border-[#8b6e4e] text-[#8b6e4e] text-base font-black tracking-[0.2em] transform hover:bg-[#8b6e4e] hover:text-white transition-all uppercase rounded-sm"><?php echo esc_html( $btn_text ); ?></a>
             </div>
             <?php endif; ?>
