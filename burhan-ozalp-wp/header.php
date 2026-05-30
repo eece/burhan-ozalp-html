@@ -42,7 +42,7 @@
             </div>
             <div class="flex items-center gap-6">
                 <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="GET" class="relative hidden sm:block">
-                    <input type="text" name="s" placeholder="<?php echo esc_attr_x( 'ARA...', 'placeholder', 'burhan-ozalp' ); ?>" class="bg-gray-50 border border-gray-200 px-3 py-1.5 w-40 text-base focus:outline-none focus:border-[#8b6e4e]" value="<?php echo get_search_query(); ?>">
+                    <input type="text" name="s" placeholder="<?php echo esc_attr_x( 'ARA', 'placeholder', 'burhan-ozalp' ); ?>" class="bg-gray-50 border border-gray-200 px-3 py-1.5 w-40 text-base focus:outline-none focus:border-[#8b6e4e]" value="<?php echo get_search_query(); ?>">
                     <button type="submit" class="absolute right-2 rtl:right-auto rtl:left-2 top-2 text-gray-400 hover:text-[#8b6e4e] focus:outline-none bg-transparent border-0 cursor-pointer">
                         <i class="fa-solid fa-magnifying-glass text-[10px]"></i>
                     </button>
@@ -82,7 +82,7 @@
             </div>
 
             <!-- Desktop Menu -->
-            <ul class="hidden lg:flex flex-wrap justify-center items-center gap-4 md:gap-8 text-xs font-bold uppercase tracking-[0.15em] text-gray-600">
+            <ul class="hidden lg:flex flex-wrap justify-center items-center gap-4 md:gap-8 text-sm font-bold uppercase tracking-[0.15em] text-gray-600">
                 <?php
                 $menu_tree = array();
                 $header_menu_location = 'header_menu';

@@ -197,6 +197,7 @@ function burhan_register_polylang_strings() {
             'İnternet Sitesi' => 'burhan-ozalp',
             'Yorumunuz *' => 'burhan-ozalp',
             'Aradığınız Sayfa Bulunamadı' => 'burhan-ozalp',
+            'Bizi Arayın' => 'burhan-ozalp',
         );
 
         foreach ( $strings as $string => $context ) {
