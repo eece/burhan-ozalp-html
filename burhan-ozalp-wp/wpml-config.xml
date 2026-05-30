@@ -1,28 +1,2 @@
 <wpml-config>
-    <admin-texts>
-        <!-- Site Options (Genel Ayarlar) -->
-        <key name="options_logo_title" />
-        <key name="options_logo_subtitle" />
-        <key name="options_phone_number" />
-        <key name="options_secondary_phone" />
-        <key name="options_facebook_url" />
-        <key name="options_instagram_url" />
-        <key name="options_youtube_url" />
-        <key name="options_quick_contact_text" />
-        <key name="options_quick_contact_url" />
-        <key name="options_office_address" />
-        <key name="options_directions_url" />
-        <key name="options_copyright_text" />
-        <key name="options_disclaimer_text" />
-        <key name="options_footer_contact_form" />
-        
-        <!-- WordPress Default Core Settings -->
-        <key name="blogname" />
-        <key name="blogdescription" />
-    </admin-texts>
-    <custom-fields>
-        <!-- ACF Flexible Sections -->
-        <custom-field action="translate">flexible_sections</custom-field>
-        <custom-field action="translate">hide_page_title</custom-field>
-    </custom-fields>
 </wpml-config>
