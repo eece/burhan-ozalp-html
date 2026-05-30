@@ -22,13 +22,13 @@
 
     <!-- Top Header -->
     <header class="bg-white border-b border-gray-100 hidden sm:block">
-        <div class="container mx-auto px-4 py-2 flex flex-wrap justify-between items-center text-base uppercase tracking-wider text-gray-500 font-semibold">
-            <div class="flex items-center space-x-6">
+        <div class="container mx-auto px-4 py-2 flex flex-wrap justify-between items-center text-base uppercase tracking-wider text-gray-400 font-semibold">
+            <div class="flex items-center gap-6">
                 <div class="flex items-center">
-                    <i class="fa-solid fa-phone text-[10px] mr-2 text-[#8b6e4e]"></i>
-                    <?php echo esc_html__( 'Bizi Arayın:', 'burhan-ozalp' ); ?> <?php echo esc_html( $phone ); ?>
+                    <i class="fa-solid fa-phone text-[10px] mr-2 rtl:mr-0 rtl:ml-2 text-[#8b6e4e]"></i>
+                    <?php echo esc_html__( 'Bizi Arayın:', 'burhan-ozalp' ); ?> <span dir="ltr"><?php echo esc_html( $phone ); ?></span>
                 </div>
-                <div class="hidden md:flex items-center space-x-4 border-l border-gray-200 pl-6">
+                <div class="hidden md:flex items-center gap-4 border-l rtl:border-l-0 rtl:border-r border-gray-200 pl-6 rtl:pl-0 rtl:pr-6">
                     <?php if ( ! empty( $facebook ) ) : ?>
                         <a href="<?php echo esc_url( $facebook ); ?>" class="hover:text-[#8b6e4e] transition-colors" target="_blank"><i class="fa-brands fa-facebook-f text-xl"></i></a>
                     <?php endif; ?>
@@ -40,15 +40,15 @@
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="flex items-center space-x-6">
+            <div class="flex items-center gap-6">
                 <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="GET" class="relative hidden sm:block">
                     <input type="text" name="s" placeholder="<?php echo esc_attr_x( 'ARA...', 'placeholder', 'burhan-ozalp' ); ?>" class="bg-gray-50 border border-gray-200 px-3 py-1.5 w-40 text-base focus:outline-none focus:border-[#8b6e4e]" value="<?php echo get_search_query(); ?>">
-                    <button type="submit" class="absolute right-2 top-2 text-gray-400 hover:text-[#8b6e4e] focus:outline-none bg-transparent border-0 cursor-pointer">
+                    <button type="submit" class="absolute right-2 rtl:right-auto rtl:left-2 top-2 text-gray-400 hover:text-[#8b6e4e] focus:outline-none bg-transparent border-0 cursor-pointer">
                         <i class="fa-solid fa-magnifying-glass text-[10px]"></i>
                     </button>
                 </form>
                 <a href="<?php echo esc_url( $contact_btn_url ); ?>" class="bg-[#008000] text-white px-4 py-2 flex items-center hover:bg-opacity-90 transition-all rounded-sm">
-                    <i class="fa-solid fa-check text-xs mr-2"></i>
+                    <i class="fa-solid fa-check text-xs mr-2 rtl:mr-0 rtl:ml-2"></i>
                     <?php echo esc_html( $contact_btn_text ); ?>
                 </a>
             </div>
@@ -59,11 +59,11 @@
     <div class="sm:hidden bg-white border-b border-gray-100 py-3">
         <div class="container mx-auto px-4 flex flex-col items-center space-y-3 text-[11px] uppercase tracking-wider text-gray-500 font-semibold text-center">
             <div class="flex items-center justify-center">
-                <i class="fa-solid fa-phone text-[10px] mr-2 text-[#8b6e4e]"></i>
-                <?php echo esc_html__( 'Bizi Arayın:', 'burhan-ozalp' ); ?> <?php echo esc_html( $phone ); ?>
+                <i class="fa-solid fa-phone text-[10px] mr-2 rtl:mr-0 rtl:ml-2 text-[#8b6e4e]"></i>
+                <?php echo esc_html__( 'Bizi Arayın:', 'burhan-ozalp' ); ?> <span dir="ltr"><?php echo esc_html( $phone ); ?></span>
             </div>
             <a href="<?php echo esc_url( $contact_btn_url ); ?>" class="bg-[#008000] text-white px-6 py-2 flex items-center hover:bg-opacity-90 transition-all rounded-sm text-xs font-bold mx-auto">
-                <i class="fa-solid fa-check text-xs mr-2"></i>
+                <i class="fa-solid fa-check text-xs mr-2 rtl:mr-0 rtl:ml-2"></i>
                 <?php echo esc_html( $contact_btn_text ); ?>
             </a>
         </div>
@@ -82,7 +82,7 @@
             </div>
 
             <!-- Desktop Menu -->
-            <ul class="hidden lg:flex flex-wrap justify-center items-center space-x-4 md:space-x-8 text-sm font-bold uppercase tracking-[0.15em] text-gray-600">
+            <ul class="hidden lg:flex flex-wrap justify-center items-center gap-4 md:gap-8 text-sm font-bold uppercase tracking-[0.15em] text-gray-600">
                 <?php
                 $menu_tree = array();
                 $header_menu_location = 'header_menu';
@@ -95,7 +95,7 @@
                         $level1 = array();
                         // Level 2 & 3 items grouped
                         $level2_and_3 = array();
-
+ 
                         foreach ( $menu_items as $item ) {
                             $parent_id = intval( $item->menu_item_parent );
                             $formatted_item = array(
@@ -106,7 +106,7 @@
                                 'sub_menu'     => array(),
                                 'sub_sub_menu' => array()
                             );
-
+ 
                             if ( $parent_id === 0 ) {
                                 $level1[ $item->ID ] = $formatted_item;
                             } else {
@@ -114,7 +114,7 @@
                                 $level2_and_3[ $item->ID ] = $formatted_item;
                             }
                         }
-
+ 
                         // Pass 2: Separate Level 2 and Level 3
                         $level2 = array();
                         $level3 = array();
@@ -128,7 +128,7 @@
                                 $level3[ $id ] = $item_data;
                             }
                         }
-
+ 
                         // Pass 3: Nest Level 3 inside Level 2
                         foreach ( $level3 as $id => $item_data ) {
                             $parent_id = $item_data['parent_id'];
@@ -136,7 +136,7 @@
                                 $level2[ $parent_id ]['sub_sub_menu'][ $id ] = $item_data;
                             }
                         }
-
+ 
                         // Pass 4: Nest Level 2 inside Level 1
                         foreach ( $level2 as $id => $item_data ) {
                             $parent_id = $item_data['parent_id'];
@@ -144,7 +144,7 @@
                                 $level1[ $parent_id ]['sub_menu'][ $id ] = $item_data;
                             }
                         }
-
+ 
                         $menu_tree = $level1;
                     }
                 }
@@ -165,7 +165,7 @@
                         <li class="relative group py-2">
                             <a href="<?php echo esc_url( $item_url ); ?>" target="<?php echo esc_attr( $item_target ); ?>" class="hover:text-[#8b6e4e] transition-colors"><?php echo esc_html( $item_title ); ?></a>
                             <?php if ( ! empty( $item['sub_menu'] ) ) : ?>
-                                <ul class="absolute left-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[220px] border-t-2 border-[#8b6e4e] py-2 z-50 text-left">
+                                <ul class="absolute left-0 rtl:left-auto rtl:right-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[220px] border-t-2 border-[#8b6e4e] py-2 z-50 text-left rtl:text-right">
                                     <?php 
                                     foreach ( $item['sub_menu'] as $sub_item ) : 
                                         $sub_url = '#';
@@ -184,11 +184,12 @@
                                             <a href="<?php echo esc_url( $sub_url ); ?>" target="<?php echo esc_attr( $sub_target ); ?>" class="flex items-center justify-between px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors">
                                                 <span><?php echo esc_html( $sub_title ); ?></span>
                                                 <?php if ( ! empty( $sub_item['sub_sub_menu'] ) ) : ?>
-                                                    <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                                                    <i class="fa-solid fa-chevron-right text-[10px] rtl:hidden"></i>
+                                                    <i class="fa-solid fa-chevron-left text-[10px] hidden rtl:inline-block"></i>
                                                 <?php endif; ?>
                                             </a>
                                             <?php if ( ! empty( $sub_item['sub_sub_menu'] ) ) : ?>
-                                                <ul class="absolute left-full top-0 hidden group-hover/sub:block bg-white shadow-xl min-w-[220px] border-l border-gray-100 py-2">
+                                                <ul class="absolute left-full rtl:left-auto rtl:right-full top-0 hidden group-hover/sub:block bg-white shadow-xl min-w-[220px] border-l rtl:border-l-0 rtl:border-r border-gray-100 py-2">
                                                     <?php 
                                                     foreach ( $sub_item['sub_sub_menu'] as $sub_sub_item ) : 
                                                         $sub_sub_url = '#';
@@ -223,13 +224,15 @@
                 ?>
                     <li class="relative group py-2">
                         <a href="<?php echo esc_url( home_url('/') ); ?>" class="hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Hakkımda', 'burhan-ozalp'); ?></a>
-                        <ul class="absolute left-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[200px] border-t-2 border-[#8b6e4e] py-2 z-50 text-left">
+                        <ul class="absolute left-0 rtl:left-auto rtl:right-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[200px] border-t-2 border-[#8b6e4e] py-2 z-50 text-left rtl:text-right">
                             <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Özgeçmiş', 'burhan-ozalp'); ?></a></li>
                             <li class="relative group/sub">
                                 <a href="#" class="flex items-center justify-between px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors">
-                                    <span><?php echo esc_html__('Kariyer', 'burhan-ozalp'); ?></span> <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                                    <span><?php echo esc_html__('Kariyer', 'burhan-ozalp'); ?></span>
+                                    <i class="fa-solid fa-chevron-right text-[10px] rtl:hidden"></i>
+                                    <i class="fa-solid fa-chevron-left text-[10px] hidden rtl:inline-block"></i>
                                 </a>
-                                <ul class="absolute left-full top-0 hidden group-hover/sub:block bg-white shadow-xl min-w-[200px] border-l border-gray-100 py-2">
+                                <ul class="absolute left-full rtl:left-auto rtl:right-full top-0 hidden group-hover/sub:block bg-white shadow-xl min-w-[200px] border-l rtl:border-l-0 rtl:border-r border-gray-100 py-2">
                                     <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Eğitim', 'burhan-ozalp'); ?></a></li>
                                     <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Sertifikalar', 'burhan-ozalp'); ?></a></li>
                                 </ul>
@@ -238,7 +241,7 @@
                     </li>
                     <li class="relative group py-2">
                         <a href="#" class="hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('İşlemler', 'burhan-ozalp'); ?></a>
-                        <ul class="absolute left-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[220px] border-t-2 border-[#8b6e4e] py-2 z-50 text-left">
+                        <ul class="absolute left-0 rtl:left-auto rtl:right-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[220px] border-t-2 border-[#8b6e4e] py-2 z-50 text-left rtl:text-right">
                             <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Lipödem Cerrahisi', 'burhan-ozalp'); ?></a></li>
                             <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Burun Estetiği', 'burhan-ozalp'); ?></a></li>
                             <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Vücut Estetiği', 'burhan-ozalp'); ?></a></li>
@@ -260,18 +263,18 @@
                                 if ( $lang['current_lang'] ) :
                         ?>
                                     <button class="flex items-center hover:text-[#8b6e4e] transition-colors cursor-pointer">
-                                        <img src="<?php echo esc_url( $lang['flag'] ); ?>" class="w-4 mr-2" alt="<?php echo esc_attr( $lang['slug'] ); ?>"> 
+                                        <img src="<?php echo esc_url( $lang['flag'] ); ?>" class="w-4 mr-2 rtl:mr-0 rtl:ml-2" alt="<?php echo esc_attr( $lang['slug'] ); ?>"> 
                                         <span class="text-xs uppercase"><?php echo esc_html( $lang['slug'] ); ?></span>
-                                        <i class="fa-solid fa-chevron-down text-[10px] ml-1 opacity-50"></i>
+                                        <i class="fa-solid fa-chevron-down text-[10px] ml-1 rtl:ml-0 rtl:mr-1 opacity-50"></i>
                                     </button>
-                                    <ul class="absolute right-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[120px] border-t-2 border-[#8b6e4e] py-2 z-50 text-left">
+                                    <ul class="absolute right-0 rtl:right-auto rtl:left-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[120px] border-t-2 border-[#8b6e4e] py-2 z-50 text-left rtl:text-right">
                                         <?php
                                         foreach ( $langs as $other_lang ) :
                                             if ( ! $other_lang['current_lang'] ) :
                                         ?>
                                                 <li>
                                                     <a href="<?php echo esc_url( $other_lang['url'] ); ?>" class="flex items-center px-4 py-2 hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors text-xs uppercase text-[#333]">
-                                                        <img src="<?php echo esc_url( $other_lang['flag'] ); ?>" class="w-4 mr-2" alt="<?php echo esc_attr( $other_lang['slug'] ); ?>"> <?php echo esc_html( $other_lang['slug'] ); ?>
+                                                        <img src="<?php echo esc_url( $other_lang['flag'] ); ?>" class="w-4 mr-2 rtl:mr-0 rtl:ml-2" alt="<?php echo esc_attr( $other_lang['slug'] ); ?>"> <?php echo esc_html( $other_lang['slug'] ); ?>
                                                     </a>
                                                 </li>
                                         <?php
@@ -287,14 +290,14 @@
                     <?php else : ?>
                         <!-- Static Fallback if Polylang is missing -->
                         <button class="flex items-center hover:text-[#8b6e4e] transition-colors cursor-pointer">
-                            <img src="https://flagcdn.com/w20/tr.png" class="w-4 mr-2" alt="TR"> 
+                            <img src="https://flagcdn.com/w20/tr.png" class="w-4 mr-2 rtl:mr-0 rtl:ml-2" alt="TR"> 
                             <span class="text-xs uppercase">TR</span>
-                            <i class="fa-solid fa-chevron-down text-[10px] ml-1 opacity-50"></i>
+                            <i class="fa-solid fa-chevron-down text-[10px] ml-1 rtl:ml-0 rtl:mr-1 opacity-50"></i>
                         </button>
-                        <ul class="absolute right-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[120px] border-t-2 border-[#8b6e4e] py-2 z-50 text-left">
+                        <ul class="absolute right-0 rtl:right-auto rtl:left-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[120px] border-t-2 border-[#8b6e4e] py-2 z-50 text-left rtl:text-right">
                             <li>
                                 <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all text-xs uppercase text-[#333]">
-                                    <img src="https://flagcdn.com/w20/gb.png" class="w-4 mr-2" alt="EN"> EN
+                                    <img src="https://flagcdn.com/w20/gb.png" class="w-4 mr-2 rtl:mr-0 rtl:ml-2" alt="EN"> EN
                                 </a>
                             </li>
                         </ul>
@@ -303,7 +306,7 @@
             </ul>
 
             <!-- Mobile Menu Toggles -->
-            <div class="flex items-center space-x-4 lg:hidden">
+            <div class="flex items-center gap-4 lg:hidden">
                 <div class="relative">
                     <?php if ( function_exists( 'pll_the_languages' ) ) : ?>
                         <?php
@@ -314,16 +317,16 @@
                         ?>
                                     <button class="mobile-lang-btn flex items-center hover:text-[#8b6e4e] transition-colors cursor-pointer">
                                         <img src="<?php echo esc_url( $lang['flag'] ); ?>" class="w-5" alt="<?php echo esc_attr( $lang['slug'] ); ?>"> 
-                                        <i class="fa-solid fa-chevron-down text-[10px] ml-1 opacity-50"></i>
+                                        <i class="fa-solid fa-chevron-down text-[10px] ml-1 rtl:ml-0 rtl:mr-1 opacity-50"></i>
                                     </button>
-                                    <ul class="mobile-lang-menu absolute right-0 top-full hidden bg-white shadow-xl min-w-[100px] border-t-2 border-[#8b6e4e] py-2 z-50 text-left">
+                                    <ul class="mobile-lang-menu absolute right-0 rtl:right-auto rtl:left-0 top-full hidden bg-white shadow-xl min-w-[100px] border-t-2 border-[#8b6e4e] py-2 z-50 text-left rtl:text-right">
                                         <?php
                                         foreach ( $langs as $other_lang ) :
                                             if ( ! $other_lang['current_lang'] ) :
                                         ?>
                                                 <li>
                                                     <a href="<?php echo esc_url( $other_lang['url'] ); ?>" class="flex items-center px-4 py-2 hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors text-xs font-bold uppercase text-[#333]">
-                                                        <img src="<?php echo esc_url( $other_lang['flag'] ); ?>" class="w-4 mr-2" alt="<?php echo esc_attr( $other_lang['slug'] ); ?>"> <?php echo esc_html( $other_lang['slug'] ); ?>
+                                                        <img src="<?php echo esc_url( $other_lang['flag'] ); ?>" class="w-4 mr-2 rtl:mr-0 rtl:ml-2" alt="<?php echo esc_attr( $other_lang['slug'] ); ?>"> <?php echo esc_html( $other_lang['slug'] ); ?>
                                                     </a>
                                                 </li>
                                         <?php
@@ -339,12 +342,12 @@
                     <?php else : ?>
                         <button class="mobile-lang-btn flex items-center hover:text-[#8b6e4e] transition-colors cursor-pointer">
                             <img src="https://flagcdn.com/w20/tr.png" class="w-5" alt="TR"> 
-                            <i class="fa-solid fa-chevron-down text-[10px] ml-1 opacity-50"></i>
+                            <i class="fa-solid fa-chevron-down text-[10px] ml-1 rtl:ml-0 rtl:mr-1 opacity-50"></i>
                         </button>
-                        <ul class="mobile-lang-menu absolute right-0 top-full hidden bg-white shadow-xl min-w-[100px] border-t-2 border-[#8b6e4e] py-2 z-50 text-left">
+                        <ul class="mobile-lang-menu absolute right-0 rtl:right-auto rtl:left-0 top-full hidden bg-white shadow-xl min-w-[100px] border-t-2 border-[#8b6e4e] py-2 z-50 text-left rtl:text-right">
                             <li>
                                 <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all text-xs font-bold uppercase text-[#333]">
-                                    <img src="https://flagcdn.com/w20/gb.png" class="w-4 mr-2" alt="EN"> EN
+                                    <img src="https://flagcdn.com/w20/gb.png" class="w-4 mr-2 rtl:mr-0 rtl:ml-2" alt="EN"> EN
                                 </a>
                             </li>
                         </ul>
@@ -357,7 +360,7 @@
         </div>
 
         <!-- Mobile Navigation Panel -->
-        <div id="mobile-menu" class="fixed inset-0 bg-white z-[200] transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden overflow-y-auto pb-12 text-left">
+        <div id="mobile-menu" class="fixed inset-0 bg-white z-[200] transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden overflow-y-auto pb-12 text-left rtl:text-right">
             <div class="flex justify-end p-6">
                 <button id="mobile-menu-close" class="text-[#333] focus:outline-none">
                     <i class="fa-solid fa-times text-3xl"></i>
@@ -386,7 +389,7 @@
                                         <span><?php echo esc_html( $item_title ); ?></span>
                                         <i class="fa-solid fa-plus text-xs"></i>
                                     </div>
-                                    <ul class="mt-4 ml-4 space-y-4 text-sm font-semibold text-gray-500 hidden mobile-accordion-content border-l border-gray-100 pl-4 capitalize tracking-normal">
+                                    <ul class="mt-4 ml-4 rtl:ml-0 rtl:mr-4 space-y-4 text-sm font-semibold text-gray-500 hidden mobile-accordion-content border-l rtl:border-l-0 rtl:border-r border-gray-100 pl-4 rtl:pl-0 rtl:pr-4 capitalize tracking-normal">
                                         <?php 
                                         foreach ( $item['sub_menu'] as $sub_item ) : 
                                             $sub_url = '#';
@@ -407,7 +410,7 @@
                                                         <span><?php echo esc_html( $sub_title ); ?></span>
                                                         <i class="fa-solid fa-plus text-xs"></i>
                                                     </div>
-                                                    <ul class="mt-4 ml-4 space-y-4 text-xs font-semibold text-gray-400 hidden mobile-accordion-content border-l border-gray-100 pl-4 capitalize tracking-normal">
+                                                    <ul class="mt-4 ml-4 rtl:ml-0 rtl:mr-4 space-y-4 text-xs font-semibold text-gray-400 hidden mobile-accordion-content border-l rtl:border-l-0 rtl:border-r border-gray-100 pl-4 rtl:pl-0 rtl:pr-4 capitalize tracking-normal">
                                                         <?php 
                                                         foreach ( $sub_item['sub_sub_menu'] as $sub_sub_item ) : 
                                                             $sub_sub_url = '#';
@@ -438,14 +441,14 @@
                     <?php
                         endforeach;
                     else :
-                        // Static Fallback Menu for mobile
+                        // Fallback Menu for mobile
                     ?>
                         <li>
                             <div class="flex justify-between items-center cursor-pointer mobile-accordion-btn">
                                 <span><?php echo esc_html__('Hakkımda', 'burhan-ozalp'); ?></span>
                                 <i class="fa-solid fa-plus text-xs"></i>
                             </div>
-                            <ul class="mt-4 ml-4 space-y-4 text-sm font-semibold text-gray-500 hidden mobile-accordion-content border-l border-gray-100 pl-4 capitalize tracking-normal">
+                            <ul class="mt-4 ml-4 rtl:ml-0 rtl:mr-4 space-y-4 text-sm font-semibold text-gray-500 hidden mobile-accordion-content border-l rtl:border-l-0 rtl:border-r border-gray-100 pl-4 rtl:pl-0 rtl:pr-4 capitalize tracking-normal">
                                  <li><a href="#" class="hover:text-[#8b6e4e]"><?php echo esc_html__('Özgeçmiş', 'burhan-ozalp'); ?></a></li>
                                  <li><a href="#" class="hover:text-[#8b6e4e]"><?php echo esc_html__('Eğitim', 'burhan-ozalp'); ?></a></li>
                             </ul>
@@ -455,7 +458,7 @@
                                 <span><?php echo esc_html__('İşlemler', 'burhan-ozalp'); ?></span>
                                 <i class="fa-solid fa-plus text-xs"></i>
                             </div>
-                            <ul class="mt-4 ml-4 space-y-4 text-sm font-semibold text-gray-500 hidden mobile-accordion-content border-l border-gray-100 pl-4 capitalize tracking-normal">
+                            <ul class="mt-4 ml-4 rtl:ml-0 rtl:mr-4 space-y-4 text-sm font-semibold text-gray-500 hidden mobile-accordion-content border-l rtl:border-l-0 rtl:border-r border-gray-100 pl-4 rtl:pl-0 rtl:pr-4 capitalize tracking-normal">
                                  <li><a href="#" class="hover:text-[#8b6e4e]"><?php echo esc_html__('Lipödem Cerrahisi', 'burhan-ozalp'); ?></a></li>
                                  <li><a href="#" class="hover:text-[#8b6e4e]"><?php echo esc_html__('Burun Estetiği', 'burhan-ozalp'); ?></a></li>
                             </ul>
