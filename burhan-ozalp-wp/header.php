@@ -149,8 +149,6 @@
                     }
                 }
                 if ( ! empty( $menu_tree ) ) :
-                    $menu_count = count( $menu_tree );
-                    $item_index = 0;
                     foreach ( $menu_tree as $item ) :
                         $item_url = '#';
                         $item_title = '';
@@ -190,15 +188,8 @@
                                                     <i class="fa-solid fa-chevron-left text-[10px] !hidden rtl:!inline-block"></i>
                                                 <?php endif; ?>
                                             </a>
-                                            <?php 
-                                            if ( ! empty( $sub_item['sub_sub_menu'] ) ) : 
-                                                $is_left_aligned = ( $item_index === $menu_count - 1 );
-                                                $submenu_align_classes = "left-full rtl:left-auto rtl:right-full border-l rtl:border-l-0 rtl:border-r";
-                                                if ( $is_left_aligned ) {
-                                                    $submenu_align_classes = "left-auto right-full border-r border-l-0 rtl:left-full rtl:right-auto rtl:border-l rtl:border-r-0";
-                                                }
-                                            ?>
-                                                <ul class="absolute <?php echo esc_attr( $submenu_align_classes ); ?> top-0 hidden group-hover/sub:block bg-white shadow-xl min-w-[220px] border-gray-100 py-2">
+                                            <?php if ( ! empty( $sub_item['sub_sub_menu'] ) ) : ?>
+                                                <ul class="absolute left-full rtl:left-auto rtl:right-full top-0 hidden group-hover/sub:block bg-white shadow-xl min-w-[220px] border-l rtl:border-l-0 rtl:border-r border-gray-100 py-2">
                                                     <?php 
                                                     foreach ( $sub_item['sub_sub_menu'] as $sub_sub_item ) : 
                                                         $sub_sub_url = '#';
@@ -227,7 +218,6 @@
                             <?php endif; ?>
                         </li>
                 <?php
-                    $item_index++;
                     endforeach;
                 else :
                     // Fallback Navigation List matching HTML template
