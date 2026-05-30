@@ -220,3 +220,17 @@ add_filter( 'gettext', function( $translation, $text, $domain ) {
     return $translation;
 }, 10, 3 );
 
+/**
+ * Automatically hook WordPress _x(), _ex(), esc_attr_x(), and esc_html_x() functions
+ * for 'burhan-ozalp' domain to Polylang's dynamic string translations database.
+ */
+add_filter( 'gettext_with_context', function( $translation, $text, $context, $domain ) {
+    if ( 'burhan-ozalp' === $domain && function_exists( 'pll__' ) ) {
+        $translated = pll__( $text );
+        if ( $translated !== $text && ! empty( $translated ) ) {
+            return $translated;
+        }
+    }
+    return $translation;
+}, 10, 4 );
+
