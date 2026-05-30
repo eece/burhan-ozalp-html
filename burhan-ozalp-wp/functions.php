@@ -198,6 +198,11 @@ function burhan_register_polylang_strings() {
             'Yorumunuz *' => 'burhan-ozalp',
             'Aradığınız Sayfa Bulunamadı' => 'burhan-ozalp',
             'Bizi Arayın:' => 'burhan-ozalp',
+            '"%1$s" araması için 1 sonuç bulundu.' => 'burhan-ozalp',
+            '"%1$s" araması için %2$s sonuç bulundu.' => 'burhan-ozalp',
+            'Devamı &rarr;' => 'burhan-ozalp',
+            'Ulaşmaya çalıştığınız sayfa silinmiş, ismi değiştirilmiş veya geçici olarak servis dışı kalmış olabilir. Aradığınız işlemi bulmak için aşağıdaki arama çubuğunu kullanabilir ya da doğrudan ana sayfaya dönebilirsiniz.' => 'burhan-ozalp',
+            'Aramak istediğiniz kelime...' => 'burhan-ozalp',
         );
 
         foreach ( $strings as $string => $context ) {

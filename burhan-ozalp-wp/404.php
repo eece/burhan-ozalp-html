@@ -37,20 +37,7 @@ get_header(); ?>
             </form>
         </div>
 
-        <!-- Quick Action Buttons -->
-        <div class="flex flex-wrap items-center justify-center gap-4">
-            <a href="<?php echo esc_url( home_url('/') ); ?>" class="px-8 py-3.5 bg-[#8b6e4e] text-white text-sm font-bold tracking-[0.15em] uppercase hover:bg-[#7b5f43] hover:scale-105 transition-all rounded-sm shadow-md cursor-pointer inline-block">
-                <i class="fa-solid fa-house text-xs mr-2"></i> <?php esc_html_e( 'ANASAYFA\'YA DÖN', 'burhan-ozalp' ); ?>
-            </a>
-            <?php
-            // Get standard WordPress posts page if configured, or fallback to home URL
-            $blog_page_id = get_option( 'page_for_posts' );
-            $hizmetler_url = $blog_page_id ? get_permalink( $blog_page_id ) : home_url('/');
-            ?>
-            <a href="<?php echo esc_url( $hizmetler_url ); ?>" class="px-8 py-3.5 border border-[#8b6e4e] text-[#8b6e4e] text-sm font-bold tracking-[0.15em] uppercase hover:bg-[#8b6e4e] hover:text-white transition-all rounded-sm cursor-pointer inline-block">
-                <?php esc_html_e( 'YAZILARIMIZ', 'burhan-ozalp' ); ?>
-            </a>
-        </div>
+
     </div>
 </section>
 
