@@ -42,9 +42,9 @@ if ( isset( $locations['footer_menu'] ) ) {
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-16 mb-20 text-center lg:text-left rtl:lg:text-right">
                 <!-- Branding & Address -->
                 <div class="w-full flex flex-col items-center lg:items-start rtl:lg:items-start rtl:items-start">
-                   <h2 class="w-full text-3xl font-['Cormorant_Garamond'] tracking-widest text-[#333] font-light leading-none mb-10 text-center lg:text-left rtl:lg:text-right rtl:text-right">
-                        <span class="block text-base font-['Montserrat'] font-semibold text-[#8b6e4e] tracking-[0.3em] mb-1 uppercase"><?php echo esc_html( $logo_subtitle ); ?></span>
-                        <?php echo esc_html( $logo_title ); ?>
+                   <h2 class="w-full text-3xl font-['Cormorant_Garamond'] tracking-widest text-[#333] font-light leading-none mb-10 text-center lg:text-left rtl:lg:text-right rtl:text-right" dir="ltr">
+                        <span class="block text-base font-['Montserrat'] font-semibold text-[#8b6e4e] tracking-[0.3em] mb-1 uppercase text-center lg:text-left rtl:lg:text-right rtl:text-right"><?php echo esc_html( $logo_subtitle ); ?></span>
+                        <span class="block text-center lg:text-left rtl:lg:text-right rtl:text-right"><?php echo esc_html( $logo_title ); ?></span>
                     </h2>
                     <div class="text-base text-[#7b5f43] space-y-6 leading-relaxed w-full flex flex-col items-center lg:items-start rtl:lg:items-start rtl:items-start text-center lg:text-left rtl:lg:text-right rtl:text-right">
                         <div class="w-full flex flex-col lg:flex-row items-center lg:items-start rtl:items-start rtl:lg:items-start text-center lg:text-left rtl:lg:text-right rtl:text-right">

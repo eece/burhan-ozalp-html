@@ -72,10 +72,10 @@
     <!-- Navigation Header -->
     <nav class="bg-white sticky top-0 z-50 shadow-sm border-b border-gray-50">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="z-50">
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="block">
-                    <h1 class="text-2xl md:text-3xl font-['Cormorant_Garamond'] tracking-widest text-[#333] font-light leading-none">
-                        <span class="block text-[10px] md:text-base font-['Montserrat'] font-semibold text-[#8b6e4e] tracking-[0.3em] mb-1 uppercase"><?php echo esc_html( $logo_subtitle ); ?></span>
+            <div class="z-50" dir="ltr">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="block text-left">
+                    <h1 class="text-2xl md:text-3xl font-['Cormorant_Garamond'] tracking-widest text-[#333] font-light leading-none text-left">
+                        <span class="block text-[10px] md:text-base font-['Montserrat'] font-semibold text-[#8b6e4e] tracking-[0.3em] mb-1 uppercase text-left"><?php echo esc_html( $logo_subtitle ); ?></span>
                         <?php echo esc_html( $logo_title ); ?>
                     </h1>
                 </a>
