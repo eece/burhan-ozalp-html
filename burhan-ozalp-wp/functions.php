@@ -166,42 +166,57 @@ add_filter( 'get_the_archive_title', function ( $title ) {
 function burhan_register_polylang_strings() {
     if ( function_exists( 'pll_register_string' ) ) {
         $strings = array(
-            'Numaranızı Bırakın Arayalım !' => 'Footer',
-            'MUAYENEHANE ADRESİ:' => 'Footer',
-            'Muayenehane Adresi:' => 'Footer',
-            'Telefonlar:' => 'Footer',
-            'YOL TARİFİ' => 'Footer',
-            'GÖNDER' => 'Footer',
-            'Randevu' => 'Footer',
-            'SSS' => 'Footer',
-            'Hakkımda' => 'Footer',
-            'Site Haritası' => 'Footer',
-            'İletişim' => 'Footer',
-            'KVKK' => 'Footer',
-            'Gizlilik Sözleşmesi' => 'Footer',
-            'Yazılar' => 'Blog/Archive',
-            'İşlem' => 'Blog/Archive',
-            'Detaylı Bilgi' => 'Blog/Archive',
-            'Henüz yazılmış bir içerik bulunamadı.' => 'Blog/Archive',
-            'Bu arşivde henüz bir içerik bulunamadı.' => 'Blog/Archive',
-            'Arama Sonuçları' => 'Search',
-            'Kelime yazın ve arayın...' => 'Search',
-            'ARA' => 'Search',
-            'Aradığınız Kelimeye ait sonuç bulunamadı.' => 'Search',
-            'Lütfen farklı kelimelerle tekrar deneyiniz.' => 'Search',
-            'Bir Yanıt Bırakın' => 'Comments',
-            'Yorumu Gönder' => 'Comments',
-            'Yanıtla' => 'Comments',
-            'İsim *' => 'Comments',
-            'E-mail *' => 'Comments',
-            'İnternet Sitesi' => 'Comments',
-            'Yorumunuz *' => 'Comments',
-            'Aradığınız Sayfa Bulunamadı' => '404 Page',
+            'Numaranızı Bırakın Arayalım !' => 'burhan-ozalp',
+            'MUAYENEHANE ADRESİ:' => 'burhan-ozalp',
+            'Muayenehane Adresi:' => 'burhan-ozalp',
+            'Telefonlar:' => 'burhan-ozalp',
+            'YOL TARİFİ' => 'burhan-ozalp',
+            'GÖNDER' => 'burhan-ozalp',
+            'Randevu' => 'burhan-ozalp',
+            'SSS' => 'burhan-ozalp',
+            'Hakkımda' => 'burhan-ozalp',
+            'Site Haritası' => 'burhan-ozalp',
+            'İletişim' => 'burhan-ozalp',
+            'KVKK' => 'burhan-ozalp',
+            'Gizlilik Sözleşmesi' => 'burhan-ozalp',
+            'Yazılar' => 'burhan-ozalp',
+            'İşlem' => 'burhan-ozalp',
+            'Detaylı Bilgi' => 'burhan-ozalp',
+            'Henüz yazılmış bir içerik bulunamadı.' => 'burhan-ozalp',
+            'Bu arşivde henüz bir içerik bulunamadı.' => 'burhan-ozalp',
+            'Arama Sonuçları' => 'burhan-ozalp',
+            'Kelime yazın ve arayın...' => 'burhan-ozalp',
+            'ARA' => 'burhan-ozalp',
+            'Aradığınız Kelimeye ait sonuç bulunamadı.' => 'burhan-ozalp',
+            'Lütfen farklı kelimelerle tekrar deneyiniz.' => 'burhan-ozalp',
+            'Bir Yanıt Bırakın' => 'burhan-ozalp',
+            'Yorumu Gönder' => 'burhan-ozalp',
+            'Yanıtla' => 'burhan-ozalp',
+            'İsim *' => 'burhan-ozalp',
+            'E-mail *' => 'burhan-ozalp',
+            'İnternet Sitesi' => 'burhan-ozalp',
+            'Yorumunuz *' => 'burhan-ozalp',
+            'Aradığınız Sayfa Bulunamadı' => 'burhan-ozalp',
         );
 
         foreach ( $strings as $string => $context ) {
-            pll_register_string( $string, $string, 'Burhan Ozalp Theme - ' . $context );
+            pll_register_string( $string, $string, $context );
         }
     }
 }
 add_action( 'init', 'burhan_register_polylang_strings' );
+
+/**
+ * Automatically hook WordPress __() and _e() functions for 'burhan-ozalp' domain
+ * to Polylang's dynamic string translations database.
+ */
+add_filter( 'gettext', function( $translation, $text, $domain ) {
+    if ( 'burhan-ozalp' === $domain && function_exists( 'pll__' ) ) {
+        $translated = pll__( $text );
+        if ( $translated !== $text && ! empty( $translated ) ) {
+            return $translated;
+        }
+    }
+    return $translation;
+}, 10, 3 );
+
