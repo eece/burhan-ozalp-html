@@ -46,6 +46,31 @@ Aşağıdaki HTML kodunu Contact Form 7 yönetim panelindeki **Form** bölümün
 </div>
 ```
 
+## 3. İletişim Sayfası Formu (Contact Page Form)
+
+Bu form, "İletişim Bilgileri ve Form" sayfa şablonunda kullanılan geniş kapsamlı iletişim formunun WordPress + Contact Form 7 (CF7) eklentisine uygun şablonudur.
+
+### Contact Form 7 Markup
+Aşağıdaki HTML kodunu Contact Form 7 yönetim panelindeki **Form** bölümüne doğrudan kopyalayıp yapıştırabilirsiniz:
+
+```html
+<div class="space-y-8">
+    <div class="relative">
+        [text* your-name class:w-full class:bg-white class:border-b class:border-gray-200 class:py-3 class:text-base class:focus:outline-none class:focus:border-[#8b6e4e] class:transition-colors placeholder "Ad Soyad*"]
+    </div>
+    <div class="relative">
+        [text* your-country class:w-full class:bg-white class:border-b class:border-gray-200 class:py-3 class:text-base class:focus:outline-none class:focus:border-[#8b6e4e] class:transition-colors placeholder "Ülke*"]
+    </div>
+    <div class="relative">
+        [tel* your-phone class:w-full class:bg-white class:border-b class:border-gray-200 class:py-3 class:text-base class:focus:outline-none class:focus:border-[#8b6e4e] class:transition-colors placeholder "Telefon No*"]
+    </div>
+    <div class="relative">
+        [textarea* your-message x4 class:w-full class:bg-white class:border-b class:border-gray-200 class:py-3 class:text-base class:focus:outline-none class:focus:border-[#8b6e4e] class:transition-colors class:resize-none placeholder "Mesaj*"]
+    </div>
+    [submit class:bg-[#6d553e] class:text-white class:px-12 class:py-4 class:font-bold class:tracking-widest class:uppercase class:hover:bg-opacity-90 class:transition-all class:rounded-sm class:shadow-md class:cursor-pointer "GÖNDER"]
+</div>
+```
+
 > **Önemli İpucu (Contact Form 7 P Etiketi Engelleme):** 
 > Contact Form 7, form içindeki her satır arasına otomatik olarak `<p>` ve `<br>` etiketleri ekler. Bu durumun flex hiyerarşisini ve Tailwind tasarımlarını bozmasını engellemek için `wp-config.php` dosyanıza şu satırı eklemeniz önerilir:
 > ```php
