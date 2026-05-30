@@ -203,6 +203,26 @@ function burhan_register_polylang_strings() {
             'Devamı &rarr;' => 'burhan-ozalp',
             'Ulaşmaya çalıştığınız sayfa silinmiş, ismi değiştirilmiş veya geçici olarak servis dışı kalmış olabilir. Aradığınız işlemi bulmak için aşağıdaki arama çubuğunu kullanabilir ya da doğrudan ana sayfaya dönebilirsiniz.' => 'burhan-ozalp',
             'Aramak istediğiniz kelime...' => 'burhan-ozalp',
+            
+            // Scanned and added strings
+            'HIZLI LİNKLER' => 'burhan-ozalp',
+            'Ad Soyad*' => 'burhan-ozalp',
+            'E-posta*' => 'burhan-ozalp',
+            'Ülke*' => 'burhan-ozalp',
+            'Telefon No*' => 'burhan-ozalp',
+            'Telefon*' => 'burhan-ozalp',
+            'Mesaj*' => 'burhan-ozalp',
+            'Konu*' => 'burhan-ozalp',
+            'İçerik bulunamadı.' => 'burhan-ozalp',
+            '1 Yorum' => 'burhan-ozalp',
+            '&larr; Eski Yorumlar' => 'burhan-ozalp',
+            'Yeni Yorumlar &rarr;' => 'burhan-ozalp',
+            'E-posta hesabınız yayımlanmayacak. Gerekli alanlar * ile işaretlenmiştir' => 'burhan-ozalp',
+            '%s için Bir Yanıt Bırakın' => 'burhan-ozalp',
+            'İptal Et' => 'burhan-ozalp',
+            'Bir dahaki sefere yorum yaptığımda kullanılmak üzere adımı, e-posta adresimi ve web site adresimi bu tarayıcıya kaydet.' => 'burhan-ozalp',
+            'Tarih:' => 'burhan-ozalp',
+            'Etiketler:' => 'burhan-ozalp',
         );
 
         foreach ( $strings as $string => $context ) {

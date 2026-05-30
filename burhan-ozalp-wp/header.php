@@ -82,7 +82,7 @@
             </div>
 
             <!-- Desktop Menu -->
-            <ul class="hidden lg:flex flex-wrap justify-center items-center gap-4 md:gap-8 text-sm font-bold uppercase tracking-[0.15em] text-gray-600">
+            <ul class="hidden lg:flex flex-wrap justify-center items-center gap-4 md:gap-8 text-xs font-bold uppercase tracking-[0.15em] text-gray-600">
                 <?php
                 $menu_tree = array();
                 $header_menu_location = 'header_menu';
@@ -223,34 +223,34 @@
                     // Fallback Navigation List matching HTML template
                 ?>
                     <li class="relative group py-2">
-                        <a href="<?php echo esc_url( home_url('/') ); ?>" class="hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Hakkımda', 'burhan-ozalp'); ?></a>
+                        <a href="<?php echo esc_url( home_url('/') ); ?>" class="hover:text-[#8b6e4e] transition-colors">Hakkımda</a>
                         <ul class="absolute left-0 rtl:left-auto rtl:right-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[200px] border-t-2 border-[#8b6e4e] py-2 z-50 text-left rtl:text-right">
-                            <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Özgeçmiş', 'burhan-ozalp'); ?></a></li>
+                            <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors">Özgeçmiş</a></li>
                             <li class="relative group/sub">
                                 <a href="#" class="flex items-center justify-between px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors">
-                                    <span><?php echo esc_html__('Kariyer', 'burhan-ozalp'); ?></span>
+                                    <span>Kariyer</span>
                                     <i class="fa-solid fa-chevron-right text-[10px] rtl:!hidden"></i>
                                     <i class="fa-solid fa-chevron-left text-[10px] !hidden rtl:!inline-block"></i>
                                 </a>
                                 <ul class="absolute left-full rtl:left-auto rtl:right-full top-0 hidden group-hover/sub:block bg-white shadow-xl min-w-[200px] border-l rtl:border-l-0 rtl:border-r border-gray-100 py-2">
-                                    <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Eğitim', 'burhan-ozalp'); ?></a></li>
-                                    <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Sertifikalar', 'burhan-ozalp'); ?></a></li>
+                                    <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors">Eğitim</a></li>
+                                    <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors">Sertifikalar</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
                     <li class="relative group py-2">
-                        <a href="#" class="hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('İşlemler', 'burhan-ozalp'); ?></a>
+                        <a href="#" class="hover:text-[#8b6e4e] transition-colors">İşlemler</a>
                         <ul class="absolute left-0 rtl:left-auto rtl:right-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[220px] border-t-2 border-[#8b6e4e] py-2 z-50 text-left rtl:text-right">
-                            <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Lipödem Cerrahisi', 'burhan-ozalp'); ?></a></li>
-                            <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Burun Estetiği', 'burhan-ozalp'); ?></a></li>
-                            <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Vücut Estetiği', 'burhan-ozalp'); ?></a></li>
-                            <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Yüz Estetiği', 'burhan-ozalp'); ?></a></li>
+                            <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors">Lipödem Cerrahisi</a></li>
+                            <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors">Burun Estetiği</a></li>
+                            <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors">Vücut Estetiği</a></li>
+                            <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors">Yüz Estetiği</a></li>
                         </ul>
                     </li>
-                    <li><a href="#" class="hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Lipödem', 'burhan-ozalp'); ?></a></li>
-                    <li><a href="#" class="hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Galeri', 'burhan-ozalp'); ?></a></li>
-                    <li><a href="#" class="hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('İletişim', 'burhan-ozalp'); ?></a></li>
+                    <li><a href="#" class="hover:text-[#8b6e4e] transition-colors">Lipödem</a></li>
+                    <li><a href="#" class="hover:text-[#8b6e4e] transition-colors">Galeri</a></li>
+                    <li><a href="#" class="hover:text-[#8b6e4e] transition-colors">İletişim</a></li>
                 <?php endif; ?>
 
                 <!-- Polylang Language Selection -->
@@ -445,27 +445,27 @@
                     ?>
                         <li>
                             <div class="flex justify-between items-center cursor-pointer mobile-accordion-btn">
-                                <span><?php echo esc_html__('Hakkımda', 'burhan-ozalp'); ?></span>
+                                <span>Hakkımda</span>
                                 <i class="fa-solid fa-plus text-xs"></i>
                             </div>
                             <ul class="mt-4 ml-4 rtl:ml-0 rtl:mr-4 space-y-4 text-sm font-semibold text-gray-500 hidden mobile-accordion-content border-l rtl:border-l-0 rtl:border-r border-gray-100 pl-4 rtl:pl-0 rtl:pr-4 capitalize tracking-normal">
-                                 <li><a href="#" class="hover:text-[#8b6e4e]"><?php echo esc_html__('Özgeçmiş', 'burhan-ozalp'); ?></a></li>
-                                 <li><a href="#" class="hover:text-[#8b6e4e]"><?php echo esc_html__('Eğitim', 'burhan-ozalp'); ?></a></li>
+                                 <li><a href="#" class="hover:text-[#8b6e4e]">Özgeçmiş</a></li>
+                                 <li><a href="#" class="hover:text-[#8b6e4e]">Eğitim</a></li>
                             </ul>
                         </li>
                         <li>
                             <div class="flex justify-between items-center cursor-pointer mobile-accordion-btn">
-                                <span><?php echo esc_html__('İşlemler', 'burhan-ozalp'); ?></span>
+                                <span>İşlemler</span>
                                 <i class="fa-solid fa-plus text-xs"></i>
                             </div>
                             <ul class="mt-4 ml-4 rtl:ml-0 rtl:mr-4 space-y-4 text-sm font-semibold text-gray-500 hidden mobile-accordion-content border-l rtl:border-l-0 rtl:border-r border-gray-100 pl-4 rtl:pl-0 rtl:pr-4 capitalize tracking-normal">
-                                 <li><a href="#" class="hover:text-[#8b6e4e]"><?php echo esc_html__('Lipödem Cerrahisi', 'burhan-ozalp'); ?></a></li>
-                                 <li><a href="#" class="hover:text-[#8b6e4e]"><?php echo esc_html__('Burun Estetiği', 'burhan-ozalp'); ?></a></li>
+                                 <li><a href="#" class="hover:text-[#8b6e4e]">Lipödem Cerrahisi</a></li>
+                                 <li><a href="#" class="hover:text-[#8b6e4e]">Burun Estetiği</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" class="block hover:text-[#8b6e4e]"><?php echo esc_html__('Lipödem', 'burhan-ozalp'); ?></a></li>
-                        <li><a href="#" class="block hover:text-[#8b6e4e]"><?php echo esc_html__('Galeri', 'burhan-ozalp'); ?></a></li>
-                        <li><a href="#" class="block hover:text-[#8b6e4e]"><?php echo esc_html__('İletişim', 'burhan-ozalp'); ?></a></li>
+                        <li><a href="#" class="block hover:text-[#8b6e4e]">Lipödem</a></li>
+                        <li><a href="#" class="block hover:text-[#8b6e4e]">Galeri</a></li>
+                        <li><a href="#" class="block hover:text-[#8b6e4e]">İletişim</a></li>
                     <?php endif; ?>
                 </ul>
             </div>

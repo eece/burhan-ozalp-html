@@ -31,16 +31,6 @@ get_header(); ?>
                 <input type="text" name="s" value="<?php echo get_search_query(); ?>" placeholder="<?php echo esc_attr__( 'Kelime yazın ve arayın...', 'burhan-ozalp' ); ?>" class="flex-grow bg-[#fcfaf7] px-6 py-4 text-base focus:outline-none focus:border-[#8b6e4e] text-gray-700 font-medium border-0">
                 <button type="submit" class="bg-[#8b6e4e] text-white px-10 py-4 font-bold tracking-widest uppercase hover:bg-[#7b5f43] transition-all cursor-pointer border-0"><?php echo esc_html__( 'ARA', 'burhan-ozalp' ); ?></button>
             </form>
-            <div class="mt-4 text-sm text-gray-400 italic">
-                <?php
-                printf(
-                    /* translators: %s: Search term query */
-                    esc_html( _n( '"%1$s" araması için 1 sonuç bulundu.', '"%1$s" araması için %2$s sonuç bulundu.', $wp_query->found_posts, 'burhan-ozalp' ) ),
-                    esc_html( get_search_query() ),
-                    number_format_i18n( $wp_query->found_posts )
-                );
-                ?>
-            </div>
         </div>
 
         <!-- Results List -->
