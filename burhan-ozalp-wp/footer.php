@@ -140,10 +140,10 @@ if ( isset( $locations['footer_menu'] ) ) {
                             <ul class="text-base font-semibold text-gray-700 uppercase tracking-wider space-y-4 list-none pl-0 pr-0">
                                 <?php foreach ( $footer_col1_rendered_links as $link ) : ?>
                                     <li>
-                                        <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>" class="hover:text-[#8b6e4e] flex items-center justify-center lg:justify-start rtl:justify-start rtl:lg:justify-start transition-all text-gray-700 hover:text-[#8b6e4e]">
-                                            <i class="fa-solid fa-chevron-right text-[10px] mr-2 rtl:mr-0 rtl:ml-2 rtl:!hidden text-[#8b6e4e]"></i>
-                                            <i class="fa-solid fa-chevron-left text-[10px] ml-2 !hidden rtl:!inline-block text-[#8b6e4e]"></i>
-                                            <?php echo esc_html($link['title']); ?>
+                                        <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>" class="hover:text-[#8b6e4e] inline-block lg:inline-flex lg:items-center lg:justify-start rtl:lg:justify-start transition-all text-gray-700 hover:text-[#8b6e4e]">
+                                            <i class="fa-solid fa-chevron-right text-[10px] mr-2 rtl:mr-0 rtl:ml-2 rtl:!hidden text-[#8b6e4e] inline-block align-middle mb-0.5"></i>
+                                            <i class="fa-solid fa-chevron-left text-[10px] ml-2 !hidden rtl:!inline-block text-[#8b6e4e] inline-block align-middle mb-0.5"></i>
+                                            <span class="inline align-middle"><?php echo esc_html($link['title']); ?></span>
                                         </a>
                                     </li>
                                 <?php endforeach; ?>
@@ -153,10 +153,10 @@ if ( isset( $locations['footer_menu'] ) ) {
                             <ul class="text-base font-semibold text-gray-700 uppercase tracking-wider space-y-4 list-none pl-0 pr-0">
                                 <?php foreach ( $footer_col2_rendered_links as $link ) : ?>
                                     <li>
-                                        <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>" class="hover:text-[#8b6e4e] flex items-center justify-center lg:justify-start rtl:justify-start rtl:lg:justify-start transition-all text-gray-700 hover:text-[#8b6e4e]">
-                                            <i class="fa-solid fa-chevron-right text-[10px] mr-2 rtl:mr-0 rtl:ml-2 rtl:!hidden text-[#8b6e4e]"></i>
-                                            <i class="fa-solid fa-chevron-left text-[10px] ml-2 !hidden rtl:!inline-block text-[#8b6e4e]"></i>
-                                            <?php echo esc_html($link['title']); ?>
+                                        <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>" class="hover:text-[#8b6e4e] inline-block lg:inline-flex lg:items-center lg:justify-start rtl:lg:justify-start transition-all text-gray-700 hover:text-[#8b6e4e]">
+                                            <i class="fa-solid fa-chevron-right text-[10px] mr-2 rtl:mr-0 rtl:ml-2 rtl:!hidden text-[#8b6e4e] inline-block align-middle mb-0.5"></i>
+                                            <i class="fa-solid fa-chevron-left text-[10px] ml-2 !hidden rtl:!inline-block text-[#8b6e4e] inline-block align-middle mb-0.5"></i>
+                                            <span class="inline align-middle"><?php echo esc_html($link['title']); ?></span>
                                         </a>
                                     </li>
                                 <?php endforeach; ?>
