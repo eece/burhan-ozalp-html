@@ -110,26 +110,28 @@ function burhan_get_option( $name, $default = '' ) {
 function burhan_comment_callback( $comment, $args, $depth ) {
     $GLOBALS['comment'] = $comment;
     ?>
-    <li class="<?php echo $depth > 1 ? 'ml-12 md:ml-20' : ''; ?> comment flex space-x-6 <?php echo $depth > 1 ? 'border-l-2 border-gray-100 pl-6 md:pl-10 mt-6' : 'mt-12'; ?>" id="comment-<?php comment_ID(); ?>">
-        <div class="flex-shrink-0">
-            <?php echo get_avatar( $comment, 60, '', '', array( 'class' => 'avatar w-14 h-14 rounded-full border border-gray-100 shadow-sm' ) ); ?>
-        </div>
-        <div class="comment-body flex-grow text-left">
-            <div class="comment-meta mb-2">
-                <cite class="fn font-bold text-gray-800 not-italic uppercase tracking-wider"><?php comment_author(); ?></cite>
-                <span class="text-xs text-gray-400 ml-4"><?php comment_date(); ?></span>
+    <li class="<?php echo $depth > 1 ? 'ml-12 md:ml-20 border-l-2 border-gray-100 pl-6 md:pl-10 mt-6' : 'mt-12'; ?> comment" id="comment-<?php comment_ID(); ?>">
+        <div class="flex space-x-6">
+            <div class="flex-shrink-0">
+                <?php echo get_avatar( $comment, 60, '', '', array( 'class' => 'avatar w-14 h-14 rounded-full border border-gray-100 shadow-sm' ) ); ?>
             </div>
-            <div class="comment-content text-[#7b5f43] text-sm leading-relaxed mb-4">
-                <?php comment_text(); ?>
-            </div>
-            <div class="reply">
-                <?php 
-                comment_reply_link( array_merge( $args, array(
-                    'depth'     => $depth,
-                    'max_depth' => $args['max_depth'],
-                    'reply_text' => esc_html__( 'Yanıtla', 'burhan-ozalp' ),
-                ) ) ); 
-                ?>
+            <div class="comment-body flex-grow text-left">
+                <div class="comment-meta mb-2">
+                    <cite class="fn font-bold text-gray-800 not-italic uppercase tracking-wider"><?php comment_author(); ?></cite>
+                    <span class="text-xs text-gray-400 ml-4"><?php comment_date(); ?></span>
+                </div>
+                <div class="comment-content text-[#7b5f43] text-sm leading-relaxed mb-4">
+                    <?php comment_text(); ?>
+                </div>
+                <div class="reply">
+                    <?php 
+                    comment_reply_link( array_merge( $args, array(
+                        'depth'     => $depth,
+                        'max_depth' => $args['max_depth'],
+                        'reply_text' => esc_html__( 'Yanıtla', 'burhan-ozalp' ),
+                    ) ) ); 
+                    ?>
+                </div>
             </div>
         </div>
     <?php

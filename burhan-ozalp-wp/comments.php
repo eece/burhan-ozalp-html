@@ -84,7 +84,8 @@ if ( post_password_required() ) {
             'title_reply_to'       => esc_html__( '%s için Bir Yanıt Bırakın', 'burhan-ozalp' ),
             'cancel_reply_link'    => esc_html__( 'İptal Et', 'burhan-ozalp' ),
             'label_submit'         => esc_html__( 'Yorumu Gönder', 'burhan-ozalp' ),
-            'submit_button'        => '<p class="form-submit pt-6">%1$s %2$s</p>',
+            'submit_button'        => '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />',
+            'submit_field'         => '<p class="form-submit pt-6">%1$s %2$s</p>',
         );
 
         // Cookies checkbox custom output
