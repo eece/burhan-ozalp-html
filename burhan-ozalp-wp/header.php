@@ -82,7 +82,7 @@
             </div>
 
             <!-- Desktop Menu -->
-            <ul class="hidden lg:flex flex-wrap justify-center items-center space-x-4 md:space-x-8 text-base font-bold uppercase tracking-[0.15em] text-gray-600">
+            <ul class="hidden lg:flex flex-wrap justify-center items-center space-x-4 md:space-x-8 text-sm font-bold uppercase tracking-[0.15em] text-gray-600">
                 <?php
                 $menu_tree = array();
                 $header_menu_location = 'header_menu';

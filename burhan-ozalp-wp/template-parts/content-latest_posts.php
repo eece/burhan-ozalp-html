@@ -46,8 +46,8 @@ $query = new WP_Query( $args );
                 <?php while ( $query->have_posts() ) : $query->the_post(); ?>
                     <div class="group cursor-pointer text-left" onclick="window.location='<?php the_permalink(); ?>'">
                         <?php if ( has_post_thumbnail() ) : ?>
-                            <div class="overflow-hidden mb-8 rounded-sm aspect-[4/5]">
-                                <?php the_post_thumbnail( 'large', array( 'class' => 'w-full h-full object-cover transition-transform duration-700 group-hover:scale-110' ) ); ?>
+                            <div class="overflow-hidden mb-8 rounded-sm aspect-[4/5] bg-gray-200">
+                                <?php the_post_thumbnail( 'large', array( 'class' => 'w-full h-full object-cover transition-transform duration-700 group-hover:scale-110', 'onerror' => "this.style.display='none';" ) ); ?>
                             </div>
                         <?php endif; ?>
                         <h3 class="text-2xl font-['Cormorant_Garamond'] text-[#333] mb-4 group-hover:text-[#8b6e4e] transition-colors leading-tight"><?php the_title(); ?></h3>

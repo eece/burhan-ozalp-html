@@ -57,7 +57,7 @@ get_header(); ?>
                     <div class="service-card group cursor-pointer" onclick="window.location='<?php the_permalink(); ?>'">
                         <div class="overflow-hidden mb-6 rounded-sm aspect-[4/3] relative bg-gray-200">
                             <?php if ( has_post_thumbnail() ) : ?>
-                                <?php the_post_thumbnail( 'large', array( 'class' => 'w-full h-full object-cover transition-transform duration-700 group-hover:scale-110' ) ); ?>
+                                <?php the_post_thumbnail( 'large', array( 'class' => 'w-full h-full object-cover transition-transform duration-700 group-hover:scale-110', 'onerror' => "this.style.display='none';" ) ); ?>
                             <?php endif; ?>
                             <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
                             <div class="absolute bottom-6 left-6">
