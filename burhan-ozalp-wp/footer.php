@@ -141,8 +141,8 @@ if ( isset( $locations['footer_menu'] ) ) {
                                 <?php foreach ( $footer_col1_rendered_links as $link ) : ?>
                                     <li>
                                         <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>" class="hover:text-[#8b6e4e] flex items-center transition-all text-gray-700 hover:text-[#8b6e4e]">
-                                            <i class="fa-solid fa-chevron-right text-[10px] mr-2 rtl:mr-0 rtl:ml-2 rtl:hidden text-[#8b6e4e]"></i>
-                                            <i class="fa-solid fa-chevron-left text-[10px] ml-2 hidden rtl:inline-block text-[#8b6e4e]"></i>
+                                            <i class="fa-solid fa-chevron-right text-[10px] mr-2 rtl:mr-0 rtl:ml-2 rtl:!hidden text-[#8b6e4e]"></i>
+                                            <i class="fa-solid fa-chevron-left text-[10px] ml-2 !hidden rtl:!inline-block text-[#8b6e4e]"></i>
                                             <?php echo esc_html($link['title']); ?>
                                         </a>
                                     </li>
@@ -154,8 +154,8 @@ if ( isset( $locations['footer_menu'] ) ) {
                                 <?php foreach ( $footer_col2_rendered_links as $link ) : ?>
                                     <li>
                                         <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>" class="hover:text-[#8b6e4e] flex items-center transition-all text-gray-700 hover:text-[#8b6e4e]">
-                                            <i class="fa-solid fa-chevron-right text-[10px] mr-2 rtl:mr-0 rtl:ml-2 rtl:hidden text-[#8b6e4e]"></i>
-                                            <i class="fa-solid fa-chevron-left text-[10px] ml-2 hidden rtl:inline-block text-[#8b6e4e]"></i>
+                                            <i class="fa-solid fa-chevron-right text-[10px] mr-2 rtl:mr-0 rtl:ml-2 rtl:!hidden text-[#8b6e4e]"></i>
+                                            <i class="fa-solid fa-chevron-left text-[10px] ml-2 !hidden rtl:!inline-block text-[#8b6e4e]"></i>
                                             <?php echo esc_html($link['title']); ?>
                                         </a>
                                     </li>

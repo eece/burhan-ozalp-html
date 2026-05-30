@@ -184,8 +184,8 @@
                                             <a href="<?php echo esc_url( $sub_url ); ?>" target="<?php echo esc_attr( $sub_target ); ?>" class="flex items-center justify-between px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors">
                                                 <span><?php echo esc_html( $sub_title ); ?></span>
                                                 <?php if ( ! empty( $sub_item['sub_sub_menu'] ) ) : ?>
-                                                    <i class="fa-solid fa-chevron-right text-[10px] rtl:hidden"></i>
-                                                    <i class="fa-solid fa-chevron-left text-[10px] hidden rtl:inline-block"></i>
+                                                    <i class="fa-solid fa-chevron-right text-[10px] rtl:!hidden"></i>
+                                                    <i class="fa-solid fa-chevron-left text-[10px] !hidden rtl:!inline-block"></i>
                                                 <?php endif; ?>
                                             </a>
                                             <?php if ( ! empty( $sub_item['sub_sub_menu'] ) ) : ?>
@@ -229,8 +229,8 @@
                             <li class="relative group/sub">
                                 <a href="#" class="flex items-center justify-between px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors">
                                     <span><?php echo esc_html__('Kariyer', 'burhan-ozalp'); ?></span>
-                                    <i class="fa-solid fa-chevron-right text-[10px] rtl:hidden"></i>
-                                    <i class="fa-solid fa-chevron-left text-[10px] hidden rtl:inline-block"></i>
+                                    <i class="fa-solid fa-chevron-right text-[10px] rtl:!hidden"></i>
+                                    <i class="fa-solid fa-chevron-left text-[10px] !hidden rtl:!inline-block"></i>
                                 </a>
                                 <ul class="absolute left-full rtl:left-auto rtl:right-full top-0 hidden group-hover/sub:block bg-white shadow-xl min-w-[200px] border-l rtl:border-l-0 rtl:border-r border-gray-100 py-2">
                                     <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-colors"><?php echo esc_html__('Eğitim', 'burhan-ozalp'); ?></a></li>
