@@ -83,7 +83,7 @@ if ( isset( $locations['footer_menu'] ) ) {
                 <!-- Quick Services -->
                 <div class="flex flex-col">
                     <h4 class="text-base font-bold tracking-[0.2em] text-[#8b6e4e] mb-6 uppercase text-center lg:text-left rtl:lg:text-right rtl:text-right"><?php echo esc_html($footer_menu_title); ?></h4>
-                    <div class="grid grid-cols-2 gap-4 text-center lg:text-left rtl:lg:text-right rtl:text-right">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-center lg:text-left rtl:lg:text-right rtl:text-right">
                         <?php
                         $footer_menu_items = array();
                         $locations = get_nav_menu_locations();
