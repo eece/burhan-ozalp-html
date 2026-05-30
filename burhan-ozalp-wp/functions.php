@@ -159,3 +159,49 @@ add_filter( 'get_the_archive_title', function ( $title ) {
     }
     return $title;
 } );
+
+/**
+ * Programmatically register hardcoded theme strings to Polylang String Translation
+ */
+function burhan_register_polylang_strings() {
+    if ( function_exists( 'pll_register_string' ) ) {
+        $strings = array(
+            'Numaranızı Bırakın Arayalım !' => 'Footer',
+            'MUAYENEHANE ADRESİ:' => 'Footer',
+            'Muayenehane Adresi:' => 'Footer',
+            'Telefonlar:' => 'Footer',
+            'YOL TARİFİ' => 'Footer',
+            'GÖNDER' => 'Footer',
+            'Randevu' => 'Footer',
+            'SSS' => 'Footer',
+            'Hakkımda' => 'Footer',
+            'Site Haritası' => 'Footer',
+            'İletişim' => 'Footer',
+            'KVKK' => 'Footer',
+            'Gizlilik Sözleşmesi' => 'Footer',
+            'Yazılar' => 'Blog/Archive',
+            'İşlem' => 'Blog/Archive',
+            'Detaylı Bilgi' => 'Blog/Archive',
+            'Henüz yazılmış bir içerik bulunamadı.' => 'Blog/Archive',
+            'Bu arşivde henüz bir içerik bulunamadı.' => 'Blog/Archive',
+            'Arama Sonuçları' => 'Search',
+            'Kelime yazın ve arayın...' => 'Search',
+            'ARA' => 'Search',
+            'Aradığınız Kelimeye ait sonuç bulunamadı.' => 'Search',
+            'Lütfen farklı kelimelerle tekrar deneyiniz.' => 'Search',
+            'Bir Yanıt Bırakın' => 'Comments',
+            'Yorumu Gönder' => 'Comments',
+            'Yanıtla' => 'Comments',
+            'İsim *' => 'Comments',
+            'E-mail *' => 'Comments',
+            'İnternet Sitesi' => 'Comments',
+            'Yorumunuz *' => 'Comments',
+            'Aradığınız Sayfa Bulunamadı' => '404 Page',
+        );
+
+        foreach ( $strings as $string => $context ) {
+            pll_register_string( $string, $string, 'Burhan Ozalp Theme - ' . $context );
+        }
+    }
+}
+add_action( 'init', 'burhan_register_polylang_strings' );
