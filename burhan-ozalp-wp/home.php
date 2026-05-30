@@ -16,7 +16,7 @@ get_header(); ?>
 <!-- Page Header -->
 <section class="bg-[#dcd0c0] py-16 text-center">
     <div class="container mx-auto px-4">
-        <h2 class="text-4xl md:text-5xl font-['Cormorant_Garamond'] font-medium tracking-widest text-[#2d2a26] mb-4 uppercase">
+        <h2 class="text-4xl md:text-5xl font-['Cormorant_Garamond'] font-medium tracking-widest text-[#2d2a26] uppercase">
             <?php 
             $posts_page_id = get_option( 'page_for_posts' );
             if ( $posts_page_id ) {
@@ -26,19 +26,6 @@ get_header(); ?>
             }
             ?>
         </h2>
-        <div class="flex items-center justify-center space-x-2 text-xs md:text-sm font-bold uppercase tracking-widest text-[#5c4a37]">
-            <a href="<?php echo esc_url( home_url('/') ); ?>" class="text-[#5c4a37] hover:text-[#2d2a26] transition-colors"><? echo esc_html__( 'ANA SAYFA', 'burhan-ozalp' ); ?></a>
-            <span class="text-[#2d2a26]/40">-</span>
-            <span class="text-[#2d2a26] uppercase">
-                <?php 
-                if ( $posts_page_id ) {
-                    echo esc_html( get_the_title( $posts_page_id ) );
-                } else {
-                    echo esc_html__( 'YAZILAR', 'burhan-ozalp' );
-                }
-                ?>
-            </span>
-        </div>
     </div>
 </section>
 
