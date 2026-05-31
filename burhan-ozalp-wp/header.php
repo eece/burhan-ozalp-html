@@ -22,32 +22,34 @@
 
     <!-- Top Header -->
     <header class="bg-white border-b border-gray-100 hidden sm:block">
-        <div class="container mx-auto px-4 py-2 flex flex-wrap justify-between items-center text-base uppercase tracking-wider text-gray-400 font-semibold">
+        <div class="container mx-auto px-4 py-2 flex flex-wrap justify-between items-center text-xs uppercase tracking-wider text-gray-700 font-bold">
             <div class="flex items-center gap-6">
-                <div class="flex items-center">
-                    <i class="fa-solid fa-phone text-[10px] mr-2 rtl:mr-0 rtl:ml-2 text-[#8b6e4e]"></i>
-                    <?php echo esc_html__( 'Bizi Arayın:', 'burhan-ozalp' ); ?> <span dir="ltr"><?php echo esc_html( $phone ); ?></span>
+                <div>
+                    <a href="tel:<?php echo esc_attr( preg_replace('/[^0-9+]/', '', $phone) ); ?>" class="flex items-center text-gray-700 hover:text-[#8b6e4e] transition-colors">
+                        <i class="fa-solid fa-phone text-[10px] mr-2 rtl:mr-0 rtl:ml-2 text-[#8b6e4e]"></i>
+                        <?php echo esc_html__( 'Bizi Arayın:', 'burhan-ozalp' ); ?>&nbsp;<span dir="ltr"><?php echo esc_html( $phone ); ?></span>
+                    </a>
                 </div>
-                <div class="hidden md:flex items-center gap-4 border-l rtl:border-l-0 rtl:border-r border-gray-200 pl-6 rtl:pl-0 rtl:pr-6">
+                <div class="hidden md:flex items-center gap-4 border-l rtl:border-l-0 rtl:border-r border-gray-200 pl-6 rtl:pl-0 rtl:pr-6 text-gray-500">
                     <?php if ( ! empty( $facebook ) ) : ?>
-                        <a href="<?php echo esc_url( $facebook ); ?>" class="hover:text-[#8b6e4e] transition-colors" target="_blank"><i class="fa-brands fa-facebook-f text-xl"></i></a>
+                        <a href="<?php echo esc_url( $facebook ); ?>" class="hover:text-[#8b6e4e] transition-colors" target="_blank"><i class="fa-brands fa-facebook-f text-base"></i></a>
                     <?php endif; ?>
                     <?php if ( ! empty( $instagram ) ) : ?>
-                        <a href="<?php echo esc_url( $instagram ); ?>" class="hover:text-[#8b6e4e] transition-colors" target="_blank"><i class="fa-brands fa-instagram text-xl"></i></a>
+                        <a href="<?php echo esc_url( $instagram ); ?>" class="hover:text-[#8b6e4e] transition-colors" target="_blank"><i class="fa-brands fa-instagram text-base"></i></a>
                     <?php endif; ?>
                     <?php if ( ! empty( $youtube ) ) : ?>
-                        <a href="<?php echo esc_url( $youtube ); ?>" class="hover:text-[#8b6e4e] transition-colors" target="_blank"><i class="fa-brands fa-youtube text-xl"></i></a>
+                        <a href="<?php echo esc_url( $youtube ); ?>" class="hover:text-[#8b6e4e] transition-colors" target="_blank"><i class="fa-brands fa-youtube text-base"></i></a>
                     <?php endif; ?>
                 </div>
             </div>
             <div class="flex items-center gap-6">
                 <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="GET" class="relative hidden sm:block">
-                    <input type="text" name="s" placeholder="<?php echo esc_attr_x( 'ARA', 'placeholder', 'burhan-ozalp' ); ?>" class="bg-gray-50 border border-gray-200 px-3 py-1.5 w-40 text-base focus:outline-none focus:border-[#8b6e4e]" value="<?php echo get_search_query(); ?>">
-                    <button type="submit" class="absolute right-2 rtl:right-auto rtl:left-2 top-2 text-gray-400 hover:text-[#8b6e4e] focus:outline-none bg-transparent border-0 cursor-pointer">
+                    <input type="text" name="s" placeholder="<?php echo esc_attr_x( 'ARA', 'placeholder', 'burhan-ozalp' ); ?>" class="bg-gray-50 border border-gray-200 px-3 py-1.5 w-40 text-xs focus:outline-none focus:border-[#8b6e4e]" value="<?php echo get_search_query(); ?>">
+                    <button type="submit" class="absolute right-2 rtl:right-auto rtl:left-2 top-2 text-gray-450 hover:text-[#8b6e4e] focus:outline-none bg-transparent border-0 cursor-pointer">
                         <i class="fa-solid fa-magnifying-glass text-[10px]"></i>
                     </button>
                 </form>
-                <a href="<?php echo esc_url( $contact_btn_url ); ?>" class="bg-[#008000] text-white px-4 py-2 flex items-center hover:bg-opacity-90 transition-all rounded-sm">
+                <a href="<?php echo esc_url( $contact_btn_url ); ?>" class="bg-[#2c8d2c] text-white px-4 py-2 flex items-center hover:bg-opacity-90 transition-all rounded-sm text-xs font-bold">
                     <i class="fa-solid fa-check text-xs mr-2 rtl:mr-0 rtl:ml-2"></i>
                     <?php echo esc_html( $contact_btn_text ); ?>
                 </a>
@@ -57,12 +59,14 @@
 
     <!-- Mobile Top Header (Centered) -->
     <div class="sm:hidden bg-white border-b border-gray-100 py-3">
-        <div class="container mx-auto px-4 flex flex-col items-center space-y-3 text-[11px] uppercase tracking-wider text-gray-500 font-semibold text-center">
+        <div class="container mx-auto px-4 flex flex-col items-center space-y-3 text-[11px] uppercase tracking-wider text-gray-700 font-bold text-center">
             <div class="flex items-center justify-center">
-                <i class="fa-solid fa-phone text-[10px] mr-2 rtl:mr-0 rtl:ml-2 text-[#8b6e4e]"></i>
-                <?php echo esc_html__( 'Bizi Arayın:', 'burhan-ozalp' ); ?> <span dir="ltr"><?php echo esc_html( $phone ); ?></span>
+                <a href="tel:<?php echo esc_attr( preg_replace('/[^0-9+]/', '', $phone) ); ?>" class="flex items-center text-gray-700 hover:text-[#8b6e4e] transition-colors">
+                    <i class="fa-solid fa-phone text-[10px] mr-2 rtl:mr-0 rtl:ml-2 text-[#8b6e4e]"></i>
+                    <?php echo esc_html__( 'Bizi Arayın:', 'burhan-ozalp' ); ?>&nbsp;<span dir="ltr"><?php echo esc_html( $phone ); ?></span>
+                </a>
             </div>
-            <a href="<?php echo esc_url( $contact_btn_url ); ?>" class="bg-[#008000] text-white px-6 py-2 flex items-center hover:bg-opacity-90 transition-all rounded-sm text-xs font-bold mx-auto">
+            <a href="<?php echo esc_url( $contact_btn_url ); ?>" class="bg-[#2c8d2c] text-white px-6 py-2 flex items-center hover:bg-opacity-90 transition-all rounded-sm text-xs font-bold mx-auto">
                 <i class="fa-solid fa-check text-xs mr-2 rtl:mr-0 rtl:ml-2"></i>
                 <?php echo esc_html( $contact_btn_text ); ?>
             </a>

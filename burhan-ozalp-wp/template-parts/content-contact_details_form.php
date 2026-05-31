@@ -54,20 +54,20 @@ $cf7_shortcode = get_sub_field('cf7_shortcode');
                     <p class="text-[#7b5f43] leading-relaxed mb-6">
                         <?php echo nl2br( esc_html( $address_text ) ); ?>
                     </p>
-                    <div class="space-y-4 font-bold text-[#333]">
+                    <div class="space-y-4 font-bold text-gray-800">
                         <?php if ( ! empty( $phone_1 ) ) : ?>
                             <div class="flex items-center">
-                                <span class="text-[#8b6e4e] mr-4"><?php echo esc_html( $phone_1 ); ?></span>
+                                <a href="tel:<?php echo esc_attr( preg_replace('/[^0-9+]/', '', $phone_1) ); ?>" class="text-gray-800 hover:text-[#8b6e4e] transition-colors"><?php echo esc_html( $phone_1 ); ?></a>
                             </div>
                         <?php endif; ?>
                         <?php if ( ! empty( $phone_2 ) ) : ?>
                             <div class="flex items-center">
-                                <span class="text-[#8b6e4e] mr-4"><?php echo esc_html( $phone_2 ); ?></span>
+                                <a href="tel:<?php echo esc_attr( preg_replace('/[^0-9+]/', '', $phone_2) ); ?>" class="text-gray-800 hover:text-[#8b6e4e] transition-colors"><?php echo esc_html( $phone_2 ); ?></a>
                             </div>
                         <?php endif; ?>
                         <?php if ( ! empty( $email ) ) : ?>
                             <div class="flex items-center">
-                                <a href="mailto:<?php echo esc_attr( $email ); ?>" class="text-[#8b6e4e] hover:opacity-80 transition-opacity underline"><?php echo esc_html( $email ); ?></a>
+                                <a href="mailto:<?php echo esc_attr( $email ); ?>" class="text-[#8b6e4e] hover:opacity-85 transition-opacity underline"><?php echo esc_html( $email ); ?></a>
                             </div>
                         <?php endif; ?>
                     </div>

@@ -46,19 +46,25 @@ if ( isset( $locations['footer_menu'] ) ) {
                         <span class="block text-base font-['Montserrat'] font-semibold text-[#8b6e4e] tracking-[0.3em] mb-1 uppercase text-center lg:text-left rtl:lg:text-right rtl:text-right"><?php echo esc_html( $logo_subtitle ); ?></span>
                         <span class="block text-center lg:text-left rtl:lg:text-right rtl:text-right"><?php echo esc_html( $logo_title ); ?></span>
                     </h2>
-                    <div class="text-base text-[#7b5f43] space-y-6 leading-relaxed w-full flex flex-col items-center lg:items-start rtl:lg:items-start rtl:items-start text-center lg:text-left rtl:lg:text-right rtl:text-right">
+                    <div class="text-base text-gray-800 space-y-6 leading-relaxed w-full flex flex-col items-center lg:items-start rtl:lg:items-start rtl:items-start text-center lg:text-left rtl:lg:text-right rtl:text-right">
                         <div class="w-full flex flex-col lg:flex-row items-center lg:items-start rtl:items-start rtl:lg:items-start text-center lg:text-left rtl:lg:text-right rtl:text-right">
                             <i class="fa-solid fa-location-dot text-sm mb-2 lg:mb-0 lg:mr-3 rtl:lg:mr-0 rtl:lg:ml-3 text-[#8b6e4e] mt-0.5 shrink-0"></i>
                             <div class="w-full">
                                 <span class="block font-bold mb-1 uppercase text-gray-800"><?php echo esc_html__( 'Muayenehane Adresi:', 'burhan-ozalp' ); ?></span>
-                                <?php echo esc_html( $address ); ?>
+                                <span class="text-gray-700 font-medium"><?php echo esc_html( $address ); ?></span>
                             </div>
                         </div>
                         <div class="w-full flex flex-col lg:flex-row items-center lg:items-start rtl:items-start rtl:lg:items-start text-center lg:text-left rtl:lg:text-right rtl:text-right">
                             <i class="fa-solid fa-phone text-sm mb-2 lg:mb-0 lg:mr-3 rtl:lg:mr-0 rtl:lg:ml-3 text-[#8b6e4e] mt-0.5 shrink-0"></i>
                             <div class="w-full">
                                 <span class="block font-bold mb-1 uppercase text-gray-800"><?php echo esc_html__( 'Telefonlar:', 'burhan-ozalp' ); ?></span>
-                                <span dir="ltr" class="inline-block"><?php echo esc_html( $phone ); ?> <?php echo ! empty( $sec_phone ) ? ' / ' . esc_html( $sec_phone ) : ''; ?></span>
+                                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start rtl:justify-center text-gray-800 font-bold gap-1 sm:gap-2 text-base" dir="ltr">
+                                    <a href="tel:<?php echo esc_attr( preg_replace('/[^0-9+]/', '', $phone) ); ?>" class="hover:text-[#8b6e4e] text-gray-800 transition-colors inline-block"><?php echo esc_html( $phone ); ?></a>
+                                    <?php if ( ! empty( $sec_phone ) ) : ?>
+                                        <span class="text-gray-400 font-normal hidden sm:inline">/</span>
+                                        <a href="tel:<?php echo esc_attr( preg_replace('/[^0-9+]/', '', $sec_phone) ); ?>" class="hover:text-[#8b6e4e] text-gray-800 transition-colors inline-block"><?php echo esc_html( $sec_phone ); ?></a>
+                                    <?php endif; ?>
+                                </div>
                             </div>
                         </div>
                         <div class="pt-4 w-full flex justify-center lg:justify-start rtl:justify-start rtl:lg:justify-start">

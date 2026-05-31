@@ -12,27 +12,30 @@
 </head>
 <body class="bg-[#fcfaf7] text-[#333] font-['Montserrat',sans-serif]">
     <!-- Top Header -->
+    <!-- Top Header -->
     <header class="bg-white border-b border-gray-100 hidden sm:block">
-        <div class="container mx-auto px-4 py-2 flex flex-wrap justify-between items-center text-base uppercase tracking-wider text-gray-500 font-semibold">
+        <div class="container mx-auto px-4 py-2 flex flex-wrap justify-between items-center text-xs uppercase tracking-wider text-gray-700 font-bold">
             <div class="flex items-center space-x-6">
-                <div class="flex items-center">
-                    <i class="fa-solid fa-phone text-[10px] mr-2 text-[#8b6e4e]"></i>
-                    Bizi Arayın: +90 532 157 05 77
+                <div>
+                    <a href="tel:+905321570577" class="flex items-center text-gray-700 hover:text-[#8b6e4e] transition-colors">
+                        <i class="fa-solid fa-phone text-[10px] mr-2 text-[#8b6e4e]"></i>
+                        Bizi Arayın:&nbsp;<span>+90 532 157 05 77</span>
+                    </a>
                 </div>
-                <div class="hidden md:flex items-center space-x-4 border-l border-gray-200 pl-6">
-                    <a href="#" class="hover:text-[#8b6e4e] transition-colors"><i class="fa-brands fa-facebook-f text-xl"></i></a>
-                    <a href="#" class="hover:text-[#8b6e4e] transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
-                    <a href="#" class="hover:text-[#8b6e4e] transition-colors"><i class="fa-brands fa-youtube text-xl"></i></a>
+                <div class="hidden md:flex items-center space-x-4 border-l border-gray-200 pl-6 text-gray-500">
+                    <a href="#" class="hover:text-[#8b6e4e] transition-colors"><i class="fa-brands fa-facebook-f text-base"></i></a>
+                    <a href="#" class="hover:text-[#8b6e4e] transition-colors"><i class="fa-brands fa-instagram text-base"></i></a>
+                    <a href="#" class="hover:text-[#8b6e4e] transition-colors"><i class="fa-brands fa-youtube text-base"></i></a>
                 </div>
             </div>
             <div class="flex items-center space-x-6">
                 <form action="/arama.html" method="GET" class="relative hidden sm:block">
-                    <input type="text" name="s" placeholder="ARA..." class="bg-gray-50 border border-gray-200 px-3 py-1.5 w-40 text-base focus:outline-none focus:border-[#8b6e4e]">
-                    <button type="submit" class="absolute right-2 top-2 text-gray-400 hover:text-[#8b6e4e] focus:outline-none bg-transparent border-0 cursor-pointer">
+                    <input type="text" name="s" placeholder="ARA..." class="bg-gray-50 border border-gray-200 px-3 py-1.5 w-40 text-xs focus:outline-none focus:border-[#8b6e4e]">
+                    <button type="submit" class="absolute right-2 top-2 text-gray-450 hover:text-[#8b6e4e] focus:outline-none bg-transparent border-0 cursor-pointer">
                         <i class="fa-solid fa-magnifying-glass text-[10px]"></i>
                     </button>
                 </form>
-                <a href="#" class="bg-[#008000] text-white px-4 py-2 flex items-center hover:bg-opacity-90 transition-all rounded-sm">
+                <a href="#" class="bg-[#2c8d2c] text-white px-4 py-2 flex items-center hover:bg-opacity-90 transition-all rounded-sm text-xs font-bold">
                     <i class="fa-solid fa-check text-xs mr-2"></i>
                     HIZLI İLETİŞİM
                 </a>
@@ -42,12 +45,14 @@
 
     <!-- Mobile Top Header (Centered) -->
     <div class="sm:hidden bg-white border-b border-gray-100 py-3">
-        <div class="container mx-auto px-4 flex flex-col items-center space-y-3 text-[11px] uppercase tracking-wider text-gray-500 font-semibold text-center">
+        <div class="container mx-auto px-4 flex flex-col items-center space-y-3 text-[11px] uppercase tracking-wider text-gray-700 font-bold text-center">
             <div class="flex items-center justify-center">
-                <i class="fa-solid fa-phone text-[10px] mr-2 text-[#8b6e4e]"></i>
-                Bizi Arayın: +90 532 157 05 77
+                <a href="tel:+905321570577" class="flex items-center text-gray-700 hover:text-[#8b6e4e] transition-colors">
+                    <i class="fa-solid fa-phone text-[10px] mr-2 text-[#8b6e4e]"></i>
+                    Bizi Arayın:&nbsp;<span>+90 532 157 05 77</span>
+                </a>
             </div>
-            <a href="#" class="bg-[#008000] text-white px-6 py-2 flex items-center hover:bg-opacity-90 transition-all rounded-sm text-xs font-bold mx-auto">
+            <a href="#" class="bg-[#2c8d2c] text-white px-6 py-2 flex items-center hover:bg-opacity-90 transition-all rounded-sm text-xs font-bold mx-auto">
                 <i class="fa-solid fa-check text-xs mr-2"></i>
                 HIZLI İLETİŞİM
             </a>
@@ -191,12 +196,12 @@
                         <p class="text-[#7b5f43] leading-relaxed mb-6">
                             Hamidiye, Cendere Cad. Kordon İstanbul Güzelyalı Sitesi No: 49, 34038 Kağıthane/İstanbul
                         </p>
-                        <div class="space-y-4 font-bold text-[#333]">
+                        <div class="space-y-4 font-bold text-gray-800">
                             <div class="flex items-center">
-                                <span class="text-[#8b6e4e] mr-4">+90 532 157 05 77</span>
+                                <a href="tel:+905321570577" class="text-gray-800 hover:text-[#8b6e4e] transition-colors">+90 532 157 05 77</a>
                             </div>
                             <div class="flex items-center">
-                                <span class="text-[#8b6e4e] mr-4">+90 212 261 12 12</span>
+                                <a href="tel:+902122611212" class="text-gray-800 hover:text-[#8b6e4e] transition-colors">+90 212 261 12 12</a>
                             </div>
                             <div class="flex items-center">
                                 <a href="mailto:info@burhanozalp.com" class="text-[#8b6e4e] hover:opacity-80 transition-opacity underline">info@burhanozalp.com</a>
@@ -239,19 +244,23 @@
                         <span class="block text-base font-['Montserrat'] font-semibold text-[#8b6e4e] tracking-[0.3em] mb-1 uppercase">Doc.Dr.</span>
                         BURHAN ÖZALP
                     </h2>
-                    <div class="text-base text-[#7b5f43] space-y-6 leading-relaxed">
-                        <div class="flex flex-col lg:flex-row items-center lg:items-start">
+                    <div class="text-base text-gray-800 space-y-6 leading-relaxed w-full flex flex-col items-center lg:items-start text-center lg:text-left">
+                        <div class="w-full flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left">
                             <i class="fa-solid fa-location-dot text-sm mb-2 lg:mb-0 lg:mr-3 text-[#8b6e4e] mt-0.5 shrink-0"></i>
-                            <div>
+                            <div class="w-full">
                                 <span class="block font-bold mb-1 uppercase text-gray-800">Muayenehane Adresi:</span>
-                                Hamidiye, Cendere Cad. Kordon İstanbul Güzelyalı Sitesi No: 49, 34038 Kağıthane/İstanbul
+                                <span class="text-gray-700 font-medium">Hamidiye, Cendere Cad. Kordon İstanbul Güzelyalı Sitesi No: 49, 34038 Kağıthane/İstanbul</span>
                             </div>
                         </div>
-                        <div class="flex flex-col lg:flex-row items-center lg:items-start">
+                        <div class="w-full flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left">
                             <i class="fa-solid fa-phone text-sm mb-2 lg:mb-0 lg:mr-3 text-[#8b6e4e] mt-0.5 shrink-0"></i>
-                            <div>
+                            <div class="w-full">
                                 <span class="block font-bold mb-1 uppercase text-gray-800">Telefonlar:</span>
-                                +90 532 157 05 77 / +90 212 261 12 12
+                                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start text-gray-800 font-bold gap-1 sm:gap-2 text-base" dir="ltr">
+                                    <a href="tel:+905321570577" class="hover:text-[#8b6e4e] text-gray-800 transition-colors inline-block">+90 532 157 05 77</a>
+                                    <span class="text-gray-400 font-normal hidden sm:inline">/</span>
+                                    <a href="tel:+902122611212" class="hover:text-[#8b6e4e] text-gray-800 transition-colors inline-block">+90 212 261 12 12</a>
+                                </div>
                             </div>
                         </div>
                         <div class="pt-4 w-full flex justify-center lg:justify-start">
