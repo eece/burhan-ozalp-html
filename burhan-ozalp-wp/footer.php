@@ -240,8 +240,9 @@ if ( isset( $locations['footer_menu'] ) ) {
 
     <!-- Fixed WhatsApp Widget -->
     <?php if ( ! empty( $whatsapp_phone ) ) : ?>
-        <a href="https://wa.me/<?php echo esc_attr( $whatsapp_phone ); ?>" target="_blank" class="fixed bottom-6 right-6 rtl:right-auto rtl:left-6 bg-[#25d366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all z-[60]">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/whatsapp.svg" class="w-8 h-8" alt="WhatsApp">
+        <a href="https://wa.me/<?php echo esc_attr( $whatsapp_phone ); ?>" target="_blank" class="fixed bottom-0 left-0 w-full md:bottom-6 md:right-6 md:left-auto rtl:md:right-auto rtl:md:left-6 md:w-auto bg-[#25d366] text-white font-bold py-2.5 px-4 md:py-3 md:px-5 rounded-none md:rounded-full flex items-center justify-center gap-2 shadow-lg hover:scale-105 md:hover:scale-110 active:scale-95 transition-all z-[60] text-sm md:text-base cursor-pointer">
+            <span><?php echo esc_html__( "Whatsapp'tan Yaz", 'burhan-ozalp' ); ?></span>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/whatsapp.svg" class="w-5 h-5 md:w-8 md:h-8" alt="WhatsApp">
         </a>
     <?php endif; ?>
 

@@ -224,6 +224,7 @@ function burhan_register_polylang_strings() {
             'Tarih:' => 'burhan-ozalp',
             'Etiketler:' => 'burhan-ozalp',
             'Devamını Oku' => 'burhan-ozalp',
+            "Whatsapp'tan Yaz" => 'burhan-ozalp',
         );
 
         foreach ( $strings as $string => $context ) {
