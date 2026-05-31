@@ -56,18 +56,18 @@ Aşağıdaki HTML kodunu Contact Form 7 yönetim panelindeki **Form** bölümün
 ```html
 <div class="space-y-8">
     <div class="relative">
-        [text* your-name class:w-full class:bg-white class:border-b class:border-gray-200 class:py-3 class:text-base class:focus:outline-none class:focus:border-[#8b6e4e] class:transition-colors placeholder "Ad Soyad*"]
+        [text* your-name class:w-full class:bg-white class:border-b class:border-gray-200 class:py-3 class:text-base class:focus:outline-none class:focus:border-brand class:transition-colors placeholder "Ad Soyad*"]
     </div>
     <div class="relative">
-        [text* your-country class:w-full class:bg-white class:border-b class:border-gray-200 class:py-3 class:text-base class:focus:outline-none class:focus:border-[#8b6e4e] class:transition-colors placeholder "Ülke*"]
+        [text* your-country class:w-full class:bg-white class:border-b class:border-gray-200 class:py-3 class:text-base class:focus:outline-none class:focus:border-brand class:transition-colors placeholder "Ülke*"]
     </div>
     <div class="relative">
-        [tel* your-phone class:w-full class:bg-white class:border-b class:border-gray-200 class:py-3 class:text-base class:focus:outline-none class:focus:border-[#8b6e4e] class:transition-colors placeholder "Telefon No*"]
+        [tel* your-phone class:w-full class:bg-white class:border-b class:border-gray-200 class:py-3 class:text-base class:focus:outline-none class:focus:border-brand class:transition-colors placeholder "Telefon No*"]
     </div>
     <div class="relative">
-        [textarea* your-message x4 class:w-full class:bg-white class:border-b class:border-gray-200 class:py-3 class:text-base class:focus:outline-none class:focus:border-[#8b6e4e] class:transition-colors class:resize-none placeholder "Mesaj*"]
+        [textarea* your-message x4 class:w-full class:bg-white class:border-b class:border-gray-200 class:py-3 class:text-base class:focus:outline-none class:focus:border-brand class:transition-colors class:resize-none placeholder "Mesaj*"]
     </div>
-    [submit class:bg-[#6d553e] class:text-white class:px-12 class:py-4 class:font-bold class:tracking-widest class:uppercase class:hover:bg-opacity-90 class:transition-all class:rounded-sm class:shadow-md class:cursor-pointer "GÖNDER"]
+    [submit class:bg-brand class:text-white class:px-12 class:py-4 class:font-bold class:tracking-widest class:uppercase class:hover:bg-opacity-90 class:transition-all class:rounded-sm class:shadow-md class:cursor-pointer "GÖNDER"]
 </div>
 ```
 
@@ -81,29 +81,29 @@ Aşağıdaki HTML kodunu Contact Form 7 yönetim panelindeki **Form** bölümün
 ```html
 <div class="space-y-8">
     <div class="relative">
-        [text* your-name class:w-full class:bg-white class:border-b class:border-gray-200 class:py-3 class:text-base class:focus:outline-none class:focus:border-[#8b6e4e] class:transition-colors placeholder "{Ad Soyad}*"]
+        [text* your-name class:w-full class:bg-white class:border-b class:border-gray-200 class:py-3 class:text-base class:focus:outline-none class:focus:border-brand class:transition-colors placeholder "{Ad Soyad}*"]
     </div>
 
     <div class="relative">
-        [tel* your-phone class:w-full class:bg-white class:border-b class:border-gray-200 class:py-3 class:text-base class:focus:outline-none class:focus:border-[#8b6e4e] class:transition-colors placeholder "{Telefon No}*"]
+        [tel* your-phone class:w-full class:bg-white class:border-b class:border-gray-200 class:py-3 class:text-base class:focus:outline-none class:focus:border-brand class:transition-colors placeholder "{Telefon No}*"]
     </div>
 
     <div class="relative">
         <label class="block text-sm font-semibold text-gray-500 mb-1">{Tarih Seçiniz} <span class="text-xs text-gray-400 font-normal">({Randevu Tarihi})</span></label>
-        [date your-date class:w-full class:bg-white class:border-b class:border-gray-200 class:py-3 class:text-base class:focus:outline-none class:focus:border-[#8b6e4e] class:transition-colors]
+        [date your-date class:w-full class:bg-white class:border-b class:border-gray-200 class:py-3 class:text-base class:focus:outline-none class:focus:border-brand class:transition-colors]
     </div>
 
     <div class="relative">
         <label class="block text-sm font-semibold text-gray-500 mb-1">{Konu}</label>
-        [select your-subject class:w-full class:bg-white class:border-b class:border-gray-200 class:py-3 class:text-base class:focus:outline-none class:focus:border-[#8b6e4e] class:transition-colors "{Seçiniz}" "{Burun Estetiği}" "{Yağ Aldırma Ameliyatı (Liposuction)}" "{Popo Büyütme, Popo Kaldırma ve Popo Dikleştirme}" "{Meme Büyütme}" "{Meme Dikleştirme}" "{Meme Küçültme}" "{Karın Germe(Abdominoplasti)}" "{Erkek Memesinin Aşırı Büyümesi Tedavisi}" "{Saç Ektirme}" "{Dolgu - Yağ Enjeksiyonu}" "{Dudak Kaldırma}" "{Diğer Estetik Operasyonlar}"]
+        [select your-subject class:w-full class:bg-white class:border-b class:border-gray-200 class:py-3 class:text-base class:focus:outline-none class:focus:border-brand class:transition-colors "{Seçiniz}" "{Burun Estetiği}" "{Yağ Aldırma Ameliyatı (Liposuction)}" "{Popo Büyütme, Popo Kaldırma ve Popo Dikleştirme}" "{Meme Büyütme}" "{Meme Dikleştirme}" "{Meme Küçültme}" "{Karın Germe(Abdominoplasti)}" "{Erkek Memesinin Aşırı Büyümesi Tedavisi}" "{Saç Ektirme}" "{Dolgu - Yağ Enjeksiyonu}" "{Dudak Kaldırma}" "{Diğer Estetik Operasyonlar}"]
     </div>
 
     <div class="relative">
         <label class="block text-sm font-semibold text-gray-500 mb-1">{Mesajınız} <span class="text-xs text-gray-400 font-normal">({varsa mesajınızı yazınız})</span></label>
-        [textarea your-message x4 class:w-full class:bg-white class:border-b class:border-gray-200 class:py-3 class:text-base class:focus:outline-none class:focus:border-[#8b6e4e] class:transition-colors class:resize-none]
+        [textarea your-message x4 class:w-full class:bg-white class:border-b class:border-gray-200 class:py-3 class:text-base class:focus:outline-none class:focus:border-brand class:transition-colors class:resize-none]
     </div>
 
-    [submit class:bg-[#6d553e] class:text-white class:px-12 class:py-4 class:font-bold class:tracking-widest class:uppercase class:hover:bg-opacity-90 class:transition-all class:rounded-sm class:shadow-md class:cursor-pointer "{GÖNDER}"]
+    [submit class:bg-brand class:text-white class:px-12 class:py-4 class:font-bold class:tracking-widest class:uppercase class:hover:bg-opacity-90 class:transition-all class:rounded-sm class:shadow-md class:cursor-pointer "{GÖNDER}"]
 </div>
 ```
 
