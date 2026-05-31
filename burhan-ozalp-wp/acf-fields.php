@@ -207,7 +207,7 @@ acf_add_local_field_group(array(
                                     'key' => 'field_slide_btn_url',
                                     'label' => 'Buton Linki',
                                     'name' => 'btn_url',
-                                    'type' => 'text',
+                                    'type' => 'page_link',
                                 ),
                             ),
                         ),
