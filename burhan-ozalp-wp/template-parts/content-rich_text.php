@@ -12,7 +12,7 @@ if ( ! empty( $content ) ) :
     <section class="py-24 bg-white">
         <div class="container mx-auto px-4 max-w-5xl">
             <div class="prose max-w-none text-[#7b5f43] leading-relaxed entry-content">
-                <?php echo wp_kses_post( $content ); ?>
+                <?php echo $content; ?>
             </div>
         </div>
     </section>

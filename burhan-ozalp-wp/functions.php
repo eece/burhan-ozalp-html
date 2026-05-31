@@ -187,7 +187,7 @@ function burhan_register_polylang_strings() {
             'Arama Sonuçları' => 'burhan-ozalp',
             'Kelime yazın ve arayın...' => 'burhan-ozalp',
             'ARA' => 'burhan-ozalp',
-            'Aradığınız Kelimeye ait sonuç bulunamadı.' => 'burhan-ozalp',
+            'Aradığınız kelimeye ait sonuç bulunamadı.' => 'burhan-ozalp',
             'Lütfen farklı kelimelerle tekrar deneyiniz.' => 'burhan-ozalp',
             'Bir Yanıt Bırakın' => 'burhan-ozalp',
             'Yorumu Gönder' => 'burhan-ozalp',
@@ -223,6 +223,7 @@ function burhan_register_polylang_strings() {
             'Bir dahaki sefere yorum yaptığımda kullanılmak üzere adımı, e-posta adresimi ve web site adresimi bu tarayıcıya kaydet.' => 'burhan-ozalp',
             'Tarih:' => 'burhan-ozalp',
             'Etiketler:' => 'burhan-ozalp',
+            'Devamını Oku' => 'burhan-ozalp',
         );
 
         foreach ( $strings as $string => $context ) {

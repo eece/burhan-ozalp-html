@@ -71,6 +71,42 @@ Aşağıdaki HTML kodunu Contact Form 7 yönetim panelindeki **Form** bölümün
 </div>
 ```
 
+## 4. Randevu Formu (Appointment Form)
+
+Bu form, polylang çok dilli uyumluluğuna sahip "Randevu Formu" bileşeninin WordPress + Contact Form 7 (CF7) eklentisine uygun şablonudur. Alan etiketleri ve yer tutucular `{translated text}` formatında hazırlanmıştır; böylece **Multilingual Contact Form 7 with Polylang** eklentisi tarafından otomatik olarak algılanıp tercüme edilebilirler.
+
+### Contact Form 7 Markup
+Aşağıdaki HTML kodunu Contact Form 7 yönetim panelindeki **Form** bölümüne doğrudan kopyalayıp yapıştırabilirsiniz:
+
+```html
+<div class="space-y-8">
+    <div class="relative">
+        [text* your-name class:w-full class:bg-white class:border-b class:border-gray-200 class:py-3 class:text-base class:focus:outline-none class:focus:border-[#8b6e4e] class:transition-colors placeholder "{Ad Soyad}*"]
+    </div>
+
+    <div class="relative">
+        [tel* your-phone class:w-full class:bg-white class:border-b class:border-gray-200 class:py-3 class:text-base class:focus:outline-none class:focus:border-[#8b6e4e] class:transition-colors placeholder "{Telefon No}*"]
+    </div>
+
+    <div class="relative">
+        <label class="block text-sm font-semibold text-gray-500 mb-1">{Tarih Seçiniz} <span class="text-xs text-gray-400 font-normal">({Randevu Tarihi})</span></label>
+        [date your-date class:w-full class:bg-white class:border-b class:border-gray-200 class:py-3 class:text-base class:focus:outline-none class:focus:border-[#8b6e4e] class:transition-colors]
+    </div>
+
+    <div class="relative">
+        <label class="block text-sm font-semibold text-gray-500 mb-1">{Konu}</label>
+        [select your-subject class:w-full class:bg-white class:border-b class:border-gray-200 class:py-3 class:text-base class:focus:outline-none class:focus:border-[#8b6e4e] class:transition-colors "{Seçiniz}" "{Burun Estetiği}" "{Yağ Aldırma Ameliyatı (Liposuction)}" "{Popo Büyütme, Popo Kaldırma ve Popo Dikleştirme}" "{Meme Büyütme}" "{Meme Dikleştirme}" "{Meme Küçültme}" "{Karın Germe(Abdominoplasti)}" "{Erkek Memesinin Aşırı Büyümesi Tedavisi}" "{Saç Ektirme}" "{Dolgu - Yağ Enjeksiyonu}" "{Dudak Kaldırma}" "{Diğer Estetik Operasyonlar}"]
+    </div>
+
+    <div class="relative">
+        <label class="block text-sm font-semibold text-gray-500 mb-1">{Mesajınız} <span class="text-xs text-gray-400 font-normal">({varsa mesajınızı yazınız})</span></label>
+        [textarea your-message x4 class:w-full class:bg-white class:border-b class:border-gray-200 class:py-3 class:text-base class:focus:outline-none class:focus:border-[#8b6e4e] class:transition-colors class:resize-none]
+    </div>
+
+    [submit class:bg-[#6d553e] class:text-white class:px-12 class:py-4 class:font-bold class:tracking-widest class:uppercase class:hover:bg-opacity-90 class:transition-all class:rounded-sm class:shadow-md class:cursor-pointer "{GÖNDER}"]
+</div>
+```
+
 > **Önemli İpucu (Contact Form 7 P Etiketi Engelleme):** 
 > Contact Form 7, form içindeki her satır arasına otomatik olarak `<p>` ve `<br>` etiketleri ekler. Bu durumun flex hiyerarşisini ve Tailwind tasarımlarını bozmasını engellemek için `wp-config.php` dosyanıza şu satırı eklemeniz önerilir:
 > ```php
