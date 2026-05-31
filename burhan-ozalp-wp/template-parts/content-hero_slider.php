@@ -18,7 +18,21 @@ if ( have_rows('slides') ) :
                 $subtitle = get_sub_field('subtitle');
                 $title = get_sub_field('title');
                 $btn_text = get_sub_field('btn_text');
-                $btn_url = get_sub_field('btn_url');
+                $btn_url_field = get_sub_field('btn_url');
+                $btn_url = '#';
+                $btn_target = '_self';
+                
+                if ( ! empty( $btn_url_field ) ) {
+                    if ( is_array( $btn_url_field ) ) {
+                        $btn_url = ! empty( $btn_url_field['url'] ) ? $btn_url_field['url'] : '#';
+                        $btn_target = ! empty( $btn_url_field['target'] ) ? $btn_url_field['target'] : '_self';
+                        if ( empty( $btn_text ) && ! empty( $btn_url_field['title'] ) ) {
+                            $btn_text = $btn_url_field['title'];
+                        }
+                    } else {
+                        $btn_url = $btn_url_field;
+                    }
+                }
                 
                 // Fallback default sample images
                 if ( empty($image_desktop) ) {
@@ -44,7 +58,7 @@ if ( have_rows('slides') ) :
                             <?php endif; ?>
                             <?php if ( ! empty( $btn_text ) ) : ?>
                                 <div class="text-right rtl:text-right">
-                                    <a href="<?php echo esc_url( $btn_url ); ?>" class="inline-block px-10 py-3 bg-[#8b6e4e] text-white text-base font-bold tracking-[0.2em] transform hover:bg-[#7b5f43] hover:scale-105 transition-all uppercase rounded-sm shadow-xl"><?php echo esc_html( $btn_text ); ?></a>
+                                    <a href="<?php echo esc_url( $btn_url ); ?>" target="<?php echo esc_attr( $btn_target ); ?>" class="inline-block px-10 py-3 bg-[#8b6e4e] text-white text-base font-bold tracking-[0.2em] transform hover:bg-[#7b5f43] hover:scale-105 transition-all uppercase rounded-sm shadow-xl"><?php echo esc_html( $btn_text ); ?></a>
                                 </div>
                             <?php endif; ?>
                         </div>
