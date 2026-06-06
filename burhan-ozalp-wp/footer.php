@@ -238,13 +238,23 @@ if ( isset( $locations['footer_menu'] ) ) {
         </div>
     </footer>
 
-    <!-- Fixed WhatsApp Widget -->
-    <?php if ( ! empty( $whatsapp_phone ) ) : ?>
-        <a href="https://wa.me/<?php echo esc_attr( $whatsapp_phone ); ?>" target="_blank" class="fixed bottom-0 left-0 w-full md:bottom-6 md:right-6 md:left-auto rtl:md:right-auto rtl:md:left-6 md:w-auto bg-[#25d366] text-white font-bold py-2.5 px-4 md:py-3 md:px-5 rounded-none md:rounded-full flex items-center justify-center gap-2 shadow-lg hover:scale-105 md:hover:scale-110 active:scale-95 transition-all z-[60] text-sm md:text-base cursor-pointer">
-            <span><?php echo esc_html__( "Whatsapp'tan Yaz", 'burhan-ozalp' ); ?></span>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/whatsapp.svg" class="w-5 h-5 md:w-8 md:h-8" alt="WhatsApp">
-        </a>
-    <?php endif; ?>
+    <!-- Fixed Contact Widgets -->
+    <div class="fixed bottom-[10px] left-4 right-4 md:bottom-6 md:left-8 md:right-8 lg:left-12 lg:right-12 flex flex-row items-center justify-between z-[60]">
+        <!-- Instagram Link -->
+        <?php if ( ! empty( $instagram ) ) : ?>
+            <a href="<?php echo esc_url( $instagram ); ?>" target="_blank" class="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all cursor-pointer" aria-label="Instagram">
+                <svg class="w-6 h-6 md:w-7 md:h-7 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                </svg>
+            </a>
+        <?php endif; ?>
+        <!-- WhatsApp Link -->
+        <?php if ( ! empty( $whatsapp_phone ) ) : ?>
+            <a href="https://wa.me/<?php echo esc_attr( $whatsapp_phone ); ?>" target="_blank" class="w-12 h-12 md:w-14 md:h-14 bg-[#25d366] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all cursor-pointer" aria-label="WhatsApp">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/whatsapp.svg" class="w-6 h-6 md:w-7 md:h-7" alt="WhatsApp">
+            </a>
+        <?php endif; ?>
+    </div>
 
     <?php wp_footer(); ?>
 </body>
