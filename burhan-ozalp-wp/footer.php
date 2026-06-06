@@ -67,7 +67,7 @@ if ( isset( $locations['footer_menu'] ) ) {
                             </div>
                         </div>
                         <div class="pt-4 w-full flex justify-center lg:justify-start rtl:justify-start rtl:lg:justify-start">
-                            <a href="<?php echo esc_url( $directions_url ); ?>" target="_blank" class="bg-[#2c8d2c] text-white px-8 py-3 rounded-sm flex items-center justify-center w-full sm:w-auto font-bold tracking-widest uppercase hover:bg-opacity-90 transition-all text-xs">
+                            <a href="<?php echo esc_url( $directions_url ); ?>" target="_blank" class="bg-[#166534] text-white px-8 py-3 rounded-sm flex items-center justify-center w-full sm:w-auto font-bold tracking-widest uppercase hover:bg-[#166534]/90 transition-all text-xs" aria-label="<?php echo esc_attr__( 'Yol Tarifi Al', 'burhan-ozalp' ); ?>">
                                 <i class="fa-solid fa-check text-xs mr-2 rtl:mr-0 rtl:ml-2"></i> <?php echo esc_html__( 'YOL TARİFİ', 'burhan-ozalp' ); ?>
                             </a>
                         </div>
@@ -239,11 +239,11 @@ if ( isset( $locations['footer_menu'] ) ) {
     </footer>
 
     <!-- Fixed Contact Widgets -->
-    <div class="fixed bottom-[10px] left-4 right-4 md:bottom-6 md:left-8 md:right-8 lg:left-12 lg:right-12 flex flex-row items-center justify-between z-[60]">
+    <div class="fixed bottom-[10px] left-[10px] right-[10px] md:bottom-6 md:right-8 md:left-auto flex flex-row md:flex-row-reverse items-center justify-between md:justify-start md:gap-4 z-[60]">
         <!-- Instagram Link -->
         <?php if ( ! empty( $instagram ) ) : ?>
             <a href="<?php echo esc_url( $instagram ); ?>" target="_blank" class="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all cursor-pointer" aria-label="Instagram">
-                <svg class="w-6 h-6 md:w-7 md:h-7 fill-current" viewBox="0 0 24 24">
+                <svg class="w-6 h-6 md:w-7 md:h-7 fill-current" viewBox="0 0 24 24" width="28" height="28">
                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
                 </svg>
             </a>
@@ -251,7 +251,7 @@ if ( isset( $locations['footer_menu'] ) ) {
         <!-- WhatsApp Link -->
         <?php if ( ! empty( $whatsapp_phone ) ) : ?>
             <a href="https://wa.me/<?php echo esc_attr( $whatsapp_phone ); ?>" target="_blank" class="w-12 h-12 md:w-14 md:h-14 bg-[#25d366] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all cursor-pointer" aria-label="WhatsApp">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/whatsapp.svg" class="w-6 h-6 md:w-7 md:h-7" alt="WhatsApp">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/whatsapp.svg" class="w-6 h-6 md:w-7 md:h-7" alt="WhatsApp" width="28" height="28">
             </a>
         <?php endif; ?>
     </div>
