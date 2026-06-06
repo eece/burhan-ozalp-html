@@ -44,12 +44,12 @@
             </div>
             <div class="flex items-center gap-6">
                 <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="GET" class="relative hidden sm:block">
-                    <input type="text" name="s" placeholder="<?php echo esc_attr_x( 'ARA', 'placeholder', 'burhan-ozalp' ); ?>" class="bg-gray-50 border border-gray-200 px-3 py-1.5 w-40 text-xs focus:outline-none focus:border-[#8b6e4e]" value="<?php echo get_search_query(); ?>" aria-label="Site İçi Arama">
-                    <button type="submit" class="absolute right-2 rtl:right-auto rtl:left-2 top-2 text-gray-450 hover:text-[#8b6e4e] focus:outline-none bg-transparent border-0 cursor-pointer min-w-[44px] min-h-[44px] flex items-center justify-center -translate-y-1" aria-label="Ara">
+                    <input type="text" name="s" placeholder="<?php echo esc_attr_x( 'ARA', 'placeholder', 'burhan-ozalp' ); ?>" class="bg-gray-50 border border-gray-200 px-3 py-1.5 w-40 text-xs focus:outline-none focus:border-[#8b6e4e]" value="<?php echo get_search_query(); ?>">
+                    <button type="submit" class="absolute right-2 rtl:right-auto rtl:left-2 top-2 text-gray-450 hover:text-[#8b6e4e] focus:outline-none bg-transparent border-0 cursor-pointer">
                         <i class="fa-solid fa-magnifying-glass text-[10px]"></i>
                     </button>
                 </form>
-                <a href="<?php echo esc_url( $contact_btn_url ); ?>" class="bg-[#166534] text-white px-4 py-2 flex items-center hover:bg-[#166534]/90 transition-all rounded-sm text-xs font-bold">
+                <a href="<?php echo esc_url( $contact_btn_url ); ?>" class="bg-[#2c8d2c] text-white px-4 py-2 flex items-center hover:bg-opacity-90 transition-all rounded-sm text-xs font-bold">
                     <i class="fa-solid fa-check text-xs mr-2 rtl:mr-0 rtl:ml-2"></i>
                     <?php echo esc_html( $contact_btn_text ); ?>
                 </a>
@@ -66,7 +66,7 @@
                     <?php echo esc_html__( 'Bizi Arayın:', 'burhan-ozalp' ); ?>&nbsp;<span dir="ltr"><?php echo esc_html( $phone ); ?></span>
                 </a>
             </div>
-            <a href="<?php echo esc_url( $contact_btn_url ); ?>" class="bg-[#166534] text-white px-6 py-2 flex items-center hover:bg-[#166534]/90 transition-all rounded-sm text-xs font-bold mx-auto">
+            <a href="<?php echo esc_url( $contact_btn_url ); ?>" class="bg-[#2c8d2c] text-white px-6 py-2 flex items-center hover:bg-opacity-90 transition-all rounded-sm text-xs font-bold mx-auto">
                 <i class="fa-solid fa-check text-xs mr-2 rtl:mr-0 rtl:ml-2"></i>
                 <?php echo esc_html( $contact_btn_text ); ?>
             </a>
@@ -86,7 +86,7 @@
             </div>
 
             <!-- Desktop Menu -->
-            <ul class="hidden lg:flex flex-wrap justify-start items-center lg:ml-12 lg:mr-auto gap-4 md:gap-8 text-xs font-bold uppercase tracking-[0.15em] text-gray-700">
+            <ul class="hidden lg:flex flex-wrap justify-start items-center lg:ml-12 lg:mr-auto gap-4 md:gap-8 text-xs font-bold uppercase tracking-[0.15em] text-gray-600">
                 <?php
                 $menu_tree = array();
                 $header_menu_location = 'header_menu';
@@ -357,7 +357,7 @@
                         </ul>
                     <?php endif; ?>
                 </div>
-                <button id="mobile-menu-btn" class="text-[#333] focus:outline-none z-50 min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Menüyü Aç">
+                <button id="mobile-menu-btn" class="text-[#333] focus:outline-none z-50">
                     <i class="fa-solid fa-bars text-2xl animate-pulse-slow"></i>
                 </button>
             </div>
@@ -366,7 +366,7 @@
         <!-- Mobile Navigation Panel -->
         <div id="mobile-menu" class="fixed inset-0 bg-white z-[200] transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden overflow-y-auto pb-12 text-left rtl:text-right">
             <div class="flex justify-end p-6">
-                <button id="mobile-menu-close" class="text-[#333] focus:outline-none min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Menüyü Kapat">
+                <button id="mobile-menu-close" class="text-[#333] focus:outline-none">
                     <i class="fa-solid fa-times text-3xl"></i>
                 </button>
             </div>
