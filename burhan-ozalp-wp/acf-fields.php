@@ -12,6 +12,13 @@ acf_add_local_field_group(array(
     'title' => 'Site Options (Genel Ayarlar)',
     'fields' => array(
         array(
+            'key' => 'field_general_tab',
+            'label' => 'Genel Ayarlar',
+            'type' => 'tab',
+            'placement' => 'top',
+            'endpoint' => 0,
+        ),
+        array(
             'key' => 'field_logo_title',
             'label' => 'Logo & Marka Başlığı',
             'name' => 'logo_title',
@@ -105,6 +112,38 @@ acf_add_local_field_group(array(
             'type' => 'text',
             'instructions' => 'İletişim Formu CF7 kısa kodunu giriniz. (Örn: [contact-form-7 id="xxxx" title="Footer İletişim Formu"])',
             'placeholder' => '[contact-form-7 id="..." title="..."]',
+        ),
+        array(
+            'key' => 'field_tracking_tab',
+            'label' => 'SEO & Takip Kodları',
+            'type' => 'tab',
+            'placement' => 'top',
+            'endpoint' => 0,
+        ),
+        array(
+            'key' => 'field_json_ld_schema',
+            'label' => 'JSON-LD Yapılandırılmış Veri (Schema.org)',
+            'name' => 'json_ld_schema',
+            'type' => 'textarea',
+            'instructions' => 'JSON-LD formatında yapılandırılmış veriyi (SEO Schema) buraya ekleyebilirsiniz.',
+            'rows' => 8,
+            'placeholder' => "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"MedicalBusiness\"\n}",
+        ),
+        array(
+            'key' => 'field_gtm_id',
+            'label' => 'Google Tag Manager ID',
+            'name' => 'google_tag_manager_id',
+            'type' => 'text',
+            'instructions' => 'GTM-XXXXXX formatında Google Tag Manager konteyner kimliğini giriniz.',
+            'placeholder' => 'GTM-XXXXXX',
+        ),
+        array(
+            'key' => 'field_ga_id',
+            'label' => 'Google Analytics (GA4) Ölçüm Kimliği',
+            'name' => 'google_analytics_id',
+            'type' => 'text',
+            'instructions' => 'G-XXXXXX formatında Google Analytics (GA4) Ölçüm Kimliğini giriniz.',
+            'placeholder' => 'G-XXXXXX',
         ),
     ),
     'location' => array(

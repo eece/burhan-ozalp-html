@@ -75,6 +75,18 @@ function burhan_ozalp_assets() {
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
     }
+
+    // Google Analytics (GA4) Tracking Enqueue
+    $ga_id = burhan_get_option( 'google_analytics_id' );
+    if ( ! empty( $ga_id ) ) {
+        wp_enqueue_script( 'google-analytics', 'https://www.googletagmanager.com/gtag/js?id=' . esc_attr( $ga_id ), array(), null, false );
+        wp_add_inline_script( 'google-analytics', "
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '" . esc_js( $ga_id ) . "');
+        " );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'burhan_ozalp_assets' );
 
@@ -261,4 +273,55 @@ add_filter( 'gettext_with_context', function( $translation, $text, $context, $do
     }
     return $translation;
 }, 10, 4 );
+
+/**
+ * Output Google Tag Manager script in <head>
+ */
+function burhan_gtm_head_script() {
+    $gtm_id = burhan_get_option('google_tag_manager_id');
+    if ( ! empty( $gtm_id ) ) {
+        ?>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','<?php echo esc_js( $gtm_id ); ?>');</script>
+        <!-- End Google Tag Manager -->
+        <?php
+    }
+}
+add_action( 'wp_head', 'burhan_gtm_head_script', 1 );
+
+/**
+ * Output Google Tag Manager noscript right after <body> opens
+ */
+function burhan_gtm_noscript() {
+    $gtm_id = burhan_get_option('google_tag_manager_id');
+    if ( ! empty( $gtm_id ) ) {
+        ?>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo esc_attr( $gtm_id ); ?>"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <?php
+    }
+}
+add_action( 'wp_body_open', 'burhan_gtm_noscript' );
+
+/**
+ * Output JSON-LD Schema in <head>
+ */
+function burhan_json_ld_schema() {
+    $schema = burhan_get_option('json_ld_schema');
+    if ( ! empty( $schema ) ) {
+        $trimmed = trim( $schema );
+        if ( strpos( $trimmed, '<script' ) === 0 ) {
+            echo $trimmed . "\n";
+        } else {
+            echo '<script type="application/ld+json">' . "\n" . $trimmed . "\n" . '</script>' . "\n";
+        }
+    }
+}
+add_action( 'wp_head', 'burhan_json_ld_schema', 10 );
 
