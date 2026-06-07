@@ -414,3 +414,104 @@ function burhan_json_ld_schema() {
 }
 add_action( 'wp_head', 'burhan_json_ld_schema', 10 );
 
+/**
+ * =========================================================================
+ * WORDPRESS RENDER-BLOCKING PERFORMANCE OPTIMIZATION (NO-PLUGIN ARCHITECTURE)
+ * =========================================================================
+ */
+
+/**
+ * Phase 1: Asynchronous Third-Party Script Injection (Google Tag Manager & Analytics)
+ * Prevents major tracking and script layers from blocking main-thread HTML parsing.
+ */
+function burhan_optimize_script_loading( $tag, $handle, $src ) {
+    if ( is_admin() ) {
+        return $tag;
+    }
+    
+    // Inject async/defer on google-analytics and other tag manager components
+    if ( strpos( $src, 'googletagmanager.com' ) !== false || strpos( $handle, 'google-analytics' ) !== false ) {
+        if ( strpos( $tag, 'defer' ) === false && strpos( $tag, 'async' ) === false ) {
+            return str_replace( '<script ', '<script async ', $tag );
+        }
+    }
+    
+    return $tag;
+}
+add_filter( 'script_loader_tag', 'burhan_optimize_script_loading', 10, 3 );
+
+/**
+ * Phase 2: Asynchronous Non-Critical CSS Loading
+ * Defer redundant bloat (like block-library enqueues or CDN font-awesome links) while keeping critical styles immediate.
+ */
+function burhan_optimize_style_loading( $html, $handle, $href, $media ) {
+    if ( is_admin() ) {
+        return $html;
+    }
+
+    // Identify assets that should be non-blocking. Let's list non-critical style handles.
+    $defer_styles = array(
+        'font-awesome',
+        'wp-block-library',
+        'wp-block-library-theme',
+        'wc-blocks-style',
+        'classic-theme-styles',
+        'global-styles'
+    );
+
+    $should_defer = false;
+    foreach ( $defer_styles as $style_handle ) {
+        if ( $handle === $style_handle || strpos( $href, $style_handle ) !== false ) {
+            $should_defer = true;
+            break;
+        }
+    }
+
+    // Force defer cloudflare CDN styles
+    if ( strpos( $href, 'cdnjs.cloudflare.com' ) !== false ) {
+        $should_defer = true;
+    }
+
+    if ( $should_defer ) {
+        $preloaded_html = sprintf(
+            '<link rel="preload" id="%s-css-preload" href="%s" as="style" onload="this.onload=null;this.rel=\'stylesheet\'" media="%s" />' . "\n",
+            esc_attr( $handle ),
+            esc_url( $href ),
+            esc_attr( $media )
+        );
+        $noscript_html = sprintf(
+            '<noscript><link rel="stylesheet" id="%s-css-noscript" href="%s" media="%s" /></noscript>' . "\n",
+            esc_attr( $handle ),
+            esc_url( $href ),
+            esc_attr( $media )
+        );
+        return $preloaded_html . $noscript_html;
+    }
+
+    return $html;
+}
+add_filter( 'style_loader_tag', 'burhan_optimize_style_loading', 10, 4 );
+
+/**
+ * Phase 3: Asset Inlining for Small Component Styles
+ * Instruct WordPress to inline enqueued Gutenberg block styles / layouts smaller than 20KB for high-density performance.
+ */
+function burhan_styles_inline_size_limit( $bytes ) {
+    return 20000; // Inline styles up to 20 KB to save RTT handshake delays
+}
+add_filter( 'styles_inline_size_limit', 'burhan_styles_inline_size_limit' );
+
+/**
+ * Phase 4: Network Preconnection Optimization
+ * Preconnect DNS, TLS session layers for fonts early before fetching.
+ */
+function burhan_fonts_preconnect_optimization() {
+    if ( is_admin() ) {
+        return;
+    }
+    echo '<link rel="preconnect" href="https://fonts.googleapis.com" />' . "\n";
+    echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />' . "\n";
+}
+add_action( 'wp_head', 'burhan_fonts_preconnect_optimization', 2 );
+
+
