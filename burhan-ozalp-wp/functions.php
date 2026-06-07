@@ -105,16 +105,105 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 
 /**
  * Helper to get site options (either localized or standard fallback)
+ * Built with Polylang-aware transient caching and in-memory static caching to completely resolve update_meta_cache and option bottlenecks.
  */
 function burhan_get_option( $name, $default = '' ) {
+    static $burhan_options_static_cache = array();
+    
+    // Determine the active Polylang language slug to ensure the cache is 100% translatable and isolated
+    $lang = 'default';
+    if ( function_exists( 'pll_current_language' ) ) {
+        $lang = pll_current_language( 'slug' );
+    } elseif ( function_exists( 'get_locale' ) ) {
+        $lang = get_locale();
+    }
+    
+    // 1. Check extremely fast PHP in-memory (request-level) static cache
+    if ( isset( $burhan_options_static_cache[$lang] ) && array_key_exists( $name, $burhan_options_static_cache[$lang] ) ) {
+        return $burhan_options_static_cache[$lang][$name];
+    }
+    
+    // 2. Check transient persistent cache
+    $cache_key = 'burhan_opt_' . sanitize_key( $lang );
+    $cached_options = get_transient( $cache_key );
+    if ( ! is_array( $cached_options ) ) {
+        $cached_options = array();
+    }
+    
+    if ( array_key_exists( $name, $cached_options ) ) {
+        $burhan_options_static_cache[$lang][$name] = $cached_options[$name];
+        return $cached_options[$name];
+    }
+    
+    // 3. Fallback to ACF / Standard WordPress option mapping
+    $val = '';
     if ( function_exists( 'get_field' ) ) {
         $val = get_field( $name, 'option' );
-        if ( ! empty( $val ) ) {
-            return $val;
+    }
+    
+    if ( empty( $val ) ) {
+        $val = $default;
+    }
+    
+    // Save to transient & static runtime caches
+    $cached_options[$name] = $val;
+    set_transient( $cache_key, $cached_options, 12 * HOUR_IN_SECONDS );
+    $burhan_options_static_cache[$lang][$name] = $val;
+    
+    return $val;
+}
+
+/**
+ * Automagic Options Cache Flushing on ACF Option Saving
+ * Fully supports Polylang by detecting all active languages and clearing their corresponding transients.
+ */
+function burhan_clear_options_caches( $post_id ) {
+    if ( strpos( (string) $post_id, 'options' ) !== false ) {
+        $languages = array( 'default' );
+        
+        // Find all active Polylang language codes
+        if ( function_exists( 'pll_languages_list' ) ) {
+            $languages = pll_languages_list( array( 'fields' => 'slug' ) );
+        } elseif ( function_exists( 'get_locale' ) ) {
+            $languages[] = get_locale();
+        }
+        
+        // Purge transients for each language to reflect real-time updates instantly
+        foreach ( $languages as $lang ) {
+            delete_transient( 'burhan_opt_' . sanitize_key( $lang ) );
         }
     }
-    return $default;
 }
+add_action( 'acf/save_post', 'burhan_clear_options_caches', 20 );
+
+/**
+ * Query Performance Optimizer: Bulk prime post caching and image metadata caching.
+ * By intercepting queried posts lists, we fetch all relevant custom thumbnail IDs in ONE batch database trip,
+ * avoiding recursive update_meta_cache and _prime_post_caches bottlenecks inside loops.
+ */
+function burhan_bulk_prime_thumbnail_caches( $posts, $query ) {
+    if ( empty( $posts ) || ! is_array( $posts ) ) {
+        return $posts;
+    }
+    
+    $thumbnail_ids = array();
+    foreach ( $posts as $post ) {
+        if ( isset( $post->ID ) ) {
+            $thumb_id = get_post_thumbnail_id( $post->ID );
+            if ( $thumb_id ) {
+                $thumbnail_ids[] = intval( $thumb_id );
+            }
+        }
+    }
+    
+    if ( ! empty( $thumbnail_ids ) ) {
+        // Batch prime both post objects and attachment metadata records in one unified query
+        _prime_post_caches( $thumbnail_ids, true, true );
+    }
+    
+    return $posts;
+}
+add_filter( 'the_posts', 'burhan_bulk_prime_thumbnail_caches', 10, 2 );
 
 /**
  * Custom Comment Callback matching the HTML design precisely

@@ -18,14 +18,17 @@ if ( empty( $post_count ) ) {
 
 $tag_filter = get_sub_field('tag_filter');
 
-// Prepare Query Args
+// Prepare Query Args with performance optimizations to cure update_meta_cache and _prime_post_caches bottlenecks
 $args = array(
-    'post_type'           => 'post',
-    'posts_per_page'      => intval( $post_count ),
-    'orderby'             => 'date',
-    'order'               => 'DESC',
-    'post_status'         => 'publish',
-    'ignore_sticky_posts' => true,
+    'post_type'              => 'post',
+    'posts_per_page'         => intval( $post_count ),
+    'orderby'                => 'date',
+    'order'                  => 'DESC',
+    'post_status'            => 'publish',
+    'ignore_sticky_posts'    => true,
+    'no_found_rows'          => true, // Highly optimized: disables heavy database-level SQL_CALC_FOUND_ROWS query
+    'update_post_meta_cache' => true, // Performance: batch primes post metadata (such as thumbnails, etc.) in a single query
+    'update_post_term_cache' => true, // Performance: batch primes tags/categories for all retrieved posts
 );
 
 // Filter by selected tag if set

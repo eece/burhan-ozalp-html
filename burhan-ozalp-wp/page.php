@@ -12,6 +12,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header();
 
+// Prime the metadata cache for the current page/post to optimize all ACF get_field, have_rows, and get_sub_field lookups
+$page_id = get_the_ID();
+if ( $page_id ) {
+    update_meta_cache( 'post', array( $page_id ) );
+}
+
 // Show/Hide Page Title setting
 $hide_title = get_field('hide_page_title');
 ?>
