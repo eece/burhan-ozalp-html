@@ -18,7 +18,7 @@ get_header(); ?>
 <!-- Page Header -->
 <section class="bg-[#dcd0c0] py-16 text-center">
     <div class="container mx-auto px-4">
-        <h2 class="text-4xl md:text-5xl font-['Cormorant_Garamond'] font-medium tracking-widest text-[#2d2a26] uppercase text-center">
+        <h2 class="text-4xl md:text-5xl font-['Cormorant_Garamond'] font-medium tracking-widest text-[#2d2a26] uppercase text-center break-words" style="word-break: break-word;">
             <?php the_archive_title(); ?>
         </h2>
     </div>
