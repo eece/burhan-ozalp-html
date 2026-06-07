@@ -71,10 +71,10 @@ if ( have_rows('slides') ) :
         </div>
         
         <?php if ( $slide_index > 1 ) : ?>
-            <button class="hidden md:block slider-prev absolute left-4 md:left-8 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-[#8b6e4e] hover:text-white p-3 text-[#8b6e4e] rounded-full shadow-lg transition-all cursor-pointer z-35">
+            <button class="hidden md:block slider-prev absolute left-4 md:left-8 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-[#8b6e4e] hover:text-white p-3 text-[#8b6e4e] rounded-full shadow-lg transition-all cursor-pointer z-35" aria-label="<?php echo esc_attr__( 'Önceki slayt', 'burhan-ozalp' ); ?>">
                 <i class="fa-solid fa-chevron-left text-lg"></i>
             </button>
-            <button class="hidden md:block slider-next absolute right-4 md:right-8 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-[#8b6e4e] hover:text-white p-3 text-[#8b6e4e] rounded-full shadow-lg transition-all cursor-pointer z-35">
+            <button class="hidden md:block slider-next absolute right-4 md:right-8 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-[#8b6e4e] hover:text-white p-3 text-[#8b6e4e] rounded-full shadow-lg transition-all cursor-pointer z-35" aria-label="<?php echo esc_attr__( 'Sonraki slayt', 'burhan-ozalp' ); ?>">
                 <i class="fa-solid fa-chevron-right text-lg"></i>
             </button>
 

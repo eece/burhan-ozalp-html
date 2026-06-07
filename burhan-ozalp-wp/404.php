@@ -13,6 +13,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header(); ?>
 
+<main role="main">
+
 <!-- Error Hero -->
 <section class="py-24 bg-white flex flex-col items-center justify-center min-h-[600px] border-b border-gray-100 text-[#333]">
     <div class="container mx-auto px-4 max-w-xl text-center">
@@ -40,5 +42,7 @@ get_header(); ?>
 
     </div>
 </section>
+
+</main>
 
 <?php get_footer(); ?>

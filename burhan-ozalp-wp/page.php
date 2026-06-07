@@ -14,6 +14,9 @@ get_header();
 
 // Show/Hide Page Title setting
 $hide_title = get_field('hide_page_title');
+?>
+<main role="main">
+<?php
 if ( ! $hide_title ) :
     ?>
     <!-- Page Header block with breadcrumbs -->
@@ -49,5 +52,7 @@ else :
         endwhile;
     endif;
 endif;
+?>
+</main>
 
 get_footer();

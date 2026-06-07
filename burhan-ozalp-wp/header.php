@@ -21,7 +21,7 @@
     ?>
 
     <!-- Top Header -->
-    <header class="bg-white border-b border-gray-100 hidden sm:block">
+    <header role="banner" class="bg-white border-b border-gray-100 hidden sm:block">
         <div class="container mx-auto px-4 py-2 flex flex-wrap justify-between items-center text-xs uppercase tracking-wider text-gray-700 font-bold">
             <div class="flex items-center gap-6">
                 <div>
@@ -32,24 +32,24 @@
                 </div>
                 <div class="hidden md:flex items-center gap-4 border-l rtl:border-l-0 rtl:border-r border-gray-200 pl-6 rtl:pl-0 rtl:pr-6 text-gray-500">
                     <?php if ( ! empty( $facebook ) ) : ?>
-                        <a href="<?php echo esc_url( $facebook ); ?>" class="hover:text-[#8b6e4e] transition-colors" target="_blank"><i class="fa-brands fa-facebook-f text-base"></i></a>
+                        <a href="<?php echo esc_url( $facebook ); ?>" class="hover:text-[#8b6e4e] transition-colors" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f text-base"></i></a>
                     <?php endif; ?>
                     <?php if ( ! empty( $instagram ) ) : ?>
-                        <a href="<?php echo esc_url( $instagram ); ?>" class="hover:text-[#8b6e4e] transition-colors" target="_blank"><i class="fa-brands fa-instagram text-base"></i></a>
+                        <a href="<?php echo esc_url( $instagram ); ?>" class="hover:text-[#8b6e4e] transition-colors" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram text-base"></i></a>
                     <?php endif; ?>
                     <?php if ( ! empty( $youtube ) ) : ?>
-                        <a href="<?php echo esc_url( $youtube ); ?>" class="hover:text-[#8b6e4e] transition-colors" target="_blank"><i class="fa-brands fa-youtube text-base"></i></a>
+                        <a href="<?php echo esc_url( $youtube ); ?>" class="hover:text-[#8b6e4e] transition-colors" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube text-base"></i></a>
                     <?php endif; ?>
                 </div>
             </div>
             <div class="flex items-center gap-6">
                 <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="GET" class="relative hidden sm:block">
                     <input type="text" name="s" placeholder="<?php echo esc_attr_x( 'ARA', 'placeholder', 'burhan-ozalp' ); ?>" class="bg-gray-50 border border-gray-200 px-3 py-1.5 w-40 text-xs focus:outline-none focus:border-[#8b6e4e]" value="<?php echo get_search_query(); ?>">
-                    <button type="submit" class="absolute right-2 rtl:right-auto rtl:left-2 top-2 text-gray-450 hover:text-[#8b6e4e] focus:outline-none bg-transparent border-0 cursor-pointer">
+                    <button type="submit" class="absolute right-2 rtl:right-auto rtl:left-2 top-2 text-gray-450 hover:text-[#8b6e4e] focus:outline-none bg-transparent border-0 cursor-pointer" aria-label="<?php echo esc_attr_x( 'Ara', 'search button', 'burhan-ozalp' ); ?>">
                         <i class="fa-solid fa-magnifying-glass text-[10px]"></i>
                     </button>
                 </form>
-                <a href="<?php echo esc_url( $contact_btn_url ); ?>" class="bg-[#2c8d2c] text-white px-4 py-2 flex items-center hover:bg-opacity-90 transition-all rounded-sm text-xs font-bold">
+                <a href="<?php echo esc_url( $contact_btn_url ); ?>" class="bg-brandGreen text-white px-4 py-2 flex items-center hover:bg-opacity-90 transition-all rounded-sm text-xs font-bold">
                     <i class="fa-solid fa-check text-xs mr-2 rtl:mr-0 rtl:ml-2"></i>
                     <?php echo esc_html( $contact_btn_text ); ?>
                 </a>
@@ -66,7 +66,7 @@
                     <?php echo esc_html__( 'Bizi Arayın:', 'burhan-ozalp' ); ?>&nbsp;<span dir="ltr"><?php echo esc_html( $phone ); ?></span>
                 </a>
             </div>
-            <a href="<?php echo esc_url( $contact_btn_url ); ?>" class="bg-[#2c8d2c] text-white px-6 py-2 flex items-center hover:bg-opacity-90 transition-all rounded-sm text-xs font-bold mx-auto">
+            <a href="<?php echo esc_url( $contact_btn_url ); ?>" class="bg-brandGreen text-white px-6 py-2 flex items-center hover:bg-opacity-90 transition-all rounded-sm text-xs font-bold mx-auto">
                 <i class="fa-solid fa-check text-xs mr-2 rtl:mr-0 rtl:ml-2"></i>
                 <?php echo esc_html( $contact_btn_text ); ?>
             </a>
@@ -74,7 +74,7 @@
     </div>
 
     <!-- Navigation Header -->
-    <nav class="bg-white sticky top-0 z-50 shadow-sm border-b border-gray-50">
+    <nav role="navigation" class="bg-white sticky top-0 z-50 shadow-sm border-b border-gray-50">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="z-50" dir="ltr">
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="block text-left">

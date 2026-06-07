@@ -14,7 +14,7 @@ if ( empty( $title ) ) {
 <!-- Popular Operations -->
 <section class="py-24 bg-[#7b5f43]">
     <div class="container mx-auto px-4">
-        <h2 class="text-center text-white text-3xl font-['Cormorant_Garamond'] tracking-widest mb-16 uppercase"><?php echo esc_html( $title ); ?></h2>
+        <h1 class="text-center text-white text-3xl font-['Cormorant_Garamond'] tracking-widest mb-16 uppercase"><?php echo esc_html( $title ); ?></h1>
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             <?php 
             if ( have_rows('items') ) :

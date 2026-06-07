@@ -37,7 +37,7 @@ if ( isset( $locations['footer_menu'] ) ) {
 ?>
 
     <!-- Footer -->
-    <footer class="bg-white pt-24 pb-12 border-t border-gray-100 text-[#333]">
+    <footer role="contentinfo" class="bg-white pt-24 pb-12 border-t border-gray-100 text-[#333]">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-16 mb-20 text-center lg:text-left rtl:lg:text-right">
                 <!-- Branding & Address -->
@@ -67,19 +67,19 @@ if ( isset( $locations['footer_menu'] ) ) {
                             </div>
                         </div>
                         <div class="pt-4 w-full flex justify-center lg:justify-start rtl:justify-start rtl:lg:justify-start">
-                            <a href="<?php echo esc_url( $directions_url ); ?>" target="_blank" class="bg-[#2c8d2c] text-white px-8 py-3 rounded-sm flex items-center justify-center w-full sm:w-auto font-bold tracking-widest uppercase hover:bg-opacity-90 transition-all text-xs">
+                            <a href="<?php echo esc_url( $directions_url ); ?>" target="_blank" class="bg-brandGreen text-white px-8 py-3 rounded-sm flex items-center justify-center w-full sm:w-auto font-bold tracking-widest uppercase hover:bg-opacity-90 transition-all text-xs">
                                 <i class="fa-solid fa-check text-xs mr-2 rtl:mr-0 rtl:ml-2"></i> <?php echo esc_html__( 'YOL TARİFİ', 'burhan-ozalp' ); ?>
                             </a>
                         </div>
                         <div class="w-full flex gap-4 pt-4 justify-center lg:justify-start rtl:justify-start rtl:lg:justify-start">
                             <?php if ( ! empty( $facebook ) ) : ?>
-                                <a href="<?php echo esc_url( $facebook ); ?>" class="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center hover:bg-[#8b6e4e] hover:text-white hover:border-[#8b6e4e] transition-all" target="_blank"><i class="fa-brands fa-facebook-f text-lg"></i></a>
+                                <a href="<?php echo esc_url( $facebook ); ?>" class="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center hover:bg-[#8b6e4e] hover:text-white hover:border-[#8b6e4e] transition-all" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f text-lg"></i></a>
                             <?php endif; ?>
                             <?php if ( ! empty( $instagram ) ) : ?>
-                                <a href="<?php echo esc_url( $instagram ); ?>" class="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center hover:bg-[#8b6e4e] hover:text-white hover:border-[#8b6e4e] transition-all" target="_blank"><i class="fa-brands fa-instagram text-lg"></i></a>
+                                <a href="<?php echo esc_url( $instagram ); ?>" class="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center hover:bg-[#8b6e4e] hover:text-white hover:border-[#8b6e4e] transition-all" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram text-lg"></i></a>
                             <?php endif; ?>
                             <?php if ( ! empty( $youtube ) ) : ?>
-                                <a href="<?php echo esc_url( $youtube ); ?>" class="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center hover:bg-[#8b6e4e] hover:text-white hover:border-[#8b6e4e] transition-all" target="_blank"><i class="fa-brands fa-youtube text-lg"></i></a>
+                                <a href="<?php echo esc_url( $youtube ); ?>" class="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center hover:bg-[#8b6e4e] hover:text-white hover:border-[#8b6e4e] transition-all" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube text-lg"></i></a>
                             <?php endif; ?>
                         </div>
                     </div>

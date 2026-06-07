@@ -12,6 +12,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header(); ?>
 
+<main role="main">
+
 <!-- Page Header -->
 <section class="bg-[#dcd0c0] py-16 text-center">
     <div class="container mx-auto px-4">
@@ -63,5 +65,7 @@ get_header(); ?>
         <?php endif; ?>
     </div>
 </section>
+
+</main>
 
 <?php get_footer(); ?>

@@ -13,7 +13,7 @@
 <body class="bg-[#fcfaf7] text-[#333] font-['Montserrat',sans-serif]">
     <!-- Top Header -->
     <!-- Top Header -->
-    <header class="bg-white border-b border-gray-100 hidden sm:block">
+    <header role="banner" class="bg-white border-b border-gray-100 hidden sm:block">
         <div class="container mx-auto px-4 py-2 flex flex-wrap justify-between items-center text-xs uppercase tracking-wider text-gray-700 font-bold">
             <div class="flex items-center space-x-6">
                 <div>
@@ -35,7 +35,7 @@
                         <i class="fa-solid fa-magnifying-glass text-[10px]"></i>
                     </button>
                 </form>
-                <a href="#" class="bg-[#2c8d2c] text-white px-4 py-2 flex items-center hover:bg-opacity-90 transition-all rounded-sm text-xs font-bold">
+                <a href="#" class="bg-brandGreen text-white px-4 py-2 flex items-center hover:bg-opacity-90 transition-all rounded-sm text-xs font-bold">
                     <i class="fa-solid fa-check text-xs mr-2"></i>
                     HIZLI İLETİŞİM
                 </a>
@@ -52,7 +52,7 @@
                     Bizi Arayın:&nbsp;<span>+90 532 157 05 77</span>
                 </a>
             </div>
-            <a href="#" class="bg-[#2c8d2c] text-white px-6 py-2 flex items-center hover:bg-opacity-90 transition-all rounded-sm text-xs font-bold mx-auto">
+            <a href="#" class="bg-brandGreen text-white px-6 py-2 flex items-center hover:bg-opacity-90 transition-all rounded-sm text-xs font-bold mx-auto">
                 <i class="fa-solid fa-check text-xs mr-2"></i>
                 HIZLI İLETİŞİM
             </a>
@@ -60,7 +60,8 @@
     </div>
 
     <!-- Navigation Header -->
-    <nav class="bg-white sticky top-0 z-50 shadow-sm border-b border-gray-50">
+    <!-- Navigation Header -->
+    <nav role="navigation" class="bg-white sticky top-0 z-50 shadow-sm border-b border-gray-50">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="z-50">
                 <a href="/" class="block">
@@ -77,10 +78,49 @@
                     <a href="#" class="hover:text-[#8b6e4e] transition-all">Hakkımda</a>
                     <ul class="absolute left-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[200px] border-t-2 border-[#8b6e4e] py-2 z-50">
                         <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Özgeçmiş</a></li>
+                        <li class="relative group/sub">
+                            <a href="#" class="flex items-center justify-between px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">
+                                Kariyer <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </a>
+                            <ul class="absolute left-full top-0 hidden group-hover/sub:block bg-white shadow-xl min-w-[200px] border-l border-gray-100 py-2">
+                                <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Eğitim</a></li>
+                                <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Sertifikalar</a></li>
+                                <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Yayınlar</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <li class="relative group py-2">
-                    <a href="/hizmetler.html" class="text-[#8b6e4e] transition-all">İşlemler</a>
+                    <a href="/hizmetler.html" class="hover:text-[#8b6e4e] transition-all">İşlemler</a>
+                    <ul class="absolute left-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[220px] border-t-2 border-[#8b6e4e] py-2 z-50">
+                        <li class="relative group/sub">
+                            <a href="#" class="flex items-center justify-between px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">
+                                Lipödem Cerrahisi <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </a>
+                            <ul class="absolute left-full top-0 hidden group-hover/sub:block bg-white shadow-xl min-w-[220px] border-l border-gray-100 py-2">
+                                <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Lipödem Nedir?</a></li>
+                                <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Tedavi Yöntemleri</a></li>
+                            </ul>
+                        </li>
+                        <li class="relative group/sub">
+                            <a href="/burun-estetigi.html" class="flex items-center justify-between px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">
+                                Burun Estetiği <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </a>
+                            <ul class="absolute left-full top-0 hidden group-hover/sub:block bg-white shadow-xl min-w-[220px] border-l border-gray-100 py-2">
+                                <li><a href="/burun-estetigi.html" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Rinoplasti</a></li>
+                                <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Revizyon</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Vücut Estetiği</a></li>
+                        <li class="relative group/sub">
+                            <a href="/hizmetler.html" class="flex items-center justify-between px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">
+                                Yüz Estetiği <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </a>
+                            <ul class="absolute left-full top-0 hidden group-hover/sub:block bg-white shadow-xl min-w-[220px] border-l border-gray-100 py-2">
+                                <li><a href="/yuz-germe.html" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all font-semibold">Yüz Germe (Facelift)</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </li>
                 <li><a href="#" class="hover:text-[#8b6e4e] border-b-2 border-transparent hover:border-[#8b6e4e] pb-1 transition-all">Lipödem</a></li>
                 <li><a href="#" class="hover:text-[#8b6e4e] transition-all">Galeri</a></li>
@@ -154,6 +194,7 @@
                              <li><a href="#" class="hover:text-[#8b6e4e]">Lipödem Cerrahisi</a></li>
                              <li><a href="/burun-estetigi.html" class="hover:text-[#8b6e4e] text-[#8b6e4e]">Burun Estetiği</a></li>
                              <li><a href="#" class="hover:text-[#8b6e4e]">Vücut Estetiği</a></li>
+                             <li><a href="/yuz-germe.html" class="hover:text-[#8b6e4e] font-semibold text-[#8b6e4e]">Yüz Germe (Facelift)</a></li>
                              <li><a href="#" class="hover:text-[#8b6e4e]">Yüz Estetiği</a></li>
                         </ul>
                     </li>
@@ -164,6 +205,8 @@
             </div>
         </div>
     </nav>
+
+    <main role="main">
 
     <!-- Page Header -->
     <section class="bg-[#dcd0c0] py-16 text-center">
@@ -328,8 +371,10 @@
         </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
-    <footer class="bg-white pt-24 pb-12 border-t border-gray-100">
+    <footer role="contentinfo" class="bg-white pt-24 pb-12 border-t border-gray-100">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-16 mb-20 text-center lg:text-left">
                 <!-- Branding & Address -->
@@ -357,7 +402,7 @@
                             </div>
                         </div>
                         <div class="pt-4 w-full flex justify-center lg:justify-start">
-                            <a href="#" class="bg-[#2c8d2c] text-white px-8 py-3 rounded-sm flex items-center justify-center w-full sm:w-auto font-bold tracking-widest uppercase hover:bg-opacity-90 transition-all">
+                            <a href="#" class="bg-brandGreen text-white px-8 py-3 rounded-sm flex items-center justify-center w-full sm:w-auto font-bold tracking-widest uppercase hover:bg-opacity-90 transition-all">
                                 <i class="fa-solid fa-check text-xs mr-2"></i> YOL TARİFİ
                             </a>
                         </div>

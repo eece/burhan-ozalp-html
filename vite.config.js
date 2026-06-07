@@ -20,6 +20,7 @@ export default defineConfig(() => {
           hizmetler: path.resolve(__dirname, 'hizmetler.html'),
           iletisim: path.resolve(__dirname, 'iletisim.html'),
           'burun-estetigi': path.resolve(__dirname, 'burun-estetigi.html'),
+          'yuz-germe': path.resolve(__dirname, 'yuz-germe.html'),
           arama: path.resolve(__dirname, 'arama.html'),
           404: path.resolve(__dirname, '404.html'),
         },

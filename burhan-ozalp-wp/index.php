@@ -8,7 +8,7 @@
 get_header(); ?>
 
 <!-- Main Wrapper -->
-<main class="py-16">
+<main role="main" class="py-16">
     <div class="container mx-auto px-4 max-w-5xl bg-white p-10 shadow-xl rounded-sm">
         <?php if ( have_posts() ) : ?>
             <?php while ( have_posts() ) : the_post(); ?>

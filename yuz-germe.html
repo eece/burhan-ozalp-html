@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Plane Yüz Germe (Facelift) - Doç. Dr. Burhan Özalp</title>
+    <meta name="description" content="İstanbul Deep Plane Yüz Germe (Facelift) ameliyatı ile zamana meydan okuyun. Doç. Dr. Burhan Özalp ile daha genç, canlanmış ve tamamen doğal yüz hatlarına kavuşun.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/src/index.css">
+    <style>
+        /* Custom styles for high-fidelity interactive slider */
+        .ba-slider {
+            position: relative;
+            overflow: hidden;
+            user-select: none;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .ba-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+        .ba-slide-before {
+            z-index: 1;
+        }
+        .ba-slide-after {
+            z-index: 2;
+            width: 50%;
+            border-right: 2px solid #8b6e4e;
+            overflow: hidden;
+        }
+        .ba-handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 44px;
+            height: 44px;
+            margin-left: -22px;
+            margin-top: -22px;
+            top: 50%;
+            background: #8b6e4e;
+            border: 3px solid #fff;
+            border-radius: 50%;
+            z-index: 10;
+            cursor: ew-resize;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+        .ba-handle:hover {
+            transform: scale(1.1);
+        }
+        .ba-label-before, .ba-label-after {
+            position: absolute;
+            bottom: 16px;
+            padding: 6px 12px;
+            background: rgba(0,0,0,0.6);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border-radius: 2px;
+            pointer-events: none;
+            z-index: 5;
+        }
+        .ba-label-before {
+            right: 16px;
+        }
+        .ba-label-after {
+            left: 16px;
+        }
+    </style>
+</head>
+<body class="bg-[#fcfaf7] text-[#333] font-['Montserrat',sans-serif]">
+    <!-- Top Header -->
+    <header role="banner" class="bg-white border-b border-gray-100 hidden sm:block">
+        <div class="container mx-auto px-4 py-2 flex flex-wrap justify-between items-center text-xs uppercase tracking-wider text-gray-700 font-bold">
+            <div class="flex items-center space-x-6">
+                <div>
+                    <a href="tel:+905321570577" class="flex items-center text-gray-700 hover:text-[#8b6e4e] transition-colors">
+                        <i class="fa-solid fa-phone text-[10px] mr-2 text-[#8b6e4e]"></i>
+                        Bizi Arayın:&nbsp;<span>+90 532 157 05 77</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-4 border-l border-gray-200 pl-6 text-gray-500">
+                    <a href="#" class="hover:text-[#8b6e4e] transition-colors"><i class="fa-brands fa-facebook-f text-base"></i></a>
+                    <a href="#" class="hover:text-[#8b6e4e] transition-colors"><i class="fa-brands fa-instagram text-base"></i></a>
+                    <a href="#" class="hover:text-[#8b6e4e] transition-colors"><i class="fa-brands fa-youtube text-base"></i></a>
+                </div>
+            </div>
+            <div class="flex items-center space-x-6">
+                <form action="/arama.html" method="GET" class="relative hidden sm:block">
+                    <input type="text" name="s" placeholder="ARA..." class="bg-gray-50 border border-gray-200 px-3 py-1.5 w-40 text-xs focus:outline-none focus:border-[#8b6e4e]">
+                    <button type="submit" class="absolute right-2 top-2 text-gray-450 hover:text-[#8b6e4e] focus:outline-none bg-transparent border-0 cursor-pointer">
+                        <i class="fa-solid fa-magnifying-glass text-[10px]"></i>
+                    </button>
+                </form>
+                <a href="#" class="bg-brandGreen text-white px-4 py-2 flex items-center hover:bg-opacity-90 transition-all rounded-sm text-xs font-bold">
+                    <i class="fa-solid fa-check text-xs mr-2"></i>
+                    HIZLI İLETİŞİM
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Top Header (Centered) -->
+    <div class="sm:hidden bg-white border-b border-gray-100 py-3">
+        <div class="container mx-auto px-4 flex flex-col items-center space-y-3 text-[11px] uppercase tracking-wider text-gray-700 font-bold text-center">
+            <div class="flex items-center justify-center">
+                <a href="tel:+905321570577" class="flex items-center text-gray-700 hover:text-[#8b6e4e] transition-colors">
+                    <i class="fa-solid fa-phone text-[10px] mr-2 text-[#8b6e4e]"></i>
+                    Bizi Arayın:&nbsp;<span>+90 532 157 05 77</span>
+                </a>
+            </div>
+            <a href="#" class="bg-brandGreen text-white px-6 py-2 flex items-center hover:bg-opacity-90 transition-all rounded-sm text-xs font-bold mx-auto">
+                <i class="fa-solid fa-check text-xs mr-2"></i>
+                HIZLI İLETİŞİM
+            </a>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <nav role="navigation" class="bg-white sticky top-0 z-50 shadow-sm border-b border-gray-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="z-50">
+                <a href="/" class="block">
+                    <h1 class="text-2xl md:text-3xl font-['Cormorant_Garamond'] tracking-widest text-[#333] font-light leading-none">
+                        <span class="block text-[10px] md:text-base font-['Montserrat'] font-semibold text-[#8b6e4e] tracking-[0.3em] mb-1 uppercase">Doc.Dr.</span>
+                        BURHAN ÖZALP
+                    </h1>
+                </a>
+            </div>
+            <!-- Desktop Menu -->
+            <ul class="hidden lg:flex flex-wrap justify-start items-center lg:ml-12 lg:mr-auto space-x-4 md:space-x-8 text-sm font-bold uppercase tracking-[0.15em] text-gray-600 font-medium">
+                <li class="relative group py-2">
+                    <a href="#" class="hover:text-[#8b6e4e] transition-all">Hakkımda</a>
+                    <ul class="absolute left-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[200px] border-t-2 border-[#8b6e4e] py-2 z-50">
+                        <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Özgeçmiş</a></li>
+                        <li class="relative group/sub">
+                            <a href="#" class="flex items-center justify-between px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">
+                                Kariyer <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </a>
+                            <ul class="absolute left-full top-0 hidden group-hover/sub:block bg-white shadow-xl min-w-[200px] border-l border-gray-100 py-2">
+                                <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Eğitim</a></li>
+                                <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Sertifikalar</a></li>
+                                <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Yayınlar</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="relative group py-2">
+                    <a href="/hizmetler.html" class="hover:text-[#8b6e4e] transition-all">İşlemler</a>
+                    <ul class="absolute left-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[220px] border-t-2 border-[#8b6e4e] py-2 z-50">
+                        <li class="relative group/sub">
+                            <a href="#" class="flex items-center justify-between px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">
+                                Lipödem Cerrahisi <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </a>
+                            <ul class="absolute left-full top-0 hidden group-hover/sub:block bg-white shadow-xl min-w-[220px] border-l border-gray-100 py-2">
+                                <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Lipödem Nedir?</a></li>
+                                <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Tedavi Yöntemleri</a></li>
+                            </ul>
+                        </li>
+                        <li class="relative group/sub">
+                            <a href="/burun-estetigi.html" class="flex items-center justify-between px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">
+                                Burun Estetiği <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </a>
+                            <ul class="absolute left-full top-0 hidden group-hover/sub:block bg-white shadow-xl min-w-[220px] border-l border-gray-100 py-2">
+                                <li><a href="/burun-estetigi.html" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Rinoplasti</a></li>
+                                <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Revizyon</a></li>
+                            </ul>
+                        </li>
+                        <li class="relative group/sub">
+                            <a href="/hizmetler.html" class="flex items-center justify-between px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">
+                                Yüz Estetiği <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </a>
+                            <ul class="absolute left-full top-0 hidden group-hover/sub:block bg-white shadow-xl min-w-[220px] border-l border-gray-100 py-2">
+                                <li><a href="/yuz-germe.html" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all text-[#8b6e4e]">Yüz Germe (Facelift)</a></li>
+                                <li><a href="#" class="block px-6 py-3 text-xs hover:bg-gray-50 hover:text-[#8b6e4e] transition-all">Göz Kapağı Estetiği</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#" class="hover:text-[#8b6e4e] border-b-2 border-transparent hover:border-[#8b6e4e] pb-1 transition-all">Lipödem</a></li>
+                <li><a href="#" class="hover:text-[#8b6e4e] transition-all">Galeri</a></li>
+                <li><a href="/iletisim.html" class="hover:text-[#8b6e4e] transition-all">İletişim</a></li>
+                
+                <li class="relative group py-2">
+                    <button class="flex items-center hover:text-[#8b6e4e] transition-all cursor-pointer">
+                        <img src="https://flagcdn.com/w20/tr.png" class="w-4 mr-2"> 
+                        <span class="text-xs uppercase">TR</span>
+                        <i class="fa-solid fa-chevron-down text-[10px] ml-1 opacity-50"></i>
+                    </button>
+                    <ul class="absolute right-0 top-full hidden group-hover:block bg-white shadow-xl min-w-[120px] border-t-2 border-[#8b6e4e] py-2 z-50 text-left">
+                        <li>
+                            <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all text-xs uppercase">
+                                <img src="https://flagcdn.com/w20/gb.png" class="w-4 mr-2"> EN
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- Mobile Menu Toggles -->
+            <div class="flex items-center space-x-4 lg:hidden">
+                <div class="relative">
+                    <button class="mobile-lang-btn flex items-center hover:text-[#8b6e4e] transition-all cursor-pointer">
+                        <img src="https://flagcdn.com/w20/tr.png" class="w-5"> 
+                        <i class="fa-solid fa-chevron-down text-[10px] ml-1 opacity-50"></i>
+                    </button>
+                    <ul class="mobile-lang-menu absolute right-0 top-full hidden bg-white shadow-xl min-w-[100px] border-t-2 border-[#8b6e4e] py-2 z-50 text-left">
+                        <li>
+                            <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-50 hover:text-[#8b6e4e] transition-all text-xs font-bold uppercase text-[#333]">
+                                <img src="https://flagcdn.com/w20/gb.png" class="w-4 mr-2"> EN
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <button id="mobile-menu-btn" class="text-[#333] focus:outline-none z-50">
+                    <i class="fa-solid fa-bars text-2xl animate-pulse-slow"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Panel -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white z-[200] transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden overflow-y-auto pb-12">
+            <div class="flex justify-end p-6">
+                <button id="mobile-menu-close" class="text-[#333] focus:outline-none">
+                    <i class="fa-solid fa-times text-3xl"></i>
+                </button>
+            </div>
+            <ul class="flex flex-col space-y-6 px-10 text-lg font-bold uppercase tracking-widest text-gray-700">
+                <li><a href="/" class="hover:text-[#8b6e4e] transition-colors">Ana Sayfa</a></li>
+                <li>
+                    <button class="mobile-accordion-btn w-full flex justify-between items-center hover:text-[#8b6e4e] transition-colors focus:outline-none uppercase">
+                        Hakkımda <i class="fa-solid fa-plus text-sm"></i>
+                    </button>
+                    <div class="hidden flex flex-col space-y-2 mt-2 pl-4 text-sm lowercase whitespace-nowrap text-gray-500">
+                        <a href="#" class="hover:text-[#8b6e4e] transition-all">Özgeçmiş</a>
+                        <a href="#" class="hover:text-[#8b6e4e] transition-all">Eğitim & Kariyer</a>
+                    </div>
+                </li>
+                <li>
+                    <button class="mobile-accordion-btn w-full flex justify-between items-center hover:text-[#8b6e4e] transition-colors focus:outline-none uppercase">
+                        İşlemler <i class="fa-solid fa-plus text-sm"></i>
+                    </button>
+                    <div class="hidden flex flex-col space-y-2 mt-2 pl-4 text-sm whitespace-nowrap text-gray-500">
+                        <a href="/burun-estetigi.html" class="hover:text-[#8b6e4e] transition-all">Burun Estetiği</a>
+                        <a href="/yuz-germe.html" class="hover:text-[#8b6e4e] transition-all font-semibold text-[#8b6e4e]">Yüz Germe (Facelift)</a>
+                        <a href="/hizmetler.html" class="hover:text-[#8b6e4e] transition-all">Tüm Hizmetler</a>
+                    </div>
+                </li>
+                <li><a href="#" class="hover:text-[#8b6e4e] transition-colors">Lipödem</a></li>
+                <li><a href="#" class="hover:text-[#8b6e4e] transition-colors">Galeri</a></li>
+                <li><a href="/iletisim.html" class="hover:text-[#8b6e4e] transition-colors">İletişim</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main role="main">
+
+    <!-- Luxury Medical Hero Section -->
+    <section class="relative bg-gradient-to-b from-[#f8f5f1] to-[#fcfaf7] pt-20 pb-20 overflow-hidden">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Hero Left: Elegant Headlines and Typography Design -->
+                <div class="lg:col-span-7 flex flex-col items-start space-y-6">
+                    <span class="inline-block py-1.5 px-4 bg-[#8b6e4e]/10 text-[#8b6e4e] font-bold text-xs uppercase tracking-[0.2em] rounded-sm">
+                        PREMIUM GENÇLEŞTİRME TEDAVİSİ
+                    </span>
+                    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-['Cormorant_Garamond'] font-light tracking-wide text-[#2d2a26] leading-none mb-2">
+                        Deep Plane Yüz Germe ile <br>
+                        <span class="italic font-normal text-[#8b6e4e]">Zamana Meydan Okuyun</span>
+                    </h2>
+                    <p class="text-gray-600 text-base sm:text-lg leading-relaxed max-w-xl font-light">
+                        Doğal ifadenizi asla bozmadan, yerçekimine ve yılların etkisine karşı derin dokuları koruyan modern tıbbi sanat. İstanbul modern cerrahi teknikleriyle kendinizin en taze haline dönüşün.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto pt-4">
+                        <a href="#bilgi-al" class="bg-[#8b6e4e] hover:bg-[#735a3f] text-white py-4 px-8 text-sm font-bold tracking-widest uppercase transition-all duration-300 text-center rounded-sm shadow-md cursor-pointer">
+                            ÜCRETSİZ ÖN DEĞERLENDİRME
+                        </a>
+                        <a href="https://wa.me/905321570577" target="_blank" class="border border-gray-300 hover:border-[#8b6e4e] hover:bg-white text-gray-700 py-4 px-8 text-sm font-bold tracking-widest uppercase transition-all duration-300 text-center rounded-sm flex items-center justify-center gap-2 cursor-pointer">
+                            <i class="fa-brands fa-whatsapp text-lg text-[#25d366]"></i> WHATSAPP İLETİŞİM
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-3 gap-6 sm:gap-12 w-full pt-8 border-t border-gray-200/60">
+                        <div>
+                            <span class="block text-3xl font-['Cormorant_Garamond'] text-[#8b6e4e] font-semibold">15+</span>
+                            <span class="block text-[10px] sm:text-xs text-gray-500 uppercase tracking-wider font-semibold">Yıllık Tecrübe</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-['Cormorant_Garamond'] text-[#8b6e4e] font-semibold">100%</span>
+                            <span class="block text-[10px] sm:text-xs text-gray-500 uppercase tracking-wider font-semibold">Doğal İfade Koruma</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-['Cormorant_Garamond'] text-[#8b6e4e] font-semibold">WAL</span>
+                            <span class="block text-[10px] sm:text-xs text-gray-500 uppercase tracking-wider font-semibold">İleri Teknoloji</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hero Right: Stylistic Portrait frame with visual contrast -->
+                <div class="lg:col-span-5 relative mt-6 lg:mt-0">
+                    <div class="relative w-full max-w-md mx-auto aspect-[3/4] bg-[#f2ede4] border border-[#ebdcc7] p-4 rounded-sm shadow-xl">
+                        <div class="absolute -top-4 -left-4 w-12 h-12 border-t-2 border-l-2 border-[#8b6e4e] z-10"></div>
+                        <div class="absolute -bottom-4 -right-4 w-12 h-12 border-b-2 border-r-2 border-[#8b6e4e] z-10"></div>
+                        
+                        <!-- High aesthetic placeholder or design content instead of blank space -->
+                        <div class="w-full h-full bg-gradient-to-br from-[#ebe6df] to-[#dcd6ca] flex flex-col items-center justify-center text-center p-8 relative overflow-hidden">
+                            <i class="fa-solid fa-sparkles text-3xl text-[#8b6e4e] mb-4"></i>
+                            <span class="text-xs font-semibold tracking-[0.2em] text-[#8b6e4e] mb-1 uppercase font-['Montserrat']">Cerrahi Sanat</span>
+                            <h3 class="text-3xl font-['Cormorant_Garamond'] text-gray-800 leading-tight font-medium mb-4">Mükemmel Doğallık ve Kalıcı Canlanma</h3>
+                            <div class="w-16 h-[1px] bg-[#8b6e4e] mb-4"></div>
+                            <p class="text-xs text-gray-600 leading-relaxed font-light">Sarkmış kas, bağ ve derin dokuların yukarıya taşındığı, deri gerginliği hissi olmadan doğal yaşlanma saatini 10-15 yıl geriye alan üst düzey yüz germe prosedürü.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deep Plane Facelift Nedir? (Detailed SEO-Rich Article Structure) -->
+    <section class="py-24 bg-white border-t border-b border-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-[#8b6e4e] font-bold text-xs uppercase tracking-[0.25em] block mb-2">BİLİMSEL YAKLAŞIM</span>
+                    <h2 class="text-3xl sm:text-4xl font-['Cormorant_Garamond'] text-[#2d2a26] tracking-wide mb-6">Deep Plane Yüz Germe Ameliyatı Nedir?</h2>
+                    <div class="w-20 h-[1.5px] bg-[#8b6e4e] mx-auto"></div>
+                </div>
+                
+                <div class="prose max-w-none text-gray-700 leading-relaxed font-light space-y-6 text-base sm:text-lg">
+                    <p class="first-letter:text-5xl first-letter:font-['Cormorant_Garamond'] first-letter:text-[#8b6e4e] first-letter:mr-3 first-letter:float-left first-letter:font-semibold">
+                        Geleneksel yüz germe ameliyatlarında sadece cildin ve hemen altındaki yüzeysel zar tabakasının (SMAS) gerilmesi hedeflenirken, modern tıpta altın standart olarak kabul edilen <strong>Deep Plane Facelift (Derin Plan Yüz Germe)</strong> yöntemi, yüzün yaşlanmasının asıl sebebi olan derin dokuları hedefler. Yaş aldıkça sarkan yüz kaslarımız, kemik üzeri bağlarımız ve yer değiştiren yağ paketlerimiz, bu gelişmiş yöntemle anatomik olarak ait oldukları yukarı pozisyonlara taşınır.
+                    </p>
+                    <p>
+                        Derin plan yüz germede, cilt ile yüzeysel kas tabakası ayrılmaz. Bu sayede cildin dolaşımı ve sinir yapısı en üst düzeyde korunur. Ameliyat sonrasında geleneksel tekniklerin yol açtığı o yapay, gergin, "rüzgarda sürüklenmiş" yüz ifadesi (wind-swept look) kesinlikle gerçekleşmez. Sonuç tamamen doğal, zamansız ve hastanın gençlik fotoğraflarındaki fresh anatomik ifadesinin ta kendisidir.
+                    </p>
+                </div>
+
+                <!-- Structured comparative layout to show deep SEO expertise -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+                    <div class="border border-gray-100 bg-[#fbfaf8] p-8 rounded-sm">
+                        <h4 class="text-lg font-bold uppercase text-gray-800 tracking-wider mb-4 flex items-center gap-2">
+                            <span class="w-1.5 h-6 bg-[#8b6e4e] inline-block"></span> Deep Plane Avantajları
+                        </h4>
+                        <ul class="space-y-3 text-sm text-gray-600">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-[#8b6e4e] mt-1 shrink-0"></i>
+                                <span>Kas ve derin bağ askı mekanizması sayesinde 10-15 yıl kalıcılık sunar.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-[#8b6e4e] mt-1 shrink-0"></i>
+                                <span>Cilt ayrılmadığı için morluk, şişlik ve ödem iyileşme süreci çok daha hızlıdır.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-[#8b6e4e] mt-1 shrink-0"></i>
+                                <span>Burun kanatlarından ağız kenarına inen çizgiler (nasolabial) derin planda mükemmel açılır.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-[#8b6e4e] mt-1 shrink-0"></i>
+                                <span>Çene hattı (jawline) ve gıdı bölgesi pürüzsüz ve keskin bir kontüre kavuşur.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="border border-gray-100 bg-[#fbfaf8] p-8 rounded-sm">
+                        <h4 class="text-lg font-bold uppercase text-gray-800 tracking-wider mb-4 flex items-center gap-2">
+                            <span class="w-1.5 h-6 bg-red-800/60 inline-block"></span> Klasik Germeden Farkı
+                        </h4>
+                        <ul class="space-y-3 text-sm text-gray-600">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-minus text-red-500 mt-1 shrink-0"></i>
+                                <span>Klasik yöntem cildi gerer; bu da kulak arkasında çekintiye ve yapay görünüme yol açabilir.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-minus text-red-500 mt-1 shrink-0"></i>
+                                <span>Derin bağlar serbest bırakılmadığı için sarkma 3-5 sene içinde tekrar gözlemlenebilir.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-minus text-red-500 mt-1 shrink-0"></i>
+                                <span>Cilt altı dolaşım bozuklukları riski klasik tekniklerde daha yüksektir.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-minus text-red-500 mt-1 shrink-0"></i>
+                                <span>Yüzün orta kısmı ve elmacık kemikleri üzerindeki sarkıklık tam düzelmeyebilir.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Before / After Comparison Slider (Luxury Touch) -->
+    <section class="py-24 bg-[#fcfaf7]">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <span class="text-[#8b6e4e] font-bold text-xs uppercase tracking-[0.25em] block mb-2">GERÇEK SONUÇLAR</span>
+                <h2 class="text-3xl sm:text-4xl font-['Cormorant_Garamond'] text-[#2d2a26] tracking-wide mb-6">Öncesi / Sonrası Değişim</h2>
+                <p class="text-gray-500 text-sm max-w-xl mx-auto font-light leading-relaxed">
+                    Aşağıdaki interaktif barı sağa ve sola kaydırarak Deep Plane Facelift tedavisinin boyun, elmacık kemikleri ve çene hattı üzerindeki olağanüstü, kırışıksız ve doğal canlandırıcı gücünü keşfedin.
+                </p>
+                <div class="w-20 h-[1.5px] bg-[#8b6e4e] mx-auto mt-6"></div>
+            </div>
+
+            <div class="max-w-2xl mx-auto">
+                <!-- Interactive Comparison Widget -->
+                <div class="ba-slider aspect-[4/3] w-full" id="facelift-ba-slider" style="container-type: inline-size;">
+                    <!-- Before Image (Right slide behind) -->
+                    <div class="ba-slide ba-slide-before w-full h-full">
+                        <img src="/src/assets/images/facelift_before_1780816039478.png" alt="Doç. Dr. Burhan Özalp Yüz Germe Öncesi" class="w-full h-full object-cover select-none pointer-events-none" referrerPolicy="no-referrer" />
+                    </div>
+                    <!-- After Image (Left slide with width adjusted dynamically) -->
+                    <div class="ba-slide ba-slide-after h-full" style="width: 50%;">
+                        <img src="/src/assets/images/facelift_after_1780816055553.png" alt="Doç. Dr. Burhan Özalp Yüz Germe Sonrası" class="absolute top-0 left-0 h-full object-cover select-none pointer-events-none" style="width: 100cqw; max-width: none;" referrerPolicy="no-referrer" />
+                    </div>
+                    <!-- Handle -->
+                    <div class="ba-handle" id="ba-handle">
+                        <i class="fa-solid fa-arrows-left-right text-xs"></i>
+                    </div>
+                    <!-- Labels -->
+                    <div class="ba-label-before">Öncesi</div>
+                    <div class="ba-label-after">Sonrası</div>
+                </div>
+                <p class="text-center text-xs text-gray-400 mt-4 italic">Fotoğraflar ve taslaklar hasta gizliliği nedeniyle korumalı olup, klinik muayenemizde gerçek ameliyat sonuçlarımızı inceleyebilirsiniz.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patient Journey / Adım Adım Tedavi Süreci -->
+    <section class="py-24 bg-white border-t border-b border-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-[#8b6e4e] font-bold text-xs uppercase tracking-[0.25em] block mb-2">ADIM ADIM YOLCULUK</span>
+                    <h2 class="text-3xl sm:text-4xl font-['Cormorant_Garamond'] text-[#2d2a26] tracking-wide mb-6">Patient Journey: Ameliyat Süreci</h2>
+                    <div class="w-20 h-[1.5px] bg-[#8b6e4e] mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col items-center text-center relative">
+                        <div class="w-20 h-20 rounded-full bg-[#f8f6f3] border border-[#ebdcc7] flex items-center justify-center text-2xl font-['Cormorant_Garamond'] font-semibold text-[#8b6e4e] mb-6">
+                            01
+                        </div>
+                        <h4 class="text-base font-bold uppercase tracking-wider text-gray-800 mb-3">İlk Muayene & Tasarım</h4>
+                        <p class="text-xs text-gray-500 leading-relaxed font-light">Doç. Dr. Burhan Özalp ile yüz kemik yapınız, elastikiyet kaybınız incelenerek size özel cerrahi plan çıkartılır.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="flex flex-col items-center text-center relative">
+                        <div class="w-20 h-20 rounded-full bg-[#f8f6f3] border border-[#ebdcc7] flex items-center justify-center text-2xl font-['Cormorant_Garamond'] font-semibold text-[#8b6e4e] mb-6">
+                            02
+                        </div>
+                        <h4 class="text-base font-bold uppercase tracking-wider text-gray-800 mb-3">Operasyon Günü</h4>
+                        <p class="text-xs text-gray-500 leading-relaxed font-light">Genel anestezi altında, kulak kıvrımı için tamamen saklı, mikroskobik hassasiyetle kesiler gerçekleştirilir.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="flex flex-col items-center text-center relative">
+                        <div class="w-20 h-20 rounded-full bg-[#f8f6f3] border border-[#ebdcc7] flex items-center justify-center text-2xl font-['Cormorant_Garamond'] font-semibold text-[#8b6e4e] mb-6">
+                            03
+                        </div>
+                        <h4 class="text-base font-bold uppercase tracking-wider text-gray-800 mb-3">Hızlı İyileşme</h4>
+                        <p class="text-xs text-gray-500 leading-relaxed font-light">Deep Plane tekniğinin getirdiği avantajla ödem ve morluklar minimumdadır. Genellikle 1 haftada sosyal hayata dönüş sağlanır.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="flex flex-col items-center text-center relative">
+                        <div class="w-20 h-20 rounded-full bg-[#f8f6f3] border border-[#ebdcc7] flex items-center justify-center text-2xl font-['Cormorant_Garamond'] font-semibold text-[#8b6e4e] mb-6">
+                            04
+                        </div>
+                        <h4 class="text-base font-bold uppercase tracking-wider text-gray-800 mb-3">Kalıcı Canlılık</h4>
+                        <p class="text-xs text-gray-500 leading-relaxed font-light">Ödemlerin tamamen dağılmasıyla, ifadenizden ödün vermeden yıllar öncesine dönen, taptaze bir görünüm netleşir.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deep-Dive SEO FAQ Section with Collapsible items -->
+    <section class="py-24 bg-[#fcfaf7]">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-[#8b6e4e] font-bold text-xs uppercase tracking-[0.25em] block mb-2 font-semibold">SORULAN SORULAR</span>
+                    <h2 class="text-3xl sm:text-4xl font-['Cormorant_Garamond'] text-[#2d2a26] tracking-wide mb-6">Deep Plane Yüz Germe SSS</h2>
+                    <p class="text-gray-500 text-sm max-w-xl mx-auto font-light leading-relaxed">
+                        Hastalarımızın yüz germe tedavisi hakkında merak ettiği başlıca tıbbi ve cerrahi süreç sorularının cevapları.
+                    </p>
+                    <div class="w-20 h-[1.5px] bg-[#8b6e4e] mx-auto mt-6"></div>
+                </div>
+
+                <!-- Custom Accordion Matching Standard Selectors in src/main.js -->
+                <div class="accordion-group divide-y divide-gray-200/80 border-t border-b border-gray-200/80">
+                    
+                    <!-- Accordion Item 1 -->
+                    <div class="accordion-item py-6 transition-all duration-300">
+                        <button class="accordion-trigger w-full flex items-center justify-between text-left group cursor-pointer focus:outline-none py-2">
+                            <span class="text-lg md:text-xl text-[#2d2a26] font-['Montserrat'] font-medium group-hover:text-[#8b6e4e] transition-colors duration-200 uppercase tracking-wider">
+                                Deep Plane Yüz Germe ameliyatının kalıcılığı ne kadardır?
+                            </span>
+                            <span class="accordion-icon ml-4 flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full border border-gray-200 group-hover:border-[#8b6e4e] group-hover:bg-[#f8f6f3] text-gray-400 group-hover:text-[#8b6e4e] transition-all duration-300">
+                                <i class="fa-solid fa-plus text-xs transition-transform duration-300"></i>
+                            </span>
+                        </button>
+                        <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <div class="pt-6 pb-2 text-[#7b5f43] leading-relaxed prose max-w-none text-base md:text-[17px] font-light">
+                                <p class="mb-4">
+                                    Deep Plane Facelift ameliyatı, cildin altındaki derin SMAS tabakasını ve yüzün ana bağlarını tamamen serbest bırakıp yukarı taşıdığı için günümüzde mevcut olan en kalıcı yüz germe yöntemidir. Sonuçlar kişisel yaşlanma hızına bağlı olarak 10 ila 15 yıl boyunca kusursuz kalır.
+                                </p>
+                                <p>
+                                    Klasik yüz germelerde görülebilen erken sarkma ve yığılmalar, derin plan askı mekanizması sayesinde seneden seneye kalitesini korur. Cerrahi sonrasında yaşlanma kronolojik olarak devam etse de, her zaman akranlarınızdan 10-15 yıl daha genç bir hattan yaşlanmaya başlarsınız.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accordion Item 2 -->
+                    <div class="accordion-item py-6 transition-all duration-300">
+                        <button class="accordion-trigger w-full flex items-center justify-between text-left group cursor-pointer focus:outline-none py-2">
+                            <span class="text-lg md:text-xl text-[#2d2a26] font-['Montserrat'] font-medium group-hover:text-[#8b6e4e] transition-colors duration-200 uppercase tracking-wider">
+                                Ameliyat izleri nerede konumlandırılır, dışarıdan belli olur mu?
+                            </span>
+                            <span class="accordion-icon ml-4 flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full border border-gray-200 group-hover:border-[#8b6e4e] group-hover:bg-[#f8f6f3] text-gray-400 group-hover:text-[#8b6e4e] transition-all duration-300">
+                                <i class="fa-solid fa-plus text-xs transition-transform duration-300"></i>
+                            </span>
+                        </button>
+                        <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <div class="pt-6 pb-2 text-[#7b5f43] leading-relaxed prose max-w-none text-base md:text-[17px] font-light">
+                                <p class="mb-4">
+                                    Deep Plane Yüz Germe ameliyatında kesiler, kulak kepçesinin hemen önündeki ve arkasındaki doğal anatomik katlantı çizgilerine yerleştirilir. Saç çizgisine ve kulak içine doğru milimetrik olarak saklanır.
+                                </p>
+                                <p>
+                                    Özel mikro-dikiş teknikleri sayesinde dikişler tamamen iyileştikten ve ilk aylardaki pembe tonlar kaybolduktan sonra, kulak arkasını açıp saçınızı toplasanız dahi ameliyat izi dışarıdan bakıldığında gözle görülmeyecek bir hal alır.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accordion Item 3 -->
+                    <div class="accordion-item py-6 transition-all duration-300">
+                        <button class="accordion-trigger w-full flex items-center justify-between text-left group cursor-pointer focus:outline-none py-2">
+                            <span class="text-lg md:text-xl text-[#2d2a26] font-['Montserrat'] font-medium group-hover:text-[#8b6e4e] transition-colors duration-200 uppercase tracking-wider">
+                                Yüz Germe için en uygun yaş aralığı nedir?
+                            </span>
+                            <span class="accordion-icon ml-4 flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full border border-gray-200 group-hover:border-[#8b6e4e] group-hover:bg-[#f8f6f3] text-gray-400 group-hover:text-[#8b6e4e] transition-all duration-300">
+                                <i class="fa-solid fa-plus text-xs transition-transform duration-300"></i>
+                            </span>
+                        </button>
+                        <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <div class="pt-6 pb-2 text-[#7b5f43] leading-relaxed prose max-w-none text-base md:text-[17px] font-light">
+                                <p class="mb-4">
+                                    Cerrahiye karar verilirken asıl belirleyici kriter yaştan ziyade yüzdeki deformasyon, sarkma hızı ve cilt yapısıdır. Bununla birlikte, elastikiyet kayıplarının ciddi derecede başladığı 40 ila 65 yaş grubu hastalarımız Deep Plane tekniği için en ideal adaylardır.
+                                </p>
+                                <p>
+                                    Daha erken evrelerdeki hafif çene hattı sarkmaları için mini-facelift gibi daha dar kapsamlı koruyucu işlemler de tercih edilebilirken, orta ve ileri derece sarkmalarda en başarılı sonuç Derin Plan cerrahiyle elde edilir.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accordion Item 4 -->
+                    <div class="accordion-item py-6 transition-all duration-300">
+                        <button class="accordion-trigger w-full flex items-center justify-between text-left group cursor-pointer focus:outline-none py-2">
+                            <span class="text-lg md:text-xl text-[#2d2a26] font-['Montserrat'] font-medium group-hover:text-[#8b6e4e] transition-colors duration-200 uppercase tracking-wider">
+                                İyileşme süreci nasıldır, ne zaman sosyal hayata dönülebilir?
+                            </span>
+                            <span class="accordion-icon ml-4 flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full border border-gray-200 group-hover:border-[#8b6e4e] group-hover:bg-[#f8f6f3] text-gray-400 group-hover:text-[#8b6e4e] transition-all duration-300">
+                                <i class="fa-solid fa-plus text-xs transition-transform duration-300"></i>
+                            </span>
+                        </button>
+                        <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <div class="pt-6 pb-2 text-[#7b5f43] leading-relaxed prose max-w-none text-base md:text-[17px] font-light">
+                                <p class="mb-4">
+                                    Derin Plan tekniğinde cilt ile kas altı dokular birbirinden ayrıştırılmadan blok halinde kaldırıldığı için yüzün mikroskobik damarları zarar görmez. Bu sebepten klasik ameliyatlardaki aşırı morarma ve günlerce süren gergin ağrılar bu teknikte görülmez.
+                                </p>
+                                <p>
+                                    Hastalarımız genellikle ameliyat sonrasındaki 2. günde duş alabilir, hafif hafif dışarı yürüyüşlerine çıkabilir. Ameliyatın 6. veya 7. gününde minik dikişler alınır ve şişliklerin büyük bölümü bu sürede hafifler. 10. günden itibaren hafif bir makyajla tamamen normal sosyal ve profesyonel hayata dönülebilmektedir.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Luxury Inline Call To Action & Appointment Form -->
+    <section class="py-24 bg-white" id="bilgi-al">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-[#f8f6f3] border border-[#ebdcc7] p-8 sm:p-16 rounded-sm relative">
+                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#8b6e4e] text-white text-[10px] font-bold tracking-[0.3em] uppercase py-1 px-4 rounded-sm">
+                    RANDEVU &amp; BİLGİ AL
+                </div>
+                
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-['Cormorant_Garamond'] text-gray-800 tracking-wide font-medium mb-4">Ücretsiz Ön Değerlendirme Formu</h3>
+                    <p class="text-xs text-gray-500 max-w-md mx-auto leading-relaxed">Bilgilerinizi bırakın, Doç. Dr. Burhan Özalp ve asistan ekibimiz sizinle en kısa sürede iletişime geçerek tedavi planınızı şekillendirsin.</p>
+                </div>
+
+                <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <label class="block text-xs uppercase tracking-wider font-bold text-gray-700">İsim Soyisim*</label>
+                        <input type="text" placeholder="Adınız Soyadınız" class="bg-white border border-gray-200/80 px-4 py-3 text-sm w-full focus:outline-none focus:border-[#8b6e4e] rounded-sm">
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <label class="block text-xs uppercase tracking-wider font-bold text-gray-700">Telefon Numaranız*</label>
+                        <input type="tel" placeholder="+90 (___) ___ __ __" class="bg-white border border-gray-200/80 px-4 py-3 text-sm w-full focus:outline-none focus:border-[#8b6e4e] rounded-sm">
+                    </div>
+
+                    <div class="space-y-4 md:col-span-2">
+                        <label class="block text-xs uppercase tracking-wider font-bold text-gray-700">Şikayetiniz veya Beklentileriniz*</label>
+                        <textarea placeholder="Yüz gençleştirme, derin plan ve boyun askısıyla ilgili merak ettiğiniz detaylar..." rows="4" class="bg-white border border-gray-200/80 px-4 py-3 text-sm w-full focus:outline-none focus:border-[#8b6e4e] rounded-sm resize-none"></textarea>
+                    </div>
+
+                    <div class="md:col-span-2 pt-4 flex flex-col items-center">
+                        <button type="submit" class="w-full sm:w-auto bg-[#8b6e4e] hover:bg-[#735a3f] text-white py-4 px-12 text-xs font-bold tracking-widest uppercase transition-all duration-300 rounded-sm shadow-md cursor-pointer">
+                            İLETİŞİM TALEBİNİ GÖNDER
+                        </button>
+                        <span class="block text-[10px] text-gray-400 mt-3">Kişisel verileriniz KVKK kapsamında yüksek güvenceli şifrelenmiş sunucularımızda saklanır.</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo" class="bg-white pt-24 pb-12 border-t border-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-16 mb-20 text-center lg:text-left">
+                <!-- Branding & Address -->
+                <div class="flex flex-col items-center lg:items-start">
+                   <h2 class="text-3xl font-['Cormorant_Garamond'] tracking-widest text-[#333] font-light leading-none mb-10">
+                        <span class="block text-base font-['Montserrat'] font-semibold text-[#8b6e4e] tracking-[0.3em] mb-1 uppercase">Doc.Dr.</span>
+                        BURHAN ÖZALP
+                    </h2>
+                    <div class="text-base text-gray-800 space-y-6 leading-relaxed w-full flex flex-col items-center lg:items-start text-center lg:text-left">
+                        <div class="w-full flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left">
+                            <i class="fa-solid fa-location-dot text-sm mb-2 lg:mb-0 lg:mr-3 text-[#8b6e4e] mt-0.5 shrink-0"></i>
+                            <div class="w-full">
+                                <span class="block font-bold mb-1 uppercase text-gray-800">Muayenehane Adresi:</span>
+                                <span class="text-gray-700 font-medium">Hamidiye, Cendere Cad. Kordon İstanbul Güzelyalı Sitesi No: 49, 34038 Kağıthane/İstanbul</span>
+                            </div>
+                        </div>
+                        <div class="w-full flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left">
+                            <i class="fa-solid fa-phone text-sm mb-2 lg:mb-0 lg:mr-3 text-[#8b6e4e] mt-0.5 shrink-0"></i>
+                            <div class="w-full">
+                                <span class="block font-bold mb-1 uppercase text-gray-800">Telefonlar:</span>
+                                <div class="flex flex-col items-center lg:items-start text-gray-800 font-bold gap-1 text-base" dir="ltr">
+                                    <a href="tel:+905321570577" class="hover:text-[#8b6e4e] text-gray-800 transition-colors inline-block">+90 532 157 05 77</a>
+                                    <a href="tel:+902122611212" class="hover:text-[#8b6e4e] text-gray-800 transition-colors inline-block">+90 212 261 12 12</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-4 w-full flex justify-center lg:justify-start">
+                            <a href="#" class="bg-brandGreen text-white px-8 py-3 rounded-sm flex items-center justify-center w-full sm:w-auto font-bold tracking-widest uppercase hover:bg-opacity-90 transition-all">
+                                <i class="fa-solid fa-check text-xs mr-2"></i> YOL TARİFİ
+                            </a>
+                        </div>
+                        <div class="flex space-x-4 pt-4 justify-center lg:justify-start">
+                            <a href="#" class="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center hover:bg-[#8b6e4e] hover:text-white hover:border-[#8b6e4e] transition-all"><i class="fa-brands fa-facebook-f text-lg"></i></a>
+                            <a href="#" class="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center hover:bg-[#8b6e4e] hover:text-white hover:border-[#8b6e4e] transition-all"><i class="fa-brands fa-instagram text-lg"></i></a>
+                            <a href="#" class="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center hover:bg-[#8b6e4e] hover:text-white hover:border-[#8b6e4e] transition-all"><i class="fa-brands fa-youtube text-lg"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Services -->
+                <div class="grid grid-cols-2 gap-4 text-left">
+                    <ul class="text-base font-semibold text-gray-700 uppercase tracking-wider space-y-4">
+                        <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Burun Estetiği</a></li>
+                        <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Göğüs Estetiği</a></li>
+                        <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Göğüs Büyütme</a></li>
+                        <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Jinekomasti</a></li>
+                        <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Karın Germe</a></li>
+                    </ul>
+                    <ul class="text-base font-semibold text-gray-700 uppercase tracking-wider space-y-4">
+                         <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Brezilya Poposu</a></li>
+                        <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Boyun Germe</a></li>
+                        <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Faça / Jilet İzi</a></li>
+                        <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Kepçe Kulak Estetiği</a></li>
+                        <li><a href="#" class="hover:text-[#8b6e4e] flex items-center transition-all"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-[#8b6e4e]"></i> Yağ Enjeksiyonu</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Form Footer -->
+                <div class="bg-[#f8f6f3] p-8 rounded-sm">
+                    <h4 class="text-base font-bold tracking-[0.2em] text-[#8b6e4e] mb-6 uppercase">Numaranızı Bırakın Arayalım !</h4>
+                    <form class="space-y-4">
+                        <input type="text" placeholder="Ad Soyad*" class="bg-white border-b border-gray-200 px-4 py-2.5 text-base w-full focus:outline-none focus:border-[#8b6e4e]">
+                        <input type="text" placeholder="Ülke*" class="bg-white border-b border-gray-200 px-4 py-2.5 text-base w-full focus:outline-none focus:border-[#8b6e4e]">
+                        <input type="tel" placeholder="Telefon No*" class="bg-white border-b border-gray-200 px-4 py-2.5 text-base w-full focus:outline-none focus:border-[#8b6e4e]">
+                        <textarea placeholder="Mesaj*" rows="3" class="bg-white border-b border-gray-200 px-4 py-2.5 text-base w-full focus:outline-none focus:border-[#8b6e4e] resize-none"></textarea>
+                        <button class="bg-[#8b6e4e] text-white px-8 py-3 text-base font-bold tracking-widest w-full hover:bg-opacity-90 transition-all uppercase rounded-sm cursor-pointer">GÖNDER</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Bottom Credits -->
+            <div class="border-t border-gray-100 pt-12 text-center">
+                <div class="flex flex-wrap justify-center space-x-6 text-base font-bold uppercase text-gray-600 tracking-widest mb-6 px-4">
+                    <a href="#" class="hover:text-[#8b6e4e] transition-all mb-2">Randevu</a>
+                    <a href="#" class="hover:text-[#8b6e4e] transition-all mb-2">SSS</a>
+                    <a href="#" class="hover:text-[#8b6e4e] transition-all mb-2">Hakkımda</a>
+                    <a href="#" class="hover:text-[#8b6e4e] transition-all mb-2">Site Haritası</a>
+                    <a href="/iletisim.html" class="hover:text-[#8b6e4e] transition-all mb-2">İletişim</a>
+                    <a href="#" class="hover:text-[#8b6e4e] transition-all mb-2">KVKK</a>
+                    <a href="#" class="hover:text-[#8b6e4e] transition-all mb-2">Gizlilik Sözleşmesi</a>
+                </div>
+                <p class="text-base text-gray-600 uppercase tracking-widest mb-4 px-4">© 2025 Tüm Hakları Doç. Dr. Burhan Özalp'a Aittir.</p>
+                <p class="text-base text-gray-600 max-w-2xl mx-auto italic px-4 leading-relaxed">Bu sitede yer alan makaleler tamamen bilgilendirme amaçlı olup, tanı ve tedavi amacıyla kullanılamaz. Tüm sağlık sorunları için doktorunuza başvurunuz.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Contact Widgets -->
+    <div class="fixed bottom-[10px] left-4 right-4 md:bottom-6 md:left-8 md:right-8 lg:left-12 lg:right-12 flex flex-row items-center justify-between z-[60]">
+        <!-- Instagram Link -->
+        <a href="https://www.instagram.com/dr.burhanozalp/" target="_blank" class="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all cursor-pointer" aria-label="Instagram">
+            <svg class="w-6 h-6 md:w-7 md:h-7 fill-current" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+            </svg>
+        </a>
+        <!-- WhatsApp Link -->
+        <a href="https://wa.me/905321570577" target="_blank" class="w-12 h-12 md:w-14 md:h-14 bg-[#25d366] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all cursor-pointer" aria-label="WhatsApp">
+            <img src="/src/images/whatsapp.svg" class="w-6 h-6 md:w-7 md:h-7" alt="WhatsApp">
+        </a>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+    
+    <!-- Script handling custom interactive Before-After comparison slider slider -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slider = document.getElementById('facelift-ba-slider');
+            const handler = document.getElementById('ba-handle');
+            const afterSlide = slider?.querySelector('.ba-slide-after');
+            
+            if (slider && handler && afterSlide) {
+                let active = false;
+                
+                const slide = (x) => {
+                    const rect = slider.getBoundingClientRect();
+                    let relativeX = x - rect.left;
+                    if (relativeX < 0) relativeX = 0;
+                    if (relativeX > rect.width) relativeX = rect.width;
+                    
+                    const pct = (relativeX / rect.width) * 100;
+                    handler.style.left = pct + '%';
+                    afterSlide.style.width = pct + '%';
+                };
+                
+                slider.addEventListener('mousedown', (e) => {
+                    active = true;
+                    slide(e.clientX);
+                });
+                
+                window.addEventListener('mouseup', () => {
+                    active = false;
+                });
+                
+                window.addEventListener('mousemove', (e) => {
+                    if (!active) return;
+                    slide(e.clientX);
+                });
+                
+                // Touch events for full support
+                slider.addEventListener('touchstart', (e) => {
+                    active = true;
+                    slide(e.touches[0].clientX);
+                });
+                
+                window.addEventListener('touchend', () => {
+                    active = false;
+                });
+                
+                window.addEventListener('touchmove', (e) => {
+                    if (!active) return;
+                    slide(e.touches[0].clientX);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
