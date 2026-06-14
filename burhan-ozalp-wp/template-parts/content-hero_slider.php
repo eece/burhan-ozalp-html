@@ -8,7 +8,7 @@
 if ( have_rows('slides') ) :
 ?>
     <!-- Hero Slider Slayt Gösterisi Seksiyonu -->
-    <section class="relative h-[400px] md:h-[600px] bg-lightBrown overflow-hidden">
+    <section class="relative h-[400px] md:h-[600px] bg-light-brown overflow-hidden">
         <div class="hero-slider relative h-full">
             <?php 
             $slide_index = 0;
