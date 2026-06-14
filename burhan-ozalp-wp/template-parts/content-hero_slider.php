@@ -51,7 +51,7 @@ if ( have_rows('slides') ) :
                      <div class="container mx-auto h-auto md:h-full flex-grow px-4 py-0 flex flex-col justify-center items-center md:items-end md:rtl:items-start text-center md:text-right md:rtl:text-right relative z-10">
                         <div class="max-w-xl animate-fade-in-right text-center md:text-right md:rtl:text-right">
                             <?php if ( ! empty( $subtitle ) ) : ?>
-                                <span class="hidden md:block text-3xl font-medium text-white tracking-widest font-['Cormorant_Garamond'] mb-4 drop-shadow-md [text-shadow:_0_2px_10px_rgba(0,0,0,0.95)] text-right rtl:text-right"><?php echo esc_html( $subtitle ); ?></span>
+                                <span class="hidden md:block text-3xl font-medium text-white tracking-widest font-['Cormorant_Garamond'] mb-4 text-right rtl:text-right"><?php echo esc_html( $subtitle ); ?></span>
                             <?php endif; ?>
                             <?php if ( ! empty( $title ) ) : ?>
                                 <h3 class="text-base sm:text-lg md:text-7xl font-bold font-['Cormorant_Garamond'] text-[#2d2a26] md:text-white leading-snug md:leading-tight mb-2 md:mb-8 uppercase text-center md:text-right md:rtl:text-right">
