@@ -10,6 +10,7 @@ module.exports = {
     extend: {
       colors: {
         brandGreen: '#2c8d2c',
+        lightBrown: '#ded1c1',
       },
     },
   },

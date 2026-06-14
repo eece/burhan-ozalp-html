@@ -8,7 +8,7 @@
 if ( have_rows('slides') ) :
 ?>
     <!-- Hero Slider Slayt Gösterisi Seksiyonu -->
-    <section class="relative h-[400px] md:h-[600px] bg-gray-200 overflow-hidden">
+    <section class="relative h-[400px] md:h-[600px] bg-lightBrown overflow-hidden">
         <div class="hero-slider relative h-full">
             <?php 
             $slide_index = 0;
@@ -45,7 +45,7 @@ if ( have_rows('slides') ) :
                 <!-- Slide <?php echo $slide_index + 1; ?> -->
                 <div class="slide absolute inset-0 <?php echo $slide_index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'; ?> transition-opacity duration-1000">
                     <!-- Desktop background image -->
-                    <div class="absolute inset-0 bg-cover bg-center hidden md:block" style="background-image: url('<?php echo esc_url( $image_desktop ); ?>');"></div>
+                    <div class="absolute inset-y-0 left-0 w-full md:max-w-[55%] bg-cover bg-center hidden md:block" style="background-image: url('<?php echo esc_url( $image_desktop ); ?>');"></div>
                     <!-- Mobile background image -->
                     <div class="absolute inset-0 bg-cover bg-center md:hidden" style="background-image: url('<?php echo esc_url( $image_mobile ); ?>');"></div>
                     <div class="container mx-auto h-full px-4 flex flex-col justify-center items-end rtl:items-start text-right rtl:text-right relative z-10">
