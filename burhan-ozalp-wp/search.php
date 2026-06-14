@@ -37,6 +37,11 @@ get_header(); ?>
 
         <!-- Results List -->
         <div class="space-y-8">
+            <?php if ( get_search_query() ) : ?>
+                <div class="text-sm text-gray-400 italic mb-6">
+                    <?php printf( esc_html__( 'Şunu aradınız: "%s"', 'burhan-ozalp' ), get_search_query() ); ?>
+                </div>
+            <?php endif; ?>
             <?php if ( have_posts() ) : ?>
                 <?php while ( have_posts() ) : the_post(); ?>
                     <div class="p-8 bg-[#fcfaf7] hover:bg-[#f8f6f3] border border-gray-100 rounded-sm transition-all text-left">

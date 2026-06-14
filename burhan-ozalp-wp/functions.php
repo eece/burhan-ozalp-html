@@ -306,6 +306,7 @@ function burhan_register_polylang_strings() {
             'Aramak istediğiniz kelime...' => 'burhan-ozalp',
             
             // Scanned and added strings
+            'Şunu aradınız: "%s"' => 'burhan-ozalp',
             'Ara' => 'burhan-ozalp',
             'Kapat' => 'burhan-ozalp',
             'Arama Yapın' => 'burhan-ozalp',
