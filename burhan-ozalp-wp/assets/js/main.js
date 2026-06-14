@@ -22,6 +22,30 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileMenuCloseBtn.addEventListener('click', toggleMenu);
   }
 
+  // Mobile Search Overlay logic
+  const mobileSearchBtn = document.getElementById('mobile-search-btn');
+  const mobileSearchClose = document.getElementById('mobile-search-close');
+  const mobileSearchOverlay = document.getElementById('mobile-search-overlay');
+
+  const toggleSearch = () => {
+    if (mobileSearchOverlay) {
+      mobileSearchOverlay.classList.toggle('translate-y-full');
+      document.body.classList.toggle('overflow-hidden');
+      if (!mobileSearchOverlay.classList.contains('translate-y-full')) {
+        const input = mobileSearchOverlay.querySelector('input[name="s"]');
+        if (input) input.focus();
+      }
+    }
+  };
+
+  if (mobileSearchBtn) {
+    mobileSearchBtn.addEventListener('click', toggleSearch);
+  }
+
+  if (mobileSearchClose) {
+    mobileSearchClose.addEventListener('click', toggleSearch);
+  }
+
   // Mobile Language Dropdown Toggle
   const mobileLangBtns = document.querySelectorAll('.mobile-lang-btn');
   mobileLangBtns.forEach(btn => {

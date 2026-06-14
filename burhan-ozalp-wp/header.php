@@ -78,8 +78,8 @@
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="z-50" dir="ltr">
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="block text-left">
-                    <h1 class="text-2xl md:text-3xl font-['Cormorant_Garamond'] tracking-widest text-[#333] font-light leading-none text-left">
-                        <span class="block text-[10px] md:text-base font-['Montserrat'] font-semibold text-[#8b6e4e] tracking-[0.3em] mb-1 uppercase text-left"><?php echo esc_html( $logo_subtitle ); ?></span>
+                    <h1 class="text-xl md:text-3xl font-['Cormorant_Garamond'] tracking-widest text-[#333] font-light leading-none text-left">
+                        <span class="block text-[9px] md:text-base font-['Montserrat'] font-semibold text-[#8b6e4e] tracking-[0.3em] mb-1 uppercase text-left"><?php echo esc_html( $logo_subtitle ); ?></span>
                         <?php echo esc_html( $logo_title ); ?>
                     </h1>
                 </a>
@@ -310,7 +310,7 @@
             </ul>
 
             <!-- Mobile Menu Toggles -->
-            <div class="flex items-center gap-4 lg:hidden">
+            <div class="flex items-center gap-6 lg:hidden">
                 <div class="relative">
                     <?php if ( function_exists( 'pll_the_languages' ) ) : ?>
                         <?php
@@ -357,10 +357,29 @@
                         </ul>
                     <?php endif; ?>
                 </div>
+                <button id="mobile-search-btn" class="text-[#333] hover:text-[#8b6e4e] focus:outline-none z-50 mr-5" aria-label="<?php echo esc_attr_x( 'Ara', 'search button', 'burhan-ozalp' ); ?>">
+                    <i class="fa-solid fa-magnifying-glass text-xl"></i>
+                </button>
                 <button id="mobile-menu-btn" class="text-[#333] focus:outline-none z-50">
                     <i class="fa-solid fa-bars text-2xl animate-pulse-slow"></i>
                 </button>
             </div>
+        </div>
+
+        <!-- Mobile Search Overlay -->
+        <div id="mobile-search-overlay" class="fixed inset-0 bg-white/98 backdrop-blur-md z-[210] transform translate-y-full transition-transform duration-300 ease-in-out flex flex-col justify-center items-center px-6">
+            <button id="mobile-search-close" class="absolute top-6 right-6 text-[#333] hover:text-[#8b6e4e] focus:outline-none" aria-label="<?php echo esc_attr__( 'Kapat', 'burhan-ozalp' ); ?>">
+                <i class="fa-solid fa-xmark text-3xl"></i>
+            </button>
+            <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="GET" class="w-full max-w-lg flex flex-col items-center gap-6">
+                <h3 class="text-2xl font-['Cormorant_Garamond'] uppercase tracking-widest text-[#333] font-bold"><?php echo esc_html__( 'Arama Yapın', 'burhan-ozalp' ); ?></h3>
+                <div class="w-full relative border-b-2 border-gray-200 focus-within:border-[#8b6e4e] transition-colors pb-2 flex items-center">
+                    <input type="text" name="s" placeholder="<?php echo esc_attr_x( 'Merak ettiğiniz her şeyi arayın...', 'placeholder', 'burhan-ozalp' ); ?>" class="w-full bg-transparent text-lg font-medium focus:outline-none text-[#333] text-center" value="<?php echo get_search_query(); ?>" required>
+                </div>
+                <button type="submit" class="px-8 py-3 bg-[#8b6e4e] text-white text-sm font-bold tracking-[0.2em] transform hover:bg-[#7b5f43] transition-all uppercase rounded-sm shadow-md w-full">
+                    <?php echo esc_html__( 'ARA', 'burhan-ozalp' ); ?>
+                </button>
+            </form>
         </div>
 
         <!-- Mobile Navigation Panel -->
