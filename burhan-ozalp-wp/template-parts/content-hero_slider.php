@@ -8,7 +8,7 @@
 if ( have_rows('slides') ) :
 ?>
     <!-- Hero Slider Slayt Gösterisi Seksiyonu -->
-    <section class="relative h-[400px] md:h-[600px] bg-light-brown overflow-hidden">
+    <section class="relative h-[275px] md:h-[600px] bg-light-brown overflow-hidden">
         <div class="hero-slider relative h-full">
             <?php 
             $slide_index = 0;
@@ -43,26 +43,35 @@ if ( have_rows('slides') ) :
                 }
             ?>
                 <!-- Slide <?php echo $slide_index + 1; ?> -->
-                <div class="slide absolute inset-0 <?php echo $slide_index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'; ?> transition-opacity duration-1000">
-                    <!-- Desktop background image -->
-                    <div class="absolute inset-y-0 left-0 w-full md:max-w-[55%] bg-cover bg-center hidden md:block" style="background-image: url('<?php echo esc_url( $image_desktop ); ?>');"></div>
-                    <!-- Mobile background image -->
-                    <div class="absolute inset-0 bg-cover bg-center md:hidden" style="background-image: url('<?php echo esc_url( $image_mobile ); ?>');"></div>
-                    <div class="container mx-auto h-full px-4 flex flex-col justify-center items-end rtl:items-start text-right rtl:text-right relative z-10">
-                        <div class="max-w-xl animate-fade-in-right text-right rtl:text-right">
+                <div class="slide absolute inset-0 <?php echo $slide_index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'; ?> transition-opacity duration-1000 flex flex-col md:block">
+                     <!-- Desktop background image -->
+                     <div class="absolute inset-y-0 left-0 w-full md:max-w-[55%] bg-cover bg-center hidden md:block" style="background-image: url('<?php echo esc_url( $image_desktop ); ?>');"></div>
+                     <!-- Mobile background image -->
+                     <div class="relative w-full h-[180px] bg-cover bg-center md:hidden shrink-0" style="background-image: url('<?php echo esc_url( $image_mobile ); ?>');"></div>
+                     <div class="container mx-auto h-auto md:h-full flex-grow px-4 py-0 flex flex-col justify-center items-center md:items-end md:rtl:items-start text-center md:text-right md:rtl:text-right relative z-10">
+                        <div class="max-w-xl animate-fade-in-right text-center md:text-right md:rtl:text-right">
                             <?php if ( ! empty( $subtitle ) ) : ?>
-                                <span class="block text-lg md:text-3xl font-medium text-white tracking-widest font-['Cormorant_Garamond'] mb-4 drop-shadow-md [text-shadow:_0_2px_10px_rgba(0,0,0,0.95)] text-right rtl:text-right"><?php echo esc_html( $subtitle ); ?></span>
+                                <span class="hidden md:block text-3xl font-medium text-white tracking-widest font-['Cormorant_Garamond'] mb-4 drop-shadow-md [text-shadow:_0_2px_10px_rgba(0,0,0,0.95)] text-right rtl:text-right"><?php echo esc_html( $subtitle ); ?></span>
                             <?php endif; ?>
                             <?php if ( ! empty( $title ) ) : ?>
-                                <h2 class="text-2xl sm:text-4xl md:text-7xl font-bold font-['Cormorant_Garamond'] text-white leading-tight mb-8 uppercase drop-shadow-lg [text-shadow:_0_2px_15px_rgba(0,0,0,0.95)] text-right rtl:text-right"><?php echo nl2br( esc_html( $title ) ); ?></h2>
+                                <h3 class="text-base sm:text-lg md:text-7xl font-bold font-['Cormorant_Garamond'] text-[#2d2a26] md:text-white leading-snug md:leading-tight mb-2 md:mb-8 uppercase text-center md:text-right md:rtl:text-right">
+                                    <?php if ( ! empty( $btn_url ) ) : ?>
+                                        <a href="<?php echo esc_url( $btn_url ); ?>" target="<?php echo esc_attr( $btn_target ); ?>" class="hover:text-[#8b6e4e] md:hover:text-inherit transition-colors duration-200">
+                                    <?php endif; ?>
+                                    <?php echo nl2br( esc_html( $title ) ); ?>
+                                    <?php if ( ! empty( $btn_url ) ) : ?>
+                                        </a>
+                                    <?php endif; ?>
+                                </h3>
                             <?php endif; ?>
                             <?php if ( ! empty( $btn_text ) ) : ?>
-                                <div class="text-right rtl:text-right">
+                                <div class="hidden md:block text-center md:text-right md:rtl:text-right">
+                                    <!-- Desktop Details Button -->
                                     <a href="<?php echo esc_url( $btn_url ); ?>" target="<?php echo esc_attr( $btn_target ); ?>" class="inline-block px-10 py-3 bg-[#8b6e4e] text-white text-base font-bold tracking-[0.2em] transform hover:bg-[#7b5f43] hover:scale-105 transition-all uppercase rounded-sm shadow-xl"><?php echo esc_html( $btn_text ); ?></a>
                                 </div>
                             <?php endif; ?>
                         </div>
-                    </div>
+                     </div>
                 </div>
             <?php 
                 $slide_index++;
@@ -79,7 +88,7 @@ if ( have_rows('slides') ) :
             </button>
 
             <!-- Slider Dots -->
-            <div class="slider-dots absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3 z-30">
+            <div class="slider-dots absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 flex space-x-3 z-30">
                 <?php for ( $i = 0; $i < $slide_index; $i++ ) : ?>
                     <div class="dot w-3 h-3 border border-[#8b6e4e] rounded-full cursor-pointer transition-all <?php echo $i === 0 ? 'bg-[#8b6e4e]' : 'hover:bg-[#8b6e4e]/50'; ?>"></div>
                 <?php endfor; ?>
