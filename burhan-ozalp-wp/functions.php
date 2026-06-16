@@ -93,15 +93,17 @@ add_action( 'wp_enqueue_scripts', 'burhan_ozalp_assets' );
 /**
  * Register ACF Options Page
  */
-if ( function_exists( 'acf_add_options_page' ) ) {
-    acf_add_options_page( array(
-        'page_title' => esc_html__( 'Site Options', 'burhan-ozalp' ),
-        'menu_title' => esc_html__( 'Site Options', 'burhan-ozalp' ),
-        'menu_slug'  => 'theme-settings',
-        'capability' => 'edit_posts',
-        'redirect'   => false,
-    ) );
-}
+add_action('acf/init', function() {
+    if ( function_exists( 'acf_add_options_page' ) ) {
+        acf_add_options_page( array(
+            'page_title' => esc_html__( 'Site Options', 'burhan-ozalp' ),
+            'menu_title' => esc_html__( 'Site Options', 'burhan-ozalp' ),
+            'menu_slug'  => 'theme-settings',
+            'capability' => 'edit_posts',
+            'redirect'   => false,
+        ) );
+    }
+} );
 
 /**
  * Helper to get site options (either localized or standard fallback)
