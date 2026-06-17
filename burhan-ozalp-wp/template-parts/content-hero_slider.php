@@ -8,7 +8,7 @@
 if ( have_rows('slides') ) :
 ?>
     <!-- Hero Slider Slayt Gösterisi Seksiyonu -->
-    <section class="relative h-[275px] md:h-[600px] bg-light-brown overflow-hidden">
+    <section class="relative h-[340px] md:h-[600px] bg-light-brown overflow-hidden">
         <div class="hero-slider relative h-full">
             <?php 
             $slide_index = 0;
@@ -47,14 +47,22 @@ if ( have_rows('slides') ) :
                      <!-- Desktop background image -->
                      <div class="absolute inset-y-0 left-0 w-full md:max-w-[55%] bg-cover bg-center hidden md:block" style="background-image: url('<?php echo esc_url( $image_desktop ); ?>');"></div>
                      <!-- Mobile background image -->
-                     <div class="relative w-full h-[180px] bg-cover bg-center md:hidden shrink-0" style="background-image: url('<?php echo esc_url( $image_mobile ); ?>');"></div>
-                     <div class="container mx-auto h-auto md:h-full flex-grow px-4 py-0 flex flex-col justify-center items-center md:items-end md:rtl:items-start text-center md:text-right md:rtl:text-right relative z-10">
+                     <a href="<?php echo esc_url( $btn_url ); ?>" target="<?php echo esc_attr( $btn_target ); ?>" class="relative block w-full h-[180px] bg-cover bg-center md:hidden shrink-0" style="background-image: url('<?php echo esc_url( $image_mobile ); ?>');"></a>
+                     <div class="container mx-auto h-auto md:h-full flex-grow px-4 py-4 md:py-0 flex flex-col justify-center items-center md:items-end md:rtl:items-start text-center md:text-right md:rtl:text-right relative z-10">
                         <div class="max-w-xl animate-fade-in-right text-center md:text-right md:rtl:text-right">
                             <?php if ( ! empty( $subtitle ) ) : ?>
-                                <span class="hidden md:block text-3xl font-medium text-white tracking-widest font-['Cormorant_Garamond'] mb-4 text-right rtl:text-right"><?php echo esc_html( $subtitle ); ?></span>
+                                <div class="block text-sm md:text-3xl font-medium text-[#2d2a26] md:text-white tracking-widest font-['Cormorant_Garamond'] mb-1 md:mb-4 text-center md:text-right md:rtl:text-right uppercase">
+                                    <?php if ( ! empty( $btn_url ) ) : ?>
+                                        <a href="<?php echo esc_url( $btn_url ); ?>" target="<?php echo esc_attr( $btn_target ); ?>" class="hover:text-[#8b6e4e] md:hover:text-inherit transition-colors duration-200">
+                                    <?php endif; ?>
+                                    <?php echo esc_html( $subtitle ); ?>
+                                    <?php if ( ! empty( $btn_url ) ) : ?>
+                                        </a>
+                                    <?php endif; ?>
+                                </div>
                             <?php endif; ?>
                             <?php if ( ! empty( $title ) ) : ?>
-                                <h3 class="text-base sm:text-lg md:text-7xl font-bold font-['Cormorant_Garamond'] text-[#2d2a26] md:text-white leading-snug md:leading-tight mb-2 md:mb-8 uppercase text-center md:text-right md:rtl:text-right">
+                                <h3 class="text-lg sm:text-xl md:text-7xl font-bold font-['Cormorant_Garamond'] text-[#2d2a26] md:text-white leading-snug md:leading-tight mb-2 md:mb-8 uppercase text-center md:text-right md:rtl:text-right">
                                     <?php if ( ! empty( $btn_url ) ) : ?>
                                         <a href="<?php echo esc_url( $btn_url ); ?>" target="<?php echo esc_attr( $btn_target ); ?>" class="hover:text-[#8b6e4e] md:hover:text-inherit transition-colors duration-200">
                                     <?php endif; ?>
