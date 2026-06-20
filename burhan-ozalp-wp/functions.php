@@ -521,4 +521,47 @@ function burhan_fonts_preconnect_optimization() {
 }
 add_action( 'wp_head', 'burhan_fonts_preconnect_optimization', 2 );
 
+/**
+ * Detect if single post content contains an image matching the featured image,
+ * and add 'has-image-content' to body classes.
+ */
+function burhan_check_content_for_duplicate_image( $classes ) {
+    if ( is_singular( 'post' ) && has_post_thumbnail() ) {
+        $post = get_post();
+        if ( $post ) {
+            $content = $post->post_content;
+            
+            // RegEx to find all img source tags
+            if ( preg_match_all( '/<img[^>]+src=[\'"]([^\'"]+)[\'"]/i', $content, $matches ) ) {
+                $thumbnail_url = get_the_post_thumbnail_url( $post->ID, 'full' );
+                
+                // Helper to extract clean filename (without size suffixes or extensions)
+                $get_img_identifier = function( $url ) {
+                    if ( empty( $url ) ) {
+                        return '';
+                    }
+                    $filename = basename( strtok( $url, '?' ) );
+                    $name_without_ext = pathinfo( $filename, PATHINFO_FILENAME );
+                    $name_clean = preg_replace( '/-\d+x\d+$/', '', $name_without_ext );
+                    return strtolower( trim( $name_clean ) );
+                };
+                
+                $featured_id = $get_img_identifier( $thumbnail_url );
+                
+                if ( ! empty( $featured_id ) ) {
+                    foreach ( $matches[1] as $img_src ) {
+                        $img_id = $get_img_identifier( $img_src );
+                        if ( $img_id && $img_id === $featured_id ) {
+                            $classes[] = 'has-image-content';
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return $classes;
+}
+add_filter( 'body_class', 'burhan_check_content_for_duplicate_image' );
+
 

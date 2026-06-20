@@ -176,39 +176,5 @@ accordionTriggers.forEach(trigger => {
   });
 });
 
-// Remove duplicate featured image if the same image is inside the post content
-const featuredImg = document.querySelector('article .wp-post-image');
-if (featuredImg) {
-  const contentImgs = document.querySelectorAll('.entry-content img');
-  
-  const getWpImgIdentifier = (url) => {
-    if (!url) return '';
-    const filename = url.substring(url.lastIndexOf('/') + 1);
-    const cleanName = filename.split('?')[0].split('#')[0];
-    const nameWithoutExt = cleanName.replace(/\.[^/.]+$/, "");
-    return nameWithoutExt.replace(/-\d+x\d+$/, "").toLowerCase().trim();
-  };
-
-  const featuredSrc = featuredImg.getAttribute('src');
-  const featuredId = getWpImgIdentifier(featuredSrc);
-  
-  if (featuredId) {
-    let isDuplicateFound = false;
-    for (const img of contentImgs) {
-      const imgId = getWpImgIdentifier(img.getAttribute('src'));
-      if (imgId && imgId === featuredId) {
-        isDuplicateFound = true;
-        break;
-      }
-    }
-    
-    if (isDuplicateFound) {
-      const wrapper = featuredImg.closest('.rounded-sm') || featuredImg;
-      wrapper.remove();
-      console.log('Duplicate featured image removed:', featuredSrc);
-    }
-  }
-}
-
 // Lucide icon replacement is handled by the CDN script in index.html
 console.log('App initialized');

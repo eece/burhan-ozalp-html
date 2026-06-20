@@ -29,7 +29,7 @@ get_header(); ?>
                 <article id="post-<?php the_ID(); ?>" <?php post_class( 'mb-16' ); ?>>
                     
                     <?php if ( has_post_thumbnail() ) : ?>
-                        <div class="rounded-sm overflow-hidden mb-12 shadow-xl">
+                        <div class="post-featured-image-wrapper rounded-sm overflow-hidden mb-12 shadow-xl">
                             <?php the_post_thumbnail( 'large', array( 'class' => 'w-full h-auto' ) ); ?>
                         </div>
                     <?php endif; ?>

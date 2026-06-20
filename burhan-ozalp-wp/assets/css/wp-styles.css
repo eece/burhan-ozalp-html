@@ -282,3 +282,8 @@ html[dir="rtl"] .wysiwyg-content table td {
   text-align: right;
 }
 
+/* Hide duplicate featured image container if identical image exists inside post content */
+body.has-image-content .post-featured-image-wrapper {
+  display: none !important;
+}
+

@@ -256,6 +256,11 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Hide duplicate featured image container if identical image exists inside post content */
+body.has-image-content .post-featured-image-wrapper {
+  display: none !important;
+}
+
 
 
 
