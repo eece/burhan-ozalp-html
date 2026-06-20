@@ -287,3 +287,19 @@ body.has-image-content .post-featured-image-wrapper {
   display: none !important;
 }
 
+/* Custom featured image styles for performance and exact layout */
+.post-featured-image-wrapper {
+  max-height: 600px;
+  width: auto !important;
+  display: table !important;
+  margin: 0 auto 3rem auto !important; /* 3rem corresponds to mb-12 */
+  max-width: 100% !important;
+}
+
+.post-featured-image-wrapper img {
+  max-height: 600px !important;
+  width: auto !important;
+  max-width: 100% !important;
+  display: block;
+}
+
