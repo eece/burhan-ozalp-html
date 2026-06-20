@@ -277,6 +277,15 @@ body.has-image-content .post-featured-image-wrapper {
   display: block;
 }
 
+/* Center iframes inside rich text content */
+.entry-content iframe,
+.wp-content iframe,
+.wysiwyg-content iframe {
+  display: block !important;
+  margin: 15px auto !important;
+  max-width: 100% !important;
+}
+
 
 
 
