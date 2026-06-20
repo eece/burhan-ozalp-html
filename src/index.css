@@ -156,7 +156,7 @@ a.page-numbers:hover {
     width: 9rem !important; /* sm:w-36 */
   }
   .wpcf7-form-control-wrap[data-name="your-phone"] {
-    width: 9rem !important; /* sm:w-36 */
+    width: 14rem !important; /* sm:w-36 */
   }
   .wpcf7-form-control-wrap[data-name="your-subject"] {
     width: 9rem !important; /* sm:w-36 */
@@ -284,6 +284,21 @@ body.has-image-content .post-featured-image-wrapper {
   display: block !important;
   margin: 15px auto !important;
   max-width: 100% !important;
+}
+
+
+/* Responsive iframes on mobile devices */
+@media (max-width: 767px) {
+  iframe {
+    max-width: 100% !important;
+  }
+  .intl-tel-input .selected-flag .iti-arrow {
+    display: none !important;
+  }
+}
+
+.intl-tel-input.allow-dropdown input {
+  padding-left: 80px !important;
 }
 
 
