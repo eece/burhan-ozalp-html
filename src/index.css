@@ -296,11 +296,16 @@ body.has-image-content .post-featured-image-wrapper {
     display: none !important;
   }
 }
-
-.intl-tel-input.allow-dropdown input {
-  padding-left: 80px !important;
+ 
+.country-select.inside input, .country-select.inside input[type=text] {
+    padding-right: 6px !important;
+    padding-left: 52px !important;
+    margin-left: 0;
 }
 
-
-
+.intl-tel-input.separate-dial-code.allow-dropdown.iti-sdc-3 input, 
+.intl-tel-input.separate-dial-code.allow-dropdown.iti-sdc-3 input[type=tel], 
+.intl-tel-input.separate-dial-code.allow-dropdown.iti-sdc-3 input[type=text] {
+    padding-left: 84px!important;
+}
 
