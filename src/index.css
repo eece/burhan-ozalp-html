@@ -10,6 +10,11 @@
   --color-brandGreen: #2c8d2c;
   --color-light-brown: #ded1c1;
   --color-lightBrown: #ded1c1;
+  --text-md: 1.125rem;
+}
+
+.text-md {
+  font-size: 1.125rem !important;
 }
 
 html {

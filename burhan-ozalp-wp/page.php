@@ -26,9 +26,9 @@ $hide_title = get_field('hide_page_title');
 if ( ! $hide_title ) :
     ?>
     <!-- Page Header block with breadcrumbs -->
-    <section class="bg-[#dcd0c0] py-16 text-center">
+    <section class="bg-[#dcd0c0] py-6 md:py-16 text-center">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl md:text-5xl font-['Cormorant_Garamond'] font-medium tracking-widest text-[#2d2a26] uppercase break-words" style="word-break: break-word;"><?php the_title(); ?></h2>
+            <h2 class="text-md md:text-5xl font-['Cormorant_Garamond'] font-medium tracking-widest text-[#2d2a26] uppercase break-words" style="word-break: break-word;"><?php the_title(); ?></h2>
         </div>
     </section>
 <?php endif; ?>
